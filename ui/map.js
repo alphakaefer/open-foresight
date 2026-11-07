@@ -89,9 +89,9 @@ function paramValue(p) {
       return {value: f, display: fmt(f, 0) + "%", unit: `illustrative, ${FUTURE_YEAR}`, when: `future ${FUTURE_YEAR}`, change: f - today, changeUnit: " pp",
         ref: "vs today's view (illustrative)", points: null, file: "ui/demo/future.json (illustrative, not data)"};
     }
-    const today = sum("p_today", "2028");
+    const today = sum("p_today", S.horizon);
     const wi = typeof wiActive === "function" && wiActive();
-    return {value: today, display: fmt(today, 0) + "%", unit: `${wi ? "HYPOTHETICAL what-if" : "today's view"}, 2028 horizon`, when: "current", change: null,
+    return {value: today, display: fmt(today, 0) + "%", unit: `${wi ? "HYPOTHETICAL what-if" : "today's view"}, ${S.horizon} horizon`, when: "current", change: null,
       ref: wi ? "engine-computed what-if, not a forecast" : "latest world state (2026-11-07)", points: null, file: wi ? "whatif/data.js (engine what-if)" : src};
   }
   return null;

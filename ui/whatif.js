@@ -67,13 +67,23 @@ function wiIndText(id) {
   return t;
 }
 
-function whatifCard() {
-  if (!W.ok) return W.why ? `<section class="card"><div class="callout"><b>What-if not available</b> ${esc(W.why)}</div></section>` : "";
+// The switches alone (case, damping k, back to today). Used by the what-if card and by the focus view (ui/dash.js).
+function whatifControls() {
   const F = W.single, res = F.whatif.results;
   const opt = (v, label) => `<option value="${esc(v)}" ${W.id === v ? "selected" : ""}>${esc(label)}</option>`;
   const singles = Object.keys(res).sort().map((id) => opt(id, `${id} ${res[id].switch_to === "on" ? "switches on" : "switches off"}: ${wiIndText(id)}`)).join("");
   const bundles = W.bundles ? Object.keys(W.bundles.bundles).map((k) => opt("bundle:" + k, `${BUNDLE_TEXT[k].name} (${W.bundles.bundles[k].ids.length} at once)`)).join("") : "";
   const ks = F.whatif.k_values.map((k) => `<option value="${k}" ${String(k) === W.k ? "selected" : ""}>${k}${k === F.whatif.k_now ? " (model)" : ""}</option>`).join("");
+  return `<div class="mb-row">
+      <label class="paramsel">Case <select id="wif-case"><option value="">Today (no what-if)</option>${bundles ? `<optgroup label="Extreme cases">${bundles}</optgroup>` : ""}<optgroup label="One indicator">${singles}</optgroup></select></label>
+      <label class="paramsel">Damping k <select id="wif-k" ${wiActive() ? "" : "disabled"}>${ks}</select></label>
+      ${wiActive() ? '<button class="btn" type="button" id="wif-reset">Back to today</button>' : ""}
+    </div>`;
+}
+
+function whatifCard(controls = true) {
+  if (!W.ok) return W.why ? `<section class="card"><div class="callout"><b>What-if not available</b> ${esc(W.why)}</div></section>` : "";
+  const F = W.single;
   let body = `<p class="kv" style="margin:8px 0 0">Today no indicator has changed since the base model, so today's probabilities are the expert starting values. Pick a case to see how the engine would move them.</p>`;
   if (wiActive()) {
     const c = wiCase(W.id), h = S.horizon, B = W.orig, now = S.D.briefing;
@@ -96,11 +106,7 @@ function whatifCard() {
   const skipped = Object.entries(F.whatif.skipped).map(([id, why]) => `${id} (${why})`).join(", ");
   return `<section class="card wif ${wiActive() ? "on" : ""}" id="whatif">
     <div class="card-head"><div><h2>What if …?</h2><span class="muted">Switch early-warning indicators hypothetically. Every case was computed by the engine in advance.</span></div>${tag("model", "whatif/data.js, ui/whatif_bundles.json (engine/tagesstand.py aus_status)")}</div>
-    <div class="mb-row">
-      <label class="paramsel">Case <select id="wif-case"><option value="">Today (no what-if)</option>${bundles ? `<optgroup label="Extreme cases">${bundles}</optgroup>` : ""}<optgroup label="One indicator">${singles}</optgroup></select></label>
-      <label class="paramsel">Damping k <select id="wif-k" ${wiActive() ? "" : "disabled"}>${ks}</select></label>
-      ${wiActive() ? '<button class="btn" type="button" id="wif-reset">Back to today</button>' : ""}
-    </div>
+    ${controls ? whatifControls() : ""}
     ${body}
     <p class="kv" style="margin-top:10px">Not simulated: ${esc(skipped)}.</p></section>`;
 }

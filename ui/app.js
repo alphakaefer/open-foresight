@@ -236,9 +236,13 @@ function render() {
   if (typeof wiApply === "function") wiApply();  // what-if (ui/whatif.js): swaps in hypothetical probabilities
   const l = S.D.lv[S.level];
   renderHeader();
-  const parts = [introCard(l)];
-  if (l.coverage !== "gap" && typeof whatifCard === "function") parts.push(whatifCard());
-  parts.push(mapCard(S.level));
+  const dash = typeof dashLayout === "function";  // focus view: map, key number, what-if and tour (ui/dash.js)
+  const parts = dash ? [dashLayout()] : [];
+  if (dash && !DASH.full) { /* focus view only */ }
+  else {
+  parts.push(introCard(l));
+  if (l.coverage !== "gap" && typeof whatifCard === "function") parts.push(whatifCard(!dash));
+  if (!dash) parts.push(mapCard(S.level));
   if (l.coverage === "gap") parts.push(gapCard(l));
   else {
     parts.push(scenariosCard(l));
@@ -248,12 +252,14 @@ function render() {
       <ul class="list">${S.D.briefing.open_tasks.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
       <p class="kv">Option scoring (permitting reform, storage subsidies, flexible tariffs) is not part of this repository yet.</p></section>`);
   }
+  }
   $("#main").innerHTML = parts.join("");
   const seen = new Set();
   $("#prov-body").innerHTML = S.prov.filter((p) => !seen.has(p.kind + p.file) && seen.add(p.kind + p.file))
     .map((p) => `<div class="prov-item"><span class="tag ${p.kind.toLowerCase().split(" ")[0]}">${esc(p.kind)}</span> <code>${esc(p.file)}</code></div>`).join("");
   const wi = typeof W !== "undefined" && W.id ? `/w=${W.id}@${W.k}` : "";
-  history.replaceState(null, "", `#${S.level}/${S.horizon}${S.open.size || wi ? "/" + [...S.open].join(",") : ""}${wi}`);
+  const tu = typeof tourHash === "function" ? tourHash() : "";
+  history.replaceState(null, "", `#${S.level}/${S.horizon}${S.open.size || wi || tu ? "/" + [...S.open].join(",") + (wi || (tu ? "/" : "")) + tu : ""}`);
 }
 
 // ---------- events ----------
@@ -313,6 +319,7 @@ document.addEventListener("mousemove", (e) => {
     (open || "").split(",").filter(Boolean).forEach((id) => S.open.add(id));
     if (S.D.lv[lv]) S.level = lv;
     if (["2028", "2032", "2040"].includes(hz)) S.horizon = hz;
+    if (typeof tourInit === "function") tourInit();  // #…/tour=N opens a tour stop
     render();
   } catch (err) {
     $("#main").innerHTML = `<div class="err"><strong>Could not load data.</strong><br>${esc(err.message)}<br>Start the server from the repository root with <code>make ui</code> and open <code>http://localhost:8000/ui/</code>.</div>`;

@@ -114,6 +114,54 @@ main{max-width:1280px;padding:8px 24px 40px;gap:20px}
 .wif-sum .big{font-size:1.6rem}
 .wif h3{margin:0 0 6px}
 
+/* focus view (ui/dash.js): the map is the dashboard, beside it the tour, the key number and the switches */
+.dash{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,380px);grid-template-areas:"map tour" "map panel";grid-template-rows:auto 1fr;gap:16px 20px;align-items:start}
+.dash-map{grid-area:map;min-width:0}.dash-tour{grid-area:tour}.dash-panel{grid-area:panel}
+.dash-tour:empty{display:none}
+.dash.dear-map .reg.metric{fill:var(--dear-fill);fill-opacity:1;transition:fill .4s}
+.dash.dear-map .sw.metric{background:var(--dear-fill);opacity:1}
+.dash-more{display:flex;justify-content:center}
+.dash-more .btn{min-width:220px}
+.btn.primary{background:var(--active);border-color:var(--active);color:var(--active-fg)}
+.btn.primary:hover{opacity:.9}
+.btn.quiet{border-color:transparent;background:transparent;color:var(--muted)}
+.btn:disabled{opacity:.45;cursor:default}
+.tour h2{margin:4px 0 8px;font-size:1.25rem}
+.tour p{margin:0 0 14px}
+.tour.on{border-color:color-mix(in srgb,var(--today) 40%,var(--line));box-shadow:var(--shadow)}
+.tour-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.dots{display:flex;gap:2px;flex-wrap:wrap}
+.dot{width:22px;height:28px;border:0;padding:0;background:transparent;cursor:pointer;position:relative}
+.dot::after{content:"";position:absolute;left:7px;top:10px;width:8px;height:8px;border-radius:50%;background:var(--base)}
+.dot.on::after{background:var(--today);transform:scale(1.35)}
+.tour-nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.panel{display:grid;gap:10px}
+.panel.hypo{border-color:color-mix(in srgb,var(--warn) 45%,var(--line))}
+.kn-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.kn-head h2{margin:0;font-size:1.05rem}
+.panel .seg{justify-self:start}
+.kn-val{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.kn-val .big{font-size:3rem;line-height:1}
+.hypo-tag{color:var(--warn);text-transform:uppercase;font-size:.75rem;letter-spacing:.06em}
+.regbar{display:flex;height:14px;border-radius:999px;overflow:hidden;background:var(--grid)}
+.regbar i{display:block;height:100%}
+.regleg{display:flex;justify-content:space-between;gap:8px;font-size:.8rem;color:var(--text2)}
+.panel h3{margin:8px 0 0}
+.panel .mb-row{display:grid;gap:8px}
+.panel .paramsel{display:grid;gap:4px}
+.panel .paramsel select{max-width:100%;width:100%}
+.panel #wif-reset{justify-self:start}
+/* in the focus view only the map and its two main controls stay */
+body.focus #question,body.focus #stamp,body.focus .scale{display:none}
+body.focus .top-inner{padding-bottom:12px}
+body.focus .dash-map .card-head .muted,body.focus .dash-map .tiles,body.focus .dash-map section>.kv,
+body.focus .dash-map .when,body.focus .dash-map .mapbar .paramsel,body.focus .dash-map .cmpside,
+body.focus .dash-map .cmplegend .cl-row+.cl-row{display:none}
+body.focus .dash-map .cmpgrid{grid-template-columns:minmax(0,1fr)}
+@media (max-width:980px){
+  .dash{grid-template-columns:minmax(0,1fr);grid-template-areas:"tour" "map" "panel";grid-template-rows:auto}
+}
+
 @media (max-width:640px){
   .top-inner{padding:20px 16px 8px;flex-direction:column}
   .scale,main{padding-left:16px;padding-right:16px}
