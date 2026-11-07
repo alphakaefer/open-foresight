@@ -14,7 +14,7 @@
       "kind": "model",
       "label": "Chance of more expensive energy",
       "short": "P(energy dearer)",
-      "note": "Share of scenario probability in scenarios with an energy-price regime above neutral, for the chosen horizon. Base model vs today."
+      "note": "Share of scenario probability in scenarios with an energy-price level above neutral, for the chosen horizon. Base model vs today."
     },
     {
       "id": "brent",

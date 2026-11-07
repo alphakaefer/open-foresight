@@ -100,3 +100,9 @@ def test_ledger_is_well_formed():
     names = [r["variant"] for r in rows]
     assert len(names) == len(set(names))
     assert all(r["split"] == "holdout" for r in rows)
+
+
+def test_ui_history_is_up_to_date():
+    # ui/history.json (last stop of the map tour) must be what ui/build_history.py computes from this loop
+    hist = _load("ui_build_history", "../ui/build_history.py")
+    assert (HERE.parent / "ui" / "history.json").read_text(encoding="utf-8") == hist.render(hist.build())

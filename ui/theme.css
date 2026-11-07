@@ -171,3 +171,27 @@ body.focus .dash-map .cmpside{grid-template-columns:minmax(0,1fr)}
   .paramsel select,.mb-row .paramsel select,.wif .paramsel select{max-width:calc(100vw - 96px);min-width:0}
   .grid2{grid-template-columns:minmax(0,1fr)}
 }
+
+/* last tour stop (ui/dash.js historyCard): the model's forecast against what happened */
+.h-svg{width:100%;height:auto;display:block;margin-top:4px}
+.h-svg text{fill:var(--muted);font-size:12px;font-family:inherit}
+.h-svg .h-evl{fill:var(--text2)}
+.h-grid{stroke:var(--grid);stroke-width:1}
+.h-band{fill:color-mix(in srgb,var(--muted) 18%,transparent)}
+.h-prior{stroke:var(--muted);stroke-width:1.5;stroke-dasharray:5 4}
+.h-ev{stroke:var(--text2);stroke-width:1}
+.h-ln{fill:none;stroke:var(--model);stroke-width:2;stroke-linejoin:round}
+.h-cross{stroke:var(--text2);stroke-width:1}
+.h-hit{fill:transparent}
+.h-leg{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.85rem;color:var(--text2);margin-top:8px}
+.h-leg i{display:inline-block;width:18px;height:10px;margin-right:6px;vertical-align:0}
+.h-leg .k-ln{height:2px;background:var(--model);vertical-align:3px}
+.h-leg .k-prior{height:0;border-top:2px dashed var(--muted);vertical-align:3px}
+.h-leg .k-band{background:color-mix(in srgb,var(--muted) 18%,transparent)}
+.h-score{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.h-score>.kv{grid-column:1/-1}
+.h-score>div{background:var(--soft);border-radius:12px;padding:10px 12px;display:grid}
+.h-score b{font-family:var(--head);font-size:1.4rem}
+.h-score span{font-size:.85rem;color:var(--text2)}
+.h-table{font-size:.85rem;margin-top:6px}
+.hist details{margin-top:10px}

@@ -67,7 +67,7 @@ function wiIndText(id) {
   return t;
 }
 
-// The switches alone (case, damping k, back to today). Used by the what-if card and by the focus view (ui/dash.js).
+// The switches alone (case, reaction to a signal = damping k, back to today). Used by the what-if card and by the focus view (ui/dash.js).
 function whatifControls() {
   const F = W.single, res = F.whatif.results;
   const opt = (v, label) => `<option value="${esc(v)}" ${W.id === v ? "selected" : ""}>${esc(label)}</option>`;
@@ -76,7 +76,7 @@ function whatifControls() {
   const ks = F.whatif.k_values.map((k) => `<option value="${k}" ${String(k) === W.k ? "selected" : ""}>${k}${k === F.whatif.k_now ? " (model)" : ""}</option>`).join("");
   return `<div class="mb-row">
       <label class="paramsel">Case <select id="wif-case"><option value="">Today (no what-if)</option>${bundles ? `<optgroup label="Extreme cases">${bundles}</optgroup>` : ""}<optgroup label="One indicator">${singles}</optgroup></select></label>
-      <label class="paramsel">Damping k <select id="wif-k" ${wiActive() ? "" : "disabled"}>${ks}</select></label>
+      <label class="paramsel">Reaction to a signal <select id="wif-k" ${wiActive() ? "" : "disabled"}>${ks}</select></label>
       ${wiActive() ? '<button class="btn" type="button" id="wif-reset">Back to today</button>' : ""}
     </div>`;
 }
@@ -93,7 +93,7 @@ function whatifCard(controls = true) {
     const li = (x) => `<li><b>${esc(x.r.name)}</b> <span class="muted">${x.r.p_today[h]}% → ${x.r.p_today[h] + x.d}%</span></li>`;
     const up = d.filter((x) => x.d > 0).slice(0, 3), down = d.filter((x) => x.d < 0).slice(-3).reverse();
     const switched = c.ids.map((id) => `<li><code>${esc(id)}</code> ${c.switchTo[id] === "on" ? "on" : "off"}: ${esc(wiIndText(id))}</li>`).join("");
-    body = `<div class="demo-banner" style="margin-top:12px"><b>HYPOTHETICAL.</b> ${c.kind === "bundle" ? `${c.ids.length} early-warning indicators switched at once` : `Indicator ${esc(c.ids[0])} switched ${c.switchTo[c.ids[0]]}`}, damping k = ${esc(W.k)}. Not observed data, not a forecast. Scenario bars, energy-price shares and the model value on the map show this case; the map colours stay measured data.</div>
+    body = `<div class="demo-banner" style="margin-top:12px"><b>HYPOTHETICAL.</b> ${c.kind === "bundle" ? `${c.ids.length} early-warning indicators switched at once` : `Indicator ${esc(c.ids[0])} switched ${c.switchTo[c.ids[0]]}`}, reaction to a signal = ${esc(W.k)}. Not observed data, not a forecast. Scenario bars, energy-price shares and the model value on the map show this case; the map colours stay measured data.</div>
       <div class="wif-sum">
         <div><span class="kv">Moved in ${h}</span><b class="big">${fmt(moved, 0)} pp</b><span class="kv">of scenario probability</span></div>
         <div><span class="kv">Chance of dearer energy, ${h}</span><b class="big">${dear(B)}% → ${dear(now)}%</b><span class="kv">scenarios with energy price above neutral</span></div>

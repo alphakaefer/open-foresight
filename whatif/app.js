@@ -83,7 +83,7 @@
     const max = Math.max(...scen.map((s) => Math.max(s.p_tag[st.h], cur.p[s.id][st.h])));
     let html = `<h1>open-foresight: world state</h1>
     <div class="meta">Last computed ${esc(fmtDate(w.stand))} · data as of ${esc(fmtDate(w.radar_stand))} ·
-    model v${esc(w.basis.version)} (${esc(w.basis.stand)}) · model damping k = ${esc(D.model.k)}</div>`;
+    model v${esc(w.basis.version)} (${esc(w.basis.stand)}) · model reaction to a signal (damping k) = ${esc(D.model.k)}</div>`;
 
     html += `<div aria-live="polite">`;
     if (st.whatif) {
@@ -100,8 +100,8 @@
 
     html += `<div class="controls"><span class="lbl">Horizon</span>${H.map((h) =>
       `<button data-h="${esc(h)}" aria-pressed="${st.h === h}">${esc(h)}</button>`).join("")}
-      <span class="lbl" style="margin-left:18px">Damping k</span>
-      <select data-act="k" aria-label="Damping k">${WI.k_values.map((k) =>
+      <span class="lbl" style="margin-left:18px">Reaction to a signal</span>
+      <select data-act="k" aria-label="Reaction to a signal (damping k)">${WI.k_values.map((k) =>
         `<option value="${k}" ${String(k) === st.k ? "selected" : ""}>${k}${k === WI.k_now ? " (model)" : ""}</option>`).join("")}</select>
       ${!st.whatif && st.k !== String(WI.k_now) ? `<span class="sub">k only scales indicator changes. Today none has changed, so the
         numbers stay the same at every k. Use a <b>What if?</b> below to see k work.</span>` : ""}</div>`;
@@ -178,7 +178,7 @@
     const max = Math.max(...levels.map((l) => Math.max(today[l], now[l])));
     const bn = b.bottleneck;
     let h = `<h2>Energy transition in Germany – ${esc(st.h)}</h2><div class="meta">${esc(b.domain.question)}</div>
-      <table><thead><tr><th>Energy price regime</th><th>${st.whatif ? "What-if vs today (grey line)" : "Probability today"}</th></tr></thead><tbody>`;
+      <table><thead><tr><th>Energy price level</th><th>${st.whatif ? "What-if vs today (grey line)" : "Probability today"}</th></tr></thead><tbody>`;
     for (const l of levels) {
       const d = now[l] - today[l];
       h += `<tr><td>${esc(l)}</td><td class="barcell"><div class="bar" title="${esc(`${l}, ${st.h}: ${now[l]}%${st.whatif ? ` (today ${today[l]}%)` : ""}`)}">

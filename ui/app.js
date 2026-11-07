@@ -121,7 +121,7 @@ function scenariosCard(l) {
     const detail = open ? `<div class="sc-detail"><div>${esc(r.short)}</div>
         <div class="regime">${Object.entries(r.regime).map(([k, v]) => `<span>${esc(k.replace(/_/g, " "))} ${v > 0 ? "+" : ""}${v}</span>`).join("")}</div>
         <table><thead><tr><th>Horizon</th><th>Base</th><th>${typeof wiLabel === "function" ? wiLabel() : "Today"}</th></tr></thead><tbody>${["2028", "2032", "2040"].map((h) => `<tr><td>${h}</td><td>${r.p_base[h]}%</td><td>${r.p_today[h]}%</td></tr>`).join("")}</tbody></table>
-        <p class="kv">Energy price: -2 much cheaper to +2 much more expensive. These two regime values are the ones the energy lens uses.</p></div>` : "";
+        <p class="kv">Energy price: -2 much cheaper to +2 much more expensive. These two values are the ones the energy lens uses.</p></div>` : "";
     return `<div class="bar-row sc ${hl.has(r.id) ? "hl" : ""}" data-sc="${esc(r.id)}" role="button" tabindex="0" aria-expanded="${open}" title="${esc(r.id)}: base ${b}%, today ${t}%. Click for details.">
       <div class="bar-name">${esc(r.name)}<small>${esc(r.id)} · energy price ${REGIME_NAMES[r.regime.energy_price] ?? r.regime.energy_price}</small></div>
       <div class="bar-track"><i class="b" style="width:${(b / max) * 100}%"></i><i class="t" style="width:${(t / max) * 100}%"></i></div>
@@ -136,7 +136,7 @@ function scenariosCard(l) {
       <div style="display:flex;gap:8px;align-items:center">${tag("model", "domains/energy-transition/briefing.json")}<div class="seg" role="group" aria-label="Horizon">${horizons}</div></div></div>
     <p class="legend"><span>Base model</span><span class="t">${typeof wiLabel === "function" ? wiLabel() : "Today"}</span></p>
     <div class="bars">${bars}</div>
-    <h3 style="margin-top:14px">Probability by energy-price regime, ${S.horizon}</h3>
+    <h3 style="margin-top:14px">Probability by energy-price level, ${S.horizon}</h3>
     <div class="mass">${massCells}</div>
     ${l.id === "global" || l.id === "europe" ? '<p class="kv">The scenarios are global. This level does not change them.</p>' : ""}
     </section>`;
@@ -316,6 +316,7 @@ document.addEventListener("mousemove", (e) => {
   try {
     S.D = await load();
     if (typeof wiLoad === "function") await wiLoad(S.D);
+    if (typeof dashLoad === "function") await dashLoad(S.D);  // ui/history.json for the last tour stop
     const [lv, hz, open, wi] = location.hash.slice(1).split("/");
     if (wi && wi.startsWith("w=") && typeof W !== "undefined" && W.ok) { const [id, k] = wi.slice(2).split("@"); W.id = id; if (k) W.k = k; }
     (open || "").split(",").filter(Boolean).forEach((id) => S.open.add(id));
