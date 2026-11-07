@@ -38,7 +38,9 @@ Start reading at **[domains/energy-transition/briefing.md](domains/energy-transi
 | `model/world_model.de.json` | The public world model, exactly as published upstream (German original, authoritative) | data |
 | `model/world_model.en.json` | English translation: same structure, same keys, same numbers | data |
 | `model/glossary.md` | German keys and values → English | EN |
-| `engine/` | Pure-Python engine: Bayes update (`bayes.py`), evidence inflow (`zufluss.py`), magnitude levels (`stufen.py`), range (`spanne.py`), daily world state (`tagesstand.py`) | code comments DE |
+| `model/uebergaenge.json` | Transitions between scenarios (mean dwell time, main exits; judgment, partly marked as proposal) | data, DE |
+| `engine/` | Pure-Python engine: Bayes update (`bayes.py`), evidence inflow (`zufluss.py`), magnitude levels (`stufen.py`), range (`spanne.py`), daily world state (`tagesstand.py`), scenario transitions as a Markov chain (`uebergaenge.py`), committor (`committor.py`) | code comments DE |
+| `backtest/` | Backtest of the early-warning indicators against 2008, 2020, 2022: 14 public series back to 1947, script `pruefung/anzeichen_geschichte.py`, results, [report](backtest/indicators/REPORT.md) | EN report, data |
 | `radar/snapshot/` | Radar snapshot (`wissensstand.json`) and the world state computed from it (`weltlage.json`) | data |
 | `radar/SOURCES.md` | All radar sources and time series, generated from the snapshot | EN |
 | `radar/collector/` | The PHP collector that builds the radar from open sources | code comments DE |
@@ -46,6 +48,37 @@ Start reading at **[domains/energy-transition/briefing.md](domains/energy-transi
 | `domains/energy-transition/` | Domain config, generated briefing (md + json) | EN |
 | `docs/process.md` | The foresight process step by step, and where each step lives in this repo | EN |
 | `tests/` | Reproducibility and model tests | |
+
+## What kind of model is this?
+
+An honest classification, because a data scientist asked at the hackathon whether this is a model at all,
+since it is mostly rules.
+
+- It is a **judgment-based probabilistic scenario model**: expert-set prior probabilities, a rule-based monitoring
+  layer on open data, and a Bayesian update. Structurally it is close to cross-impact analysis and Bayesian belief
+  networks, not to a model fitted on data.
+- **Set by judgment, not estimated from data:** the 36 base probabilities (12 scenarios × 3 horizons); the
+  coupling matrix (33 drivers × 12 scenarios), derived upstream from judged driver loadings and scenario regime
+  vectors; the rules and thresholds of the 23 early-warning indicators and their signal strengths; the damping
+  `k = 0.15`; the transition matrix between scenarios (`model/uebergaenge.json`).
+- **Measured:** 31 radar time series. Indicator states follow from them by rule; nothing else is fitted.
+- **Checked against history:**
+  - *Outside view* (`aussensicht` in the model): in 2028 the crisis load (scenarios with below-normal growth) is
+    38%, 1.8 times the US base rate 1973–2025 (21% of years).
+  - *Backtest of the indicators* ([report](backtest/indicators/REPORT.md)): no numeric indicator would have
+    warned selectively and in time before 2008, 2020 and 2022. Hard thresholds are the weak spot.
+- **Not done yet: calibration.** No Brier score exists so far. The tool is upstream, but the first quarterly
+  forecast questions resolve from 2027-Q1. The three horizons are not linked: today's evidence moves 2040 as much
+  as 2028.
+
+### Hackathon track: from rules to estimates
+
+1. **Soft thresholds:** make an indicator's likelihood a continuous function of its distance to the threshold
+   (e.g. logistic) instead of on/off. The backtest series in `backtest/indicators/reihen/` are ready to fit on.
+2. **Estimate coupling and `k` from data:** which values best explain the US years 1973–2025 and the backtest?
+3. **A fair backtest:** today the backtest uses today's prior. Set a prior as of a cut-off date, roll forward,
+   score with the Brier score (mean squared error of probability forecasts).
+4. **Link the horizons** through the transition matrix (`engine/uebergaenge.py`, `engine/committor.py`).
 
 ## Transparency and reproducibility
 
@@ -60,6 +93,8 @@ Start reading at **[domains/energy-transition/briefing.md](domains/energy-transi
 - **Gaps stay visible.** A number without a source is marked `GAP` (see the grid-connection evidence in the
   energy briefing) rather than silently dropped or invented.
 - **No hidden state.** The world state is recomputed each day from base model + data, never carried forward.
+- **The backtest reproduces byte for byte.** `make backtest` recomputes all result files in `backtest/indicators/`
+  from the committed series; CI fails if anything differs.
 
 ### How the engine updates probabilities (short)
 

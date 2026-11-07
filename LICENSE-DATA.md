@@ -7,6 +7,6 @@ https://creativecommons.org/licenses/by/4.0/
 
 Attribution: "open-foresight world model by Karl Hosang and contributors, https://github.com/alphakaefer/open-foresight".
 
-**Not covered:** the time series and news titles in `radar/snapshot/` belong to their original publishers
+**Not covered:** the time series and news titles in `radar/snapshot/` and the series in `backtest/indicators/reihen/` belong to their original publishers
 (Fraunhofer ISE Energy-Charts, FRED, Destatis, Eurostat, ECB, OpenAlex, V-Dem and the news outlets listed in
-`radar/SOURCES.md`) and remain under their licences. They are included only so that the computation can be reproduced.
+`radar/SOURCES.md`, `backtest/indicators/SERIES.md`) and remain under their licences. They are included only so that the computation can be reproduced.

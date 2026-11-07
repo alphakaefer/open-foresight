@@ -1,0 +1,356 @@
+{
+  "schema": "uebergaenge/v1",
+  "stand": "2026-10-15",
+  "erlaeuterung": "Schritt 2 (docs/review-2026-10.md, Gegenproben in docs/review-2026-10-uebergaenge.md). Je Szenario: wie lange bleibt die Welt im Mittel darin (verweildauer_jahre), und wohin zieht sie meist weiter (zwei bis drei hauptausgaenge mit anteil, zusammen hoechstens 1). Der Rest verteilt sich auf die uebrigen Szenarien anteilig nach ihrer mittleren Wahrscheinlichkeit ueber die Horizonte. Alle Werte sind Vorschlaege von Ebene D (vorschlag: true), aus der historischen Gegenprobe und der Erzaehlung der Szenarien, so gewaehlt, dass die Horizonte dazu passen (D unter 0,09). Karl legt fest; bis dahin rechnet nichts Oeffentliches damit (engine.uebergaenge.aus_vorlage verweigert Vorschlaege ohne ausdrueckliches vorschlaege=True). Pruefen: python3 pruefung/uebergaenge.py.",
+  "festgelegt": null,
+  "varianten_strukturpruefung": {
+    "A": {
+      "name": "Wetterlagen: 2 Jahre fuer alle (Geschichte)",
+      "verweildauer": 2,
+      "vorschlag": true
+    },
+    "B": {
+      "name": "Vorschlag je Szenario: Krisen 3, Grundzustand 4, Aufbruch 5, Strukturwelten 6 Jahre",
+      "verweildauer": "vorlage",
+      "vorschlag": true
+    }
+  },
+  "szenarien": [
+    {
+      "id": "S01",
+      "name": "Zäher Aufstieg",
+      "verweildauer_jahre": 4,
+      "vorschlag": true,
+      "hauptausgaenge": [
+        {
+          "nach": "S02",
+          "anteil": 0.25,
+          "vorschlag": true
+        },
+        {
+          "nach": "S08",
+          "anteil": 0.2,
+          "vorschlag": true
+        },
+        {
+          "nach": "S09",
+          "anteil": 0.2,
+          "vorschlag": true
+        }
+      ],
+      "begruendung": "Grundzustand ohne Bruch, 4 Jahre: laenger als die Geschichte (1 Jahr, nur halb messbar), weil 'nichts bricht' selbst ein Zustand ist. Ausgaenge: KI kommt doch an (S02, so widerlegt sich S01 selbst), die Lernkurve setzt sich durch (S08), Klimaschaeden haeufen sich (S09). Die Horizonte verlangen genau das: S01 faellt von 26 auf 10, S02, S08 und S09 steigen."
+    },
+    {
+      "id": "S02",
+      "name": "KI-Schub",
+      "verweildauer_jahre": 5,
+      "vorschlag": true,
+      "hauptausgaenge": [
+        {
+          "nach": "S14",
+          "anteil": 0.3,
+          "vorschlag": true
+        },
+        {
+          "nach": "S03",
+          "anteil": 0.25,
+          "vorschlag": true
+        },
+        {
+          "nach": "S06",
+          "anteil": 0.15,
+          "vorschlag": true
+        }
+      ],
+      "begruendung": "Diffusion dauert Jahre, 5 Jahre. Ausgaenge: Jobverluste in der Wissensarbeit kippen das Vertrauen (S14), Ueberinvestition korrigiert (S03), der Wettlauf um die Technik spaltet die Bloecke (S06; Geschichte: S06)."
+    },
+    {
+      "id": "S03",
+      "name": "Der Platzer",
+      "verweildauer_jahre": 3,
+      "vorschlag": true,
+      "hauptausgaenge": [
+        {
+          "nach": "S01",
+          "anteil": 0.35,
+          "vorschlag": true
+        },
+        {
+          "nach": "S02",
+          "anteil": 0.2,
+          "vorschlag": true
+        },
+        {
+          "nach": "S13",
+          "anteil": 0.15,
+          "vorschlag": true
+        }
+      ],
+      "begruendung": "Eine Korrektur dauert ein bis drei Jahre, 3 Jahre (Geschichte: 1 Jahr am Stueck, zwei Laeufe). Ausgaenge: Erholung ins Muddling (S01), die Technik bleibt und wird billiger (S02), Rettungen erhoehen die Schulden (S13)."
+    },
+    {
+      "id": "S04",
+      "name": "Energiegetriebene Stagflation",
+      "verweildauer_jahre": 3,
+      "vorschlag": true,
+      "hauptausgaenge": [
+        {
+          "nach": "S01",
+          "anteil": 0.3,
+          "vorschlag": true
+        },
+        {
+          "nach": "S08",
+          "anteil": 0.25,
+          "vorschlag": true
+        },
+        {
+          "nach": "S13",
+          "anteil": 0.2,
+          "vorschlag": true
+        }
+      ],
+      "begruendung": "Geschichte ist Anker (71 % messbar, 1 Jahr); 3 Jahre, weil der Nahostkonflikt als Dauerzustand angelegt ist. Ausgaenge: Oel normalisiert sich (S01), teure Energie beschleunigt Solar und Speicher (S08), Inflation trifft hohe Schulden (S13)."
+    },
+    {
+      "id": "S06",
+      "name": "Blockbildung",
+      "verweildauer_jahre": 6,
+      "vorschlag": true,
+      "hauptausgaenge": [
+        {
+          "nach": "S17",
+          "anteil": 0.25,
+          "vorschlag": true
+        },
+        {
+          "nach": "S16",
+          "anteil": 0.2,
+          "vorschlag": true
+        },
+        {
+          "nach": "S01",
+          "anteil": 0.2,
+          "vorschlag": true
+        }
+      ],
+      "begruendung": "Getrennte Technik-Infrastruktur baut man nicht schnell zurueck, 6 Jahre. Ausgaenge: Eskalation um Taiwan (S17), Aufruestung (S16), Entspannung ins Muddling (S01). Die Geschichte (S14, S08) misst hier kaum (29 % messbar)."
+    },
+    {
+      "id": "S08",
+      "name": "Grüner Boom aus Kostengründen",
+      "verweildauer_jahre": 6,
+      "vorschlag": true,
+      "hauptausgaenge": [
+        {
+          "nach": "S06",
+          "anteil": 0.3,
+          "vorschlag": true
+        },
+        {
+          "nach": "S02",
+          "anteil": 0.25,
+          "vorschlag": true
+        },
+        {
+          "nach": "S09",
+          "anteil": 0.15,
+          "vorschlag": true
+        }
+      ],
+      "begruendung": "Die Lernkurve ist ein Jahrzehnt-Trend, 6 Jahre (Geschichte: 2 Jahre am Stueck; laenger, weil der Kapitalstock bleibt). Ausgaenge: Rohstoffrennen unter Fuehrung Chinas (S06; Geschichte: S06 2x), billige Energie traegt KI (S02), die Erwaermung laeuft trotzdem nach (S09)."
+    },
+    {
+      "id": "S09",
+      "name": "Klimaschock-Kaskade",
+      "verweildauer_jahre": 5,
+      "vorschlag": true,
+      "hauptausgaenge": [
+        {
+          "nach": "S13",
+          "anteil": 0.3,
+          "vorschlag": true
+        },
+        {
+          "nach": "S14",
+          "anteil": 0.25,
+          "vorschlag": true
+        },
+        {
+          "nach": "S04",
+          "anteil": 0.15,
+          "vorschlag": true
+        }
+      ],
+      "begruendung": "Mehrere Extremjahre in Folge, widerlegt erst nach drei normalen Jahren: 5 Jahre. Ausgaenge: Schaeden belasten die Haushalte (S13), Vertrauen bricht (S14), Ernten und Preise (S04)."
+    },
+    {
+      "id": "S13",
+      "name": "Verteilungskampf im Sozialstaat",
+      "verweildauer_jahre": 6,
+      "vorschlag": true,
+      "hauptausgaenge": [
+        {
+          "nach": "S14",
+          "anteil": 0.3,
+          "vorschlag": true
+        },
+        {
+          "nach": "S01",
+          "anteil": 0.2,
+          "vorschlag": true
+        },
+        {
+          "nach": "S15",
+          "anteil": 0.15,
+          "vorschlag": true
+        }
+      ],
+      "begruendung": "Demografie wirkt langsam, 6 Jahre (Geschichte: 2 Jahre am Stueck, 82 % messbar; laenger, weil Alterung nicht in zwei Jahren endet). Ausgaenge: Streit, wer zahlt, polarisiert (S14), Reform ins Muddling (S01) oder in den Neustart (S15)."
+    },
+    {
+      "id": "S14",
+      "name": "Gespaltene Gesellschaft",
+      "verweildauer_jahre": 6,
+      "vorschlag": true,
+      "hauptausgaenge": [
+        {
+          "nach": "S13",
+          "anteil": 0.25,
+          "vorschlag": true
+        },
+        {
+          "nach": "S06",
+          "anteil": 0.2,
+          "vorschlag": true
+        },
+        {
+          "nach": "S16",
+          "anteil": 0.15,
+          "vorschlag": true
+        }
+      ],
+      "begruendung": "Vertrauen kommt langsam zurueck, 6 Jahre. Ausgaenge: Verteilungskampf (S13), Abschottung (S06; Geschichte: S06 3x, aber nur 14 % messbar), harte Hand und Aufruestung (S16)."
+    },
+    {
+      "id": "S15",
+      "name": "Europäischer Neustart",
+      "verweildauer_jahre": 5,
+      "vorschlag": true,
+      "hauptausgaenge": [
+        {
+          "nach": "S01",
+          "anteil": 0.3,
+          "vorschlag": true
+        },
+        {
+          "nach": "S08",
+          "anteil": 0.25,
+          "vorschlag": true
+        },
+        {
+          "nach": "S16",
+          "anteil": 0.2,
+          "vorschlag": true
+        }
+      ],
+      "begruendung": "Ein Investitionsprogramm laeuft Jahre, 5 Jahre. Ausgaenge: versandet im Haushaltsstreit (S01), Netze tragen den gruenen Boom (S08), der Krieg weitet sich aus (S16)."
+    },
+    {
+      "id": "S16",
+      "name": "Rüstungswirtschaft",
+      "verweildauer_jahre": 6,
+      "vorschlag": true,
+      "hauptausgaenge": [
+        {
+          "nach": "S15",
+          "anteil": 0.3,
+          "vorschlag": true
+        },
+        {
+          "nach": "S13",
+          "anteil": 0.25,
+          "vorschlag": true
+        },
+        {
+          "nach": "S06",
+          "anteil": 0.15,
+          "vorschlag": true
+        }
+      ],
+      "begruendung": "Sicherheit als Dauerauftrag, 6 Jahre. Ausgaenge: Waffenstillstand und Neustart (S15, die Gegenwelt), Schulden und verdraengter Sozialstaat (S13), Bloecke (S06; Geschichte: S06)."
+    },
+    {
+      "id": "S17",
+      "name": "Bruch um Taiwan",
+      "verweildauer_jahre": 3,
+      "vorschlag": true,
+      "hauptausgaenge": [
+        {
+          "nach": "S06",
+          "anteil": 0.4,
+          "vorschlag": true
+        },
+        {
+          "nach": "S16",
+          "anteil": 0.2,
+          "vorschlag": true
+        },
+        {
+          "nach": "S03",
+          "anteil": 0.15,
+          "vorschlag": true
+        }
+      ],
+      "begruendung": "Die akute Phase einer Blockade ist kurz, 3 Jahre (Geschichte 1 Jahr, 68 % messbar). Ausgaenge: danach verfestigen sich die Bloecke (S06), Aufruestung (S16), Kurseinbruch (S03; Geschichte: S03)."
+    }
+  ],
+  "filter": {
+    "an": false,
+    "vorschlag": true,
+    "pi0": null,
+    "horizont_stichtag": "07-01",
+    "erlaeuterung": "Spezifikation 7b. pi0 ('Wo stehen wir heute?', zum Stand des Basismodells) setzt Karl; bis dahin nehmen vorlaeufige Rechnungen den naechsten Horizont. Stichtag: ein Horizont h meint die Welt am 1. Juli des Jahres h (Vorschlag)."
+  },
+  "committor": {
+    "an": false,
+    "vorschlag": true,
+    "paare": [
+      {
+        "id": "krise_aufbau",
+        "A": [
+          "S03",
+          "S04",
+          "S17"
+        ],
+        "B": [
+          "S02",
+          "S08",
+          "S15"
+        ],
+        "begruendung": "Krisenwelten (Platzer, Stagflation, Bruch um Taiwan) gegen Aufbauwelten (KI-Schub, gruener Boom, europaeischer Neustart)"
+      },
+      {
+        "id": "klima",
+        "A": [
+          "S09"
+        ],
+        "B": [
+          "S08"
+        ],
+        "begruendung": "Klimaschock-Kaskade gegen gruenen Boom: dieselbe Achse, zwei Ausgaenge"
+      },
+      {
+        "id": "gesellschaft",
+        "A": [
+          "S14"
+        ],
+        "B": [
+          "S15"
+        ],
+        "begruendung": "Gespaltene Gesellschaft gegen europaeischen Neustart"
+      }
+    ],
+    "erlaeuterung": "Spezifikation 12, Paare als Vorschlag von Ebene D aus docs/review-2026-10.md (Schritt 4). Karl waehlt zwei bis drei."
+  }
+}

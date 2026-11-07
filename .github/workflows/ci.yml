@@ -10,3 +10,4 @@ jobs:
       - run: pip install -r requirements.txt
       - run: make test
       - run: make energy && git diff --exit-code domains/   # briefing in the repo must match the code
+      - run: make backtest && git diff --exit-code backtest/  # backtest results must reproduce byte for byte
