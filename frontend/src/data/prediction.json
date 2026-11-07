@@ -1,0 +1,948 @@
+{
+  "mode": "engine",
+  "limits": [
+    "PROTOTYPE, NOT PROOF. Read the limits first:",
+    "1. Prior built with hindsight: the base probabilities (model v1.4.0) were set in 2026 by someone who knew 2008, 2020 and 2022. This favours 'model' and 'prior-only'. Only model vs prior-only isolates the data-driven update.",
+    "2. Growth-equals-industry assumption: the forecast is the 2028 probability of the below-normal-growth scenarios, used as a 12-month probability that German industry falls. Both the mapping and the horizon are judgments made for this prototype.",
+    "3. Overlapping windows: 12-month outcomes checked every quarter overlap; there are only about 25 independent years and 3 large crises. Small Brier differences mean nothing.",
+    "4. Revised data: the series are today's revised values; a 2-month lag only partly mimics what was known then. The indicator states at the base date also use data up to 2026-10."
+  ],
+  "crisis_scenarios": [
+    "S03",
+    "S04",
+    "S09",
+    "S14",
+    "S17"
+  ],
+  "brier": {
+    "model": 0.24028116117324622,
+    "prior_only": 0.24557647058823528,
+    "baseline": 0.25277749327763865
+  },
+  "skill_vs_baseline": {
+    "model": 0.04943609473437993,
+    "prior_only": 0.02848759435039616
+  },
+  "n": 102,
+  "repo_head": "70c4ade3cd3f3e2ca98f87235c1c1b269a94759f",
+  "rows": [
+    {
+      "date": "2000-03",
+      "outcome": 0,
+      "model": 0.35496569,
+      "prior_only": 0.38,
+      "baseline": 0.3838383838383838,
+      "baseline_n_known": 99,
+      "model_data_up_to": "2000-01"
+    },
+    {
+      "date": "2000-06",
+      "outcome": 0,
+      "model": 0.32086925,
+      "prior_only": 0.38,
+      "baseline": 0.37254901960784315,
+      "baseline_n_known": 102,
+      "model_data_up_to": "2000-04"
+    },
+    {
+      "date": "2000-09",
+      "outcome": 1,
+      "model": 0.3629426,
+      "prior_only": 0.38,
+      "baseline": 0.3619047619047619,
+      "baseline_n_known": 105,
+      "model_data_up_to": "2000-07"
+    },
+    {
+      "date": "2000-12",
+      "outcome": 1,
+      "model": 0.32086925,
+      "prior_only": 0.38,
+      "baseline": 0.35185185185185186,
+      "baseline_n_known": 108,
+      "model_data_up_to": "2000-10"
+    },
+    {
+      "date": "2001-03",
+      "outcome": 1,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.34234234234234234,
+      "baseline_n_known": 111,
+      "model_data_up_to": "2001-01"
+    },
+    {
+      "date": "2001-06",
+      "outcome": 1,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3333333333333333,
+      "baseline_n_known": 114,
+      "model_data_up_to": "2001-04"
+    },
+    {
+      "date": "2001-09",
+      "outcome": 1,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3504273504273504,
+      "baseline_n_known": 117,
+      "model_data_up_to": "2001-07"
+    },
+    {
+      "date": "2001-12",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.36666666666666664,
+      "baseline_n_known": 120,
+      "model_data_up_to": "2001-10"
+    },
+    {
+      "date": "2002-03",
+      "outcome": 0,
+      "model": 0.3629426,
+      "prior_only": 0.38,
+      "baseline": 0.3821138211382114,
+      "baseline_n_known": 123,
+      "model_data_up_to": "2002-01"
+    },
+    {
+      "date": "2002-06",
+      "outcome": 1,
+      "model": 0.3629426,
+      "prior_only": 0.38,
+      "baseline": 0.3968253968253968,
+      "baseline_n_known": 126,
+      "model_data_up_to": "2002-04"
+    },
+    {
+      "date": "2002-09",
+      "outcome": 1,
+      "model": 0.35147096,
+      "prior_only": 0.38,
+      "baseline": 0.4108527131782946,
+      "baseline_n_known": 129,
+      "model_data_up_to": "2002-07"
+    },
+    {
+      "date": "2002-12",
+      "outcome": 0,
+      "model": 0.35147096,
+      "prior_only": 0.38,
+      "baseline": 0.4015151515151515,
+      "baseline_n_known": 132,
+      "model_data_up_to": "2002-10"
+    },
+    {
+      "date": "2003-03",
+      "outcome": 0,
+      "model": 0.35237464,
+      "prior_only": 0.38,
+      "baseline": 0.3925925925925926,
+      "baseline_n_known": 135,
+      "model_data_up_to": "2003-01"
+    },
+    {
+      "date": "2003-06",
+      "outcome": 0,
+      "model": 0.31368321,
+      "prior_only": 0.38,
+      "baseline": 0.391304347826087,
+      "baseline_n_known": 138,
+      "model_data_up_to": "2003-04"
+    },
+    {
+      "date": "2003-09",
+      "outcome": 0,
+      "model": 0.30939342,
+      "prior_only": 0.38,
+      "baseline": 0.3971631205673759,
+      "baseline_n_known": 141,
+      "model_data_up_to": "2003-07"
+    },
+    {
+      "date": "2003-12",
+      "outcome": 0,
+      "model": 0.32086925,
+      "prior_only": 0.38,
+      "baseline": 0.3888888888888889,
+      "baseline_n_known": 144,
+      "model_data_up_to": "2003-10"
+    },
+    {
+      "date": "2004-03",
+      "outcome": 0,
+      "model": 0.30939342,
+      "prior_only": 0.38,
+      "baseline": 0.38095238095238093,
+      "baseline_n_known": 147,
+      "model_data_up_to": "2004-01"
+    },
+    {
+      "date": "2004-06",
+      "outcome": 0,
+      "model": 0.32086925,
+      "prior_only": 0.38,
+      "baseline": 0.37333333333333335,
+      "baseline_n_known": 150,
+      "model_data_up_to": "2004-04"
+    },
+    {
+      "date": "2004-09",
+      "outcome": 0,
+      "model": 0.32086925,
+      "prior_only": 0.38,
+      "baseline": 0.3660130718954248,
+      "baseline_n_known": 153,
+      "model_data_up_to": "2004-07"
+    },
+    {
+      "date": "2004-12",
+      "outcome": 0,
+      "model": 0.32086925,
+      "prior_only": 0.38,
+      "baseline": 0.358974358974359,
+      "baseline_n_known": 156,
+      "model_data_up_to": "2004-10"
+    },
+    {
+      "date": "2005-03",
+      "outcome": 0,
+      "model": 0.30939342,
+      "prior_only": 0.38,
+      "baseline": 0.3522012578616352,
+      "baseline_n_known": 159,
+      "model_data_up_to": "2005-01"
+    },
+    {
+      "date": "2005-06",
+      "outcome": 0,
+      "model": 0.30939342,
+      "prior_only": 0.38,
+      "baseline": 0.345679012345679,
+      "baseline_n_known": 162,
+      "model_data_up_to": "2005-04"
+    },
+    {
+      "date": "2005-09",
+      "outcome": 0,
+      "model": 0.34307397,
+      "prior_only": 0.38,
+      "baseline": 0.3393939393939394,
+      "baseline_n_known": 165,
+      "model_data_up_to": "2005-07"
+    },
+    {
+      "date": "2005-12",
+      "outcome": 0,
+      "model": 0.30939342,
+      "prior_only": 0.38,
+      "baseline": 0.3333333333333333,
+      "baseline_n_known": 168,
+      "model_data_up_to": "2005-10"
+    },
+    {
+      "date": "2006-03",
+      "outcome": 0,
+      "model": 0.30939342,
+      "prior_only": 0.38,
+      "baseline": 0.32748538011695905,
+      "baseline_n_known": 171,
+      "model_data_up_to": "2006-01"
+    },
+    {
+      "date": "2006-06",
+      "outcome": 0,
+      "model": 0.3629426,
+      "prior_only": 0.38,
+      "baseline": 0.3218390804597701,
+      "baseline_n_known": 174,
+      "model_data_up_to": "2006-04"
+    },
+    {
+      "date": "2006-09",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3163841807909605,
+      "baseline_n_known": 177,
+      "model_data_up_to": "2006-07"
+    },
+    {
+      "date": "2006-12",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3111111111111111,
+      "baseline_n_known": 180,
+      "model_data_up_to": "2006-10"
+    },
+    {
+      "date": "2007-03",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.30601092896174864,
+      "baseline_n_known": 183,
+      "model_data_up_to": "2007-01"
+    },
+    {
+      "date": "2007-06",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3010752688172043,
+      "baseline_n_known": 186,
+      "model_data_up_to": "2007-04"
+    },
+    {
+      "date": "2007-09",
+      "outcome": 1,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.2962962962962963,
+      "baseline_n_known": 189,
+      "model_data_up_to": "2007-07"
+    },
+    {
+      "date": "2007-12",
+      "outcome": 1,
+      "model": 0.38662163,
+      "prior_only": 0.38,
+      "baseline": 0.2916666666666667,
+      "baseline_n_known": 192,
+      "model_data_up_to": "2007-10"
+    },
+    {
+      "date": "2008-03",
+      "outcome": 1,
+      "model": 0.38662163,
+      "prior_only": 0.38,
+      "baseline": 0.28717948717948716,
+      "baseline_n_known": 195,
+      "model_data_up_to": "2008-01"
+    },
+    {
+      "date": "2008-06",
+      "outcome": 1,
+      "model": 0.38662163,
+      "prior_only": 0.38,
+      "baseline": 0.2828282828282828,
+      "baseline_n_known": 198,
+      "model_data_up_to": "2008-04"
+    },
+    {
+      "date": "2008-09",
+      "outcome": 1,
+      "model": 0.39692067000000003,
+      "prior_only": 0.38,
+      "baseline": 0.2835820895522388,
+      "baseline_n_known": 201,
+      "model_data_up_to": "2008-07"
+    },
+    {
+      "date": "2008-12",
+      "outcome": 1,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.29411764705882354,
+      "baseline_n_known": 204,
+      "model_data_up_to": "2008-10"
+    },
+    {
+      "date": "2009-03",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.30434782608695654,
+      "baseline_n_known": 207,
+      "model_data_up_to": "2009-01"
+    },
+    {
+      "date": "2009-06",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3142857142857143,
+      "baseline_n_known": 210,
+      "model_data_up_to": "2009-04"
+    },
+    {
+      "date": "2009-09",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.323943661971831,
+      "baseline_n_known": 213,
+      "model_data_up_to": "2009-07"
+    },
+    {
+      "date": "2009-12",
+      "outcome": 0,
+      "model": 0.3629426,
+      "prior_only": 0.38,
+      "baseline": 0.3333333333333333,
+      "baseline_n_known": 216,
+      "model_data_up_to": "2009-10"
+    },
+    {
+      "date": "2010-03",
+      "outcome": 0,
+      "model": 0.37322611,
+      "prior_only": 0.38,
+      "baseline": 0.3287671232876712,
+      "baseline_n_known": 219,
+      "model_data_up_to": "2010-01"
+    },
+    {
+      "date": "2010-06",
+      "outcome": 0,
+      "model": 0.33022827,
+      "prior_only": 0.38,
+      "baseline": 0.32432432432432434,
+      "baseline_n_known": 222,
+      "model_data_up_to": "2010-04"
+    },
+    {
+      "date": "2010-09",
+      "outcome": 0,
+      "model": 0.32086925,
+      "prior_only": 0.38,
+      "baseline": 0.32,
+      "baseline_n_known": 225,
+      "model_data_up_to": "2010-07"
+    },
+    {
+      "date": "2010-12",
+      "outcome": 0,
+      "model": 0.32086925,
+      "prior_only": 0.38,
+      "baseline": 0.3157894736842105,
+      "baseline_n_known": 228,
+      "model_data_up_to": "2010-10"
+    },
+    {
+      "date": "2011-03",
+      "outcome": 0,
+      "model": 0.30939342,
+      "prior_only": 0.38,
+      "baseline": 0.3116883116883117,
+      "baseline_n_known": 231,
+      "model_data_up_to": "2011-01"
+    },
+    {
+      "date": "2011-06",
+      "outcome": 0,
+      "model": 0.40578339999999996,
+      "prior_only": 0.38,
+      "baseline": 0.3076923076923077,
+      "baseline_n_known": 234,
+      "model_data_up_to": "2011-04"
+    },
+    {
+      "date": "2011-09",
+      "outcome": 1,
+      "model": 0.40578339999999996,
+      "prior_only": 0.38,
+      "baseline": 0.3037974683544304,
+      "baseline_n_known": 237,
+      "model_data_up_to": "2011-07"
+    },
+    {
+      "date": "2011-12",
+      "outcome": 1,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3,
+      "baseline_n_known": 240,
+      "model_data_up_to": "2011-10"
+    },
+    {
+      "date": "2012-03",
+      "outcome": 1,
+      "model": 0.3629426,
+      "prior_only": 0.38,
+      "baseline": 0.2962962962962963,
+      "baseline_n_known": 243,
+      "model_data_up_to": "2012-01"
+    },
+    {
+      "date": "2012-06",
+      "outcome": 0,
+      "model": 0.40578339999999996,
+      "prior_only": 0.38,
+      "baseline": 0.3008130081300813,
+      "baseline_n_known": 246,
+      "model_data_up_to": "2012-04"
+    },
+    {
+      "date": "2012-09",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3092369477911647,
+      "baseline_n_known": 249,
+      "model_data_up_to": "2012-07"
+    },
+    {
+      "date": "2012-12",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.31746031746031744,
+      "baseline_n_known": 252,
+      "model_data_up_to": "2012-10"
+    },
+    {
+      "date": "2013-03",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3254901960784314,
+      "baseline_n_known": 255,
+      "model_data_up_to": "2013-01"
+    },
+    {
+      "date": "2013-06",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.32558139534883723,
+      "baseline_n_known": 258,
+      "model_data_up_to": "2013-04"
+    },
+    {
+      "date": "2013-09",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.32567049808429116,
+      "baseline_n_known": 261,
+      "model_data_up_to": "2013-07"
+    },
+    {
+      "date": "2013-12",
+      "outcome": 0,
+      "model": 0.38662163,
+      "prior_only": 0.38,
+      "baseline": 0.32196969696969696,
+      "baseline_n_known": 264,
+      "model_data_up_to": "2013-10"
+    },
+    {
+      "date": "2014-03",
+      "outcome": 1,
+      "model": 0.38662163,
+      "prior_only": 0.38,
+      "baseline": 0.31835205992509363,
+      "baseline_n_known": 267,
+      "model_data_up_to": "2014-01"
+    },
+    {
+      "date": "2014-06",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3148148148148148,
+      "baseline_n_known": 270,
+      "model_data_up_to": "2014-04"
+    },
+    {
+      "date": "2014-09",
+      "outcome": 0,
+      "model": 0.35147096,
+      "prior_only": 0.38,
+      "baseline": 0.315018315018315,
+      "baseline_n_known": 273,
+      "model_data_up_to": "2014-07"
+    },
+    {
+      "date": "2014-12",
+      "outcome": 1,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.31521739130434784,
+      "baseline_n_known": 276,
+      "model_data_up_to": "2014-10"
+    },
+    {
+      "date": "2015-03",
+      "outcome": 0,
+      "model": 0.35147096,
+      "prior_only": 0.38,
+      "baseline": 0.3225806451612903,
+      "baseline_n_known": 279,
+      "model_data_up_to": "2015-01"
+    },
+    {
+      "date": "2015-06",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3191489361702128,
+      "baseline_n_known": 282,
+      "model_data_up_to": "2015-04"
+    },
+    {
+      "date": "2015-09",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3157894736842105,
+      "baseline_n_known": 285,
+      "model_data_up_to": "2015-07"
+    },
+    {
+      "date": "2015-12",
+      "outcome": 1,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3194444444444444,
+      "baseline_n_known": 288,
+      "model_data_up_to": "2015-10"
+    },
+    {
+      "date": "2016-03",
+      "outcome": 0,
+      "model": 0.38662163,
+      "prior_only": 0.38,
+      "baseline": 0.3161512027491409,
+      "baseline_n_known": 291,
+      "model_data_up_to": "2016-01"
+    },
+    {
+      "date": "2016-06",
+      "outcome": 0,
+      "model": 0.38662163,
+      "prior_only": 0.38,
+      "baseline": 0.3163265306122449,
+      "baseline_n_known": 294,
+      "model_data_up_to": "2016-04"
+    },
+    {
+      "date": "2016-09",
+      "outcome": 0,
+      "model": 0.38662163,
+      "prior_only": 0.38,
+      "baseline": 0.3164983164983165,
+      "baseline_n_known": 297,
+      "model_data_up_to": "2016-07"
+    },
+    {
+      "date": "2016-12",
+      "outcome": 0,
+      "model": 0.38662163,
+      "prior_only": 0.38,
+      "baseline": 0.31666666666666665,
+      "baseline_n_known": 300,
+      "model_data_up_to": "2016-10"
+    },
+    {
+      "date": "2017-03",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.31683168316831684,
+      "baseline_n_known": 303,
+      "model_data_up_to": "2017-01"
+    },
+    {
+      "date": "2017-06",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3137254901960784,
+      "baseline_n_known": 306,
+      "model_data_up_to": "2017-04"
+    },
+    {
+      "date": "2017-09",
+      "outcome": 1,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3106796116504854,
+      "baseline_n_known": 309,
+      "model_data_up_to": "2017-07"
+    },
+    {
+      "date": "2017-12",
+      "outcome": 1,
+      "model": 0.38662163,
+      "prior_only": 0.38,
+      "baseline": 0.3076923076923077,
+      "baseline_n_known": 312,
+      "model_data_up_to": "2017-10"
+    },
+    {
+      "date": "2018-03",
+      "outcome": 1,
+      "model": 0.38662163,
+      "prior_only": 0.38,
+      "baseline": 0.3047619047619048,
+      "baseline_n_known": 315,
+      "model_data_up_to": "2018-01"
+    },
+    {
+      "date": "2018-06",
+      "outcome": 1,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3018867924528302,
+      "baseline_n_known": 318,
+      "model_data_up_to": "2018-04"
+    },
+    {
+      "date": "2018-09",
+      "outcome": 1,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3052959501557632,
+      "baseline_n_known": 321,
+      "model_data_up_to": "2018-07"
+    },
+    {
+      "date": "2018-12",
+      "outcome": 1,
+      "model": 0.38662163,
+      "prior_only": 0.38,
+      "baseline": 0.30864197530864196,
+      "baseline_n_known": 324,
+      "model_data_up_to": "2018-10"
+    },
+    {
+      "date": "2019-03",
+      "outcome": 1,
+      "model": 0.38662163,
+      "prior_only": 0.38,
+      "baseline": 0.3149847094801223,
+      "baseline_n_known": 327,
+      "model_data_up_to": "2019-01"
+    },
+    {
+      "date": "2019-06",
+      "outcome": 1,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3212121212121212,
+      "baseline_n_known": 330,
+      "model_data_up_to": "2019-04"
+    },
+    {
+      "date": "2019-09",
+      "outcome": 1,
+      "model": 0.38662163,
+      "prior_only": 0.38,
+      "baseline": 0.32732732732732733,
+      "baseline_n_known": 333,
+      "model_data_up_to": "2019-07"
+    },
+    {
+      "date": "2019-12",
+      "outcome": 0,
+      "model": 0.3629426,
+      "prior_only": 0.38,
+      "baseline": 0.3333333333333333,
+      "baseline_n_known": 336,
+      "model_data_up_to": "2019-10"
+    },
+    {
+      "date": "2020-03",
+      "outcome": 0,
+      "model": 0.39845511,
+      "prior_only": 0.38,
+      "baseline": 0.3392330383480826,
+      "baseline_n_known": 339,
+      "model_data_up_to": "2020-01"
+    },
+    {
+      "date": "2020-06",
+      "outcome": 0,
+      "model": 0.4092602,
+      "prior_only": 0.38,
+      "baseline": 0.34502923976608185,
+      "baseline_n_known": 342,
+      "model_data_up_to": "2020-04"
+    },
+    {
+      "date": "2020-09",
+      "outcome": 1,
+      "model": 0.4092602,
+      "prior_only": 0.38,
+      "baseline": 0.3507246376811594,
+      "baseline_n_known": 345,
+      "model_data_up_to": "2020-07"
+    },
+    {
+      "date": "2020-12",
+      "outcome": 1,
+      "model": 0.33022827,
+      "prior_only": 0.38,
+      "baseline": 0.35344827586206895,
+      "baseline_n_known": 348,
+      "model_data_up_to": "2020-10"
+    },
+    {
+      "date": "2021-03",
+      "outcome": 1,
+      "model": 0.33022827,
+      "prior_only": 0.38,
+      "baseline": 0.3561253561253561,
+      "baseline_n_known": 351,
+      "model_data_up_to": "2021-01"
+    },
+    {
+      "date": "2021-06",
+      "outcome": 0,
+      "model": 0.33022827,
+      "prior_only": 0.38,
+      "baseline": 0.3531073446327684,
+      "baseline_n_known": 354,
+      "model_data_up_to": "2021-04"
+    },
+    {
+      "date": "2021-09",
+      "outcome": 0,
+      "model": 0.32586374,
+      "prior_only": 0.38,
+      "baseline": 0.35294117647058826,
+      "baseline_n_known": 357,
+      "model_data_up_to": "2021-07"
+    },
+    {
+      "date": "2021-12",
+      "outcome": 1,
+      "model": 0.33538985,
+      "prior_only": 0.38,
+      "baseline": 0.35833333333333334,
+      "baseline_n_known": 360,
+      "model_data_up_to": "2021-10"
+    },
+    {
+      "date": "2022-03",
+      "outcome": 0,
+      "model": 0.36992854000000003,
+      "prior_only": 0.38,
+      "baseline": 0.3608815426997245,
+      "baseline_n_known": 363,
+      "model_data_up_to": "2022-01"
+    },
+    {
+      "date": "2022-06",
+      "outcome": 1,
+      "model": 0.42256394999999997,
+      "prior_only": 0.38,
+      "baseline": 0.3633879781420765,
+      "baseline_n_known": 366,
+      "model_data_up_to": "2022-04"
+    },
+    {
+      "date": "2022-09",
+      "outcome": 1,
+      "model": 0.40514965,
+      "prior_only": 0.38,
+      "baseline": 0.36314363143631434,
+      "baseline_n_known": 369,
+      "model_data_up_to": "2022-07"
+    },
+    {
+      "date": "2022-12",
+      "outcome": 1,
+      "model": 0.38288099000000003,
+      "prior_only": 0.38,
+      "baseline": 0.3629032258064516,
+      "baseline_n_known": 372,
+      "model_data_up_to": "2022-10"
+    },
+    {
+      "date": "2023-03",
+      "outcome": 1,
+      "model": 0.38288099000000003,
+      "prior_only": 0.38,
+      "baseline": 0.3626666666666667,
+      "baseline_n_known": 375,
+      "model_data_up_to": "2023-01"
+    },
+    {
+      "date": "2023-06",
+      "outcome": 1,
+      "model": 0.39323677,
+      "prior_only": 0.38,
+      "baseline": 0.36243386243386244,
+      "baseline_n_known": 378,
+      "model_data_up_to": "2023-04"
+    },
+    {
+      "date": "2023-09",
+      "outcome": 1,
+      "model": 0.38288099000000003,
+      "prior_only": 0.38,
+      "baseline": 0.3674540682414698,
+      "baseline_n_known": 381,
+      "model_data_up_to": "2023-07"
+    },
+    {
+      "date": "2023-12",
+      "outcome": 1,
+      "model": 0.31650945,
+      "prior_only": 0.38,
+      "baseline": 0.3723958333333333,
+      "baseline_n_known": 384,
+      "model_data_up_to": "2023-10"
+    },
+    {
+      "date": "2024-03",
+      "outcome": 0,
+      "model": 0.35903506999999996,
+      "prior_only": 0.38,
+      "baseline": 0.3772609819121447,
+      "baseline_n_known": 387,
+      "model_data_up_to": "2024-01"
+    },
+    {
+      "date": "2024-06",
+      "outcome": 1,
+      "model": 0.29638563,
+      "prior_only": 0.38,
+      "baseline": 0.382051282051282,
+      "baseline_n_known": 390,
+      "model_data_up_to": "2024-04"
+    },
+    {
+      "date": "2024-09",
+      "outcome": 1,
+      "model": 0.29638563,
+      "prior_only": 0.38,
+      "baseline": 0.38676844783715014,
+      "baseline_n_known": 393,
+      "model_data_up_to": "2024-07"
+    },
+    {
+      "date": "2024-12",
+      "outcome": 0,
+      "model": 0.33880783000000003,
+      "prior_only": 0.38,
+      "baseline": 0.39141414141414144,
+      "baseline_n_known": 396,
+      "model_data_up_to": "2024-10"
+    },
+    {
+      "date": "2025-03",
+      "outcome": 1,
+      "model": 0.38290131000000005,
+      "prior_only": 0.38,
+      "baseline": 0.39348370927318294,
+      "baseline_n_known": 399,
+      "model_data_up_to": "2025-01"
+    },
+    {
+      "date": "2025-06",
+      "outcome": 1,
+      "model": 0.38290131000000005,
+      "prior_only": 0.38,
+      "baseline": 0.39552238805970147,
+      "baseline_n_known": 402,
+      "model_data_up_to": "2025-04"
+    }
+  ]
+}

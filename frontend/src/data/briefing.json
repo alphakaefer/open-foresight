@@ -1,0 +1,594 @@
+{
+  "domain": {
+    "id": "energy-transition-de",
+    "title": "Energy transition (Energiewende) in Germany",
+    "question": "How fast can Germany's energy transition turn installed renewable capacity into usable, affordable electricity until 2028 / 2032 / 2040 – and which bottleneck decides the pace?",
+    "status": "Hackathon starting point (2026-11-07). Every link from the world model to this domain below is a human judgment and marked as such. The world model itself does not know this domain; it computes for the world.",
+    "horizons": [
+      "2028",
+      "2032",
+      "2040"
+    ]
+  },
+  "inputs": {
+    "world_model": "model/world_model.en.json",
+    "version": "1.4.0",
+    "model_date": "2026-10-09",
+    "world_state_date": "2026-11-07T11:16:17Z",
+    "radar_date": "2026-11-07T11:16:02.000Z"
+  },
+  "scenarios": {
+    "rows": [
+      {
+        "id": "S04",
+        "name": "Energy-Driven Stagflation",
+        "short": "Hormuz stays a combat zone, Europe erodes industrially",
+        "regime": {
+          "energy_price": 2.0,
+          "climate_damage": 1.0
+        },
+        "p_base": {
+          "2028": 12,
+          "2032": 8,
+          "2040": 5
+        },
+        "p_today": {
+          "2028": 12,
+          "2032": 8,
+          "2040": 5
+        }
+      },
+      {
+        "id": "S01",
+        "name": "Grinding Ascent",
+        "short": "Muddling through with expensive energy",
+        "regime": {
+          "energy_price": 1.0,
+          "climate_damage": 1.0
+        },
+        "p_base": {
+          "2028": 26,
+          "2032": 16,
+          "2040": 10
+        },
+        "p_today": {
+          "2028": 26,
+          "2032": 16,
+          "2040": 10
+        }
+      },
+      {
+        "id": "S08",
+        "name": "Green Boom on Cost",
+        "short": "Solar and storage undercut everything, energy becomes cheap",
+        "regime": {
+          "energy_price": -2.0,
+          "climate_damage": 0.0
+        },
+        "p_base": {
+          "2028": 6,
+          "2032": 9,
+          "2040": 13
+        },
+        "p_today": {
+          "2028": 6,
+          "2032": 9,
+          "2040": 13
+        }
+      },
+      {
+        "id": "S09",
+        "name": "Climate Shock Cascade",
+        "short": "Heat, drought and floods hit Europe too - several years in a row",
+        "regime": {
+          "energy_price": 0.0,
+          "climate_damage": 2.0
+        },
+        "p_base": {
+          "2028": 5,
+          "2032": 8,
+          "2040": 13
+        },
+        "p_today": {
+          "2028": 5,
+          "2032": 8,
+          "2040": 13
+        }
+      },
+      {
+        "id": "S03",
+        "name": "The Bust",
+        "short": "AI investment collapses, the technology stays",
+        "regime": {
+          "energy_price": 0.0,
+          "climate_damage": 1.0
+        },
+        "p_base": {
+          "2028": 9,
+          "2032": 5,
+          "2040": 5
+        },
+        "p_today": {
+          "2028": 9,
+          "2032": 5,
+          "2040": 5
+        }
+      },
+      {
+        "id": "S15",
+        "name": "European Restart",
+        "short": "Ceasefire, investment and education give Europe new momentum",
+        "regime": {
+          "energy_price": -1.0,
+          "climate_damage": 0.0
+        },
+        "p_base": {
+          "2028": 5,
+          "2032": 6,
+          "2040": 7
+        },
+        "p_today": {
+          "2028": 5,
+          "2032": 6,
+          "2040": 7
+        }
+      },
+      {
+        "id": "S16",
+        "name": "Arms Economy",
+        "short": "Security becomes a standing order - and crowds out other things",
+        "regime": {
+          "energy_price": 1.0,
+          "climate_damage": 0.0
+        },
+        "p_base": {
+          "2028": 5,
+          "2032": 8,
+          "2040": 5
+        },
+        "p_today": {
+          "2028": 5,
+          "2032": 8,
+          "2040": 5
+        }
+      },
+      {
+        "id": "S17",
+        "name": "Taiwan Rupture",
+        "short": "Blockade or war over Taiwan - chips, trade and sea lanes break at the same time",
+        "regime": {
+          "energy_price": 1.0,
+          "climate_damage": 0.0
+        },
+        "p_base": {
+          "2028": 7,
+          "2032": 8,
+          "2040": 6
+        },
+        "p_today": {
+          "2028": 7,
+          "2032": 8,
+          "2040": 6
+        }
+      },
+      {
+        "id": "S02",
+        "name": "AI Surge",
+        "short": "AI arrives across the board - with growth and upheaval at the same time",
+        "regime": {
+          "energy_price": 0.0,
+          "climate_damage": 0.0
+        },
+        "p_base": {
+          "2028": 7,
+          "2032": 10,
+          "2040": 12
+        },
+        "p_today": {
+          "2028": 7,
+          "2032": 10,
+          "2040": 12
+        }
+      },
+      {
+        "id": "S06",
+        "name": "Bloc Formation",
+        "short": "Two technology worlds, expensive but without war",
+        "regime": {
+          "energy_price": 0.0,
+          "climate_damage": 0.0
+        },
+        "p_base": {
+          "2028": 7,
+          "2032": 8,
+          "2040": 6
+        },
+        "p_today": {
+          "2028": 7,
+          "2032": 8,
+          "2040": 6
+        }
+      },
+      {
+        "id": "S13",
+        "name": "Distribution Fight in the Welfare State",
+        "short": "Pensions, care and housing blow up budgets - money is quietly devalued",
+        "regime": {
+          "energy_price": 0.0,
+          "climate_damage": 0.0
+        },
+        "p_base": {
+          "2028": 6,
+          "2032": 9,
+          "2040": 11
+        },
+        "p_today": {
+          "2028": 6,
+          "2032": 9,
+          "2040": 11
+        }
+      },
+      {
+        "id": "S14",
+        "name": "Divided Society",
+        "short": "Trust collapses - gridlock or a firm hand",
+        "regime": {
+          "energy_price": 0.0,
+          "climate_damage": 0.0
+        },
+        "p_base": {
+          "2028": 5,
+          "2032": 5,
+          "2040": 7
+        },
+        "p_today": {
+          "2028": 5,
+          "2032": 5,
+          "2040": 7
+        }
+      }
+    ],
+    "energy_price_mass": {
+      "2028": {
+        "more expensive": 38,
+        "neutral": 39,
+        "much more expensive": 12,
+        "much cheaper": 6,
+        "cheaper": 5
+      },
+      "2032": {
+        "more expensive": 32,
+        "neutral": 45,
+        "much more expensive": 8,
+        "much cheaper": 9,
+        "cheaper": 6
+      },
+      "2040": {
+        "more expensive": 21,
+        "neutral": 54,
+        "much more expensive": 5,
+        "much cheaper": 13,
+        "cheaper": 7
+      }
+    },
+    "note": "p_today = today's world state (base model + early-warning signals since the base); mass = sum of scenario probabilities per energy-price regime. Scenarios are mutually exclusive within a horizon, so the sum is meaningful."
+  },
+  "drivers": [
+    {
+      "id": "T7",
+      "name": "Solar and storage learning curve",
+      "type": "Strong trend, high predictability",
+      "question": "How far will the cost of solar plus storage fall, and when will it undercut fossil marginal costs everywhere?",
+      "status_2026": "The learning curve is running: Germany has 130.4 GW of photovoltaics installed (+14% in one year), and battery storage is growing to 33.6 GWh (+39%). Renewables supply 62.6% of public net electricity generation.",
+      "why_linked": "Cost curve of solar and batteries sets the price of new generation and storage.",
+      "judgment": true
+    },
+    {
+      "id": "T8",
+      "name": "Grid, storage and infrastructure build-out (including data centres)",
+      "type": "Critical uncertainty",
+      "question": "Does the physical build-out – grids, connections for large consumers such as data centres, transformers, skilled workers, permits – keep pace with generation and electricity demand, and who pays for it?",
+      "status_2026": "The bottleneck is transmission and grid connection, not generation. The federal government plans to subsidise transmission grid costs from 2027 to 2029 (amendment to the Energy Industry Act, sent to the Bundestag); data centres keep crowding into connection queues.",
+      "why_linked": "Grid, storage and infrastructure build-out is the transport and balancing side of the transition.",
+      "judgment": true
+    },
+    {
+      "id": "G3",
+      "name": "Energy chokepoints and the Middle East",
+      "type": "Active shock",
+      "question": "Does the Strait of Hormuz remain a permanent risk premium, or does the situation normalise?",
+      "status_2026": "Hormuz remains a combat zone: tankers come under fire, the US rejects a proposal from Iran, states release oil reserves. Brent averaged 114 dollars in September; the early-warning sign 'Brent between 80 and 95 dollars' has lapsed.",
+      "why_linked": "Oil and gas chokepoints set the fossil price the transition competes against.",
+      "judgment": true
+    },
+    {
+      "id": "OE1",
+      "name": "Emissions pathway and rate of warming",
+      "type": "Driver with inertia",
+      "question": "How fast is temperature rising, and is the rate more important than the level?",
+      "status_2026": "Europe's summer of 2026 was marked by climate extremes (Copernicus); Western Europe experienced more extreme heat than ever before.",
+      "why_linked": "Emission path defines the political pressure and the carbon price corridor.",
+      "judgment": true
+    },
+    {
+      "id": "OE5",
+      "name": "Critical raw materials and the circular economy",
+      "type": "Driver with chokepoint risk",
+      "question": "Do copper, lithium, rare earths and grid materials become the bottleneck of electrification?",
+      "status_2026": "No new evidence in the radar.",
+      "why_linked": "Critical raw materials (lithium, copper, rare earths) constrain panels, batteries and grids.",
+      "judgment": true
+    },
+    {
+      "id": "M2",
+      "name": "Interest rate regime and term premium",
+      "type": "Critical uncertainty",
+      "question": "Do real long-term interest rates stay positive, or are they pushed down politically?",
+      "status_2026": "The turn to higher rates has arrived: the ECB raised the deposit rate to 2.50% on 16 September (a year ago 2.00%), and the real ten-year US yield stands at 2.88% – above the 2.5% threshold the model marks as a regime.",
+      "why_linked": "Renewables are capital-intensive: the interest-rate regime drives their cost of capital.",
+      "judgment": true
+    }
+  ],
+  "indicators": [
+    {
+      "id": "A02",
+      "text": "Brent swings between 85 and 110 $",
+      "series": "fred-brent",
+      "rule": "zwischen 3 85 110",
+      "refers_to": "S01",
+      "affects_drivers": [],
+      "active_at_base": false,
+      "active_today": false,
+      "current": null,
+      "threshold": null,
+      "latest": {
+        "reihe": "fred-brent",
+        "t": "2026-10",
+        "wert": 124.96
+      }
+    },
+    {
+      "id": "A05",
+      "text": "Brent above 110 $ for more than two quarters",
+      "series": "fred-brent",
+      "rule": "alle 7 > 110",
+      "refers_to": "S04",
+      "affects_drivers": [
+        "G3"
+      ],
+      "active_at_base": false,
+      "active_today": false,
+      "current": 83.76,
+      "threshold": 110.0,
+      "latest": {
+        "reihe": "fred-brent",
+        "t": "2026-10",
+        "wert": 124.96
+      }
+    },
+    {
+      "id": "A07",
+      "text": "German industrial production falls two years in a row",
+      "series": "eurostat-industrie-de",
+      "rule": "jahresrueckgang 2",
+      "refers_to": "S04",
+      "affects_drivers": [
+        "G3",
+        "M6"
+      ],
+      "active_at_base": true,
+      "active_today": true,
+      "current": null,
+      "threshold": null,
+      "latest": {
+        "reihe": "eurostat-industrie-de",
+        "t": "2026-08",
+        "wert": 90.8
+      }
+    },
+    {
+      "id": "A11",
+      "text": "Real 10-year yield persistently above 2.5%",
+      "series": "fred-realrendite-10j",
+      "rule": "alle 3 > 2.5",
+      "refers_to": "M2",
+      "affects_drivers": [],
+      "active_at_base": false,
+      "active_today": false,
+      "current": 2.4,
+      "threshold": 2.5,
+      "latest": {
+        "reihe": "fred-realrendite-10j",
+        "t": "2026-10",
+        "wert": 2.84
+      }
+    },
+    {
+      "id": "A12",
+      "text": "Brent above 115 $ (escalation)",
+      "series": "fred-brent",
+      "rule": "mittel 1 > 115",
+      "refers_to": "G3",
+      "affects_drivers": [
+        "G3"
+      ],
+      "active_at_base": true,
+      "active_today": true,
+      "current": 124.96,
+      "threshold": 130.0,
+      "latest": {
+        "reihe": "fred-brent",
+        "t": "2026-10",
+        "wert": 124.96
+      }
+    },
+    {
+      "id": "A13",
+      "text": "Brent below 70 $ (easing)",
+      "series": "fred-brent",
+      "rule": "mittel 1 < 70",
+      "refers_to": "G3",
+      "affects_drivers": [
+        "G3"
+      ],
+      "active_at_base": false,
+      "active_today": false,
+      "current": 124.96,
+      "threshold": 70.0,
+      "latest": {
+        "reihe": "fred-brent",
+        "t": "2026-10",
+        "wert": 124.96
+      }
+    },
+    {
+      "id": "AS09",
+      "text": "Power outage per customer above 15 minutes per year (SAIDI)",
+      "series": "bnetza-saidi",
+      "rule": "mittel 1 > 15",
+      "refers_to": "T8",
+      "affects_drivers": [
+        "T8"
+      ],
+      "active_at_base": null,
+      "active_today": null,
+      "current": null,
+      "threshold": 15.0,
+      "latest": null
+    }
+  ],
+  "series": [
+    {
+      "id": "energy-charts-erneuerbare",
+      "label": "Renewable share of electricity, Germany",
+      "unit": "%",
+      "source": "Energy-Charts, Fraunhofer ISE",
+      "url": "https://energy-charts.info/charts/renewable_share/chart.htm?l=de&c=DE",
+      "latest": {
+        "t": "2026-10",
+        "wert": 58.3
+      },
+      "year_ago": {
+        "t": "2025-10",
+        "wert": 83.4
+      },
+      "change_12m": -25.1,
+      "points": 13
+    },
+    {
+      "id": "energy-charts-solar",
+      "label": "Installed PV capacity, Germany",
+      "unit": "GW",
+      "source": "Energy-Charts, Fraunhofer ISE",
+      "url": "https://energy-charts.info/charts/installed_power/chart.htm?l=de&c=DE",
+      "latest": {
+        "t": "2026-10",
+        "wert": 131.6
+      },
+      "year_ago": {
+        "t": "2025-10",
+        "wert": 114.7
+      },
+      "change_12m": 16.9,
+      "points": 25
+    },
+    {
+      "id": "energy-charts-speicher",
+      "label": "Battery storage capacity, Germany",
+      "unit": "GWh",
+      "source": "Energy-Charts, Fraunhofer ISE",
+      "url": "https://energy-charts.info/charts/installed_power/chart.htm?l=de&c=DE",
+      "latest": {
+        "t": "2026-10",
+        "wert": 34.3
+      },
+      "year_ago": {
+        "t": "2025-10",
+        "wert": 24.1
+      },
+      "change_12m": 10.2,
+      "points": 25
+    },
+    {
+      "id": "fred-brent",
+      "label": "Brent crude oil price",
+      "unit": "USD je Barrel",
+      "source": "FRED, Brent (DCOILBRENTEU)",
+      "url": "https://fred.stlouisfed.org/series/DCOILBRENTEU",
+      "latest": {
+        "t": "2026-10",
+        "wert": 124.96
+      },
+      "year_ago": {
+        "t": "2025-10",
+        "wert": 64.54
+      },
+      "change_12m": 60.42,
+      "points": 58
+    }
+  ],
+  "bottleneck": {
+    "rho": -3.0,
+    "usability_ces": 0.3137,
+    "usability_linear": 0.53,
+    "usability_ces_first_4_axes": 0.4766,
+    "marginal_gain": [
+      {
+        "axis": "permitting",
+        "label": "Permitting and grid connection (procedures)",
+        "from": 0.2,
+        "to": 0.3,
+        "usability": 0.4073,
+        "gain_percent": 29.8
+      },
+      {
+        "axis": "storage",
+        "label": "Storage (batteries)",
+        "from": 0.35,
+        "to": 0.525,
+        "usability": 0.3251,
+        "gain_percent": 3.6
+      },
+      {
+        "axis": "control",
+        "label": "Control (forecasting, trading, demand response)",
+        "from": 0.5,
+        "to": 0.75,
+        "usability": 0.3174,
+        "gain_percent": 1.2
+      },
+      {
+        "axis": "grid",
+        "label": "Grid (transmission and distribution)",
+        "from": 0.6,
+        "to": 0.9,
+        "usability": 0.3158,
+        "gain_percent": 0.7
+      },
+      {
+        "axis": "generation",
+        "label": "Generation (PV and wind)",
+        "from": 1.0,
+        "to": 1.5,
+        "usability": 0.3142,
+        "gain_percent": 0.1
+      }
+    ],
+    "binding_bottleneck": "permitting"
+  },
+  "bottleneck_evidence": [
+    {
+      "for_axis": "permitting",
+      "text": "In Germany, 400 GW of power and 661 GWh of capacity of battery storage are waiting for a grid connection, across 9,710 applications. Actually in operation: 2.3 GW and 3.2 GWh. Requested exceeds built by a factor of 170 (power) and 206 (capacity). In 2024 only about 25 GW received a commitment, roughly 6 percent of applications. The bottleneck is not the battery but the procedure before it.",
+      "source": null,
+      "source_status": "GAP: the upstream model states these numbers without a citation. Hackathon task: find and cite the primary source (likely grid operators / BNetzA) or correct the numbers."
+    }
+  ],
+  "open_tasks": [
+    "Cite the primary source for the grid-connection numbers (evidence GAP above).",
+    "Replace judgment axis states with measured indices (e.g. from Energy-Charts, BNetzA Marktstammdatenregister, grid-connection queues).",
+    "Map each world scenario to a domain path: which axes move under which energy-price regime?",
+    "Add domain options (e.g. permitting reform, storage subsidies, flexible tariffs) and score them across scenarios in the app (step 4, decision analysis).",
+    "Add a data series for the permitting axis to the radar collector, so the bottleneck can be monitored."
+  ]
+}

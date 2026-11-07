@@ -1,0 +1,658 @@
+{
+  "run": {
+    "created_utc": "2026-11-07T14:06:22Z",
+    "python": "3.13.3",
+    "repo_head": "35e6dc21c16df16c4776227ac773b20a8cff8219",
+    "inputs_sha256": {
+      "world_model.de.json": "c3819732ffdf01c7ad73e3ae2a2a32969922accccb8aa94849342e3b18d48320",
+      "world_model.en.json": "3c7fef092a18df90572cc44fc5126dd8c07587458836e49d4fd513f6f6c211a6",
+      "wissensstand.json": "8a358025ae65cc49f01ba0252db2fbe7812fe42011ab54474e1b5389bca0cbac",
+      "weltlage.json": "e2eece819d1b340f47ca25aeed871e43471a41811a47da9451dc0af41a92a331"
+    },
+    "gates": [
+      {
+        "gate": "engine reproduces the published p_tag in weltlage.json (all horizons)",
+        "passed": true
+      },
+      {
+        "gate": "signals rebuilt here == signals in the engine output",
+        "passed": true
+      },
+      {
+        "gate": "rechne_am() posterior == aus_status() p_tag",
+        "passed": true
+      },
+      {
+        "gate": "unrounded posterior_exakt present",
+        "passed": true
+      },
+      {
+        "gate": "rounded probabilities sum to 100 per horizon",
+        "passed": true
+      },
+      {
+        "gate": "unrounded probabilities sum to 100 per horizon",
+        "passed": true
+      },
+      {
+        "gate": "bayes.largest_remainder(unrounded) == published rounding",
+        "passed": true
+      }
+    ],
+    "sources": {
+      "meta.k": "model/world_model.de.json bayes.k_daempfung, as returned by engine/tagesstand.py aus_status() (k_daempfung)",
+      "meta.probability_floor_percent": "model/world_model.de.json zufluss.ungerundet.p_min_prozent (used by engine/zufluss.py untergrenze())",
+      "changed_indicators[].status_*": "engine/tagesstand.py tagesstand() -> pruefe() / gilt(); fields anzeichen[].stufe_basis / stufe_jetzt",
+      "changed_indicators[].latest": "engine/tagesstand.py tagesstand() anzeichen[].zuletzt (last value of the data series)",
+      "changed_indicators[].text/rule/series": "model/world_model.en.json anzeichen[] (text), .de.json (rule, series)",
+      "signals[].direction/strength": "engine/tagesstand.py anzeichen_signal() from model anzeichen[].wirkung",
+      "signals[].weight": "engine/zufluss.py gewichte() via engine output signale[].gewicht",
+      "signals[].coupling": "model/world_model.de.json treiber_kopplung[driver][scenario]",
+      "signals[].mean_coupling_per_scenario": "engine/bayes.py coupling_mean()",
+      "signals[].boost_per_scenario": "engine/bayes.py log_likelihoods() (exp) via engine output signale[].likelihood",
+      "probabilities.*.before": "engine/tagesstand.py aus_status() szenarien[].p_basis (= model wahrscheinlichkeit)",
+      "probabilities.*.after": "engine/tagesstand.py aus_status() szenarien[].p_tag (engine/bayes.py largest_remainder())",
+      "probabilities.*.change_rounded": "engine/tagesstand.py aus_status() szenarien[].delta",
+      "probabilities.*.after_unrounded": "engine/tagesstand.py rechne_am() -> engine/bayes.py _update_zufluss() posterior_exakt (engine/zufluss.py posterior()), rounded to 2 decimals here",
+      "probabilities.*.change_unrounded": "after_unrounded minus model zufluss.p_basis, rounded to 2 decimals here",
+      "big_changes": "selected here: up to 3 per horizon with |change_unrounded| >= 0.5",
+      "energy_price_mass": "sum over scenarios per model szenarien[].regime.energy_price (same rule as domains/lens.py scenarios())",
+      "scenarios": "model/world_model.en.json szenarien[].name; regime from .de.json",
+      "gaps": "engine/tagesstand.py aus_status() luecken (number indicators without data)",
+      "known_limitations": "README.md 'Known limitations' and 'How the engine updates probabilities'; docs/process.md rules"
+    },
+    "note": "Only the 'trace' part is sent to Claude. 'run' stays local."
+  },
+  "trace": {
+    "meta": {
+      "mode": "HYPOTHETICAL what-if - not a forecast",
+      "is_hypothetical": true,
+      "what_if": {
+        "indicator": "A05",
+        "assumption": "A05 is assumed to switch ON today. In the real data it is OFF. Everything else is the real snapshot."
+      },
+      "model_version": "1.4.0",
+      "model_date": "2026-10-09",
+      "world_state_date": "2026-11-07T11:16:17Z",
+      "radar_date": "2026-11-07T11:16:02.000Z",
+      "k": 0.15,
+      "horizons": [
+        "2028",
+        "2032",
+        "2040"
+      ],
+      "probability_floor_percent": 0.5
+    },
+    "how_the_update_works": "Only indicators whose status changed since the base model create a signal. For each scenario: boost = exp(k x direction x strength x mean coupling of the signal's drivers to that scenario), with direction +1 for confirming and -1 for contradicting. New probability = old probability x boost; then all scenarios are rescaled so each horizon sums to 100 (with a minimum per scenario) and rounded to whole percents. A scenario with a boost of exactly 1 can still fall a little, only because the others grew.",
+    "changed_indicators": [
+      {
+        "id": "A05",
+        "text": "Brent above 110 $ for more than two quarters",
+        "rule": "alle 7 > 110",
+        "series": "fred-brent",
+        "latest": {
+          "month": "2026-10",
+          "value": 124.96
+        },
+        "status_at_base": false,
+        "status_today": true,
+        "change": "switched on",
+        "hypothetical": true,
+        "status_today_in_real_data": false
+      }
+    ],
+    "signals": [
+      {
+        "indicator": "A05",
+        "drivers": [
+          {
+            "id": "G3",
+            "name": "Energy chokepoints and the Middle East"
+          }
+        ],
+        "direction": "confirming",
+        "strength": 3,
+        "weight": 1.0,
+        "coupling": {
+          "G3": {
+            "S01": 0.526,
+            "S02": 0.047,
+            "S03": -0.106,
+            "S04": 0.799,
+            "S06": 0.483,
+            "S08": -0.475,
+            "S09": 0.284,
+            "S13": 0.216,
+            "S14": 0.0,
+            "S15": -0.276,
+            "S16": 0.68,
+            "S17": 0.659
+          }
+        },
+        "mean_coupling_per_scenario": {
+          "S01": 0.526,
+          "S02": 0.047,
+          "S03": -0.106,
+          "S04": 0.799,
+          "S06": 0.483,
+          "S08": -0.475,
+          "S09": 0.284,
+          "S13": 0.216,
+          "S14": 0.0,
+          "S15": -0.276,
+          "S16": 0.68,
+          "S17": 0.659
+        },
+        "boost_per_scenario": {
+          "S01": 1.2671,
+          "S02": 1.0214,
+          "S03": 0.9534,
+          "S04": 1.4327,
+          "S06": 1.2428,
+          "S08": 0.8076,
+          "S09": 1.1363,
+          "S13": 1.1021,
+          "S14": 1.0,
+          "S15": 0.8832,
+          "S16": 1.358,
+          "S17": 1.3452
+        }
+      }
+    ],
+    "scenarios": {
+      "S01": {
+        "name": "Grinding Ascent",
+        "energy_price_regime": 1.0
+      },
+      "S02": {
+        "name": "AI Surge",
+        "energy_price_regime": 0.0
+      },
+      "S03": {
+        "name": "The Bust",
+        "energy_price_regime": 0.0
+      },
+      "S04": {
+        "name": "Energy-Driven Stagflation",
+        "energy_price_regime": 2.0
+      },
+      "S06": {
+        "name": "Bloc Formation",
+        "energy_price_regime": 0.0
+      },
+      "S08": {
+        "name": "Green Boom on Cost",
+        "energy_price_regime": -2.0
+      },
+      "S09": {
+        "name": "Climate Shock Cascade",
+        "energy_price_regime": 0.0
+      },
+      "S13": {
+        "name": "Distribution Fight in the Welfare State",
+        "energy_price_regime": 0.0
+      },
+      "S14": {
+        "name": "Divided Society",
+        "energy_price_regime": 0.0
+      },
+      "S15": {
+        "name": "European Restart",
+        "energy_price_regime": -1.0
+      },
+      "S16": {
+        "name": "Arms Economy",
+        "energy_price_regime": 1.0
+      },
+      "S17": {
+        "name": "Taiwan Rupture",
+        "energy_price_regime": 1.0
+      }
+    },
+    "probabilities": {
+      "2028": {
+        "S01": {
+          "before": 26,
+          "after": 28,
+          "change_rounded": 2,
+          "after_unrounded": 28.08,
+          "change_unrounded": 2.08
+        },
+        "S02": {
+          "before": 7,
+          "after": 6,
+          "change_rounded": -1,
+          "after_unrounded": 6.09,
+          "change_unrounded": -0.91
+        },
+        "S03": {
+          "before": 9,
+          "after": 7,
+          "change_rounded": -2,
+          "after_unrounded": 7.31,
+          "change_unrounded": -1.69
+        },
+        "S04": {
+          "before": 12,
+          "after": 15,
+          "change_rounded": 3,
+          "after_unrounded": 14.65,
+          "change_unrounded": 2.65
+        },
+        "S06": {
+          "before": 7,
+          "after": 7,
+          "change_rounded": 0,
+          "after_unrounded": 7.41,
+          "change_unrounded": 0.41
+        },
+        "S08": {
+          "before": 6,
+          "after": 4,
+          "change_rounded": -2,
+          "after_unrounded": 4.13,
+          "change_unrounded": -1.87
+        },
+        "S09": {
+          "before": 5,
+          "after": 5,
+          "change_rounded": 0,
+          "after_unrounded": 4.84,
+          "change_unrounded": -0.16
+        },
+        "S13": {
+          "before": 6,
+          "after": 6,
+          "change_rounded": 0,
+          "after_unrounded": 5.64,
+          "change_unrounded": -0.36
+        },
+        "S14": {
+          "before": 5,
+          "after": 4,
+          "change_rounded": -1,
+          "after_unrounded": 4.26,
+          "change_unrounded": -0.74
+        },
+        "S15": {
+          "before": 5,
+          "after": 4,
+          "change_rounded": -1,
+          "after_unrounded": 3.76,
+          "change_unrounded": -1.24
+        },
+        "S16": {
+          "before": 5,
+          "after": 6,
+          "change_rounded": 1,
+          "after_unrounded": 5.79,
+          "change_unrounded": 0.79
+        },
+        "S17": {
+          "before": 7,
+          "after": 8,
+          "change_rounded": 1,
+          "after_unrounded": 8.03,
+          "change_unrounded": 1.03
+        }
+      },
+      "2032": {
+        "S01": {
+          "before": 16,
+          "after": 18,
+          "change_rounded": 2,
+          "after_unrounded": 17.65,
+          "change_unrounded": 1.65
+        },
+        "S02": {
+          "before": 10,
+          "after": 9,
+          "change_rounded": -1,
+          "after_unrounded": 8.89,
+          "change_unrounded": -1.11
+        },
+        "S03": {
+          "before": 5,
+          "after": 4,
+          "change_rounded": -1,
+          "after_unrounded": 4.15,
+          "change_unrounded": -0.85
+        },
+        "S04": {
+          "before": 8,
+          "after": 10,
+          "change_rounded": 2,
+          "after_unrounded": 9.98,
+          "change_unrounded": 1.98
+        },
+        "S06": {
+          "before": 8,
+          "after": 9,
+          "change_rounded": 1,
+          "after_unrounded": 8.66,
+          "change_unrounded": 0.66
+        },
+        "S08": {
+          "before": 9,
+          "after": 6,
+          "change_rounded": -3,
+          "after_unrounded": 6.33,
+          "change_unrounded": -2.67
+        },
+        "S09": {
+          "before": 8,
+          "after": 8,
+          "change_rounded": 0,
+          "after_unrounded": 7.91,
+          "change_unrounded": -0.09
+        },
+        "S13": {
+          "before": 9,
+          "after": 9,
+          "change_rounded": 0,
+          "after_unrounded": 8.64,
+          "change_unrounded": -0.36
+        },
+        "S14": {
+          "before": 5,
+          "after": 4,
+          "change_rounded": -1,
+          "after_unrounded": 4.35,
+          "change_unrounded": -0.65
+        },
+        "S15": {
+          "before": 6,
+          "after": 5,
+          "change_rounded": -1,
+          "after_unrounded": 4.61,
+          "change_unrounded": -1.39
+        },
+        "S16": {
+          "before": 8,
+          "after": 9,
+          "change_rounded": 1,
+          "after_unrounded": 9.46,
+          "change_unrounded": 1.46
+        },
+        "S17": {
+          "before": 8,
+          "after": 9,
+          "change_rounded": 1,
+          "after_unrounded": 9.37,
+          "change_unrounded": 1.37
+        }
+      },
+      "2040": {
+        "S01": {
+          "before": 10,
+          "after": 12,
+          "change_rounded": 2,
+          "after_unrounded": 11.54,
+          "change_unrounded": 1.54
+        },
+        "S02": {
+          "before": 12,
+          "after": 11,
+          "change_rounded": -1,
+          "after_unrounded": 11.17,
+          "change_unrounded": -0.83
+        },
+        "S03": {
+          "before": 5,
+          "after": 4,
+          "change_rounded": -1,
+          "after_unrounded": 4.34,
+          "change_unrounded": -0.66
+        },
+        "S04": {
+          "before": 5,
+          "after": 7,
+          "change_rounded": 2,
+          "after_unrounded": 6.53,
+          "change_unrounded": 1.53
+        },
+        "S06": {
+          "before": 6,
+          "after": 7,
+          "change_rounded": 1,
+          "after_unrounded": 6.79,
+          "change_unrounded": 0.79
+        },
+        "S08": {
+          "before": 13,
+          "after": 10,
+          "change_rounded": -3,
+          "after_unrounded": 9.57,
+          "change_unrounded": -3.43
+        },
+        "S09": {
+          "before": 13,
+          "after": 13,
+          "change_rounded": 0,
+          "after_unrounded": 13.46,
+          "change_unrounded": 0.46
+        },
+        "S13": {
+          "before": 11,
+          "after": 11,
+          "change_rounded": 0,
+          "after_unrounded": 11.05,
+          "change_unrounded": 0.05
+        },
+        "S14": {
+          "before": 7,
+          "after": 6,
+          "change_rounded": -1,
+          "after_unrounded": 6.38,
+          "change_unrounded": -0.62
+        },
+        "S15": {
+          "before": 7,
+          "after": 6,
+          "change_rounded": -1,
+          "after_unrounded": 5.63,
+          "change_unrounded": -1.37
+        },
+        "S16": {
+          "before": 5,
+          "after": 6,
+          "change_rounded": 1,
+          "after_unrounded": 6.19,
+          "change_unrounded": 1.19
+        },
+        "S17": {
+          "before": 6,
+          "after": 7,
+          "change_rounded": 1,
+          "after_unrounded": 7.35,
+          "change_unrounded": 1.35
+        }
+      }
+    },
+    "big_changes": {
+      "2028": {
+        "S04": {
+          "name": "Energy-Driven Stagflation",
+          "before": 12,
+          "after": 15,
+          "after_unrounded": 14.65,
+          "change_unrounded": 2.65,
+          "direction": "up"
+        },
+        "S01": {
+          "name": "Grinding Ascent",
+          "before": 26,
+          "after": 28,
+          "after_unrounded": 28.08,
+          "change_unrounded": 2.08,
+          "direction": "up"
+        },
+        "S08": {
+          "name": "Green Boom on Cost",
+          "before": 6,
+          "after": 4,
+          "after_unrounded": 4.13,
+          "change_unrounded": -1.87,
+          "direction": "down"
+        }
+      },
+      "2032": {
+        "S08": {
+          "name": "Green Boom on Cost",
+          "before": 9,
+          "after": 6,
+          "after_unrounded": 6.33,
+          "change_unrounded": -2.67,
+          "direction": "down"
+        },
+        "S04": {
+          "name": "Energy-Driven Stagflation",
+          "before": 8,
+          "after": 10,
+          "after_unrounded": 9.98,
+          "change_unrounded": 1.98,
+          "direction": "up"
+        },
+        "S01": {
+          "name": "Grinding Ascent",
+          "before": 16,
+          "after": 18,
+          "after_unrounded": 17.65,
+          "change_unrounded": 1.65,
+          "direction": "up"
+        }
+      },
+      "2040": {
+        "S08": {
+          "name": "Green Boom on Cost",
+          "before": 13,
+          "after": 10,
+          "after_unrounded": 9.57,
+          "change_unrounded": -3.43,
+          "direction": "down"
+        },
+        "S01": {
+          "name": "Grinding Ascent",
+          "before": 10,
+          "after": 12,
+          "after_unrounded": 11.54,
+          "change_unrounded": 1.54,
+          "direction": "up"
+        },
+        "S04": {
+          "name": "Energy-Driven Stagflation",
+          "before": 5,
+          "after": 7,
+          "after_unrounded": 6.53,
+          "change_unrounded": 1.53,
+          "direction": "up"
+        }
+      }
+    },
+    "energy_price_mass": {
+      "2028": {
+        "much cheaper": {
+          "before": 6,
+          "after": 4,
+          "after_unrounded": 4.13
+        },
+        "cheaper": {
+          "before": 5,
+          "after": 4,
+          "after_unrounded": 3.76
+        },
+        "neutral": {
+          "before": 39,
+          "after": 35,
+          "after_unrounded": 35.56
+        },
+        "more expensive": {
+          "before": 38,
+          "after": 42,
+          "after_unrounded": 41.89
+        },
+        "much more expensive": {
+          "before": 12,
+          "after": 15,
+          "after_unrounded": 14.65
+        }
+      },
+      "2032": {
+        "much cheaper": {
+          "before": 9,
+          "after": 6,
+          "after_unrounded": 6.33
+        },
+        "cheaper": {
+          "before": 6,
+          "after": 5,
+          "after_unrounded": 4.61
+        },
+        "neutral": {
+          "before": 45,
+          "after": 43,
+          "after_unrounded": 42.6
+        },
+        "more expensive": {
+          "before": 32,
+          "after": 36,
+          "after_unrounded": 36.48
+        },
+        "much more expensive": {
+          "before": 8,
+          "after": 10,
+          "after_unrounded": 9.98
+        }
+      },
+      "2040": {
+        "much cheaper": {
+          "before": 13,
+          "after": 10,
+          "after_unrounded": 9.57
+        },
+        "cheaper": {
+          "before": 7,
+          "after": 6,
+          "after_unrounded": 5.63
+        },
+        "neutral": {
+          "before": 54,
+          "after": 52,
+          "after_unrounded": 53.19
+        },
+        "more expensive": {
+          "before": 21,
+          "after": 25,
+          "after_unrounded": 25.09
+        },
+        "much more expensive": {
+          "before": 5,
+          "after": 7,
+          "after_unrounded": 6.53
+        }
+      }
+    },
+    "gaps": [
+      {
+        "id": "AS03",
+        "text": "Politically motivated violence in Germany keeps rising"
+      },
+      {
+        "id": "AS09",
+        "text": "Power outage per customer above 15 minutes per year (SAIDI)"
+      }
+    ],
+    "known_limitations": [
+      "The starting probabilities of the scenarios were typed in by a person (the model author). They are judgments, not measurements.",
+      "The coupling values between drivers and scenarios are typed-in judgments.",
+      "Each indicator's direction and strength are typed-in judgments.",
+      "The damping k is a chosen parameter, not estimated from data. A larger k makes every signal move the probabilities more.",
+      "The model has not been checked against real outcomes yet. Published versions are kept in a journal so they can be scored later.",
+      "The horizons are updated separately, and each scenario gets the same boost in every horizon: today's evidence pushes the far horizon as hard as the near one.",
+      "Statement indicators (patterns in news titles) are shown to people but never move a probability.",
+      "The model computes for the world, not for one country, industry or company.",
+      "Probabilities are rescaled with a minimum per scenario and rounded to whole percents, so small effects can disappear in the rounded numbers.",
+      "This trace is a HYPOTHETICAL what-if - not a forecast: indicator A05 was assumed to switch on."
+    ]
+  }
+}
