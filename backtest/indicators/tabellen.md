@@ -20,7 +20,7 @@
 | A01 | sffed-tfp-usa | mittel 4 < 1.2 | 1948-01 | 471 von 946 | 30, erste 1949-01 bis 1949-12; längste 2015-04 bis 2019-09 (54); letzte 2024-10 bis 2025-06 (9) |
 | A02 | fred-brent | zwischen 3 85 110 | 1987-07 | 52 von 472 | 12, erste 2007-12 bis 2008-04; längste 2013-11 bis 2014-11 (13); letzte 2026-04 bis 2026-09 (6) |
 | A03 | sffed-tfp-usa | mittel 6 > 1.5 | 1948-07 | 396 von 940 | 23, erste 1948-07 bis 1949-03; längste 1961-10 bis 1967-03 (66); letzte 2025-07 bis 2025-09 (3) |
-| A04 | eurostat-kerninflation-ea + eurostat-bip-ea | faellt 3 und eurostat-bip-ea: alle 2 > 0 | 2001-05 | 117 von 306 | 29, erste 2002-06 bis 2003-05; längste 2023-06 bis 2024-07 (14); letzte 2026-01 bis 2026-03 (3) |
+| A04 | eurostat-kerninflation-ea + eurostat-bip-ea | faellt 3 und eurostat-bip-ea: alle 2 > 0 | 2001-05 | 116 von 306 | 28, erste 2002-06 bis 2003-05; längste 2023-06 bis 2024-07 (14); letzte 2026-01 bis 2026-03 (3) |
 | A05 | fred-brent | alle 7 > 110 | 1987-11 | 1 von 468 | 2011-09 bis 2011-09 (1) |
 | A06 | eurostat-kerninflation-ea + eurostat-bip-ea | alle 3 > 3 und eurostat-bip-ea: mittel 2 < 1 | 2001-02 | 11 von 309 | 2023-04 bis 2024-02 (11) |
 | A07 | eurostat-industrie-de | jahresrueckgang 2 | 1993-12 | 62 von 395 | 9, erste 1993-12 bis 1994-08; längste 2024-10 bis 2026-10 (25); letzte 2024-10 bis 2026-10 (25) |

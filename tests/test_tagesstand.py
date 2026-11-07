@@ -94,3 +94,10 @@ def test_journal_ist_oeffentlich_unbedenklich():
     text = str(weltmodell()["journal"])
     assert "P0" not in text and "X0" not in text and "CE_" not in text
 
+
+
+def test_gleichstand_ist_kein_rueckgang_in_jeder_python_version():
+    """1,1+0,9+0,9 = 0,9+1,0+1,0: exakt gleich, also faellt nichts (Python 3.12 rechnet sum() anders als 3.9)."""
+    werte = [(f"2017-{m:02d}", w) for m, w in zip(range(9, 13), [1.1, 0.9, 0.9, 0.9])] + [("2018-01", 1.0), ("2018-02", 1.0)]
+    assert gilt("faellt 3", werte) is False
+    assert gilt("steigt 3", werte) is False

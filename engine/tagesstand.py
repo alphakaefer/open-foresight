@@ -34,6 +34,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -47,6 +48,15 @@ GEGENRICHTUNG = {"bestaetigend": "widersprechend", "widersprechend": "bestaetige
 
 # --- Regeln -----------------------------------------------------------------
 
+def _mittel(xs: list) -> float:
+    """Mittelwert, exakt summiert (math.fsum) und auf 9 Stellen gerundet.
+
+    Grund: sum() rechnet ab Python 3.12 anders als davor (Ausgleichssumme). Bei einem echten Gleichstand
+    (etwa 1,1+0,9+0,9 gegen 0,9+1,0+1,0) entschied sonst der Rundungsrest der Python-Version, ob eine Regel
+    gilt. Mit Rundung zählt ein Gleichstand in jeder Version als Gleichstand."""
+    return round(math.fsum(xs) / len(xs), 9)
+
+
 def gilt(regel: str, werte: list) -> bool | None:
     """True/False nach der Regel; None, wenn die Werte nicht reichen."""
     t = regel.split()
@@ -57,21 +67,21 @@ def gilt(regel: str, werte: list) -> bool | None:
         if len(xs) < n:
             return None
         passt = (lambda w: w > x) if op == ">" else (lambda w: w < x)
-        return passt(sum(xs[-n:]) / n) if art == "mittel" else all(passt(w) for w in xs[-n:])
+        return passt(_mittel(xs[-n:])) if art == "mittel" else all(passt(w) for w in xs[-n:])
     if art == "zwischen":
         n, a, b = int(t[1]), float(t[2]), float(t[3])
-        return a <= sum(xs[-n:]) / n <= b if len(xs) >= n else None
+        return a <= _mittel(xs[-n:]) <= b if len(xs) >= n else None
     if art == "jahresrueckgang":
         n = int(t[1])
         if len(xs) < 12 * (n + 1):
             return None
-        jahre = [sum(xs[len(xs) - 12 * (i + 1):len(xs) - 12 * i]) / 12 for i in range(n + 1)]
+        jahre = [_mittel(xs[len(xs) - 12 * (i + 1):len(xs) - 12 * i]) for i in range(n + 1)]
         return all(jahre[i] < jahre[i + 1] for i in range(n))
     if art in ("faellt", "steigt"):
         n = int(t[1])
         if len(xs) < 2 * n:
             return None
-        jung, davor = sum(xs[-n:]) / n, sum(xs[-2 * n:-n]) / n
+        jung, davor = _mittel(xs[-n:]), _mittel(xs[-2 * n:-n])
         return jung < davor if art == "faellt" else jung > davor
     raise ValueError(f"unbekannte Regel: {regel}")
 

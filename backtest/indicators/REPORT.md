@@ -15,7 +15,7 @@ The numeric early-warning indicators of the world model have rules on public dat
 | A01 TFP (total factor productivity) below 1.2% (counter-indicator to S02 AI Surge) | No. Holds in 471 of 946 months and before all three events; it says nothing about a break. |
 | A02 Brent between 85 and 110 $ (no effect) | Moves nothing. It held for five months before 2008, not before 2020 and not before 2022 (only in the event month). |
 | A03 TFP above 1.5% for six quarters | Not a crisis sign, and the threshold barely separates: it holds in 396 of 940 months (42%), 23 episodes (an episode is a run of consecutive months in which the rule holds) since 1948. |
-| A04 Core inflation falls while GDP rises | No. Holds in 117 of 306 months (38%), 29 episodes, and before all three events. |
+| A04 Core inflation falls while GDP rises | No. Holds in 116 of 306 months (38%), 28 episodes, and before all three events. |
 | A05 Brent above 110 $ for seven months | Never: one month in 468 (2011-09). It did not hold in 2022 either, and it does not hold today. |
 | A06 Core inflation above 3% with weak demand | Too late: only episode 2023-04 to 2024-02, after the event of 2022. |
 | A07 German industry in decline for two years | Only at the same time: not before 2008, not before 2020 (holds only from 2020-03), before 2022 from 2021-02 (four months, in the wake of the slump of 2020). Holds in 62 of 395 months. |
@@ -70,7 +70,7 @@ For every month, the rule of each numeric indicator (field `anzeichen` in `model
 | A01 | sffed-tfp-usa | mittel 4 < 1.2 | 1948-01 | 471 of 946 | 30, first 1949-01 to 1949-12; longest 2015-04 to 2019-09 (54); last 2024-10 to 2025-06 (9) |
 | A02 | fred-brent | zwischen 3 85 110 | 1987-07 | 52 of 472 | 12, first 2007-12 to 2008-04; longest 2013-11 to 2014-11 (13); last 2026-04 to 2026-09 (6) |
 | A03 | sffed-tfp-usa | mittel 6 > 1.5 | 1948-07 | 396 of 940 | 23, first 1948-07 to 1949-03; longest 1961-10 to 1967-03 (66); last 2025-07 to 2025-09 (3) |
-| A04 | eurostat-kerninflation-ea + eurostat-bip-ea | faellt 3 and eurostat-bip-ea: alle 2 > 0 | 2001-05 | 117 of 306 | 29, first 2002-06 to 2003-05; longest 2023-06 to 2024-07 (14); last 2026-01 to 2026-03 (3) |
+| A04 | eurostat-kerninflation-ea + eurostat-bip-ea | faellt 3 and eurostat-bip-ea: alle 2 > 0 | 2001-05 | 116 of 306 | 28, first 2002-06 to 2003-05; longest 2023-06 to 2024-07 (14); last 2026-01 to 2026-03 (3) |
 | A05 | fred-brent | alle 7 > 110 | 1987-11 | 1 of 468 | 2011-09 to 2011-09 (1) |
 | A06 | eurostat-kerninflation-ea + eurostat-bip-ea | alle 3 > 3 and eurostat-bip-ea: mittel 2 < 1 | 2001-02 | 11 of 309 | 2023-04 to 2024-02 (11) |
 | A07 | eurostat-industrie-de | jahresrueckgang 2 | 1993-12 | 62 of 395 | 9, first 1993-12 to 1994-08; longest 2024-10 to 2026-10 (25); last 2024-10 to 2026-10 (25) |
@@ -209,6 +209,7 @@ Course over time (selection; full table in `backtest/indicators/tabellen.md` and
 - **Core inflation:** the new series (ECOICOP 2) replaces the old one backwards where both have values; 20 of 289 months differ by 0.1 (as in the radar).
 - **Gaps:** AS03 (bka-pmk-gewalt) and AS09 (bnetza-saidi): no free, machine-readable historical download (radar comment "by hand"; the earlier source survey names a PDF and a web page, not downloaded here). Not estimated.
 - **Not computed:** the lever backwards, and steps 3 and 4 with magnitude levels for indicators other than A12 (only A12 has levels in the model file). q0 with a set pi0 (the starting distribution "where are we today?", to be set by the model owner; `filter.pi0` in `model/uebergaenge.json` is empty) and with fixed transitions (all still proposals).
+- **Correction on 2026-11-07 (ties in averaged rules).** The rules that compare averages (`mittel`, `zwischen`, `jahresrueckgang`, `faellt`, `steigt`) used Python's `sum()`, which changed in Python 3.12. On an exact tie the floating-point remainder decided, so Python 3.9 and 3.12 gave different results. The engine now averages with `math.fsum` and rounds to 9 decimals (`_mittel` in `engine/tagesstand.py`), so a tie counts as a tie in every version. Effect on this backtest: A04 no longer holds in 2010-04 (1.0+1.1+0.8 = 0.8+1.2+0.9, no fall); A04 holds in 116 instead of 117 months, 28 instead of 29 episodes. Nothing else changes: not the events, not the daily world state backwards, not the committor, not today's world state.
 - **File name:** the source model repository already has a script `pruefung/geschichte.py` (years 1973 to 2025, for the base rates of the outside view). This script is therefore called `pruefung/anzeichen_geschichte.py`, the test `tests/test_anzeichen_geschichte.py`.
 
 ## 6. Files and how to repeat
