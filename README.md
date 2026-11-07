@@ -133,6 +133,10 @@ See `domains/energy-transition/briefing.md`, section 6, and `docs/process.md`. G
 5. Score domain options (permitting reform, storage subsidies, flexible tariffs) across the scenarios
    (expected value, worst case, minimax regret).
 6. Build an application on top: the model's public JSON files are the interface.
+7. **GDELT as a numeric news series:** turn statement indicator AS08 (cyberattack paralyses critical
+   infrastructure in Germany) into a time series with the GDELT DOC 2.0 API (`mode=timelinevol`, share of all
+   monitored coverage), compare it with the radar's feed hits, and backtest it from 2017. Mind the rate limit
+   (one request every 5 seconds) and cite GDELT as its terms require.
 
 ## Licence
 
