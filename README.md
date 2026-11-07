@@ -2,7 +2,8 @@
 
 An open, reproducible foresight model: a **world model** of scenarios for 2028 / 2032 / 2040, a **radar** that
 collects open data to monitor it, and a **domain lens** that breaks the world model down to one concrete question.
-Applications built on top (such as the Foresight Studio web app) live in their own repositories.
+Applications built on top live in their own repositories, e.g. the Foresight Studio web app:
+[alphakaefer/open-foresight-studio](https://github.com/alphakaefer/open-foresight-studio).
 
 Hackathon focus (2026-11-07): **the energy transition (Energiewende) in Germany.**
 
