@@ -1,4 +1,4 @@
-.PHONY: test energy worldstate sources snapshot app
+.PHONY: test energy worldstate sources snapshot
 
 test:            ## reproduce the published world state, run all model tests
 	python3 -m pytest tests -q
@@ -15,6 +15,3 @@ sources:         ## regenerate the radar source list
 
 snapshot:        ## fetch the latest public radar snapshot (then: make worldstate energy sources)
 	bash radar/fetch_snapshot.sh
-
-app:             ## run the Foresight Studio web app
-	cd app && npm install && npm run dev

@@ -1,8 +1,8 @@
 # open-foresight
 
-An open, reproducible foresight stack: a **world model** of scenarios for 2028 / 2032 / 2040, a **radar** that
-collects open data to monitor it, a **domain lens** that breaks the world model down to one concrete question,
-and the **Foresight Studio** web app that walks a team through the full foresight process.
+An open, reproducible foresight model: a **world model** of scenarios for 2028 / 2032 / 2040, a **radar** that
+collects open data to monitor it, and a **domain lens** that breaks the world model down to one concrete question.
+Applications built on top (such as the Foresight Studio web app) live in their own repositories.
 
 Hackathon focus (2026-11-07): **the energy transition (Energiewende) in Germany.**
 
@@ -16,7 +16,7 @@ radar (open data: Energy-Charts, FRED, Destatis, Eurostat, ECB, OpenAlex, news f
 domain lens (domains/lens.py + domains/energy-transition/domain.json)
       │  scenarios × energy-price regime, linked drivers, indicators, radar series, bottleneck model
       ▼
-Foresight Studio (app/): evidence → key factors → scenarios → options
+applications (separate repos), e.g. Foresight Studio: evidence → key factors → scenarios → options
 ```
 
 ## Quick start (5 minutes)
@@ -26,7 +26,6 @@ git clone https://github.com/alphakaefer/open-foresight && cd open-foresight
 python3 -m pip install -r requirements.txt     # only pytest; the engine is pure standard library
 make test                                       # reproduces the published world state, checks the domain model
 make energy                                     # writes domains/energy-transition/briefing.md
-make app                                        # Foresight Studio on http://localhost:5173 (needs Node 20+)
 ```
 
 Start reading at **[domains/energy-transition/briefing.md](domains/energy-transition/briefing.md)**.
@@ -44,7 +43,6 @@ Start reading at **[domains/energy-transition/briefing.md](domains/energy-transi
 | `radar/collector/` | The PHP collector that builds the radar from open sources | code comments DE |
 | `domains/lens.py` | Domain lens: world model → one domain question | EN |
 | `domains/energy-transition/` | Domain config, generated briefing (md + json) | EN |
-| `app/` | Foresight Studio web app (React, Vite, TypeScript, bring-your-own AI key) | UI DE, README EN |
 | `docs/process.md` | The foresight process step by step, and where each step lives in this repo | EN |
 | `tests/` | Reproducibility and model tests | |
 
@@ -81,8 +79,8 @@ much as 2028).
 
 - The world model computes for the **world**, not for a country, an industry or a company. The domain lens adds
   that step explicitly and marks it as judgment.
-- Engine identifiers, code comments and the app UI are still **German**; data is available in English.
-  Translating the app UI is a good hackathon task.
+- Engine identifiers and code comments are still **German**; the data is available in English
+  (`model/world_model.en.json`, `model/glossary.md`).
 - The radar snapshot omits news teaser texts (copyright); titles, links and dates remain. Statement indicators
   may therefore show a few fewer news hits than the live radar; no probability depends on them.
 - The upstream model contains more (option scoring, private evaluations); only the public world model is here.
@@ -95,13 +93,14 @@ See `domains/energy-transition/briefing.md`, section 6, and `docs/process.md`. G
 2. Replace the judgment axis states of the bottleneck model with measured indices.
 3. Add a permitting / grid-connection data series to the radar.
 4. Build domain scenarios: world scenario × bottleneck path.
-5. Score domain options (permitting reform, storage subsidies, flexible tariffs) in the app's decision analysis.
-6. English UI for the app.
+5. Score domain options (permitting reform, storage subsidies, flexible tariffs) across the scenarios
+   (expected value, worst case, minimax regret).
+6. Build an application on top: the model's public JSON files are the interface.
 
 ## Licence
 
 Code: MIT (`LICENSE`). Model data, domain data and documentation: CC BY 4.0 (`LICENSE-DATA.md`).
 Radar time series remain under the licences of their original publishers (see `radar/SOURCES.md`).
 
-Origin: the world model, engine and app are developed by Karl Hosang ([zukunftsgut.org](https://zukunftsgut.org)).
+Origin: the world model and engine are developed by Karl Hosang ([zukunftsgut.org](https://zukunftsgut.org)).
 This repository is the open edition for collaboration.

@@ -8,11 +8,11 @@ probabilities as given and adds only what is specific to the domain.
 | Step | Question | World level (shared) | Domain level (per question) | Where |
 |---|---|---|---|---|
 | 0. Frame | What do we want to know, by when, for whom? | Fixed horizons 2028 / 2032 / 2040 | `question`, `horizons` in `domain.json` | `domains/<name>/domain.json` |
-| 1. Evidence & signals | What is happening already? | Radar: open data series + news + research, daily | Domain series selected from the radar (`radar_series`) | `radar/`, briefing §4, app step 1 |
-| 2. Drivers / key factors | What moves the outcome? | 33 drivers with type (trend, critical uncertainty, wildcard) and coupling to scenarios | Linked world drivers (judgment, with reason) + domain factors (bottleneck axes) | briefing §2 and §5, app step 2 |
-| 3. Scenarios | Which futures are plausible, how likely? | 12 mutually exclusive scenarios per horizon, each with a regime vector (energy price, climate damage, growth …) and probabilities | Scenarios seen through the domain's regime keys; probability mass per regime | briefing §1, app step 3 |
+| 1. Evidence & signals | What is happening already? | Radar: open data series + news + research, daily | Domain series selected from the radar (`radar_series`) | `radar/`, briefing §4 |
+| 2. Drivers / key factors | What moves the outcome? | 33 drivers with type (trend, critical uncertainty, wildcard) and coupling to scenarios | Linked world drivers (judgment, with reason) + domain factors (bottleneck axes) | briefing §2 and §5 |
+| 3. Scenarios | Which futures are plausible, how likely? | 12 mutually exclusive scenarios per horizon, each with a regime vector (energy price, climate damage, growth …) and probabilities | Scenarios seen through the domain's regime keys; probability mass per regime | briefing §1 |
 | 4. Monitoring | How do we notice which future arrives? | 23 early-warning indicators as testable rules on data series; status change → Bayes update | Indicators that touch the linked drivers or domain series | briefing §3, `engine/tagesstand.py` |
-| 5. Options | What should we do? | – (the world model does not recommend) | Options scored across scenarios: expected value, worst case, minimax regret | app step 4 (`app/…/src/lib/analysis/decisionAnalysis.ts`) |
+| 5. Options | What should we do? | – (the world model does not recommend) | Options scored across scenarios: expected value, worst case, minimax regret | applications on top (e.g. Foresight Studio, separate repo) |
 
 ## Rules that keep it transparent
 
