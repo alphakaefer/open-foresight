@@ -42,6 +42,7 @@ Start reading at **[domains/energy-transition/briefing.md](domains/energy-transi
 | `backtest/` | Backtest of the early-warning indicators against 2008, 2020, 2022: 14 public series back to 1947, script `pruefung/anzeichen_geschichte.py`, results, [report](backtest/indicators/REPORT.md) | EN report, data |
 | `explain/` | Plain-language explanation of an engine run by the Claude API, with an offline number check: every number in the text must appear in the engine trace (`--dry-run` makes no API call). [How to rerun](explain/RERUN.md) | EN |
 | `k_experiment/` | Sensitivity of the scenario probabilities to the damping `k`, with gates that must reproduce the published state first. [How to rerun](k_experiment/RERUN.md) | EN |
+| `loop/` | Research loop: does the data-driven update forecast better than the prior alone? One round tests one variant on a training window (2000–2011) and once on a held-out window (2013–2025); `loop/check.py --goal` says when to stop. Start: [PROMPT.md](loop/PROMPT.md); results so far: [JOURNAL.md](loop/JOURNAL.md) | EN |
 | `radar/snapshot/` | Radar snapshot (`wissensstand.json`) and the world state computed from it (`weltlage.json`) | data |
 | `radar/SOURCES.md` | All radar sources and time series, generated from the snapshot | EN |
 | `radar/collector/` | The PHP collector that builds the radar from open sources | code comments DE |
