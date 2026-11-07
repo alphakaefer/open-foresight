@@ -1,0 +1,44 @@
+{
+  "_note": "JUDGMENT, not model output: which data belongs to which geographic level. Every level lists what is measured and what is a gap. Edit here, not in app.js.",
+  "levels": [
+    {"id": "global", "name": "Global", "parent": null, "coverage": "full",
+     "blurb": "The world model itself: 12 scenarios, three horizons. This is the only level the model computes natively.",
+     "series": ["fred-brent", "fred-realrendite-10j"],
+     "indicators": ["A02", "A05", "A11", "A12", "A13"],
+     "drivers": ["G3", "OE1", "OE5", "T7", "M2"],
+     "highlight_scenarios": []},
+    {"id": "europe", "name": "Europe", "parent": "global", "coverage": "proxy",
+     "blurb": "No European energy model exists here. Eurozone macro series are used as a proxy, and the scenario 'European Restart' is highlighted. Treat as context, not a European forecast.",
+     "series": ["eurostat-bip-ea", "eurostat-kerninflation-ea", "ezb-leitzins", "fred-brent"],
+     "indicators": ["A05", "A12", "A13"],
+     "drivers": ["G3", "M2"],
+     "highlight_scenarios": ["S15"]},
+    {"id": "germany", "name": "Germany", "parent": "europe", "coverage": "full",
+     "blurb": "The domain lens: how fast can installed renewable capacity become usable, affordable electricity, and which bottleneck decides the pace.",
+     "series": ["energy-charts-erneuerbare", "energy-charts-solar", "energy-charts-speicher", "destatis-produktion", "eurostat-industrie-de", "fred-brent"],
+     "indicators": ["A02", "A05", "A07", "A11", "A12", "A13"],
+     "drivers": ["T7", "T8", "G3", "OE1", "OE5", "M2"],
+     "highlight_scenarios": [],
+     "bottleneck": true},
+    {"id": "brandenburg", "name": "Brandenburg", "parent": "germany", "coverage": "gap",
+     "blurb": "No state-level data in this repository. Nothing below is measured for Brandenburg.",
+     "series": [], "indicators": [], "drivers": [], "highlight_scenarios": [],
+     "inherits_from": "germany",
+     "data_plan": [
+       "Installed wind and PV capacity by state (Marktstammdatenregister, Bundesnetzagentur)",
+       "State-level generation and renewable share (Energy-Charts, state view)",
+       "Grid-connection queue by network operator (primary source still missing, see the Germany GAP)",
+       "State industrial production and energy-intensive employment (Destatis regional database)"
+     ]},
+    {"id": "berlin", "name": "Berlin", "parent": "brandenburg", "coverage": "gap",
+     "blurb": "No city-state data in this repository. Berlin is supplied largely by its surroundings, so Brandenburg and Germany context applies, but it is not measured.",
+     "series": [], "indicators": [], "drivers": [], "highlight_scenarios": [],
+     "inherits_from": "germany",
+     "data_plan": [
+       "Electricity consumption and peak load for Berlin (grid operator Stromnetz Berlin)",
+       "Rooftop PV and heat-pump rollout (Marktstammdatenregister, filtered to Berlin)",
+       "District-heating decarbonisation milestones (city climate-neutrality plan)",
+       "Link to the Brandenburg supply data once that exists"
+     ]}
+  ]
+}

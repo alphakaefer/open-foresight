@@ -1,0 +1,15 @@
+{
+  "_note": "English names for radar series (the snapshot titles are German). Units come from the snapshot.",
+  "series": {
+    "fred-brent": "Brent crude oil price",
+    "fred-realrendite-10j": "US real 10-year yield",
+    "eurostat-bip-ea": "Eurozone GDP growth",
+    "eurostat-kerninflation-ea": "Eurozone core inflation",
+    "ezb-leitzins": "ECB deposit rate",
+    "energy-charts-erneuerbare": "Renewable share of electricity, Germany",
+    "energy-charts-solar": "Installed photovoltaic capacity, Germany",
+    "energy-charts-speicher": "Battery storage capacity, Germany",
+    "destatis-produktion": "Industrial production, Germany (Destatis)",
+    "eurostat-industrie-de": "Industrial production, Germany (Eurostat)"
+  }
+}

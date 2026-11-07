@@ -45,9 +45,11 @@ Start reading at **[domains/energy-transition/briefing.md](domains/energy-transi
 | `radar/snapshot/` | Radar snapshot (`wissensstand.json`) and the world state computed from it (`weltlage.json`) | data |
 | `radar/SOURCES.md` | All radar sources and time series, generated from the snapshot | EN |
 | `radar/collector/` | The PHP collector that builds the radar from open sources | code comments DE |
+| `radar/regional/`, `radar/fetch_regional.py` | Per-country (World Bank, Eurostat) and per-state (MaStR) energy values for the UI map comparisons, with sources | data, code EN |
 | `domains/lens.py` | Domain lens: world model → one domain question | EN |
 | `domains/energy-transition/` | Domain config, generated briefing (md + json) | EN |
 | `docs/process.md` | The foresight process step by step, and where each step lives in this repo | EN |
+| `ui/`, `docs/ux-flow.md` | Prototype UI with maps, scenario drill-down and a bottleneck what-if (static HTML/JS, `make ui`) across Berlin, Brandenburg, Germany, Europe, Global; UX flow | EN |
 | `tests/` | Reproducibility and model tests | |
 
 ## What kind of model is this?
