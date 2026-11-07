@@ -6,6 +6,10 @@ import a05Json from './data/trace-a05.json'
 import a13Json from './data/trace-a13.json'
 import PredictionPanel from './PredictionPanel'
 
+// Legal links for a hosted copy (imprint, privacy). Unset in the repo, so a fork shows none.
+const IMPRINT_URL = import.meta.env.VITE_IMPRINT_URL
+const PRIVACY_URL = import.meta.env.VITE_PRIVACY_URL
+
 type Horizon = '2028' | '2032' | '2040'
 type Mode = 'A' | 'B' | 'C'
 type Probabilities = Record<Horizon, Record<string, number>>
@@ -94,7 +98,7 @@ function App({ initialHorizon = '2028', initialMode = 'A', initialK = 0.15 }: { 
         <PredictionPanel />
         <section id="method" className="section method"><div className="section-top"><div><div className="section-number">05 / THE METHOD</div><h2>Show the assumptions.</h2><p>The energy system works as a chain. Its least developed links limit usable output in this illustrative model.</p></div></div><div className="method-grid"><div className="card bottleneck-card"><div className="card-head"><span className="label">THE ENERGY BOTTLENECK</span><span className="badge">JUDGMENT-BASED INDICES</span></div><h3>What if we improved one part by 50%?</h3>{briefing.bottleneck.marginal_gain.map(g => <div className="bottleneck-row" key={g.axis}><div><b>{g.label}</b><span>index {g.from}  to  {g.to}</span></div><div className="bottleneck-track"><i style={{ width: `${Math.max(3, g.gain_percent / 30 * 100)}%` }} /></div><strong>+{g.gain_percent}%</strong></div>)}<p className="small-note">These are changes in the model's usable-output index, not promised real-world electricity gains. Axis scores are expert judgments.</p></div><div className="card method-card"><span className="label">READ THE MODEL HONESTLY</span><h3>Transparent by design.</h3><p>Scenario starting probabilities, driver links, indicator strengths, k, and bottleneck scores are human judgments. Radar measurements determine whether defined indicator rules are active.</p><div className="source-warning"><strong>Source needed</strong><span>Grid-connection figures in the briefing still lack a cited primary source. They are excluded from headline metrics.</span></div><button type="button" className="text-button" onClick={() => setShowMethod(!showMethod)} aria-expanded={showMethod}> {showMethod ? 'Hide' : 'Read'} model limitations </button>{showMethod && <ul className="limitations">{trace.known_limitations.slice(0, 7).map((line, i) => <li key={i}>{line}</li>)}</ul>}<div className="source-links"><a href="https://github.com/alphakaefer/open-foresight/blob/develop/domains/energy-transition/briefing.md" target="_blank" rel="noreferrer">Energy briefing </a><a href="https://github.com/alphakaefer/open-foresight/blob/develop/radar/SOURCES.md" target="_blank" rel="noreferrer">Radar sources </a><a href="https://github.com/alphakaefer/open-foresight/blob/develop/explain/RERUN.md" target="_blank" rel="noreferrer">Explanation method </a></div></div></div></section>
       </div>
-    </main><footer><span className="brand">FORESIGHT</span><span>Open model / snapshot / v{briefing.inputs.version}</span><a href="#top">Back to top </a></footer>
+    </main><footer><span className="brand">FORESIGHT</span><span>Open model / snapshot / v{briefing.inputs.version}</span><span className="footer-links"><a href="#top">Back to top </a>{IMPRINT_URL && <a href={IMPRINT_URL}>Impressum</a>}{PRIVACY_URL && <a href={PRIVACY_URL}>Datenschutz</a>}</span></footer>
   </div>
 }
 

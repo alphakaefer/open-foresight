@@ -11,6 +11,10 @@ npm run dev
 ```
 
 Open the local URL printed by Vite. For a production build, run `npm run build`; the static site is written to `frontend/dist/`.
+Asset paths are relative (`base: './'` in `vite.config.ts`), so `dist/` also works in a subfolder. The fonts are bundled
+(Fontsource), so the page loads nothing from third-party servers. A hosted copy can show imprint and privacy links in the
+footer by setting `VITE_IMPRINT_URL` and `VITE_PRIVACY_URL` at build time, for example in `.env.production.local`
+(ignored by git). Without them the footer shows no legal links.
 
 ## Explanation trace from commit `35e6dc2`
 
@@ -58,8 +62,8 @@ The result is marked **PROTOTYPE / NOT PROOF**. The prior was set in 2026 with k
 
 The trace files were generated without an AI API call. The UI uses their deterministic engine data and does not show AI-written prose. The sensitivity file passed its three engine gates. All artifacts use model v1.4.0 and the 2026-11-07 radar/world-state snapshot. At startup the app compares their input hashes and dates; it stops the comparison if they disagree.
 
-When updating data, run the two scripts with explicit `--repo` and `--out` paths (their defaults point to the original author's machine). Their output directories must be outside this repository. Copy the checked JSON outputs into `src/data/` only after the gate results pass, then run `npm run build`.
+When updating data, run the scripts from the repo root. By default their results go to `../open-foresight-results/<tool>/`, next to your clone; an `--out` folder must also be outside this repository. Copy the checked JSON outputs into `src/data/` only after the gate results pass, then run `npm run build`.
 
 ## Scope
 
-This frontend is on the `newUI` branch. There is no HTTP API in this repository. The page reflects the [UI spec](../docs/newUI-spec.md) and the broader [frontend plan](../FE-README.md). The model and radar values remain owned by the original data files.
+This frontend was built on the `predictUI` branch and merged into `main` on 2026-11-07. There is no HTTP API in this repository. The page reflects the [UI spec](../docs/newUI-spec.md) and the broader [frontend plan](../FE-README.md). The model and radar values remain owned by the original data files.

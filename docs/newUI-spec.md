@@ -2,7 +2,7 @@
 
 **Status:** proposed UI, 2026-11-07
 
-**Branch:** `newUI` (created from `develop` at `35e6dc2`)
+**Branch:** built on `predictUI` (from `develop`), merged into `main` on 2026-11-07. Implementation: [`frontend/`](../frontend/README.md)
 **Audience:** hackathon judges and teammates who need to understand what the model says, what changes under an assumption, and why.
 
 ## Goal

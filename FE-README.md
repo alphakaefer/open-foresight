@@ -6,7 +6,7 @@
 
 The demo follows a simple path: **evidence -> possible futures -> bottlenecks -> decisions to investigate**. The world scenarios describe possible external conditions. The German energy lens connects those conditions to the energy question. It does not predict a single electricity price, generation total, or completion date.
 
-This is a frontend plan, not an existing frontend implementation. The application can live in a separate repository, as the main README suggests.
+This is the plan written before the build. The implementation is in [`frontend/`](frontend/README.md).
 
 ## Recommended demo screen
 

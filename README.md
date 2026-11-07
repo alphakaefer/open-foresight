@@ -147,3 +147,4 @@ Origin: the world model and engine are developed by Karl Hosang ([zukunftsgut.or
 This repository is the open edition for collaboration.
 
 Analysis tools added at the hackathon (k sensitivity, plain-language explanation with a number check, forecasting prototype): [docs/analysis-tools.md](docs/analysis-tools.md).
+Web frontend for the energy lens (React, runs from checked-in data, no backend): [frontend/README.md](frontend/README.md).
