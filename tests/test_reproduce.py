@@ -62,3 +62,29 @@ def test_public_model_has_no_private_sections():
     w = io.load_world_model("de")
     for key in ("optionen", "scoring", "segmentmischung", "meine_lage", "energiebeispiel_v12"):
         assert key not in w
+
+
+
+@pytest.mark.parametrize("switch", ["today", "all_on", "all_off"])
+def test_english_model_gives_identical_numbers(switch):
+    """The English translation changes words, never numbers.
+
+    'today' uses the real snapshot (no indicator changed, so nothing moves);
+    'all_on' / 'all_off' flip every numeric indicator, which really moves probabilities.
+    """
+    from datetime import timezone
+    from engine.tagesstand import aus_status
+    de, en = io.load_world_model("de"), io.load_world_model("en")
+    now = datetime(2026, 11, 7, tzinfo=timezone.utc)
+    if switch == "today":
+        ws = io.load_json(SNAP / "wissensstand.json")
+        a, b = tagesstand(de, ws, now), tagesstand(en, ws, now)
+    else:
+        ids = [x["id"] for x in de["anzeichen"] if x.get("art") == "zahl"]
+        before, after = (False, True) if switch == "all_on" else (True, False)
+        a = aus_status(de, {i: before for i in ids}, {i: after for i in ids}, now)
+        b = aus_status(en, {i: before for i in ids}, {i: after for i in ids}, now)
+        assert any(s["p_tag"] != s["p_basis"] for s in a["szenarien"])  # the case really moves numbers
+    pick = lambda lage: [(s["id"], s["p_basis"], s["p_tag"], s["delta"]) for s in lage["szenarien"]]  # noqa: E731
+    assert pick(a) == pick(b)
+    assert [(x["id"], x.get("status_jetzt")) for x in a["anzeichen"]] == [(x["id"], x.get("status_jetzt")) for x in b["anzeichen"]]

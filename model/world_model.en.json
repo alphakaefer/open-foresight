@@ -1,0 +1,2920 @@
+{
+  "schema": "weltmodell/v1",
+  "meta": {
+    "titel": "Strategic Foresight Model: Technology, Macro, Climate, Politics",
+    "version": "1.4.0",
+    "stand": "2026-10-09",
+    "horizonte": [
+      "2028",
+      "2032",
+      "2040"
+    ]
+  },
+  "treiber": [
+    {
+      "id": "T1",
+      "cluster": "Technology",
+      "name": "AI capability curve",
+      "typ": "Critical uncertainty",
+      "frage": "Does capability scaling continue, or does the curve flatten at a level that allows assistance but not autonomous work?",
+      "stand_2026": "Capabilities keep rising, and new agent features are reaching mass-market products (Apple warns about AI agents accessing data on the Mac). This has not yet shown up in broad productivity: US TFP growth stands at 1.2% and is falling.",
+      "unsicherheit": 5,
+      "wirkung": 5,
+      "tempo": "fast",
+      "richtung": "rising",
+      "indikatoren": [
+        {
+          "name": "Length of work tasks AI can complete autonomously (time-horizon metric)",
+          "schwelle": "more than 1 working day without intervention = regime change",
+          "quelle": "METR / Stanford AI Index"
+        },
+        {
+          "name": "Cost per unit of capability",
+          "schwelle": "Price decline continues at a factor of 10 per year",
+          "quelle": "Stanford AI Index, Chapter 4"
+        }
+      ],
+      "kreuzwirkung": [
+        "T2",
+        "T3",
+        "T5",
+        "M4",
+        "M7"
+      ]
+    },
+    {
+      "id": "T2",
+      "cluster": "Technology",
+      "name": "AI diffusion into the real economy",
+      "typ": "Critical uncertainty",
+      "frage": "How fast does capability translate into measured productivity outside the tech sector?",
+      "stand_2026": "Use is growing, impact is not: 26% of German companies with ten or more employees used AI in 2025 (2024: 20%), and US TFP growth is falling to 1.2%. The early-warning sign 'TFP below 1.2%' applies.",
+      "unsicherheit": 5,
+      "wirkung": 5,
+      "tempo": "medium",
+      "richtung": "slowly rising",
+      "indikatoren": [
+        {
+          "name": "US total factor productivity growth",
+          "schwelle": "above 1.5 percent p.a. for 6 quarters = breakthrough confirmed",
+          "quelle": "BLS / Fed"
+        },
+        {
+          "name": "Share of companies using AI in core processes (not pilots)",
+          "schwelle": "above 25 percent",
+          "quelle": "Census BTOS"
+        }
+      ],
+      "kreuzwirkung": [
+        "T1",
+        "M7",
+        "M8"
+      ]
+    },
+    {
+      "id": "T3",
+      "cluster": "Technology",
+      "name": "Compute and semiconductor availability",
+      "typ": "Driver with chokepoint risk",
+      "frage": "Does computing power remain an abundant good or become a politically rationed one?",
+      "stand_2026": "Memory stays scarce and lucrative (Micron posts another record quarter), large firms bet on their own chips (Google versus Nvidia), Europe expands small sites (Erfurt). The Taiwan chokepoint is unchanged.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "medium",
+      "richtung": "tightening",
+      "indikatoren": [
+        {
+          "name": "HBM spot prices and lead times",
+          "schwelle": "doubling within 2 quarters",
+          "quelle": "TrendForce"
+        },
+        {
+          "name": "Share of global leading-edge capacity outside Taiwan",
+          "schwelle": "above 25 percent = chokepoint defused",
+          "quelle": "SEMI / TSMC reports"
+        }
+      ],
+      "kreuzwirkung": [
+        "G2",
+        "T1",
+        "M4"
+      ]
+    },
+    {
+      "id": "T5",
+      "cluster": "Technology",
+      "name": "Robotics and embodied AI",
+      "typ": "Critical uncertainty",
+      "frage": "Do humanoids and VLA systems (vision-language-action models) cross the threshold from pilot project to economic deployment?",
+      "stand_2026": "No evidence in the radar of the jump from pilot project to continuous operation. Robotics remains a niche topic in the news.",
+      "unsicherheit": 5,
+      "wirkung": 5,
+      "tempo": "medium",
+      "richtung": "rising",
+      "indikatoren": [
+        {
+          "name": "Humanoids installed in continuous productive operation",
+          "schwelle": "more than 50,000 worldwide",
+          "quelle": "IFR / State of Robotics"
+        },
+        {
+          "name": "Cost per robot hour vs. labour cost",
+          "schwelle": "parity in high-wage countries",
+          "quelle": "Manufacturer data, IFR"
+        }
+      ],
+      "kreuzwirkung": [
+        "M7",
+        "G7"
+      ]
+    },
+    {
+      "id": "T6",
+      "cluster": "Technology",
+      "name": "Biotechnology, healthspan and AI-driven science",
+      "typ": "Wildcard with high impact",
+      "frage": "Does AI-accelerated biology shift the cost and age structure of health systems?",
+      "stand_2026": "Medical technology and AI-assisted research are moving (brain chips competing with Neuralink, Germany's Excellence Strategy), but the effect on the cost structure of health systems still lies beyond 2032.",
+      "unsicherheit": 4,
+      "wirkung": 4,
+      "tempo": "slow",
+      "richtung": "rising",
+      "indikatoren": [
+        {
+          "name": "Time from target identification to Phase 1 start",
+          "schwelle": "halved compared with the 2020s median",
+          "quelle": "FDA / EMA statistics"
+        },
+        {
+          "name": "Health spending ratio in the OECD",
+          "schwelle": "first decline despite ageing",
+          "quelle": "OECD Health"
+        }
+      ],
+      "kreuzwirkung": [
+        "G7",
+        "M1"
+      ]
+    },
+    {
+      "id": "T7",
+      "cluster": "Technology",
+      "name": "Solar and storage learning curve",
+      "typ": "Strong trend, high predictability",
+      "frage": "How far will the cost of solar plus storage fall, and when will it undercut fossil marginal costs everywhere?",
+      "stand_2026": "The learning curve is running: Germany has 130.4 GW of photovoltaics installed (+14% in one year), and battery storage is growing to 33.6 GWh (+39%). Renewables supply 62.6% of public net electricity generation.",
+      "unsicherheit": 2,
+      "wirkung": 5,
+      "tempo": "medium",
+      "richtung": "sharply falling costs",
+      "indikatoren": [
+        {
+          "name": "Storage cost per kWh (system level)",
+          "schwelle": "below 80 USD/kWh",
+          "quelle": "BloombergNEF"
+        },
+        {
+          "name": "Share of solar plus wind in global electricity generation",
+          "schwelle": "above 25 percent",
+          "quelle": "Ember Global Electricity Review"
+        }
+      ],
+      "kreuzwirkung": [
+        "T8",
+        "M3",
+        "G3"
+      ]
+    },
+    {
+      "id": "T8",
+      "cluster": "Technology",
+      "name": "Grid, storage and infrastructure build-out (including data centres)",
+      "typ": "Critical uncertainty",
+      "frage": "Does the physical build-out – grids, connections for large consumers such as data centres, transformers, skilled workers, permits – keep pace with generation and electricity demand, and who pays for it?",
+      "stand_2026": "The bottleneck is transmission and grid connection, not generation. The federal government plans to subsidise transmission grid costs from 2027 to 2029 (amendment to the Energy Industry Act, sent to the Bundestag); data centres keep crowding into connection queues.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "slow",
+      "richtung": "improving but too slowly",
+      "indikatoren": [
+        {
+          "name": "Lead time for large transformers",
+          "schwelle": "below 2 years = easing",
+          "quelle": "Industry associations"
+        },
+        {
+          "name": "Waiting time for large-load grid connection",
+          "schwelle": "above 5 years = hard brake",
+          "quelle": "Grid operators"
+        },
+        {
+          "name": "State subsidies for grid fees",
+          "schwelle": "permanent instead of temporary",
+          "quelle": "Bundestag, DIP"
+        }
+      ],
+      "kreuzwirkung": [
+        "T7",
+        "M3"
+      ]
+    },
+    {
+      "id": "T9",
+      "cluster": "Technology",
+      "name": "Cybersecurity situation and offensive AI",
+      "typ": "Wildcard",
+      "frage": "Does AI-assisted offence tip the balance between attack and defence?",
+      "stand_2026": "Protection of critical infrastructure is moving into criminal law (draft law on criminal-law protection of critical infrastructure); outages of digital government services (a disruption at the Federal Employment Agency) show the vulnerability.",
+      "unsicherheit": 4,
+      "wirkung": 4,
+      "tempo": "fast",
+      "richtung": "worsening",
+      "indikatoren": [
+        {
+          "name": "Successful attack with physical outage effects on grid or water in the OECD",
+          "schwelle": "first event affecting more than 1 million people",
+          "quelle": "CISA / BSI"
+        },
+        {
+          "name": "Cyber reinsurance premiums",
+          "schwelle": "doubling within 12 months",
+          "quelle": "Reinsurers"
+        }
+      ],
+      "kreuzwirkung": [
+        "G4",
+        "G6"
+      ]
+    },
+    {
+      "id": "T10",
+      "cluster": "Technology",
+      "name": "Information ecosystem and synthetic media",
+      "typ": "Critical uncertainty",
+      "frage": "Does the shared factual basis erode so far that collective decision-making suffers?",
+      "stand_2026": "Synthetic content is becoming a legal battle (a US court provisionally halts a ban on AI nude images at xAI); who earns money from AI music is unresolved.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "fast",
+      "richtung": "worsening",
+      "indikatoren": [
+        {
+          "name": "Trust in news media (Reuters Institute)",
+          "schwelle": "below 30 percent in the G7 median",
+          "quelle": "Reuters Digital News Report"
+        },
+        {
+          "name": "Spread of enforced provenance credentials",
+          "schwelle": "above 50 percent of the reach of large platforms",
+          "quelle": "C2PA adoption"
+        }
+      ],
+      "kreuzwirkung": [
+        "G4",
+        "M8",
+        "G5"
+      ]
+    },
+    {
+      "id": "M1",
+      "cluster": "Macro and finance",
+      "name": "Public debt and fiscal space",
+      "typ": "Structural burden",
+      "frage": "At what point does the debt burden force austerity, inflation or financial repression?",
+      "stand_2026": "Pressure increasingly comes from the welfare state: the Federal Court of Audit warns of rising federal pension spending, and social security contributions rise in 2027. In the US, Scope confirms the credit rating but flags the high debt.",
+      "unsicherheit": 3,
+      "wirkung": 5,
+      "tempo": "slow",
+      "richtung": "worsening",
+      "indikatoren": [
+        {
+          "name": "Interest payments as a percentage of government revenue (USA, F, IT, UK)",
+          "schwelle": "above 15 percent = political pressure point",
+          "quelle": "IMF Fiscal Monitor"
+        },
+        {
+          "name": "Bid-to-cover ratio for long maturities",
+          "schwelle": "repeatedly below the historical average",
+          "quelle": "Treasury / debt management agencies"
+        }
+      ],
+      "kreuzwirkung": [
+        "M2",
+        "M3",
+        "M5",
+        "G6"
+      ]
+    },
+    {
+      "id": "M2",
+      "cluster": "Macro and finance",
+      "name": "Interest rate regime and term premium",
+      "typ": "Critical uncertainty",
+      "frage": "Do real long-term interest rates stay positive, or are they pushed down politically?",
+      "stand_2026": "The turn to higher rates has arrived: the ECB raised the deposit rate to 2.50% on 16 September (a year ago 2.00%), and the real ten-year US yield stands at 2.88% – above the 2.5% threshold the model marks as a regime.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "medium",
+      "richtung": "rising",
+      "indikatoren": [
+        {
+          "name": "10-year real yield, USA",
+          "schwelle": "persistently above 2.5 percent or below 0 percent",
+          "quelle": "TIPS market"
+        },
+        {
+          "name": "Curve steepness 2s10s",
+          "schwelle": "above 150 basis points",
+          "quelle": "Market data"
+        }
+      ],
+      "kreuzwirkung": [
+        "M1",
+        "M3",
+        "M4"
+      ]
+    },
+    {
+      "id": "M3",
+      "cluster": "Macro and finance",
+      "name": "Inflation regime (supply-driven)",
+      "typ": "Critical uncertainty",
+      "frage": "Is the inflation of 2026 a one-off energy shock or the start of a structurally higher level?",
+      "stand_2026": "The energy shock is turning into broader price pressure: inflation in Germany 2.9% in August, 3.3% in September; in the US 3.4%. Euro area core inflation holds at 2.5%, and Brent averaged 114 dollars in September.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "fast",
+      "richtung": "rising",
+      "indikatoren": [
+        {
+          "name": "Core inflation excluding energy in the G7",
+          "schwelle": "above 3 percent despite falling energy prices",
+          "quelle": "OECD"
+        },
+        {
+          "name": "Unit labour costs, euro area",
+          "schwelle": "above 4 percent p.a.",
+          "quelle": "ECB"
+        }
+      ],
+      "kreuzwirkung": [
+        "G3",
+        "T7",
+        "M2",
+        "M8"
+      ]
+    },
+    {
+      "id": "M4",
+      "cluster": "Macro and finance",
+      "name": "AI capex cycle and valuation concentration",
+      "typ": "Critical uncertainty",
+      "frage": "Is the investment boom a sustainable infrastructure phase or credit-driven overinvestment?",
+      "stand_2026": "The cycle is running at full speed: Nvidia expands its share buyback by 150 billion dollars, Micron reports a record quarter. The radar shows no evidence of a financing gap.",
+      "unsicherheit": 5,
+      "wirkung": 5,
+      "tempo": "fast",
+      "richtung": "maturing",
+      "indikatoren": [
+        {
+          "name": "Share of debt-financed data centre capex",
+          "schwelle": "above 40 percent = fragility",
+          "quelle": "Bond issuance, private credit"
+        },
+        {
+          "name": "Depreciation period for GPUs on balance sheets",
+          "schwelle": "shortening forced by auditors",
+          "quelle": "Annual reports"
+        },
+        {
+          "name": "Top-10 concentration in the MSCI World",
+          "schwelle": "above 30 percent",
+          "quelle": "MSCI"
+        }
+      ],
+      "kreuzwirkung": [
+        "T1",
+        "T3",
+        "M2"
+      ]
+    },
+    {
+      "id": "M5",
+      "cluster": "Macro and finance",
+      "name": "Currency order and the role of the dollar",
+      "typ": "Slow structural break",
+      "frage": "Is the dollar's reserve role eroding step by step, and what replaces it?",
+      "stand_2026": "No new evidence in the radar.",
+      "unsicherheit": 3,
+      "wirkung": 4,
+      "tempo": "slow",
+      "richtung": "eroding",
+      "indikatoren": [
+        {
+          "name": "Dollar share of global currency reserves",
+          "schwelle": "below 50 percent",
+          "quelle": "IMF COFER"
+        },
+        {
+          "name": "Gold share of central bank reserves",
+          "schwelle": "above 20 percent",
+          "quelle": "World Gold Council"
+        }
+      ],
+      "kreuzwirkung": [
+        "M1",
+        "G1",
+        "M8"
+      ]
+    },
+    {
+      "id": "M6",
+      "cluster": "Macro and finance",
+      "name": "China's deflation and overcapacity pressure",
+      "typ": "Driver",
+      "frage": "Does China export deflation and overcapacity to world markets, and how does the West respond with trade policy?",
+      "stand_2026": "No new evidence in the radar; trade policy is currently aimed more at Russia (US sanctions against Moscow and its trading partners).",
+      "unsicherheit": 3,
+      "wirkung": 4,
+      "tempo": "medium",
+      "richtung": "persistent",
+      "indikatoren": [
+        {
+          "name": "Chinese GDP deflator",
+          "schwelle": "negative for more than 12 quarters",
+          "quelle": "NBS"
+        },
+        {
+          "name": "China's trade surplus as a percentage of GDP",
+          "schwelle": "above 5 percent = political backlash certain",
+          "quelle": "Customs data"
+        }
+      ],
+      "kreuzwirkung": [
+        "G1",
+        "M3",
+        "G2"
+      ]
+    },
+    {
+      "id": "M7",
+      "cluster": "Macro and finance",
+      "name": "Structure of the labour market for knowledge work",
+      "typ": "Critical uncertainty",
+      "frage": "Does AI substitution hit entry-level positions first, and what happens to the skills pipeline?",
+      "stand_2026": "The split is becoming visible: the economy grows while the labour market shrinks; job openings for career starters are falling fast. The unemployment rate in Germany rises to 4.0% (a year ago 3.8%).",
+      "unsicherheit": 5,
+      "wirkung": 5,
+      "tempo": "medium",
+      "richtung": "worsening",
+      "indikatoren": [
+        {
+          "name": "Hiring rate for career starters in consulting, law, software",
+          "schwelle": "decline of more than 30 percent compared with 2024",
+          "quelle": "Industry associations, LinkedIn data"
+        },
+        {
+          "name": "Wage dispersion within the same occupations",
+          "schwelle": "clear widening between AI users and non-users",
+          "quelle": "Wage statistics"
+        }
+      ],
+      "kreuzwirkung": [
+        "T1",
+        "T2",
+        "T5",
+        "M8",
+        "G4"
+      ]
+    },
+    {
+      "id": "M8",
+      "cluster": "Macro and finance",
+      "name": "Wealth and income distribution",
+      "typ": "Driver with political feedback",
+      "frage": "How strongly does the AI cycle shift income from labour to capital, and when does that tip over politically?",
+      "stand_2026": "Consumer frustration grows despite growth (HDE consumer barometer); eastern Germany has stopped catching up economically for years (IW).",
+      "unsicherheit": 3,
+      "wirkung": 5,
+      "tempo": "medium",
+      "richtung": "worsening",
+      "indikatoren": [
+        {
+          "name": "Labour share of national income",
+          "schwelle": "decline of more than 3 percentage points in 5 years",
+          "quelle": "National accounts"
+        },
+        {
+          "name": "Political majorities for capital or wealth taxation",
+          "schwelle": "first G7 implementation",
+          "quelle": "Legislation"
+        }
+      ],
+      "kreuzwirkung": [
+        "M7",
+        "G4",
+        "T10",
+        "M1"
+      ]
+    },
+    {
+      "id": "G1",
+      "cluster": "Geopolitics and governance",
+      "name": "Trade fragmentation and tariff policy",
+      "typ": "Active structural break",
+      "frage": "Does the tariff regime consolidate on a new, higher plateau, or does it keep escalating?",
+      "stand_2026": "The effective US tariff rate actually collected stands at 8.2% of goods imports – well below the statutory rate and below the 15% threshold. Trade and tariffs are losing weight in the news.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "fast",
+      "richtung": "fragmenting",
+      "indikatoren": [
+        {
+          "name": "Effective average US tariff rate",
+          "schwelle": "persistently above 15 percent",
+          "quelle": "USITC / PIIE"
+        },
+        {
+          "name": "World trade volume relative to world GDP",
+          "schwelle": "sustained decline over 3 years",
+          "quelle": "WTO"
+        }
+      ],
+      "kreuzwirkung": [
+        "M6",
+        "M3",
+        "G2",
+        "M5"
+      ]
+    },
+    {
+      "id": "G2",
+      "cluster": "Geopolitics and governance",
+      "name": "Taiwan and the semiconductor chokepoint",
+      "typ": "Wildcard with extreme impact",
+      "frage": "Will there be a blockade, quarantine or conflict, and how fast does the world economy react?",
+      "stand_2026": "No new evidence of blockade or quarantine in the radar.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "fast",
+      "richtung": "tense",
+      "indikatoren": [
+        {
+          "name": "Military activity in the Taiwan Strait (ADIZ incursions, exercises)",
+          "schwelle": "multi-day quarantine exercise with trade disruption",
+          "quelle": "Defence ministries"
+        },
+        {
+          "name": "East Asia sea freight insurance premiums",
+          "schwelle": "doubling",
+          "quelle": "Lloyd's"
+        }
+      ],
+      "kreuzwirkung": [
+        "T3",
+        "G1",
+        "M4",
+        "M6"
+      ]
+    },
+    {
+      "id": "G3",
+      "cluster": "Geopolitics and governance",
+      "name": "Energy chokepoints and the Middle East",
+      "typ": "Active shock",
+      "frage": "Does the Strait of Hormuz remain a permanent risk premium, or does the situation normalise?",
+      "stand_2026": "Hormuz remains a combat zone: tankers come under fire, the US rejects a proposal from Iran, states release oil reserves. Brent averaged 114 dollars in September; the early-warning sign 'Brent between 80 and 95 dollars' has lapsed.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "fast",
+      "richtung": "rising",
+      "indikatoren": [
+        {
+          "name": "Brent spot price",
+          "schwelle": "below 70 dollars = easing, above 110 dollars for two quarters = permanent crisis",
+          "quelle": "EIA"
+        },
+        {
+          "name": "Tanker traffic through Hormuz",
+          "schwelle": "decline of more than 20 percent",
+          "quelle": "Lloyd's List"
+        },
+        {
+          "name": "Releases of strategic oil reserves",
+          "schwelle": "repeatedly within six months",
+          "quelle": "IEA"
+        }
+      ],
+      "kreuzwirkung": [
+        "M3",
+        "M2",
+        "T7",
+        "G6"
+      ]
+    },
+    {
+      "id": "G4",
+      "cluster": "Geopolitics and governance",
+      "name": "Institutional stability and polarisation of Western democracies",
+      "typ": "Critical uncertainty",
+      "frage": "Do erosion and polarisation continue – in parliament as on the street – and how do they affect legal certainty, governability and capital allocation?",
+      "stand_2026": "Polarisation is reaching parliaments and streets: in Germany there is a dispute over AfD committee chairs, and the Federal President warns of radical forces; in France student protests escalate (more than 5,000 arrests), and in Spain there are nationwide demonstrations against the housing shortage. Democracy and parties were the most-cited topic last week (50 news items).",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "medium",
+      "richtung": "eroding",
+      "indikatoren": [
+        {
+          "name": "V-Dem Liberal Democracy Index for the G7",
+          "schwelle": "further decline over 2 years",
+          "quelle": "V-Dem"
+        },
+        {
+          "name": "Government formations without a stable majority in core EU countries",
+          "schwelle": "two or more at the same time",
+          "quelle": "Own analysis"
+        },
+        {
+          "name": "Protest waves with mass arrests in the EU",
+          "schwelle": "several countries within one quarter",
+          "quelle": "ACLED"
+        }
+      ],
+      "kreuzwirkung": [
+        "T10",
+        "M8",
+        "G5",
+        "G7"
+      ]
+    },
+    {
+      "id": "G5",
+      "cluster": "Geopolitics and governance",
+      "name": "AI regulation and governance divergence",
+      "typ": "Driver",
+      "frage": "Do incompatible regulatory spaces emerge that split products and data flows?",
+      "stand_2026": "AI regulation is diverging and ending up in court (a US court halts a ban at xAI); the US is arming AI militarily (announcement of an 'AI Force').",
+      "unsicherheit": 4,
+      "wirkung": 4,
+      "tempo": "medium",
+      "richtung": "diverging",
+      "indikatoren": [
+        {
+          "name": "Time lag in model availability, EU versus USA",
+          "schwelle": "more than 6 months at the median",
+          "quelle": "Vendor releases"
+        },
+        {
+          "name": "Number of incompatible national data localisation requirements",
+          "schwelle": "rising",
+          "quelle": "Regulation tracker"
+        }
+      ],
+      "kreuzwirkung": [
+        "G1",
+        "T1",
+        "G4"
+      ]
+    },
+    {
+      "id": "G6",
+      "cluster": "Geopolitics and governance",
+      "name": "Defence spending and the armament cycle",
+      "typ": "Strong trend",
+      "frage": "How long will the spending cycle last, and does it crowd out civilian investment?",
+      "stand_2026": "The cycle remains politically contested: there are demonstrations against rearmament and conscription in Stuttgart and Berlin, while Germany pledges further military aid to Ukraine.",
+      "unsicherheit": 2,
+      "wirkung": 4,
+      "tempo": "medium",
+      "richtung": "rising strongly",
+      "indikatoren": [
+        {
+          "name": "NATO defence spending as a percentage of GDP",
+          "schwelle": "above 3 percent on average",
+          "quelle": "NATO"
+        },
+        {
+          "name": "Order backlog of European defence companies",
+          "schwelle": "more than 4 years of revenue",
+          "quelle": "Annual reports"
+        }
+      ],
+      "kreuzwirkung": [
+        "M1",
+        "G3",
+        "G2",
+        "T9"
+      ]
+    },
+    {
+      "id": "G7",
+      "cluster": "Society",
+      "name": "Migration, demography and labour supply",
+      "typ": "Structural trend with political explosive force",
+      "frage": "Can immigration offset the demographic decline in Europe without overloading political stability?",
+      "stand_2026": "Demography is hitting social security funds and the labour market: rising pension spending, higher social security contributions in 2027, and at the same time skills shortages in bottleneck occupations, where workers with a migrant background are especially often employed.",
+      "unsicherheit": 3,
+      "wirkung": 5,
+      "tempo": "slow",
+      "richtung": "worsening",
+      "indikatoren": [
+        {
+          "name": "Labour force potential, Germany",
+          "schwelle": "decline of more than 1 percent p.a.",
+          "quelle": "IAB"
+        },
+        {
+          "name": "Job vacancies in skilled trades, energy, care",
+          "schwelle": "persistently above 1 million",
+          "quelle": "BA (Federal Employment Agency)"
+        }
+      ],
+      "kreuzwirkung": [
+        "T8",
+        "M7",
+        "G4"
+      ]
+    },
+    {
+      "id": "OE1",
+      "cluster": "Ecology",
+      "name": "Emissions pathway and rate of warming",
+      "typ": "Driver with inertia",
+      "frage": "How fast is temperature rising, and is the rate more important than the level?",
+      "stand_2026": "Europe's summer of 2026 was marked by climate extremes (Copernicus); Western Europe experienced more extreme heat than ever before.",
+      "unsicherheit": 3,
+      "wirkung": 5,
+      "tempo": "slow",
+      "richtung": "rising",
+      "indikatoren": [
+        {
+          "name": "Rolling 10-year mean of the global anomaly",
+          "schwelle": "exceeding 1.5 degrees on average",
+          "quelle": "WMO / Copernicus"
+        },
+        {
+          "name": "Global CO2 emissions",
+          "schwelle": "first sustained decline over 3 years",
+          "quelle": "Global Carbon Project"
+        }
+      ],
+      "kreuzwirkung": [
+        "OE2",
+        "OE3",
+        "T7",
+        "G3"
+      ]
+    },
+    {
+      "id": "OE2",
+      "cluster": "Ecology",
+      "name": "Tipping point risk (AMOC, Amazon, corals)",
+      "typ": "Wildcard with extreme impact",
+      "frage": "How likely is an irreversible system shift within the horizon?",
+      "stand_2026": "No new evidence in the radar; scientific disagreement about the AMOC remains the relevant information.",
+      "unsicherheit": 5,
+      "wirkung": 5,
+      "tempo": "slow to abrupt",
+      "richtung": "rising risk",
+      "indikatoren": [
+        {
+          "name": "AMOC strength (RAPID array)",
+          "schwelle": "sustained decline of more than 15 percent",
+          "quelle": "RAPID / NOAA"
+        },
+        {
+          "name": "Consecutive Amazon drought years",
+          "schwelle": "3 years of net carbon release",
+          "quelle": "INPE"
+        }
+      ],
+      "kreuzwirkung": [
+        "OE1",
+        "OE4",
+        "OE3",
+        "G7"
+      ]
+    },
+    {
+      "id": "OE3",
+      "cluster": "Ecology",
+      "name": "Extreme weather damage and insurability",
+      "typ": "Active trend with financial impact",
+      "frage": "Where does the insurance market withdraw first, and who takes on the residual risk?",
+      "stand_2026": "No new evidence on insurability in the radar; damage events (heat, heavy rain on Crete) continue.",
+      "unsicherheit": 3,
+      "wirkung": 5,
+      "tempo": "medium",
+      "richtung": "worsening",
+      "indikatoren": [
+        {
+          "name": "Share of uninsurable residential property in exposed regions",
+          "schwelle": "above 10 percent",
+          "quelle": "GDV, Insurance Journal"
+        },
+        {
+          "name": "State reinsurance programmes",
+          "schwelle": "introduction of mandatory insurance in Germany",
+          "quelle": "Legislation"
+        }
+      ],
+      "kreuzwirkung": [
+        "OE1",
+        "M1",
+        "M8",
+        "G4"
+      ]
+    },
+    {
+      "id": "OE4",
+      "cluster": "Ecology",
+      "name": "Water and food security (also in Europe)",
+      "typ": "Driver",
+      "frage": "How strongly do crop failures and water scarcity feed through to prices, migration and political stability?",
+      "stand_2026": "Water scarcity is reaching Central Europe: rivers carry less water than at any time in a good 30 years, inland shipping on the Rhine is stalling, and the federal environment minister calls for massive investment in water infrastructure. Farmers warn of existential strain.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "medium",
+      "richtung": "worsening",
+      "indikatoren": [
+        {
+          "name": "FAO Food Price Index",
+          "schwelle": "above the 2022 level",
+          "quelle": "FAO"
+        },
+        {
+          "name": "Kaub gauge (Rhine)",
+          "schwelle": "more than 30 days per year below 80 cm",
+          "quelle": "WSV (Federal Waterways and Shipping Administration)"
+        },
+        {
+          "name": "Fertiliser price index",
+          "schwelle": "further rise of more than 20 percent",
+          "quelle": "World Bank"
+        }
+      ],
+      "kreuzwirkung": [
+        "G3",
+        "M3",
+        "G7",
+        "OE2"
+      ]
+    },
+    {
+      "id": "OE5",
+      "cluster": "Ecology",
+      "name": "Critical raw materials and the circular economy",
+      "typ": "Driver with chokepoint risk",
+      "frage": "Do copper, lithium, rare earths and grid materials become the bottleneck of electrification?",
+      "stand_2026": "No new evidence in the radar.",
+      "unsicherheit": 3,
+      "wirkung": 4,
+      "tempo": "medium",
+      "richtung": "tightening",
+      "indikatoren": [
+        {
+          "name": "Real copper price",
+          "schwelle": "persistently above 12,000 USD/t",
+          "quelle": "LME"
+        },
+        {
+          "name": "Export restrictions on critical raw materials",
+          "schwelle": "new controls by China or Indonesia",
+          "quelle": "Trade policy"
+        }
+      ],
+      "kreuzwirkung": [
+        "T7",
+        "T8",
+        "G1",
+        "M3"
+      ]
+    },
+    {
+      "id": "N1",
+      "name": "Russia's war and the European security order",
+      "cluster": "Geopolitics and governance",
+      "typ": "Critical uncertainty",
+      "frage": "Does the war against Ukraine end in a stable ceasefire, freeze, or expand – and what does that mean for Europe's security, energy and budgets?",
+      "stand_2026": "The war shapes European politics: the Chancellor travels to Kyiv and pledges further military aid and a drone agreement, the US tightens sanctions against Moscow and its trading partners, EU states argue over further sanctions, and Ukraine announces intensified attacks on Russian refineries.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "richtung": "open",
+      "tempo": "fast",
+      "indikatoren": [
+        {
+          "name": "Front line and ceasefire negotiations",
+          "schwelle": "agreed ceasefire lasting more than 3 months",
+          "quelle": "ISW"
+        },
+        {
+          "name": "EU sanctions package",
+          "schwelle": "unanimity fails twice in a row",
+          "quelle": "Council of the EU"
+        },
+        {
+          "name": "Attacks on energy infrastructure",
+          "schwelle": "outage of more than 10 percent of Russian refining capacity",
+          "quelle": "Reuters"
+        }
+      ],
+      "kreuzwirkung": []
+    },
+    {
+      "id": "N2",
+      "name": "Sustainability of the welfare state: care, health and pensions",
+      "cluster": "Society",
+      "typ": "Structural burden",
+      "frage": "Can long-term care, health and pensions still be financed in an ageing society without overstretching contributions, benefits or cohesion?",
+      "stand_2026": "Health and care were the fastest-growing topic last week (18 news items, previous week 7). The CDU/CSU and SPD are wrangling over a long-term care reform, the Court of Audit warns of rising pension spending, and social security contributions rise in 2027.",
+      "unsicherheit": 3,
+      "wirkung": 4,
+      "richtung": "worsening",
+      "tempo": "medium",
+      "indikatoren": [
+        {
+          "name": "Total social security contributions",
+          "schwelle": "above 43 percent of gross wages",
+          "quelle": "Federal government"
+        },
+        {
+          "name": "Federal subsidy to the pension insurance",
+          "schwelle": "above 30 percent of the federal budget",
+          "quelle": "Federal Court of Audit"
+        },
+        {
+          "name": "Out-of-pocket share in nursing homes",
+          "schwelle": "above 3,500 euros per month on the national average",
+          "quelle": "vdek"
+        }
+      ],
+      "kreuzwirkung": []
+    },
+    {
+      "id": "N3",
+      "name": "Housing and cost of living",
+      "cluster": "Society",
+      "typ": "Driver with political feedback",
+      "frage": "Do housing and everyday life become so expensive that the middle class feels left behind – with consequences for consumption, mobility and elections?",
+      "stand_2026": "Housing and rents are gaining in the news (10, previous week 6): in Spain there are nationwide demonstrations against the housing shortage, and the Association of German Cities and Municipalities wants to make rural areas more attractive to relieve the cities. Consumer frustration grows despite growth.",
+      "unsicherheit": 3,
+      "wirkung": 4,
+      "richtung": "worsening",
+      "tempo": "medium",
+      "indikatoren": [
+        {
+          "name": "Rent burden ratio",
+          "schwelle": "above 30 percent of household income at the median of large cities",
+          "quelle": "Destatis"
+        },
+        {
+          "name": "Residential building permits",
+          "schwelle": "below 200,000 per year",
+          "quelle": "Destatis"
+        },
+        {
+          "name": "Consumer sentiment",
+          "schwelle": "four consecutive quarters below the previous year",
+          "quelle": "HDE / GfK"
+        }
+      ],
+      "kreuzwirkung": []
+    },
+    {
+      "id": "N4",
+      "name": "Education, upskilling and entry into working life",
+      "cluster": "Society",
+      "typ": "Slow trend",
+      "frage": "Can young people and workers be qualified well enough to find a way into a world of work with AI – or does an unsettled generation grow up?",
+      "stand_2026": "Education is gaining clearly in the news (10, previous week 3): the Bundestag is debating a law on equal-start opportunities and daycare quality, student protests are escalating in France, and the Excellence Strategy selects new universities. At the same time, job openings for career starters are falling fast.",
+      "unsicherheit": 3,
+      "wirkung": 4,
+      "richtung": "open",
+      "tempo": "slow",
+      "indikatoren": [
+        {
+          "name": "Job openings for career starters",
+          "schwelle": "decline of more than 30 percent compared with 2024",
+          "quelle": "Federal Employment Agency / Indeed"
+        },
+        {
+          "name": "Participation in continuing education",
+          "schwelle": "above 60 percent of the employed",
+          "quelle": "Adult Education Survey"
+        },
+        {
+          "name": "School leavers without a qualification",
+          "schwelle": "above 8 percent",
+          "quelle": "KMK (Standing Conference of Education Ministers)"
+        }
+      ],
+      "kreuzwirkung": []
+    }
+  ],
+  "szenarien": [
+    {
+      "id": "S01",
+      "name": "Grinding Ascent",
+      "kurz": "Muddling through with expensive energy",
+      "these": "Nothing breaks, nothing breaks through. AI is widely used but does not show up in productivity; energy stays expensive, interest rates rise slightly, Europe ages and barely grows.",
+      "einfach": "Things go on as before, only with effort: energy stays expensive, AI helps a little, the economy barely grows.",
+      "narrativ": "The energy shock slowly fades without prices returning to earlier levels. Companies use AI everywhere and nowhere properly. States run high deficits without anything breaking - the most boring scenario and therefore the most likely one for the near future.",
+      "regime": {
+        "growth": 0.0,
+        "inflation": 1.0,
+        "real_rates": 1.0,
+        "tech_concentration": 1.0,
+        "energy_price": 1.0,
+        "geopol_stress": 1.0,
+        "labor_disruption": 1.0,
+        "institutional_trust": 0.0,
+        "climate_damage": 1.0,
+        "capital_scarcity": 1.0
+      },
+      "treiber_konstellation": {
+        "T2": 0,
+        "T7": 1,
+        "M3": 1,
+        "M4": 1,
+        "G3": 1,
+        "M7": 1,
+        "N2": 1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 26,
+        "2032": 16,
+        "2040": 10
+      },
+      "fruehindikatoren": [
+        "US TFP growth stays below 1.2% despite rising AI use",
+        "Brent swings between 85 and 110 dollars without new escalation",
+        "Euro area core inflation between 2 and 3%"
+      ],
+      "was_es_widerlegt": "Two years with TFP growth above 1.5%, or a break in energy, interest rates or Taiwan.",
+      "kernpreis": null,
+      "fassung": 2,
+      "quadrant": "Borderline",
+      "quadrant_achsen": {
+        "wachstum": 0.0,
+        "inflation": 1.0
+      },
+      "quadrant_hinweis": "Borderline: growth is 0, so the scenario sits on none of the four corners."
+    },
+    {
+      "id": "S02",
+      "name": "AI Surge",
+      "kurz": "AI arrives across the board - with growth and upheaval at the same time",
+      "these": "Diffusion succeeds and capabilities leap: AI handles multi-day tasks, productivity picks up, prices fall - and knowledge work is rebuilt within a few years. The race for the technology sharpens tensions between the powers, and interest rates rise because capital is needed everywhere.",
+      "einfach": "AI helps with work almost everywhere - much more gets done, many things get cheaper, but many jobs change fast.",
+      "narrativ": "From 2028 the effects show up in the statistics. Companies reorganise around their AI systems, entry-level jobs disappear, new ones emerge. Those with skills and capital win; politics argues over how the gains are shared.",
+      "regime": {
+        "growth": 2.0,
+        "inflation": -1.0,
+        "real_rates": 2.0,
+        "tech_concentration": 2.0,
+        "energy_price": 0.0,
+        "geopol_stress": 1.0,
+        "labor_disruption": 2.0,
+        "institutional_trust": 0.0,
+        "climate_damage": 0.0,
+        "capital_scarcity": -1.0
+      },
+      "treiber_konstellation": {
+        "T1": 2,
+        "T2": 2,
+        "T5": 1,
+        "M7": 2,
+        "M8": 1,
+        "N4": 1,
+        "M3": -1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 7,
+        "2032": 10,
+        "2040": 12
+      },
+      "fruehindikatoren": [
+        "US TFP growth above 1.5% for six quarters",
+        "AI in core processes at more than 25% of companies",
+        "Jobs for career starters in knowledge occupations down 30% compared with 2024"
+      ],
+      "was_es_widerlegt": "TFP stays below 1.2% until 2029, or the capability curve visibly flattens.",
+      "kernpreis": null,
+      "fassung": 2,
+      "quadrant": "Goldilocks",
+      "quadrant_achsen": {
+        "wachstum": 2.0,
+        "inflation": -1.0
+      },
+      "quadrant_hinweis": null
+    },
+    {
+      "id": "S03",
+      "name": "The Bust",
+      "kurz": "AI investment collapses, the technology stays",
+      "these": "Investment runs ahead of willingness to pay. A financing gap triggers the correction: share prices fall, capital becomes scarce, prices give way. The technology does not disappear, but the owners change.",
+      "einfach": "Companies have put too much money into AI; the stock market crashes, but the technology stays.",
+      "narrativ": "A large data centre financier comes under pressure, auditors force shorter depreciation periods for GPUs, private credit structures are revalued. Index concentration reverses, and capital becomes more expensive for everyone, including companies that have nothing to do with AI. Like 2001: the infrastructure stays and gets cheaper, but those who built it lose it. This is an event, not a permanent state, which is why the probability falls sharply after 2032.",
+      "regime": {
+        "growth": -1.0,
+        "inflation": -1.0,
+        "real_rates": 1.0,
+        "tech_concentration": -2.0,
+        "energy_price": 0.0,
+        "geopol_stress": 0.0,
+        "labor_disruption": 0.0,
+        "institutional_trust": 0.0,
+        "climate_damage": 1.0,
+        "capital_scarcity": 2.0
+      },
+      "treiber_konstellation": {
+        "M4": -2,
+        "T1": 0,
+        "M2": 1,
+        "T3": -1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 9,
+        "2032": 5,
+        "2040": 5
+      },
+      "fruehindikatoren": [
+        "Share of debt-financed data centre investment above 40%",
+        "Auditors force shorter depreciation for GPUs",
+        "Top-10 concentration in the MSCI World above 30%"
+      ],
+      "was_es_widerlegt": "Two years of AI revenue that covers the investment.",
+      "kernpreis": {
+        "text": "Credit spread of AI borrowers",
+        "quelle": "Karl, 27.10.2026"
+      },
+      "fassung": 2,
+      "quadrant": "Deflation",
+      "quadrant_achsen": {
+        "wachstum": -1.0,
+        "inflation": -1.0
+      },
+      "quadrant_hinweis": null
+    },
+    {
+      "id": "S04",
+      "name": "Energy-Driven Stagflation",
+      "kurz": "Hormuz stays a combat zone, Europe erodes industrially",
+      "these": "The Middle East conflict becomes a permanent state. Oil stays above 110 dollars, fertiliser and food follow, and central banks raise interest rates into a recession.",
+      "einfach": "The Middle East stays dangerous, oil becomes very expensive, everything gets more expensive - and the economy stalls.",
+      "narrativ": "Tankers are shot at, reserves released, and the oil price no longer falls below 100 dollars. Europe's industry keeps losing output, inflation gets locked into wages, and interest rates rise even though the economy is weak.",
+      "regime": {
+        "growth": -2.0,
+        "inflation": 2.0,
+        "real_rates": 1.0,
+        "tech_concentration": 1.0,
+        "energy_price": 2.0,
+        "geopol_stress": 2.0,
+        "labor_disruption": 0.0,
+        "institutional_trust": -1.0,
+        "climate_damage": 1.0,
+        "capital_scarcity": 2.0
+      },
+      "treiber_konstellation": {
+        "G3": 2,
+        "M3": 2,
+        "M2": 1,
+        "N1": 1,
+        "OE4": 1,
+        "M1": 1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 12,
+        "2032": 8,
+        "2040": 5
+      },
+      "fruehindikatoren": [
+        "Brent above 110 dollars for more than two quarters",
+        "Euro area core inflation above 3% despite weak demand",
+        "German industrial production falls for the third year in a row"
+      ],
+      "was_es_widerlegt": "Brent persistently below 85 dollars and an open Strait of Hormuz.",
+      "kernpreis": null,
+      "fassung": 2,
+      "quadrant": "Stagflation",
+      "quadrant_achsen": {
+        "wachstum": -2.0,
+        "inflation": 2.0
+      },
+      "quadrant_hinweis": null
+    },
+    {
+      "id": "S06",
+      "name": "Bloc Formation",
+      "kurz": "Two technology worlds, expensive but without war",
+      "these": "Taiwan does not escalate militarily, but technology, trade and data split into a US bloc and a China bloc. States invest massively in their own manufacturing - expensive and slower, but not catastrophic.",
+      "einfach": "The world splits into one technology camp around the US and one around China; much gets built twice.",
+      "narrativ": "Export controls, sanctions and in-house chips separate the camps. Europe has to choose and pays for duplicate standards. If things escalate over Taiwan after all, bloc formation turns into a break in chip supply - that is the dangerous edge of this scenario.",
+      "regime": {
+        "growth": 0.0,
+        "inflation": 1.0,
+        "real_rates": 1.0,
+        "tech_concentration": -1.0,
+        "energy_price": 0.0,
+        "geopol_stress": 2.0,
+        "labor_disruption": 0.0,
+        "institutional_trust": 0.0,
+        "climate_damage": 0.0,
+        "capital_scarcity": 0.0
+      },
+      "treiber_konstellation": {
+        "G1": 2,
+        "G2": 1,
+        "G5": 2,
+        "T3": 1,
+        "M6": 1,
+        "N1": 1,
+        "OE5": 1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 7,
+        "2032": 8,
+        "2040": 6
+      },
+      "fruehindikatoren": [
+        "New export controls on AI chips on both sides within one year",
+        "Sanctions against trading partners of Russia or China expanded",
+        "Models and services in the EU and US with more than 6 months of time lag"
+      ],
+      "was_es_widerlegt": "A comprehensive trade and technology agreement between the US and China.",
+      "kernpreis": null,
+      "fassung": 2,
+      "quadrant": "Borderline",
+      "quadrant_achsen": {
+        "wachstum": 0.0,
+        "inflation": 1.0
+      },
+      "quadrant_hinweis": "Borderline: growth is 0, so the scenario sits on none of the four corners."
+    },
+    {
+      "id": "S08",
+      "name": "Green Boom on Cost",
+      "kurz": "Solar and storage undercut everything, energy becomes cheap",
+      "these": "Not climate policy but the learning curve decides: from around 2030 energy prices fall so far that electrification becomes a cost argument. In exchange, a race for raw materials and supply chains begins, led by China.",
+      "einfach": "Electricity from sun and storage becomes so cheap that everyone switches - because it pays off, not out of conviction.",
+      "narrativ": "Storage grows by a third every year, grids are built faster than expected. With cheap electricity, industry and small and medium-sized firms pick up again; oil crises lose their terror.",
+      "regime": {
+        "growth": 1.0,
+        "inflation": -2.0,
+        "real_rates": 0.0,
+        "tech_concentration": 0.0,
+        "energy_price": -2.0,
+        "geopol_stress": 1.0,
+        "labor_disruption": 0.0,
+        "institutional_trust": 1.0,
+        "climate_damage": 0.0,
+        "capital_scarcity": -1.0
+      },
+      "treiber_konstellation": {
+        "T7": 2,
+        "T8": 2,
+        "OE5": 1,
+        "M3": -2,
+        "G3": -1,
+        "OE1": -1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 6,
+        "2032": 9,
+        "2040": 13
+      },
+      "fruehindikatoren": [
+        "Storage costs below 80 dollars per kWh at system level",
+        "Battery storage in Germany keeps growing by more than 30% a year",
+        "Lead time for large transformers below 2 years"
+      ],
+      "was_es_widerlegt": "Storage costs rise two years in a row, or grid expansion stalls permanently.",
+      "kernpreis": null,
+      "fassung": 2,
+      "quadrant": "Goldilocks",
+      "quadrant_achsen": {
+        "wachstum": 1.0,
+        "inflation": -2.0
+      },
+      "quadrant_hinweis": null
+    },
+    {
+      "id": "S09",
+      "name": "Climate Shock Cascade",
+      "kurz": "Heat, drought and floods hit Europe too - several years in a row",
+      "these": "Not one event but a cluster: several extreme years overwhelm insurers, budgets, agriculture and transport at the same time - in Central Europe too.",
+      "einfach": "Several years of droughts, floods and storms in a row overwhelm insurers, states and agriculture.",
+      "narrativ": "In autumn, rivers carry less water than ever, ships are stranded, harvests fail. Insurers withdraw from regions, states step in and take on more debt.",
+      "regime": {
+        "growth": -1.0,
+        "inflation": 1.0,
+        "real_rates": 0.0,
+        "tech_concentration": 0.0,
+        "energy_price": 0.0,
+        "geopol_stress": 1.0,
+        "labor_disruption": 0.0,
+        "institutional_trust": -1.0,
+        "climate_damage": 2.0,
+        "capital_scarcity": 1.0
+      },
+      "treiber_konstellation": {
+        "OE1": 2,
+        "OE2": 1,
+        "OE3": 2,
+        "OE4": 2,
+        "M1": 1,
+        "G7": 1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 5,
+        "2032": 8,
+        "2040": 13
+      },
+      "fruehindikatoren": [
+        "Kaub gauge below 80 cm on more than 30 days a year",
+        "Insurers withdraw from regions in Germany",
+        "Two consecutive years with crop losses above 10% in the EU"
+      ],
+      "was_es_widerlegt": "Three normal years in a row without record damage in Europe.",
+      "kernpreis": null,
+      "fassung": 2,
+      "quadrant": "Stagflation",
+      "quadrant_achsen": {
+        "wachstum": -1.0,
+        "inflation": 1.0
+      },
+      "quadrant_hinweis": null
+    },
+    {
+      "id": "S13",
+      "name": "Distribution Fight in the Welfare State",
+      "kurz": "Pensions, care and housing blow up budgets - money is quietly devalued",
+      "these": "An ageing society, expensive care, scarce housing and high debt: central banks keep interest rates below inflation so that states stay solvent - money is cheap, savings quietly lose value, and the dispute over who pays shapes politics.",
+      "einfach": "Pensions, care and housing become so expensive that the state can hardly pay for them - and savings slowly lose value.",
+      "narrativ": "Social security contributions rise year after year, and so do rents. The state keeps interest rates below inflation so that debt stays bearable. Young against old, tenants against owners, city against countryside - distribution becomes the main issue of every election.",
+      "regime": {
+        "growth": 0.0,
+        "inflation": 2.0,
+        "real_rates": -2.0,
+        "tech_concentration": 0.0,
+        "energy_price": 0.0,
+        "geopol_stress": 0.0,
+        "labor_disruption": 1.0,
+        "institutional_trust": -1.0,
+        "climate_damage": 0.0,
+        "capital_scarcity": -1.0
+      },
+      "treiber_konstellation": {
+        "M1": 2,
+        "M2": -2,
+        "M3": 2,
+        "N2": 2,
+        "N3": 2,
+        "M8": 2,
+        "G7": 2
+      },
+      "wahrscheinlichkeit": {
+        "2028": 6,
+        "2032": 9,
+        "2040": 11
+      },
+      "fruehindikatoren": [
+        "Social security contributions above 43% of gross wages",
+        "Real ten-year yield below zero with inflation above 3%",
+        "Rent burden in large cities above 30% of household income at the median"
+      ],
+      "was_es_widerlegt": "A pension reform with stable contributions, and falling real housing costs.",
+      "kernpreis": null,
+      "nachfolger_von": "S05",
+      "fassung": 1,
+      "seit": "1.3.0",
+      "quadrant": "Borderline",
+      "quadrant_achsen": {
+        "wachstum": 0.0,
+        "inflation": 2.0
+      },
+      "quadrant_hinweis": "Borderline: growth is 0, so the scenario sits on none of the four corners."
+    },
+    {
+      "id": "S14",
+      "name": "Divided Society",
+      "kurz": "Trust collapses - gridlock or a firm hand",
+      "these": "Job losses in knowledge work, a crumbling factual basis and polarised parliaments make trust collapse. The end result is gridlock - or governments that promise order through surveillance and a firm hand.",
+      "einfach": "People no longer trust politics or each other; either nothing moves forward any more, or someone promises order with a firm hand.",
+      "narrativ": "Protests grow larger and harsher, forming a government takes months. AI fakes turn every election into a dispute over facts. Some countries paralyse themselves, others resort to surveillance and emergency law - both cost freedom and prosperity.",
+      "regime": {
+        "growth": -1.0,
+        "inflation": 0.0,
+        "real_rates": 0.0,
+        "tech_concentration": 2.0,
+        "energy_price": 0.0,
+        "geopol_stress": 0.0,
+        "labor_disruption": 2.0,
+        "institutional_trust": -2.0,
+        "climate_damage": 0.0,
+        "capital_scarcity": 1.0
+      },
+      "treiber_konstellation": {
+        "G4": -2,
+        "T10": 2,
+        "M7": 2,
+        "M8": 2,
+        "N3": 1,
+        "N4": -1,
+        "T9": 1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 5,
+        "2032": 5,
+        "2040": 7
+      },
+      "fruehindikatoren": [
+        "Protest waves with mass arrests in several EU countries within one quarter",
+        "Two or more core EU countries without a stable government majority at the same time",
+        "Trust in news media below 30% in the G7 median"
+      ],
+      "was_es_widerlegt": "Stable government majorities and rising trust in institutions over two years.",
+      "kernpreis": null,
+      "nachfolger_von": "S11",
+      "fassung": 1,
+      "seit": "1.3.0",
+      "quadrant": "Borderline",
+      "quadrant_achsen": {
+        "wachstum": -1.0,
+        "inflation": 0.0
+      },
+      "quadrant_hinweis": "Borderline: inflation is 0, so the scenario sits on none of the four corners."
+    },
+    {
+      "id": "S15",
+      "name": "European Restart",
+      "kurz": "Ceasefire, investment and education give Europe new momentum",
+      "these": "A durable ceasefire in Ukraine, large investments in grids, defence and education, and a reform of the welfare state bring Europe - and with it the West - back. The investment boom drives prices and capital demand, but trust in its own institutions grows.",
+      "einfach": "The war in Ukraine ends, Europe invests in schools, grids and security - and people regain trust.",
+      "narrativ": "After the ceasefire, money flows into reconstruction, grids and schools. Young people find their way into a world of work with AI through new training. Energy prices fall, and the parties of the centre win majorities again. The price: higher interest rates and a period of noticeable inflation, because construction is happening everywhere.",
+      "regime": {
+        "growth": 1.0,
+        "inflation": 1.0,
+        "real_rates": 1.0,
+        "tech_concentration": 0.0,
+        "energy_price": -1.0,
+        "geopol_stress": -1.0,
+        "labor_disruption": 0.0,
+        "institutional_trust": 2.0,
+        "climate_damage": 0.0,
+        "capital_scarcity": 1.0
+      },
+      "treiber_konstellation": {
+        "N1": -2,
+        "N4": 2,
+        "N2": 1,
+        "G4": 2,
+        "G6": 1,
+        "T8": 2,
+        "T7": 1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 5,
+        "2032": 6,
+        "2040": 7
+      },
+      "fruehindikatoren": [
+        "Agreed ceasefire in Ukraine lasting more than three months",
+        "Participation in continuing education above 60% of the employed",
+        "Stable centrist government majorities in Germany and France"
+      ],
+      "was_es_widerlegt": "The war expands, or the investments fizzle out in budget disputes.",
+      "kernpreis": null,
+      "fassung": 1,
+      "seit": "1.3.0",
+      "quadrant": "Overheating",
+      "quadrant_achsen": {
+        "wachstum": 1.0,
+        "inflation": 1.0
+      },
+      "quadrant_hinweis": null
+    },
+    {
+      "id": "S16",
+      "name": "Arms Economy",
+      "kurz": "Security becomes a standing order - and crowds out other things",
+      "these": "The war neither freezes nor ends. Europe permanently converts its economy to defence: armament creates orders and jobs, drives up prices and debt, and crowds out money for the welfare state, climate and education.",
+      "einfach": "Because the threat remains, Europe puts a great deal of money into weapons and soldiers - that brings work, but less is left for schools, care and climate.",
+      "narrativ": "Defence budgets rise to three percent and more, and defence companies have orders for years. New jobs emerge in industrial regions, conscription returns. Prices stay elevated, public debt grows, and every social reform has to hold its own against the defence budget.",
+      "regime": {
+        "growth": 1.0,
+        "inflation": 1.0,
+        "real_rates": 0.0,
+        "tech_concentration": 0.0,
+        "energy_price": 1.0,
+        "geopol_stress": 2.0,
+        "labor_disruption": -1.0,
+        "institutional_trust": 0.0,
+        "climate_damage": 0.0,
+        "capital_scarcity": 1.0
+      },
+      "treiber_konstellation": {
+        "G6": 2,
+        "N1": 2,
+        "M1": 2,
+        "M3": 1,
+        "N2": -1,
+        "G4": 0,
+        "T9": 1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 5,
+        "2032": 8,
+        "2040": 5
+      },
+      "fruehindikatoren": [
+        "NATO defence spending above 3% of GDP on average",
+        "Order backlog of European defence companies above four years of revenue",
+        "Reintroduction of conscription in Germany"
+      ],
+      "was_es_widerlegt": "A lasting ceasefire and falling defence budgets from 2028.",
+      "kernpreis": null,
+      "fassung": 1,
+      "seit": "1.3.0",
+      "quadrant": "Overheating",
+      "quadrant_achsen": {
+        "wachstum": 1.0,
+        "inflation": 1.0
+      },
+      "quadrant_hinweis": null
+    },
+    {
+      "id": "S17",
+      "name": "Taiwan Rupture",
+      "kurz": "Blockade or war over Taiwan - chips, trade and sea lanes break at the same time",
+      "these": "China blockades or attacks Taiwan. Production of the most advanced chips stops, sea freight in East Asia becomes uninsurable, sanctions separate the blocs overnight. Growth collapses, inflation jumps.",
+      "einfach": "A conflict over Taiwan cuts the supply of chips and trade with Asia - many things become scarce and expensive, the economy shrinks.",
+      "narrativ": "Within weeks, advanced chips are missing in cars, machines, data centres and weapons all at once. Shipping lines avoid the region, supply chains snap. Capital flees into gold and short maturities, and assets in China become unreachable for Western investors. What follows is the fastest industrial policy push in history. The scenario is rare but so consequential that every decision should be tested against it.",
+      "regime": {
+        "growth": -2.0,
+        "inflation": 2.0,
+        "real_rates": 0.0,
+        "tech_concentration": -1.0,
+        "energy_price": 1.0,
+        "geopol_stress": 2.0,
+        "labor_disruption": 0.0,
+        "institutional_trust": -1.0,
+        "climate_damage": 0.0,
+        "capital_scarcity": 2.0
+      },
+      "treiber_konstellation": {
+        "G2": 2,
+        "T3": -2,
+        "G1": 2,
+        "M3": 2,
+        "M4": -1,
+        "G6": 2
+      },
+      "wahrscheinlichkeit": {
+        "2028": 7,
+        "2032": 8,
+        "2040": 6
+      },
+      "fruehindikatoren": [
+        "Multi-day quarantine exercise with an actual trade disruption",
+        "Doubling of sea freight insurance for East Asia",
+        "Prediction markets put an invasion within one year above 20%"
+      ],
+      "was_es_widerlegt": "Clear de-escalation in the Taiwan Strait, or more than a quarter of the most advanced chip production outside Taiwan.",
+      "kernpreis": {
+        "text": "East Asia sea freight insurance",
+        "quelle": "Karl, 27.10.2026"
+      },
+      "abgespalten_von": "S06",
+      "fassung": 1,
+      "seit": "1.4.0",
+      "quadrant": "Stagflation",
+      "quadrant_achsen": {
+        "wachstum": -2.0,
+        "inflation": 2.0
+      },
+      "quadrant_hinweis": null
+    }
+  ],
+  "treiber_kopplung": {
+    "T1": {
+      "S01": 0.433,
+      "S02": 0.814,
+      "S03": -0.456,
+      "S04": 0.055,
+      "S06": -0.224,
+      "S08": 0.065,
+      "S09": -0.07,
+      "S13": 0.2,
+      "S14": 0.69,
+      "S15": 0.068,
+      "S16": -0.14,
+      "S17": -0.291
+    },
+    "T2": {
+      "S01": 0.0,
+      "S02": 0.589,
+      "S03": -0.22,
+      "S04": -0.555,
+      "S06": 0.084,
+      "S08": 0.293,
+      "S09": -0.315,
+      "S13": 0.225,
+      "S14": -0.141,
+      "S15": 0.154,
+      "S16": 0.0,
+      "S17": -0.458
+    },
+    "T3": {
+      "S01": 0.419,
+      "S02": 0.338,
+      "S03": -0.284,
+      "S04": 0.637,
+      "S06": 0.217,
+      "S08": 0.095,
+      "S09": 0.305,
+      "S13": 0.0,
+      "S14": 0.456,
+      "S15": -0.297,
+      "S16": 0.305,
+      "S17": 0.338
+    },
+    "T5": {
+      "S01": 0.381,
+      "S02": 0.86,
+      "S03": -0.414,
+      "S04": -0.116,
+      "S06": -0.158,
+      "S08": 0.138,
+      "S09": -0.148,
+      "S13": 0.211,
+      "S14": 0.531,
+      "S15": 0.144,
+      "S16": -0.074,
+      "S17": -0.369
+    },
+    "T6": {
+      "S01": 0.0,
+      "S02": 0.453,
+      "S03": -0.254,
+      "S04": -0.534,
+      "S06": 0.0,
+      "S08": 0.381,
+      "S09": -0.41,
+      "S13": -0.13,
+      "S14": -0.489,
+      "S15": 0.532,
+      "S16": 0.273,
+      "S17": -0.566
+    },
+    "T7": {
+      "S01": 0.5,
+      "S02": 0.229,
+      "S03": 0.0,
+      "S04": -0.72,
+      "S06": -0.098,
+      "S08": 0.771,
+      "S09": -0.184,
+      "S13": -0.175,
+      "S14": -0.082,
+      "S15": 0.269,
+      "S16": -0.276,
+      "S17": -0.535
+    },
+    "T8": {
+      "S01": -0.128,
+      "S02": 0.103,
+      "S03": 0.116,
+      "S04": -0.39,
+      "S06": 0.0,
+      "S08": 0.464,
+      "S09": 0.0,
+      "S13": -0.119,
+      "S14": 0.0,
+      "S15": 0.486,
+      "S16": 0.0,
+      "S17": -0.207
+    },
+    "T9": {
+      "S01": 0.222,
+      "S02": 0.179,
+      "S03": 0.0,
+      "S04": 0.507,
+      "S06": 0.46,
+      "S08": 0.0,
+      "S09": 0.432,
+      "S13": 0.205,
+      "S14": 0.387,
+      "S15": -0.631,
+      "S16": 0.432,
+      "S17": 0.537
+    },
+    "T10": {
+      "S01": 0.099,
+      "S02": 0.16,
+      "S03": 0.0,
+      "S04": 0.227,
+      "S06": 0.0,
+      "S08": -0.27,
+      "S09": 0.29,
+      "S13": 0.367,
+      "S14": 0.692,
+      "S15": -0.564,
+      "S16": -0.097,
+      "S17": 0.24
+    },
+    "M1": {
+      "S01": 0.514,
+      "S02": -0.103,
+      "S03": 0.464,
+      "S04": 0.683,
+      "S06": 0.265,
+      "S08": -0.464,
+      "S09": 0.374,
+      "S13": 1.0,
+      "S14": 0.223,
+      "S15": 0.486,
+      "S16": 0.374,
+      "S17": 0.621
+    },
+    "M2": {
+      "S01": 0.433,
+      "S02": 0.058,
+      "S03": 0.652,
+      "S04": 0.603,
+      "S06": 0.224,
+      "S08": -0.261,
+      "S09": 0.28,
+      "S13": -0.6,
+      "S14": 0.251,
+      "S15": 0.341,
+      "S16": 0.14,
+      "S17": 0.465
+    },
+    "M3": {
+      "S01": 0.371,
+      "S02": -0.358,
+      "S03": -0.201,
+      "S04": 0.676,
+      "S06": 0.307,
+      "S08": -0.737,
+      "S09": 0.36,
+      "S13": 0.548,
+      "S14": 0.064,
+      "S15": 0.14,
+      "S16": 0.288,
+      "S17": 0.657
+    },
+    "M4": {
+      "S01": 0.148,
+      "S02": 0.717,
+      "S03": -0.804,
+      "S04": -0.169,
+      "S06": -0.23,
+      "S08": 0.134,
+      "S09": -0.288,
+      "S13": 0.137,
+      "S14": 0.129,
+      "S15": -0.07,
+      "S16": 0.072,
+      "S17": -0.597
+    },
+    "M5": {
+      "S01": 0.514,
+      "S02": 0.0,
+      "S03": 0.116,
+      "S04": 0.78,
+      "S06": 0.664,
+      "S08": -0.116,
+      "S09": 0.499,
+      "S13": 0.119,
+      "S14": 0.112,
+      "S15": 0.0,
+      "S16": 0.748,
+      "S17": 0.827
+    },
+    "M6": {
+      "S01": -0.128,
+      "S02": 0.103,
+      "S03": 0.348,
+      "S04": 0.0,
+      "S06": 0.0,
+      "S08": 0.464,
+      "S09": 0.0,
+      "S13": -0.474,
+      "S14": 0.112,
+      "S15": -0.486,
+      "S16": -0.125,
+      "S17": 0.0
+    },
+    "M7": {
+      "S01": 0.305,
+      "S02": 0.492,
+      "S03": 0.0,
+      "S04": 0.058,
+      "S06": 0.0,
+      "S08": -0.069,
+      "S09": 0.074,
+      "S13": 0.352,
+      "S14": 0.663,
+      "S15": -0.144,
+      "S16": -0.296,
+      "S17": 0.061
+    },
+    "M8": {
+      "S01": 0.141,
+      "S02": 0.227,
+      "S03": 0.0,
+      "S04": 0.214,
+      "S06": 0.0,
+      "S08": -0.254,
+      "S09": 0.273,
+      "S13": 0.39,
+      "S14": 0.734,
+      "S15": -0.532,
+      "S16": -0.137,
+      "S17": 0.227
+    },
+    "G1": {
+      "S01": 0.336,
+      "S02": -0.135,
+      "S03": 0.076,
+      "S04": 0.766,
+      "S06": 0.608,
+      "S08": -0.076,
+      "S09": 0.49,
+      "S13": 0.155,
+      "S14": 0.146,
+      "S15": -0.318,
+      "S16": 0.408,
+      "S17": 0.812
+    },
+    "G2": {
+      "S01": 0.128,
+      "S02": -0.207,
+      "S03": 0.348,
+      "S04": 0.488,
+      "S06": 0.664,
+      "S08": 0.116,
+      "S09": 0.374,
+      "S13": 0.0,
+      "S14": -0.112,
+      "S15": -0.364,
+      "S16": 0.374,
+      "S17": 0.724
+    },
+    "G3": {
+      "S01": 0.526,
+      "S02": 0.047,
+      "S03": -0.106,
+      "S04": 0.799,
+      "S06": 0.483,
+      "S08": -0.475,
+      "S09": 0.284,
+      "S13": 0.216,
+      "S14": 0.0,
+      "S15": -0.276,
+      "S16": 0.68,
+      "S17": 0.659
+    },
+    "G4": {
+      "S01": 0.076,
+      "S02": 0.061,
+      "S03": 0.0,
+      "S04": 0.348,
+      "S06": 0.158,
+      "S08": -0.207,
+      "S09": 0.37,
+      "S13": 0.282,
+      "S14": 0.531,
+      "S15": -0.649,
+      "S16": 0.148,
+      "S17": 0.369
+    },
+    "G5": {
+      "S01": 0.363,
+      "S02": 0.146,
+      "S03": -0.164,
+      "S04": 0.69,
+      "S06": 0.188,
+      "S08": 0.0,
+      "S09": 0.353,
+      "S13": 0.0,
+      "S14": 0.474,
+      "S15": -0.343,
+      "S16": 0.176,
+      "S17": 0.439
+    },
+    "G6": {
+      "S01": 0.385,
+      "S02": 0.31,
+      "S03": 0.116,
+      "S04": 0.39,
+      "S06": 0.531,
+      "S08": 0.232,
+      "S09": 0.249,
+      "S13": -0.119,
+      "S14": 0.0,
+      "S15": 0.0,
+      "S16": 0.748,
+      "S17": 0.414
+    },
+    "G7": {
+      "S01": 0.182,
+      "S02": -0.439,
+      "S03": 0.0,
+      "S04": 0.69,
+      "S06": 0.188,
+      "S08": -0.656,
+      "S09": 0.529,
+      "S13": 0.503,
+      "S14": 0.474,
+      "S15": -0.343,
+      "S16": 0.0,
+      "S17": 0.731
+    },
+    "OE1": {
+      "S01": 0.314,
+      "S02": 0.0,
+      "S03": 0.284,
+      "S04": 0.239,
+      "S06": 0.0,
+      "S08": 0.0,
+      "S09": 0.611,
+      "S13": 0.0,
+      "S14": 0.0,
+      "S15": 0.0,
+      "S16": 0.0,
+      "S17": 0.0
+    },
+    "OE2": {
+      "S01": 0.305,
+      "S02": 0.0,
+      "S03": 0.276,
+      "S04": 0.29,
+      "S06": 0.0,
+      "S08": -0.069,
+      "S09": 0.667,
+      "S13": 0.07,
+      "S14": 0.133,
+      "S15": -0.144,
+      "S16": 0.0,
+      "S17": 0.061
+    },
+    "OE3": {
+      "S01": 0.445,
+      "S02": -0.119,
+      "S03": 0.335,
+      "S04": 0.451,
+      "S06": 0.077,
+      "S08": -0.201,
+      "S09": 0.72,
+      "S13": 0.068,
+      "S14": 0.064,
+      "S15": 0.14,
+      "S16": 0.144,
+      "S17": 0.239
+    },
+    "OE4": {
+      "S01": 0.534,
+      "S02": 0.0,
+      "S03": 0.069,
+      "S04": 0.638,
+      "S06": 0.473,
+      "S08": -0.138,
+      "S09": 0.741,
+      "S13": 0.282,
+      "S14": 0.0,
+      "S15": 0.0,
+      "S16": 0.444,
+      "S17": 0.492
+    },
+    "OE5": {
+      "S01": 0.514,
+      "S02": 0.103,
+      "S03": -0.116,
+      "S04": 0.78,
+      "S06": 0.664,
+      "S08": 0.5,
+      "S09": 0.374,
+      "S13": 0.237,
+      "S14": 0.0,
+      "S15": -0.243,
+      "S16": 0.748,
+      "S17": 0.724
+    },
+    "N1": {
+      "S01": 0.469,
+      "S02": 0.162,
+      "S03": 0.121,
+      "S04": 0.764,
+      "S06": 0.555,
+      "S08": -0.121,
+      "S09": 0.391,
+      "S13": 0.0,
+      "S14": 0.175,
+      "S15": -0.444,
+      "S16": 0.716,
+      "S17": 0.702
+    },
+    "N2": {
+      "S01": 0.5,
+      "S02": -0.561,
+      "S03": -0.18,
+      "S04": 0.302,
+      "S06": -0.103,
+      "S08": -0.449,
+      "S09": 0.386,
+      "S13": 0.735,
+      "S14": 0.432,
+      "S15": -0.564,
+      "S16": 0.0,
+      "S17": 0.481
+    },
+    "N3": {
+      "S01": 0.363,
+      "S02": -0.293,
+      "S03": 0.164,
+      "S04": 0.69,
+      "S06": 0.188,
+      "S08": -0.656,
+      "S09": 0.529,
+      "S13": 0.335,
+      "S14": 0.474,
+      "S15": 0.0,
+      "S16": 0.353,
+      "S17": 0.731
+    },
+    "N4": {
+      "S01": 0.257,
+      "S02": 0.621,
+      "S03": -0.116,
+      "S04": -0.293,
+      "S06": 0.0,
+      "S08": 0.232,
+      "S09": -0.249,
+      "S13": 0.119,
+      "S14": 0.112,
+      "S15": 0.364,
+      "S16": -0.125,
+      "S17": -0.31
+    }
+  },
+  "bayes": {
+    "k_daempfung": 0.15
+  },
+  "anzeichen": [
+    {
+      "id": "A01",
+      "bezug": "S02",
+      "rolle": "widerlegt",
+      "art": "zahl",
+      "text": "TFP growth stays below 1.2%",
+      "reihe": "sffed-tfp-usa",
+      "regel": "mittel 4 < 1.2",
+      "hinweis": "US business sector, mean of the last four quarters",
+      "wirkung": {
+        "treiber_ids": [
+          "T2"
+        ],
+        "richtung": "widersprechend",
+        "staerke": 2
+      },
+      "warum": "AI diffusion does not show up in productivity."
+    },
+    {
+      "id": "A02",
+      "bezug": "S01",
+      "art": "zahl",
+      "text": "Brent swings between 85 and 110 $",
+      "reihe": "fred-brent",
+      "regel": "zwischen 3 85 110",
+      "hinweis": "Mean of the last three months",
+      "wirkung": null,
+      "warum": "Describes a middle band. A breakout upwards or downwards is carried by A05, A12 and A13."
+    },
+    {
+      "id": "A03",
+      "bezug": "S02",
+      "art": "zahl",
+      "text": "TFP growth above 1.5% for six quarters",
+      "reihe": "sffed-tfp-usa",
+      "regel": "mittel 6 > 1.5",
+      "hinweis": "US business sector",
+      "wirkung": {
+        "treiber_ids": [
+          "T1",
+          "T2"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 3
+      },
+      "warum": "AI capability and diffusion show up broadly in productivity."
+    },
+    {
+      "id": "A04",
+      "bezug": "S02",
+      "art": "zahl",
+      "text": "Core inflation falls while GDP rises",
+      "reihe": "eurostat-kerninflation-ea",
+      "regel": "faellt 3",
+      "reihe2": "eurostat-bip-ea",
+      "regel2": "alle 2 > 0",
+      "hinweis": "Euro area: core inflation over three months against the three before, GDP over two quarters",
+      "wirkung": {
+        "treiber_ids": [
+          "M3"
+        ],
+        "richtung": "widersprechend",
+        "staerke": 2
+      },
+      "warum": "Disinflation alongside growth argues against a supply-driven higher inflation regime."
+    },
+    {
+      "id": "A05",
+      "bezug": "S04",
+      "art": "zahl",
+      "text": "Brent above 110 $ for more than two quarters",
+      "reihe": "fred-brent",
+      "regel": "alle 7 > 110",
+      "hinweis": "seven consecutive monthly averages",
+      "wirkung": {
+        "treiber_ids": [
+          "G3"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 3
+      },
+      "warum": "The bottleneck in the Gulf becomes permanent."
+    },
+    {
+      "id": "A06",
+      "bezug": "S04",
+      "art": "zahl",
+      "text": "Euro area core inflation above 3% despite weak demand",
+      "reihe": "eurostat-kerninflation-ea",
+      "regel": "alle 3 > 3",
+      "reihe2": "eurostat-bip-ea",
+      "regel2": "mittel 2 < 1",
+      "hinweis": "weak demand: GDP growth below 1% on average over two quarters",
+      "wirkung": {
+        "treiber_ids": [
+          "M3"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 2
+      },
+      "warum": "Inflation that does not come from demand is supply-driven."
+    },
+    {
+      "id": "A07",
+      "bezug": "S04",
+      "art": "zahl",
+      "text": "German industrial production falls two years in a row",
+      "reihe": "eurostat-industrie-de",
+      "regel": "jahresrueckgang 2",
+      "hinweis": "Annual mean against the year before, twice",
+      "wirkung": {
+        "treiber_ids": [
+          "G3",
+          "M6"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 2
+      },
+      "warum": "Expensive energy and Chinese overcapacity are hurting European industry."
+    },
+    {
+      "id": "A08",
+      "bezug": "S13",
+      "art": "zahl",
+      "text": "Real 10-year yield persistently below zero with inflation above 3%",
+      "reihe": "fred-realrendite-10j",
+      "regel": "alle 3 < 0",
+      "reihe2": "fred-inflation-usa",
+      "regel2": "alle 3 > 3",
+      "hinweis": "USA, three months",
+      "wirkung": {
+        "treiber_ids": [
+          "M1",
+          "M3"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 3
+      },
+      "warum": "Debt is inflated away, real interest rates are pushed down politically."
+    },
+    {
+      "id": "A09",
+      "bezug": "S13",
+      "art": "aussage",
+      "text": "Central bank postpones or qualifies its inflation target",
+      "muster": "inflationsziel.{0,80}(verschieb|lockert|lockern|aufweich|relativ|anheb|flexib|abrück|aufgeb|toleri|überprüf)|(verschieb|lockert|lockern|aufweich|relativ|anheb|flexib|abrück|aufgeb|toleri|überprüf).{0,80}inflationsziel|inflation target",
+      "hinweis": "a statement, not a number: matches in news items from the last 30 days, judged by hand",
+      "wirkung": {
+        "treiber_ids": [
+          "M1"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 2
+      },
+      "warum": "Takes effect only once a match is confirmed - never from a single word alone."
+    },
+    {
+      "id": "A10",
+      "bezug": "S06",
+      "art": "zahl",
+      "text": "Effective US tariff rate persistently above 15%",
+      "reihe": "fred-zollsatz-usa",
+      "regel": "alle 2 > 15",
+      "hinweis": "collected: customs revenue per goods imports; the statutory rate (Yale Budget Lab) is higher",
+      "wirkung": {
+        "treiber_ids": [
+          "G1"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 3
+      },
+      "warum": "The tariff regime consolidates on a high plateau."
+    },
+    {
+      "id": "A11",
+      "bezug": "M2",
+      "art": "zahl",
+      "text": "Real 10-year yield persistently above 2.5%",
+      "reihe": "fred-realrendite-10j",
+      "regel": "alle 3 > 2.5",
+      "hinweis": "Indicator threshold of the driver 'Interest rate regime and term premium'",
+      "wirkung": null,
+      "warum": "The driver's direction is open in the model - high real rates show the state but move no scenario until the coupling is settled."
+    },
+    {
+      "id": "A12",
+      "bezug": "G3",
+      "art": "zahl",
+      "text": "Brent above 115 $ (escalation)",
+      "reihe": "fred-brent",
+      "regel": "mittel 1 > 115",
+      "hinweis": "Indicator threshold of the driver 'Energy chokepoints and the Middle East'",
+      "wirkung": {
+        "treiber_ids": [
+          "G3"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 2
+      },
+      "warum": "Threshold that the model itself names as escalation."
+    },
+    {
+      "id": "A13",
+      "bezug": "G3",
+      "art": "zahl",
+      "text": "Brent below 70 $ (easing)",
+      "reihe": "fred-brent",
+      "regel": "mittel 1 < 70",
+      "hinweis": "Indicator threshold of the driver 'Energy chokepoints and the Middle East'",
+      "wirkung": {
+        "treiber_ids": [
+          "G3"
+        ],
+        "richtung": "widersprechend",
+        "staerke": 2
+      },
+      "warum": "Threshold that the model itself names as easing."
+    },
+    {
+      "id": "AS01",
+      "bezug": "S16",
+      "art": "zahl",
+      "text": "Geopolitical risk around Germany at war level",
+      "reihe": "gpr-deu",
+      "regel": "mittel 3 > 1.0",
+      "hinweis": "Three-month mean of the country index for Germany (share of articles in ten newspapers that mention Germany together with geopolitical risks, in percent). Since 1985 above 1.0 only in 1991, 2001, 2003, 2022 and March to May 2026; median of monthly values 0.35, of three-month means (what the rule measures) 0.37; both 01/1985 to 09/2026, column GPRC_DEU, data as of 1 October 2026. Most recently (July to September 2026) 0.49.",
+      "wirkung": {
+        "treiber_ids": [
+          "N1",
+          "G6"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 3
+      },
+      "warum": "War or the threat of war affecting Germany shows up first in news coverage. The threshold separates war episodes from background noise. N1 has the direction 'offen' (open) in the model; its loading (geopolitical stress +2) reads 'bestaetigend' (confirming) as escalation. Anyone who does not want that, as with A11, takes only G6."
+    },
+    {
+      "id": "AS02",
+      "bezug": "S16",
+      "art": "aussage",
+      "text": "NATO Article 5 case or German armed forces in combat",
+      "muster": "(bündnisfall|artikel 5|article 5).{0,80}(ausgerufen|ausrufen|aktiviert|invoked|invoke)|(ausgerufen|aktiviert|invoked).{0,80}(bündnisfall|artikel 5|article 5)|bundeswehr.{0,80}(kampfhandlung|beschossen|angegriffen|gefallen)",
+      "hinweis": "a statement, not a number: matches in news items from the last 30 days, judged by hand",
+      "wirkung": {
+        "treiber_ids": [
+          "N1",
+          "G6"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 4
+      },
+      "warum": "No number measures Germany's direct involvement. Takes effect only once a match is confirmed - never from a single word alone."
+    },
+    {
+      "id": "AS03",
+      "bezug": "S14",
+      "art": "zahl",
+      "text": "Politically motivated violence in Germany keeps rising",
+      "reihe": "bka-pmk-gewalt",
+      "regel": "steigt 1",
+      "hinweis": "Violent offences in politically motivated crime per year, latest value against the previous year. 2025: 4,156 (up 1.2%, highest level since 2016).",
+      "wirkung": {
+        "treiber_ids": [
+          "G4"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 2
+      },
+      "warum": "More political violence is the visible part of polarisation and loss of trust (G4, Divided Society). Already applies today (2025 above 2024) and is therefore priced in; it moves things when it flips."
+    },
+    {
+      "id": "AS04",
+      "bezug": "S14",
+      "art": "zahl",
+      "text": "Liberal democracy in Germany below 0.75 (V-Dem)",
+      "reihe": "vdem-libdem-de",
+      "regel": "mittel 1 < 0.75",
+      "hinweis": "Liberal Democracy Index, 0 to 1. Germany 2025: 0.782, 2024: 0.778 (lowest value since 1991). Never below 0.75 since 1991.",
+      "wirkung": {
+        "treiber_ids": [
+          "G4"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 3
+      },
+      "warum": "Measures rule of law, separation of powers and civil rights together; a value below 0.75 would be a break with everything since reunification."
+    },
+    {
+      "id": "AS05",
+      "bezug": "S14",
+      "art": "zahl",
+      "text": "Freedom of expression and information in Germany below 0.9 (V-Dem)",
+      "reihe": "vdem-meinungsfreiheit-de",
+      "regel": "mittel 1 < 0.9",
+      "hinweis": "Freedom of Expression and Alternative Sources of Information Index, 0 to 1. Germany 2025: 0.914, 2024: 0.920; never this low since 1991.",
+      "wirkung": {
+        "treiber_ids": [
+          "T10",
+          "G4"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 2
+      },
+      "warum": "Measures freedom of information and expression on its own, more narrowly than the democracy index; it has been falling since 2023."
+    },
+    {
+      "id": "AS06",
+      "bezug": "S14",
+      "art": "zahl",
+      "text": "Liberal democracy in the US below 0.5 (V-Dem)",
+      "reihe": "vdem-libdem-usa",
+      "regel": "mittel 1 < 0.5",
+      "hinweis": "USA 2025: 0.571 after 0.751 in 2024, lowest value since 1965. The index was last below 0.5 in 1949.",
+      "wirkung": {
+        "treiber_ids": [
+          "G4"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 2
+      },
+      "warum": "G4 applies to Western democracies; the US is the strongest single case. The 2025 plunge is priced in; the threshold asks whether it continues."
+    },
+    {
+      "id": "AS07",
+      "bezug": "T9",
+      "art": "zahl",
+      "text": "Exploited vulnerabilities at a high level (CISA catalogue)",
+      "reihe": "cisa-kev-monat",
+      "regel": "mittel 3 > 27",
+      "hinweis": "New entries per month in the catalogue of known exploited vulnerabilities, three-month mean. 27 is the 90th percentile of three-month means since June 2022 (monthly median 18). July to September 2026: 26, 31, 43, so a mean of 33; already applies today.",
+      "wirkung": {
+        "treiber_ids": [
+          "T9"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 2
+      },
+      "warum": "The best open, daily number on the attack situation. It measures exploitation, not AI in particular; no open series covers AI-assisted attacks."
+    },
+    {
+      "id": "AS08",
+      "bezug": "T9",
+      "art": "aussage",
+      "text": "Cyberattack paralyses critical infrastructure in Germany",
+      "muster": "(cyber|hacker|ransomware|ki-gestützt).{0,80}(stromnetz|stromausfall|krankenhaus|wasserwerk|kritische infrastruktur|kritis|stadtwerk)|(stromnetz|krankenhaus|wasserwerk|kritische infrastruktur|kritis|stadtwerk).{0,80}(cyberangriff|hackerangriff|ransomware)",
+      "hinweis": "a statement, not a number: matches in news items from the last 30 days, judged by hand",
+      "wirkung": {
+        "treiber_ids": [
+          "T9"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 3
+      },
+      "warum": "An outage caused by an attack is the event itself; figures on it only appear in the BSI annual report. Takes effect only once a match is confirmed - never from a single word alone."
+    },
+    {
+      "id": "AS09",
+      "bezug": "T8",
+      "art": "zahl",
+      "text": "Power outage per customer above 15 minutes per year (SAIDI)",
+      "reihe": "bnetza-saidi",
+      "regel": "mittel 1 > 15",
+      "hinweis": "Average interruption per final consumer, unplanned only (weather, third-party impact, grid operator). 2024: 11.7 minutes, 2023: 12.8; ten-year mean 12.7.",
+      "wirkung": {
+        "treiber_ids": [
+          "T8"
+        ],
+        "richtung": "widersprechend",
+        "staerke": 2
+      },
+      "warum": "Measures whether the grid allows outages more often, whatever the reason. 15 minutes is roughly a fifth above the ten-year mean (a judgement). One year of delay."
+    },
+    {
+      "id": "AS10",
+      "bezug": "S14",
+      "art": "zahl",
+      "text": "Richest 0.1% in the US persistently own more than 15% of wealth",
+      "reihe": "fed-dfa-top01",
+      "regel": "alle 2 > 15",
+      "hinweis": "Share of household net worth, quarterly. 2026-Q2: 15.0% (highest since the series began in 1989; 1989: 8.6%).",
+      "wirkung": {
+        "treiber_ids": [
+          "M8"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 2
+      },
+      "warum": "Wealth concentration at the top is the measurable side of an oligarchy. There is no open quarterly series for Germany."
+    }
+  ],
+  "beendet": [
+    {
+      "id": "S05",
+      "name": "Fiscal Dominance and Financial Repression",
+      "bis": "2026-10-04",
+      "bis_version": "1.2.0",
+      "nachfolger": "S13",
+      "begruendung": "Merged into S13: the evidence shows debt pressure mainly as pressure on the welfare state and the cost of living (pensions, care, housing) – a richer, more understandable future than a purely financial-technical one."
+    },
+    {
+      "id": "S07",
+      "name": "Chokepoint Rupture",
+      "bis": "2026-10-04",
+      "bis_version": "1.2.0",
+      "nachfolger": "S06",
+      "begruendung": "Below the 5% threshold in all horizons; absorbed into S06 as its escalation edge instead of carrying a scenario of its own that barely affects the calculation."
+    },
+    {
+      "id": "S10",
+      "name": "Authoritarian Efficiency",
+      "bis": "2026-10-04",
+      "bis_version": "1.2.0",
+      "nachfolger": "S14",
+      "begruendung": "Below the 5% threshold (4 to 7%) and almost identical in regime to the Fragmented Society; the authoritarian way out is now one possibility within S14."
+    },
+    {
+      "id": "S11",
+      "name": "Fragmented Society",
+      "bis": "2026-10-04",
+      "bis_version": "1.2.0",
+      "nachfolger": "S14",
+      "begruendung": "Merged into S14, together with Authoritarian Efficiency (S10): both described the same force - declining trust - with two outcomes."
+    },
+    {
+      "id": "S12",
+      "name": "Accelerated Transformation",
+      "bis": "2026-10-04",
+      "bis_version": "1.2.0",
+      "nachfolger": "S02",
+      "begruendung": "Below the 5% threshold (1 to 6%); absorbed into the AI Surge (S02), which now describes growth and upheaval at the same time."
+    }
+  ],
+  "pruefung": {
+    "ampel": "gruen",
+    "stand": "2026-10-09",
+    "faellig": false,
+    "naechste": "2026-11-14",
+    "begruendung": [],
+    "kennzahlen": [
+      {
+        "schluessel": "fehlender_treiber",
+        "frage": "Is a driver missing?",
+        "status": "gruen",
+        "befund": "0 of 21 signals name no driver that exists in the model."
+      },
+      {
+        "schluessel": "keine_trennung",
+        "frage": "Do the scenarios still separate?",
+        "status": "gruen",
+        "befund": "0 of 21 assignable signals barely separate the scenarios (coupling range below 0.3)."
+      },
+      {
+        "schluessel": "unbalanciert",
+        "frage": "Is the scenario set balanced?",
+        "status": "gruen",
+        "befund": "In the 2028 horizon, 0 of 12 scenarios lie outside 5 to 40 percent."
+      },
+      {
+        "schluessel": "effektive_dimension",
+        "frage": "Are the scenarios different enough?",
+        "status": "gruen",
+        "befund": "Effective dimension 5.94 of 10, i.e. 59 percent of the axes. Up by 0.0 from the previous value of 5.937."
+      },
+      {
+        "schluessel": "krisenlast",
+        "frage": "Is the crisis load justified?",
+        "status": "gruen",
+        "befund": "In the 2028 horizon, 38% of the probability sits on scenarios with below-normal growth, 1.8 times the base rate of 21% – justified."
+      }
+    ],
+    "krisenlast_begruendung": "In 2028 the crisis load (scenarios with below-normal growth) stands at 38%, 1.8 times the base rate (USA 1973–2025: 21% of years with growth more than half a standard deviation below the mean). Justified by the situation in October 2026: Brent above 100 $, German industrial production declining for two years (the indicator for this has been triggered), a Shiller P/E of 41 as the drop height for a bust, Russia's war, and prediction markets putting a Taiwan invasion by the end of 2027 at around 12%. Against this: credit spreads below their long-term average and the weak but positive growth the IMF expects for the euro area. The crisis load excluding Taiwan has therefore been damped from 39 to 31%."
+  },
+  "aussensicht": {
+    "schema": "aussensicht/v1",
+    "stand": "2026-10-09",
+    "geschichte": {
+      "zeitraum": "1973-2025",
+      "region": "USA",
+      "quelle": "FRED (real GDP, consumer prices, 10-year yield, oil price, credit spread), pruefung/basisraten.py",
+      "hinweis": "Long, freely available series exist for the US; for Germany and the euro area they begin later."
+    },
+    "vergleiche": [
+      {
+        "id": "wachstum_schwach",
+        "frage": "Below-normal growth",
+        "erklaerung": "Scenarios in which the economy grows more weakly than usual - compared with the years in which growth was more than half a standard deviation below the mean.",
+        "szenarien": [
+          "S03",
+          "S04",
+          "S09",
+          "S14",
+          "S17"
+        ],
+        "geschichte": 21,
+        "begruendung": "In 2028 the crisis load (scenarios with below-normal growth) stands at 38%, 1.8 times the base rate (USA 1973–2025: 21% of years with growth more than half a standard deviation below the mean). Justified by the situation in October 2026: Brent above 100 $, German industrial production declining for two years (the indicator for this has been triggered), a Shiller P/E of 41 as the drop height for a bust, Russia's war, and prediction markets putting a Taiwan invasion by the end of 2027 at around 12%. Against this: credit spreads below their long-term average and the weak but positive growth the IMF expects for the euro area. The crisis load excluding Taiwan has therefore been damped from 39 to 31%."
+      },
+      {
+        "id": "schrumpft",
+        "frage": "Economy shrinks",
+        "erklaerung": "Scenarios with a marked slump - compared with the years in which economic output fell.",
+        "szenarien": [
+          "S04",
+          "S17"
+        ],
+        "geschichte": 13
+      },
+      {
+        "id": "stagflation",
+        "frage": "Stagflation",
+        "erklaerung": "Weak growth and high inflation at the same time - compared with years in which both came together.",
+        "szenarien": [
+          "S04",
+          "S09",
+          "S17"
+        ],
+        "geschichte": 8,
+        "begruendung": "For 2028 the model puts 24% on worlds with weak growth and rising prices at the same time; history shows 8% such years, almost all between 1974 and 1982 after the oil crises. The factor of 3 overstates things somewhat: only Energy-Driven Stagflation (12%) is the classic case. Climate Shock Cascade (5%) and Taiwan Rupture (7%) count too, because in them a supply shock triggers both at once. In favour, the situation in October 2026: Brent between 105 and 125 $ – an oil shock like back then –, German industrial production has fallen two years in a row, in the US inflation stands at 3.4% and expected one-year inflation at 3.9%, plus higher tariffs. Against: central banks are more independent and credible than in the 1970s, the economy needs only about half as much oil per euro of value added, wages hardly follow prices automatically any more, and euro area core inflation stands at 2.5%. The deviation is therefore justified but not certain: if the oil price falls permanently below 110 $, the indicators for it flip, and the deviation shrinks in the daily status."
+      },
+      {
+        "id": "inflation_hoch",
+        "frage": "High inflation",
+        "erklaerung": "Scenarios with sharply rising prices - compared with years in which inflation was more than one standard deviation above the mean.",
+        "szenarien": [
+          "S04",
+          "S13",
+          "S17"
+        ],
+        "geschichte": 13,
+        "begruendung": "25% against 13% of years. Counted are Energy-Driven Stagflation, Distribution Fight in the Welfare State and Taiwan Rupture. In favour: high public debt and the pressure to keep interest rates below inflation, fewer workers due to ageing, protectionism and tariffs, and expensive energy. Against: the ECB holds the deposit rate at 2.5% and signals hikes rather than cuts, and euro area core inflation stands at 2.5%. The deviation depends mainly on the Distribution Fight in the Welfare State; its indicators – real interest rates below zero with high inflation, a softened inflation target – have not been triggered so far."
+      },
+      {
+        "id": "energie_teuer",
+        "frage": "Expensive energy",
+        "erklaerung": "Scenarios with high energy prices - compared with years in which the real oil price was more than half a standard deviation above the mean.",
+        "szenarien": [
+          "S01",
+          "S04",
+          "S16",
+          "S17"
+        ],
+        "geschichte": 32,
+        "begruendung": "50% against 32% of years for 2028; after that the share falls below history (2040: 26%). The reason is the starting point: the oil price today is far above its long-term average, and energy prices usually fall over years, not months – which is why the Grinding Ascent still assumes expensive energy. Against this is the transition: 42% of electricity already comes from renewables, and battery storage is growing fast. The model therefore lets expensive energy phase out by 2040."
+      }
+    ],
+    "anker": [
+      {
+        "id": "taiwan",
+        "frage": "Invasion of Taiwan by the end of 2027",
+        "szenarien": [
+          "S17"
+        ],
+        "horizont": "2028",
+        "extern": 12,
+        "extern_text": "12%",
+        "quelle": "Polymarket",
+        "url": "https://polymarket.com/event/will-china-invade-taiwan-by-december-31-2027",
+        "datum": "2026-10-08",
+        "hinweis": "The market asks about an invasion; the scenario also includes a blockade."
+      },
+      {
+        "id": "rezession",
+        "frage": "Recession in the US in 2026",
+        "szenarien": [
+          "S03"
+        ],
+        "horizont": "2028",
+        "extern": 20,
+        "extern_text": "11-28%",
+        "quelle": "Polymarket and Kalshi, summer 2026",
+        "url": "https://seekingalpha.com/news/4575878-prediction-markets-slash-2026-us-recession-odds-to-28",
+        "datum": "2026-07-15",
+        "hinweis": "Not the same question: the market asks about 2026, the scenario describes the world in 2028."
+      },
+      {
+        "id": "iwf",
+        "frage": "Euro area growth in 2027",
+        "szenarien": [
+          "S01"
+        ],
+        "horizont": "2028",
+        "extern": null,
+        "extern_text": "+1.2%",
+        "quelle": "IMF, World Economic Outlook July 2026",
+        "url": "https://www.imf.org/en/publications/weo",
+        "datum": "2026-07-15",
+        "hinweis": "Weak but positive - the picture of the Grinding Ascent."
+      }
+    ]
+  },
+  "journal": [
+    {
+      "version": "1.2.0",
+      "datum": "2026-08-15",
+      "szenarien": {
+        "S01": "Grinding Ascent",
+        "S02": "Productivity Breakthrough",
+        "S03": "The Bust",
+        "S04": "Energy-Driven Stagflation",
+        "S05": "Fiscal Dominance and Financial Repression",
+        "S06": "Bloc Formation and Two-Stack World",
+        "S07": "Chokepoint Rupture",
+        "S08": "Green Boom on Cost",
+        "S09": "Climate Shock Cascade",
+        "S10": "Authoritarian Efficiency",
+        "S11": "Fragmented Society",
+        "S12": "Accelerated Transformation"
+      },
+      "wahrscheinlichkeiten": {
+        "2028": {
+          "S01": 26,
+          "S02": 7,
+          "S03": 16,
+          "S04": 15,
+          "S05": 6,
+          "S06": 12,
+          "S07": 3,
+          "S08": 3,
+          "S09": 4,
+          "S10": 4,
+          "S11": 3,
+          "S12": 1
+        },
+        "2032": {
+          "S01": 17,
+          "S02": 12,
+          "S03": 8,
+          "S04": 10,
+          "S05": 11,
+          "S06": 14,
+          "S07": 4,
+          "S08": 8,
+          "S09": 6,
+          "S10": 5,
+          "S11": 3,
+          "S12": 2
+        },
+        "2040": {
+          "S01": 10,
+          "S02": 12,
+          "S03": 3,
+          "S04": 5,
+          "S05": 12,
+          "S06": 12,
+          "S07": 4,
+          "S08": 13,
+          "S09": 11,
+          "S10": 7,
+          "S11": 5,
+          "S12": 6
+        }
+      }
+    },
+    {
+      "version": "1.3.0",
+      "datum": "2026-10-04",
+      "szenarien": {
+        "S01": "Grinding Ascent",
+        "S02": "AI Surge",
+        "S03": "The Bust",
+        "S04": "Energy-Driven Stagflation",
+        "S06": "Bloc Formation",
+        "S08": "Green Boom on Cost",
+        "S09": "Climate Shock Cascade",
+        "S13": "Distribution Fight in the Welfare State",
+        "S14": "Divided Society",
+        "S15": "European Restart",
+        "S16": "Arms Economy"
+      },
+      "wahrscheinlichkeiten": {
+        "2028": {
+          "S01": 24,
+          "S02": 6,
+          "S03": 12,
+          "S04": 16,
+          "S06": 9,
+          "S08": 5,
+          "S09": 6,
+          "S13": 6,
+          "S14": 5,
+          "S15": 5,
+          "S16": 6
+        },
+        "2032": {
+          "S01": 16,
+          "S02": 10,
+          "S03": 7,
+          "S04": 10,
+          "S06": 11,
+          "S08": 9,
+          "S09": 8,
+          "S13": 9,
+          "S14": 6,
+          "S15": 6,
+          "S16": 8
+        },
+        "2040": {
+          "S01": 10,
+          "S02": 12,
+          "S03": 5,
+          "S04": 6,
+          "S06": 10,
+          "S08": 13,
+          "S09": 13,
+          "S13": 11,
+          "S14": 7,
+          "S15": 7,
+          "S16": 6
+        }
+      }
+    },
+    {
+      "version": "1.4.0",
+      "datum": "2026-10-09",
+      "szenarien": {
+        "S01": "Grinding Ascent",
+        "S02": "AI Surge",
+        "S03": "The Bust",
+        "S04": "Energy-Driven Stagflation",
+        "S06": "Bloc Formation",
+        "S08": "Green Boom on Cost",
+        "S09": "Climate Shock Cascade",
+        "S13": "Distribution Fight in the Welfare State",
+        "S14": "Divided Society",
+        "S15": "European Restart",
+        "S16": "Arms Economy",
+        "S17": "Taiwan Rupture"
+      },
+      "wahrscheinlichkeiten": {
+        "2028": {
+          "S01": 26,
+          "S02": 7,
+          "S03": 9,
+          "S04": 12,
+          "S06": 7,
+          "S08": 6,
+          "S09": 5,
+          "S13": 6,
+          "S14": 5,
+          "S15": 5,
+          "S16": 5,
+          "S17": 7
+        },
+        "2032": {
+          "S01": 16,
+          "S02": 10,
+          "S03": 5,
+          "S04": 8,
+          "S06": 8,
+          "S08": 9,
+          "S09": 8,
+          "S13": 9,
+          "S14": 5,
+          "S15": 6,
+          "S16": 8,
+          "S17": 8
+        },
+        "2040": {
+          "S01": 10,
+          "S02": 12,
+          "S03": 5,
+          "S04": 5,
+          "S06": 6,
+          "S08": 13,
+          "S09": 13,
+          "S13": 11,
+          "S14": 7,
+          "S15": 7,
+          "S16": 5,
+          "S17": 6
+        }
+      }
+    }
+  ],
+  "zufluss": {
+    "entdoppeln": {
+      "an": true,
+      "buendel_exponent": 0.5
+    },
+    "ungerundet": {
+      "an": true,
+      "p_min_prozent": 0.5,
+      "basis_version": "1.4.0"
+    },
+    "p_basis": {
+      "2028": {
+        "S01": 26,
+        "S02": 7,
+        "S03": 9,
+        "S04": 12,
+        "S06": 7,
+        "S08": 6,
+        "S09": 5,
+        "S13": 6,
+        "S14": 5,
+        "S15": 5,
+        "S16": 5,
+        "S17": 7
+      },
+      "2032": {
+        "S01": 16,
+        "S02": 10,
+        "S03": 5,
+        "S04": 8,
+        "S06": 8,
+        "S08": 9,
+        "S09": 8,
+        "S13": 9,
+        "S14": 5,
+        "S15": 6,
+        "S16": 8,
+        "S17": 8
+      },
+      "2040": {
+        "S01": 10,
+        "S02": 12,
+        "S03": 5,
+        "S04": 5,
+        "S06": 6,
+        "S08": 13,
+        "S09": 13,
+        "S13": 11,
+        "S14": 7,
+        "S15": 7,
+        "S16": 5,
+        "S17": 6
+      }
+    },
+    "signale": []
+  },
+  "stufen": {
+    "A12": [
+      {
+        "regel": "mittel 1 > 115",
+        "staerke": 2
+      },
+      {
+        "regel": "mittel 1 > 130",
+        "staerke": 3
+      },
+      {
+        "regel": "mittel 1 > 145",
+        "staerke": 4
+      }
+    ]
+  },
+  "spanne_massstab": {
+    "je_horizont": {
+      "2028": 0.025089250925677674,
+      "2032": 0.025089250925677674,
+      "2040": 0.025089250925677674
+    },
+    "quelle": "last revision 1.3.0 -> 1.4.0, splits assigned to their origin, largest value for all horizons"
+  }
+}
