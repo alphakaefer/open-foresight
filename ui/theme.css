@@ -155,9 +155,10 @@ main{max-width:1280px;padding:8px 24px 40px;gap:20px}
 body.focus #question,body.focus #stamp,body.focus .scale{display:none}
 body.focus .top-inner{padding-bottom:12px}
 body.focus .dash-map .card-head .muted,body.focus .dash-map .tiles,body.focus .dash-map section>.kv,
-body.focus .dash-map .when,body.focus .dash-map .mapbar .paramsel,body.focus .dash-map .cmpside,
+body.focus .dash-map .when,body.focus .dash-map .mapbar .paramsel,body.focus .dash-map .cmpside .ranklist,
 body.focus .dash-map .cmplegend .cl-row+.cl-row{display:none}
 body.focus .dash-map .cmpgrid{grid-template-columns:minmax(0,1fr)}
+body.focus .dash-map .cmpside{grid-template-columns:minmax(0,1fr)}
 @media (max-width:980px){
   .dash{grid-template-columns:minmax(0,1fr);grid-template-areas:"tour" "map" "panel";grid-template-rows:auto}
 }

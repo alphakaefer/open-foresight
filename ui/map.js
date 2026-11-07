@@ -81,6 +81,20 @@ function paramValue(p) {
     const change = prev ? (pct ? ((last.wert - prev.wert) / prev.wert) * 100 : last.wert - prev.wert) : null;
     return {value: last.wert, display: fmt(last.wert, 2), unit: p.unit, when: last.t, change, changeUnit: pct ? "%" : " pp", ref: "vs 12 months earlier", points: pts, url: r.url, source: r.quelleName, file: `radar/snapshot/wissensstand.json (${p.series})`};
   }
+  if (p.kind === "regional") {  // one region's value from radar/regional/regional.json
+    const ds = D.regional?.datasets?.[p.dataset], r = ds?.values?.[p.key];
+    if (!r) return null;
+    return {value: r.v, display: fmt(r.v, 0), unit: p.unit || ds.unit, when: r.p, change: null, changeUnit: "",
+      ref: r.n != null ? `${fmt(r.n, 0)} units` : "", points: null, url: ds.url, source: ds.source, file: `radar/regional/regional.json (${p.dataset})`};
+  }
+  if (p.kind === "local") {  // a yearly series from the "local" part of regional.json
+    const r = D.regional?.local?.[p.local];
+    if (!r || !r.punkte?.length) return null;
+    const pts = r.punkte, last = pts[pts.length - 1], prev = pts[pts.length - 2];
+    return {value: last.wert, display: fmt(last.wert, 0), unit: p.unit || r.einheit, when: last.t,
+      change: prev ? ((last.wert - prev.wert) / prev.wert) * 100 : null, changeUnit: "%", ref: prev ? `vs ${prev.t}` : "",
+      points: pts, url: r.url, source: r.quelleName, file: `radar/regional/regional.json (local.${p.local})`};
+  }
   if (p.kind === "model") {
     const rows = S.D.briefing.scenarios.rows, src = "domains/energy-transition/briefing.json (scenario rows)";
     const sum = (key, h) => rows.filter((r) => r.regime.energy_price > 0).reduce((a, r) => a + r[key][h], 0);
@@ -110,6 +124,7 @@ function paramAppliesTo(p, level, name) {
   if (!p || p.kind === "gap") return false;
   if (p.scope === "global") return true;
   if (p.scope === "germany") return level === "global" || level === "europe" ? name === "Germany" : true;
+  if (p.scope === "brandenburg" || p.scope === "berlin") return name === S.D.lv[p.scope].name;
   return false;
 }
 
@@ -135,7 +150,7 @@ function readout(p, level) {
   let where = `Applies to: ${esc(sc)}.`;
   if (p.scope === "euro_area") where += " Not drawn per country.";
   if (regional && p.scope !== level) where = `${esc(sc)} value. <b>None for ${esc(S.D.lv[level].name)}.</b>`;
-  const kind = S.when === "future" ? "illustrative" : p.kind === "model" ? "model" : "measured";
+  const kind = S.when === "future" && (p.kind === "series" || p.kind === "model") ? "illustrative" : p.kind === "model" ? "model" : "measured";
   return `<div class="readout"><div class="ro-top">${tag(kind, v.file)}<span class="ro-scope">${esc(sc)}</span></div>
     <strong>${esc(p.label)}</strong>
     <div class="ro-val"><span class="big">${esc(v.display)}</span> <span class="muted">${esc(v.unit)} · ${esc(v.when)}</span></div>
@@ -165,7 +180,7 @@ function paramSelect() {
 }
 
 // ---------- comparison of sub-regions (choropleth) ----------
-const LEVEL_DEFAULT = {global: "c-wb-res", europe: "c-es-res", germany: "c-mastr-wind", brandenburg: "c-mastr-wind", berlin: "c-mastr-wind"};
+const LEVEL_DEFAULT = {global: "c-wb-res", europe: "c-es-res", germany: "c-mastr-wind", brandenburg: "c-mastr-wind-mw", berlin: "c-mastr-roof-mw"};
 const GEO_KIND = {global: "country", europe: "country", germany: "state", brandenburg: "state", berlin: "state"};
 // Colour classes run from the lowest to the highest values. "good" says which end is favourable.
 const PALETTES = {

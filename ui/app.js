@@ -14,7 +14,7 @@ const FILES = {
   demo: "demo/future.json",
 };
 const REGIME_NAMES = {"-2": "much cheaper", "-1": "cheaper", "0": "neutral", "1": "more expensive", "2": "much more expensive"};
-const COVERAGE = {full: "full data", proxy: "proxy data", gap: "GAP: no data"};
+const COVERAGE = {full: "full data", proxy: "proxy data", partial: "partial data", gap: "GAP: no data"};
 
 const S = {level: "germany", horizon: "2028", D: null, prov: [], open: new Set(), param: "auto", pal: "rg", when: "current"};
 const $ = (sel) => document.querySelector(sel);
@@ -248,6 +248,8 @@ function render() {
     parts.push(scenariosCard(l));
     if (l.bottleneck) parts.push(bottleneckCard());
     parts.push(indicatorsCard(l), driversCard(l), seriesSection(l));
+    if (l.coverage === "partial" && l.data_plan?.length) parts.push(`<section class="card"><div class="card-head"><h2>Data for ${esc(l.name)}: done and still missing</h2>${tag("judgment", "ui/regions.json (data_plan)")}</div>
+      <ol style="margin:0;padding-left:20px;display:grid;gap:6px">${l.data_plan.map((t) => `<li>${esc(t)}</li>`).join("")}</ol></section>`);
     parts.push(`<section class="card"><div class="card-head"><h2>Watchlist: what to improve next</h2>${tag("judgment", "domains/energy-transition/domain.json (open_tasks)")}</div>
       <ul class="list">${S.D.briefing.open_tasks.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
       <p class="kv">Option scoring (permitting reform, storage subsidies, flexible tariffs) is not part of this repository yet.</p></section>`);

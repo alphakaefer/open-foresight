@@ -33,6 +33,14 @@ const STEPS = [
       const one = (n) => (v[n] ? `${n} ${fmt(v[n].v, 0)}` : `${n}: no value`);
       return `The colours are measured data: wind turbines in operation per state. Most in <b>${esc(top[0])}</b> (${fmt(top[1].v, 0)}), ${one("Brandenburg")}, ${one("Berlin")}.`;
     }},
+  {title: "Brandenburg and Berlin, measured", set: {level: "brandenburg", param: "c-mastr-wind-mw", h: "2028"},
+    need: () => !!(S.D.regional?.datasets?.mastr_wind_mw?.values?.Brandenburg && S.D.regional?.datasets?.mastr_pv_roof_mw?.values?.Berlin),
+    text: () => {
+      const w = S.D.regional.datasets.mastr_wind_mw.values, roof = S.D.regional.datasets.mastr_pv_roof_mw.values.Berlin;
+      const rank = Object.values(w).filter((x) => x.v > w.Brandenburg.v).length + 1, n = Object.keys(w).length;
+      const peak = S.D.regional.local?.berlin_peak_load?.punkte?.slice(-1)[0];
+      return `Brandenburg runs <b>${fmt(w.Brandenburg.v, 0)} MW</b> of wind power, rank ${rank} of ${n} states. Berlin has ${fmt(roof.v, 0)} MW of solar on buildings${peak ? `; its peak load at the medium-/low-voltage level was ${fmt(peak.wert, 0)} MW in ${esc(peak.t)}` : ""}.`;
+    }},
   {title: "The bottleneck is not generation", set: {level: "germany", param: "c-mastr-pv", h: "2028"},
     need: () => !!S.D.briefing.bottleneck?.marginal_gain?.length,
     text: () => {

@@ -2369,6 +2369,345 @@
      "p": "2026-11-07"
     }
    }
+  },
+  "mastr_wind_mw": {
+   "geo": "state",
+   "label": "Wind capacity in operation",
+   "unit": "MW",
+   "source": "Marktstammdatenregister (Bundesnetzagentur), Energieträger Wind, in operation, sum of net rated capacity",
+   "url": "https://www.marktstammdatenregister.de/",
+   "values": {
+    "Brandenburg": {
+     "v": 9658.8,
+     "p": "2026-11-07",
+     "n": 4131
+    },
+    "Berlin": {
+     "v": 16.6,
+     "p": "2026-11-07",
+     "n": 8
+    },
+    "Baden-Württemberg": {
+     "v": 2337.2,
+     "p": "2026-11-07",
+     "n": 950
+    },
+    "Bayern": {
+     "v": 2913.8,
+     "p": "2026-11-07",
+     "n": 1382
+    },
+    "Bremen": {
+     "v": 188.1,
+     "p": "2026-11-07",
+     "n": 87
+    },
+    "Hessen": {
+     "v": 2984.8,
+     "p": "2026-11-07",
+     "n": 1239
+    },
+    "Hamburg": {
+     "v": 121.7,
+     "p": "2026-11-07",
+     "n": 67
+    },
+    "Mecklenburg-Vorpommern": {
+     "v": 4687.6,
+     "p": "2026-11-07",
+     "n": 1972
+    },
+    "Niedersachsen": {
+     "v": 14677.2,
+     "p": "2026-11-07",
+     "n": 6442
+    },
+    "Nordrhein-Westfalen": {
+     "v": 10123.9,
+     "p": "2026-11-07",
+     "n": 4076
+    },
+    "Rheinland-Pfalz": {
+     "v": 4471.8,
+     "p": "2026-11-07",
+     "n": 1819
+    },
+    "Schleswig-Holstein": {
+     "v": 10187.3,
+     "p": "2026-11-07",
+     "n": 3675
+    },
+    "Saarland": {
+     "v": 578.6,
+     "p": "2026-11-07",
+     "n": 225
+    },
+    "Sachsen": {
+     "v": 1539.6,
+     "p": "2026-11-07",
+     "n": 930
+    },
+    "Sachsen-Anhalt": {
+     "v": 5739.0,
+     "p": "2026-11-07",
+     "n": 2651
+    },
+    "Thüringen": {
+     "v": 2010.5,
+     "p": "2026-11-07",
+     "n": 899
+    }
+   }
+  },
+  "mastr_pv_mw": {
+   "geo": "state",
+   "label": "Solar PV capacity in operation",
+   "unit": "MW",
+   "source": "Marktstammdatenregister (Bundesnetzagentur), Energieträger Solar, in operation, sum of net rated capacity",
+   "url": "https://www.marktstammdatenregister.de/",
+   "values": {
+    "Brandenburg": {
+     "v": 9074.1,
+     "p": "2026-11-07",
+     "n": 196164
+    },
+    "Berlin": {
+     "v": 501.8,
+     "p": "2026-11-07",
+     "n": 65422
+    },
+    "Baden-Württemberg": {
+     "v": 14747.5,
+     "p": "2026-11-07",
+     "n": 1032343
+    },
+    "Bayern": {
+     "v": 31444.3,
+     "p": "2026-11-07",
+     "n": 1445272
+    },
+    "Bremen": {
+     "v": 196.4,
+     "p": "2026-11-07",
+     "n": 19423
+    },
+    "Hessen": {
+     "v": 5426.7,
+     "p": "2026-11-07",
+     "n": 437737
+    },
+    "Hamburg": {
+     "v": 274.3,
+     "p": "2026-11-07",
+     "n": 33816
+    },
+    "Mecklenburg-Vorpommern": {
+     "v": 4834.3,
+     "p": "2026-11-07",
+     "n": 97675
+    },
+    "Niedersachsen": {
+     "v": 10721.2,
+     "p": "2026-11-07",
+     "n": 736786
+    },
+    "Nordrhein-Westfalen": {
+     "v": 14269.4,
+     "p": "2026-11-07",
+     "n": 1200857
+    },
+    "Rheinland-Pfalz": {
+     "v": 5915.4,
+     "p": "2026-11-07",
+     "n": 384766
+    },
+    "Schleswig-Holstein": {
+     "v": 4810.0,
+     "p": "2026-11-07",
+     "n": 220138
+    },
+    "Saarland": {
+     "v": 1193.0,
+     "p": "2026-11-07",
+     "n": 78745
+    },
+    "Sachsen": {
+     "v": 5175.5,
+     "p": "2026-11-07",
+     "n": 233579
+    },
+    "Sachsen-Anhalt": {
+     "v": 5631.3,
+     "p": "2026-11-07",
+     "n": 149206
+    },
+    "Thüringen": {
+     "v": 3166.2,
+     "p": "2026-11-07",
+     "n": 142162
+    }
+   }
+  },
+  "mastr_pv_roof_mw": {
+   "geo": "state",
+   "label": "Solar PV on buildings, capacity in operation",
+   "unit": "MW",
+   "source": "Marktstammdatenregister (Bundesnetzagentur), Solar, Art der Solaranlage = Gebäudesolaranlage, in operation, sum of net rated capacity",
+   "url": "https://www.marktstammdatenregister.de/",
+   "values": {
+    "Brandenburg": {
+     "v": 2583.7,
+     "p": "2026-11-07",
+     "n": 138663
+    },
+    "Berlin": {
+     "v": 480.9,
+     "p": "2026-11-07",
+     "n": 37978
+    },
+    "Baden-Württemberg": {
+     "v": 12005.2,
+     "p": "2026-11-07",
+     "n": 822066
+    },
+    "Bayern": {
+     "v": 18161.5,
+     "p": "2026-11-07",
+     "n": 1202576
+    },
+    "Bremen": {
+     "v": 188.4,
+     "p": "2026-11-07",
+     "n": 11109
+    },
+    "Hessen": {
+     "v": 4335.1,
+     "p": "2026-11-07",
+     "n": 320538
+    },
+    "Hamburg": {
+     "v": 262.8,
+     "p": "2026-11-07",
+     "n": 21689
+    },
+    "Mecklenburg-Vorpommern": {
+     "v": 1611.7,
+     "p": "2026-11-07",
+     "n": 65163
+    },
+    "Niedersachsen": {
+     "v": 8557.9,
+     "p": "2026-11-07",
+     "n": 539271
+    },
+    "Nordrhein-Westfalen": {
+     "v": 12708.6,
+     "p": "2026-11-07",
+     "n": 891564
+    },
+    "Rheinland-Pfalz": {
+     "v": 3916.1,
+     "p": "2026-11-07",
+     "n": 288184
+    },
+    "Schleswig-Holstein": {
+     "v": 2376.2,
+     "p": "2026-11-07",
+     "n": 155707
+    },
+    "Saarland": {
+     "v": 700.9,
+     "p": "2026-11-07",
+     "n": 57051
+    },
+    "Sachsen": {
+     "v": 2613.1,
+     "p": "2026-11-07",
+     "n": 151414
+    },
+    "Sachsen-Anhalt": {
+     "v": 2448.0,
+     "p": "2026-11-07",
+     "n": 103738
+    },
+    "Thüringen": {
+     "v": 1866.1,
+     "p": "2026-11-07",
+     "n": 98464
+    }
+   }
+  }
+ },
+ "local": {
+  "berlin_peak_load": {
+   "quelleName": "Stromnetz Berlin, § 23c EnWG, annual peak load at the MV/LV transformer level (open data, CC BY)",
+   "url": "https://www.stromnetz.berlin/uber-uns/veroffentlichungspflichten/energiewirtschaftsgesetz-enwg",
+   "dataset": "daten.berlin.de: historie-ab-2020-jahreshoechstlast-mittelspannung-niederspannung-berlin",
+   "file": "https://www.stromnetz.berlin/files/globalassets/dokumente/opendata/veroffentlichungspflichten/historie-jahreshoechstlast-mittelspannung-niederspannung-berlin.xlsx",
+   "scope": "Medium-/low-voltage transformer level only, not the whole Berlin grid; yearly values",
+   "label": "Annual peak load, MV/LV level",
+   "einheit": "MW",
+   "punkte": [
+    {
+     "t": "2020",
+     "wert": 1308.1
+    },
+    {
+     "t": "2021",
+     "wert": 1344.3
+    },
+    {
+     "t": "2022",
+     "wert": 1300.8
+    },
+    {
+     "t": "2023",
+     "wert": 1286.8
+    },
+    {
+     "t": "2024",
+     "wert": 1295.7
+    },
+    {
+     "t": "2025",
+     "wert": 1265.8
+    }
+   ]
+  },
+  "berlin_mvlv_energy": {
+   "quelleName": "Stromnetz Berlin, § 23c EnWG, annual peak load at the MV/LV transformer level (open data, CC BY)",
+   "url": "https://www.stromnetz.berlin/uber-uns/veroffentlichungspflichten/energiewirtschaftsgesetz-enwg",
+   "dataset": "daten.berlin.de: historie-ab-2020-jahreshoechstlast-mittelspannung-niederspannung-berlin",
+   "file": "https://www.stromnetz.berlin/files/globalassets/dokumente/opendata/veroffentlichungspflichten/historie-jahreshoechstlast-mittelspannung-niederspannung-berlin.xlsx",
+   "scope": "Medium-/low-voltage transformer level only, not the whole Berlin grid; yearly values",
+   "label": "Energy through the MV/LV level",
+   "einheit": "GWh",
+   "punkte": [
+    {
+     "t": "2020",
+     "wert": 7095.1
+    },
+    {
+     "t": "2021",
+     "wert": 7153.0
+    },
+    {
+     "t": "2022",
+     "wert": 6925.4
+    },
+    {
+     "t": "2023",
+     "wert": 6770.0
+    },
+    {
+     "t": "2024",
+     "wert": 6753.3
+    },
+    {
+     "t": "2025",
+     "wert": 6760.9
+    }
+   ]
   }
  }
 }

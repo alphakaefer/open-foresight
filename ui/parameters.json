@@ -1,5 +1,5 @@
 {
-  "_note": "JUDGMENT: which energy parameters the map can show, and the geography each one applies to. 'series' parameters read a radar series, 'model' parameters read the scenario table, 'gap' parameters have no data yet and say what is needed. Nothing here is a regional measurement.",
+  "_note": "JUDGMENT: which energy parameters the map can show, and the geography each one applies to. 'series' parameters read a radar series, 'model' parameters read the scenario table, 'regional' parameters read one region's value from radar/regional/regional.json, 'local' parameters a yearly series from its 'local' part, 'gap' parameters have no data yet and say what is needed. Nothing here is a regional measurement.",
   "scopes": {
     "global": "Global",
     "euro_area": "Euro area (aggregate)",
@@ -99,12 +99,15 @@
       "unit": "index 2021=100"
     },
     {
-      "id": "gap-wind",
+      "id": "bb-wind",
       "scope": "brandenburg",
-      "kind": "gap",
+      "kind": "regional",
+      "dataset": "mastr_wind_mw",
+      "key": "Brandenburg",
       "label": "Installed wind capacity",
       "short": "Wind capacity",
-      "needs": "Marktstammdatenregister (Bundesnetzagentur), filtered to the state"
+      "unit": "MW",
+      "note": "Sum of the net rated capacity of wind units in operation, computed by the Marktstammdatenregister."
     },
     {
       "id": "gap-queue",
@@ -115,20 +118,43 @@
       "needs": "Network operators; the primary source for the German figures is also still missing"
     },
     {
-      "id": "gap-load",
+      "id": "be-peak",
       "scope": "berlin",
-      "kind": "gap",
-      "label": "Electricity consumption and peak load",
+      "kind": "local",
+      "local": "berlin_peak_load",
+      "label": "Annual peak load, medium-/low-voltage level",
       "short": "Peak load",
-      "needs": "Grid operator Stromnetz Berlin"
+      "unit": "MW",
+      "caution": "Only the transformer level from medium to low voltage, not the whole Berlin grid."
     },
     {
-      "id": "gap-roof",
+      "id": "be-energy",
+      "scope": "berlin",
+      "kind": "local",
+      "local": "berlin_mvlv_energy",
+      "label": "Electricity through the medium-/low-voltage level",
+      "short": "MV/LV energy",
+      "unit": "GWh",
+      "caution": "Only the transformer level from medium to low voltage, not Berlin's total consumption."
+    },
+    {
+      "id": "be-roof",
+      "scope": "berlin",
+      "kind": "regional",
+      "dataset": "mastr_pv_roof_mw",
+      "key": "Berlin",
+      "label": "Solar PV on buildings",
+      "short": "Rooftop PV",
+      "unit": "MW",
+      "note": "Units of the type 'Gebäudesolaranlage' in operation; balcony and ground-mounted systems are not included."
+    },
+    {
+      "id": "gap-heat",
       "scope": "berlin",
       "kind": "gap",
-      "label": "Rooftop PV and heat pumps",
-      "short": "Rooftop PV",
-      "needs": "Marktstammdatenregister, filtered to Berlin"
+      "label": "Heat pumps",
+      "short": "Heat pumps",
+      "needs": "An open source for heat-pump numbers in Berlin (not found yet)"
     }
   ],
   "compare": [
@@ -224,6 +250,48 @@
       "good": "neutral",
       "short": "Solar PV units",
       "caution": "Counts registered units, mostly rooftop systems, not capacity and not per head of population.",
+      "levels": [
+        "germany",
+        "brandenburg",
+        "berlin"
+      ]
+    },
+    {
+      "id": "c-mastr-wind-mw",
+      "kind": "compare",
+      "dataset": "mastr_wind_mw",
+      "home": "germany",
+      "good": "neutral",
+      "short": "Wind capacity",
+      "caution": "Capacity in operation, not generation, and not per area or per head.",
+      "levels": [
+        "germany",
+        "brandenburg",
+        "berlin"
+      ]
+    },
+    {
+      "id": "c-mastr-pv-mw",
+      "kind": "compare",
+      "dataset": "mastr_pv_mw",
+      "home": "germany",
+      "good": "neutral",
+      "short": "Solar capacity",
+      "caution": "Capacity in operation, not generation, and not per area or per head.",
+      "levels": [
+        "germany",
+        "brandenburg",
+        "berlin"
+      ]
+    },
+    {
+      "id": "c-mastr-roof-mw",
+      "kind": "compare",
+      "dataset": "mastr_pv_roof_mw",
+      "home": "germany",
+      "good": "neutral",
+      "short": "Rooftop solar",
+      "caution": "Solar units on buildings only. Capacity, not generation.",
       "levels": [
         "germany",
         "brandenburg",
