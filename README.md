@@ -145,3 +145,5 @@ Radar time series remain under the licences of their original publishers (see `r
 
 Origin: the world model and engine are developed by Karl Hosang ([zukunftsgut.org](https://zukunftsgut.org)).
 This repository is the open edition for collaboration.
+
+Analysis tools added at the hackathon (k sensitivity, plain-language explanation with a number check, forecasting prototype): [docs/analysis-tools.md](docs/analysis-tools.md).
