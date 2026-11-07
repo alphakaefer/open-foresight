@@ -11,6 +11,8 @@ const IMPRINT_URL = import.meta.env.VITE_IMPRINT_URL
 const PRIVACY_URL = import.meta.env.VITE_PRIVACY_URL
 // Optional link to the map prototype (ui/) where a hosted copy serves it next to this page.
 const MAPS_URL = import.meta.env.VITE_MAPS_URL
+// Optional link to the what-if demo page (whatif/) where a hosted copy serves it.
+const WHATIF_URL = import.meta.env.VITE_WHATIF_URL
 
 type Horizon = '2028' | '2032' | '2040'
 type Mode = 'A' | 'B' | 'C'
@@ -90,7 +92,7 @@ function App({ initialHorizon = '2028', initialMode = 'A', initialK = 0.15 }: { 
   if (!valid) return <main className="fatal"><h1>Results from different snapshots</h1><p>The bundled model outputs do not pass their checks or come from different inputs. The comparison is unavailable.</p></main>
 
   return <div className="app-shell">
-    <header className="topbar"><a className="brand" href="#top" aria-label="Foresight home">FORESIGHT</a><nav aria-label="Page sections"><a href="#outlook">Outlook</a><a href="#evidence">Evidence</a><a href="#explore">Explore</a><a href="#prediction">Forecast check</a><a href="#method">Method</a>{MAPS_URL && <a href={MAPS_URL}>Maps</a>}</nav></header>
+    <header className="topbar"><a className="brand" href="#top" aria-label="Foresight home">FORESIGHT</a><nav aria-label="Page sections"><a href="#outlook">Outlook</a><a href="#evidence">Evidence</a><a href="#explore">Explore</a><a href="#prediction">Forecast check</a><a href="#method">Method</a>{MAPS_URL && <a href={MAPS_URL}>Maps</a>}{WHATIF_URL && <a href={WHATIF_URL}>What-if</a>}</nav></header>
     <main id="top">
       <section className="hero"><div className="hero-copy"><div className="eyebrow"><span className="eyebrow-dot" /> GERMANY / ENERGY TRANSITION</div><h1>What does the<br /><em>energy future</em> look like?</h1><p>{briefing.domain.question}</p><div className="hero-meta"><span>MODEL v{briefing.inputs.version}</span><span>RADAR {date(briefing.inputs.radar_date)}</span><span>3 FUTURE HORIZONS</span></div></div><div className="hero-art" aria-hidden="true"><div className="orbit orbit-one" /><div className="orbit orbit-two" /><div className="orbit orbit-three" /><div className="sun" /><span className="art-label art-label-a">GENERATION</span><span className="art-label art-label-b">STORAGE</span><span className="art-label art-label-c">GRID</span><span className="art-label art-label-d">PERMITTING</span></div></section>
       <div className="content">

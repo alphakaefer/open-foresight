@@ -6,4 +6,6 @@ interface ImportMetaEnv {
   readonly VITE_PRIVACY_URL?: string
   /** Optional link to the map prototype (ui/), e.g. karten/ui/ */
   readonly VITE_MAPS_URL?: string
+  /** Optional link to the what-if demo page (whatif/), e.g. whatif/ */
+  readonly VITE_WHATIF_URL?: string
 }
