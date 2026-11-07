@@ -49,7 +49,7 @@ Start reading at **[domains/energy-transition/briefing.md](domains/energy-transi
 | `domains/lens.py` | Domain lens: world model → one domain question | EN |
 | `domains/energy-transition/` | Domain config, generated briefing (md + json) | EN |
 | `docs/process.md` | The foresight process step by step, and where each step lives in this repo | EN |
-| `ui/`, `docs/ux-flow.md` | Prototype UI with maps, scenario drill-down and a bottleneck what-if (static HTML/JS, `make ui`) across Berlin, Brandenburg, Germany, Europe, Global; UX flow | EN |
+| `ui/`, `docs/ux-flow.md` | Prototype UI with maps, scenario drill-down and a bottleneck what-if (static HTML/JS, `make ui`) across Berlin, Brandenburg, Germany, Europe, Global; UX flow. Early-warning what-ifs and two extreme cases (`ui/whatif.js`, `ui/build_bundles.py`) reuse the engine results of `whatif/` | EN |
 | `tests/` | Reproducibility and model tests | |
 
 ## What kind of model is this?

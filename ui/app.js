@@ -120,7 +120,7 @@ function scenariosCard(l) {
     const open = S.open.has(r.id);
     const detail = open ? `<div class="sc-detail"><div>${esc(r.short)}</div>
         <div class="regime">${Object.entries(r.regime).map(([k, v]) => `<span>${esc(k.replace(/_/g, " "))} ${v > 0 ? "+" : ""}${v}</span>`).join("")}</div>
-        <table><thead><tr><th>Horizon</th><th>Base</th><th>Today</th></tr></thead><tbody>${["2028", "2032", "2040"].map((h) => `<tr><td>${h}</td><td>${r.p_base[h]}%</td><td>${r.p_today[h]}%</td></tr>`).join("")}</tbody></table>
+        <table><thead><tr><th>Horizon</th><th>Base</th><th>${typeof wiLabel === "function" ? wiLabel() : "Today"}</th></tr></thead><tbody>${["2028", "2032", "2040"].map((h) => `<tr><td>${h}</td><td>${r.p_base[h]}%</td><td>${r.p_today[h]}%</td></tr>`).join("")}</tbody></table>
         <p class="kv">Energy price: -2 much cheaper to +2 much more expensive. These two regime values are the ones the energy lens uses.</p></div>` : "";
     return `<div class="bar-row sc ${hl.has(r.id) ? "hl" : ""}" data-sc="${esc(r.id)}" role="button" tabindex="0" aria-expanded="${open}" title="${esc(r.id)}: base ${b}%, today ${t}%. Click for details.">
       <div class="bar-name">${esc(r.name)}<small>${esc(r.id)} · energy price ${REGIME_NAMES[r.regime.energy_price] ?? r.regime.energy_price}</small></div>
@@ -134,7 +134,7 @@ function scenariosCard(l) {
   return `<section class="card">
     <div class="card-head"><div><h2>World scenarios</h2><span class="muted">Probability by horizon, base model → today (after early-warning signals)</span></div>
       <div style="display:flex;gap:8px;align-items:center">${tag("model", "domains/energy-transition/briefing.json")}<div class="seg" role="group" aria-label="Horizon">${horizons}</div></div></div>
-    <p class="legend"><span>Base model</span><span class="t">Today</span></p>
+    <p class="legend"><span>Base model</span><span class="t">${typeof wiLabel === "function" ? wiLabel() : "Today"}</span></p>
     <div class="bars">${bars}</div>
     <h3 style="margin-top:14px">Probability by energy-price regime, ${S.horizon}</h3>
     <div class="mass">${massCells}</div>
@@ -233,9 +233,12 @@ function gapCard(l) {
 
 function render() {
   S.prov = [];
+  if (typeof wiApply === "function") wiApply();  // what-if (ui/whatif.js): swaps in hypothetical probabilities
   const l = S.D.lv[S.level];
   renderHeader();
-  const parts = [introCard(l), mapCard(S.level)];
+  const parts = [introCard(l)];
+  if (l.coverage !== "gap" && typeof whatifCard === "function") parts.push(whatifCard());
+  parts.push(mapCard(S.level));
   if (l.coverage === "gap") parts.push(gapCard(l));
   else {
     parts.push(scenariosCard(l));
@@ -249,7 +252,8 @@ function render() {
   const seen = new Set();
   $("#prov-body").innerHTML = S.prov.filter((p) => !seen.has(p.kind + p.file) && seen.add(p.kind + p.file))
     .map((p) => `<div class="prov-item"><span class="tag ${p.kind.toLowerCase().split(" ")[0]}">${esc(p.kind)}</span> <code>${esc(p.file)}</code></div>`).join("");
-  history.replaceState(null, "", `#${S.level}/${S.horizon}${S.open.size ? "/" + [...S.open].join(",") : ""}`);
+  const wi = typeof W !== "undefined" && W.id ? `/w=${W.id}@${W.k}` : "";
+  history.replaceState(null, "", `#${S.level}/${S.horizon}${S.open.size || wi ? "/" + [...S.open].join(",") : ""}${wi}`);
 }
 
 // ---------- events ----------
@@ -303,7 +307,9 @@ document.addEventListener("mousemove", (e) => {
 (async () => {
   try {
     S.D = await load();
-    const [lv, hz, open] = location.hash.slice(1).split("/");
+    if (typeof wiLoad === "function") await wiLoad(S.D);
+    const [lv, hz, open, wi] = location.hash.slice(1).split("/");
+    if (wi && wi.startsWith("w=") && typeof W !== "undefined" && W.ok) { const [id, k] = wi.slice(2).split("@"); W.id = id; if (k) W.k = k; }
     (open || "").split(",").filter(Boolean).forEach((id) => S.open.add(id));
     if (S.D.lv[lv]) S.level = lv;
     if (["2028", "2032", "2040"].includes(hz)) S.horizon = hz;

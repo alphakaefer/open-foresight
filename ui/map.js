@@ -90,8 +90,9 @@ function paramValue(p) {
         ref: "vs today's view (illustrative)", points: null, file: "ui/demo/future.json (illustrative, not data)"};
     }
     const today = sum("p_today", "2028");
-    return {value: today, display: fmt(today, 0) + "%", unit: "today's view, 2028 horizon", when: "current", change: null,
-      ref: "latest world state (2026-11-07)", points: null, file: src};
+    const wi = typeof wiActive === "function" && wiActive();
+    return {value: today, display: fmt(today, 0) + "%", unit: `${wi ? "HYPOTHETICAL what-if" : "today's view"}, 2028 horizon`, when: "current", change: null,
+      ref: wi ? "engine-computed what-if, not a forecast" : "latest world state (2026-11-07)", points: null, file: wi ? "whatif/data.js (engine what-if)" : src};
   }
   return null;
 }
