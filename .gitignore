@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+dist/
+dist-*/
+.env
+.env.*
+*.recomputed.json
+radar/snapshot/*.full.json
+.DS_Store

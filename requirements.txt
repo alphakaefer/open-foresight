@@ -1,0 +1,2 @@
+# The engine and the domain lens use only the Python standard library (3.9+).
+pytest>=7.0

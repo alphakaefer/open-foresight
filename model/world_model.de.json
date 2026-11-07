@@ -1,0 +1,2920 @@
+{
+  "schema": "weltmodell/v1",
+  "meta": {
+    "titel": "Strategic Foresight Modell: Technologie, Makro, Klima, Politik",
+    "version": "1.4.0",
+    "stand": "2026-10-09",
+    "horizonte": [
+      "2028",
+      "2032",
+      "2040"
+    ]
+  },
+  "treiber": [
+    {
+      "id": "T1",
+      "cluster": "Technologie",
+      "name": "KI-Fähigkeitskurve",
+      "typ": "Kritische Unsicherheit",
+      "frage": "Setzt sich die Skalierung von Fähigkeiten fort oder flacht die Kurve auf einem Niveau ab, das Assistenz erlaubt, aber keine autonome Arbeit?",
+      "stand_2026": "Die Fähigkeiten steigen weiter, neue Agentenfunktionen kommen in Massenprodukte (Apple warnt vor Datenzugriff von KI-Agenten auf dem Mac). In der Breite der Produktivität ist das noch nicht angekommen: das TFP-Wachstum der USA liegt bei 1,2 % und fällt.",
+      "unsicherheit": 5,
+      "wirkung": 5,
+      "tempo": "schnell",
+      "richtung": "steigend",
+      "indikatoren": [
+        {
+          "name": "Länge autonom lösbarer Arbeitsaufgaben (Zeithorizont-Metrik)",
+          "schwelle": "über 1 Arbeitstag ohne Eingriff = Regimewechsel",
+          "quelle": "METR / Stanford AI Index"
+        },
+        {
+          "name": "Kosten pro Einheit Fähigkeit",
+          "schwelle": "Fortsetzung des Preisverfalls um Faktor 10 pro Jahr",
+          "quelle": "Stanford AI Index Kapitel 4"
+        }
+      ],
+      "kreuzwirkung": [
+        "T2",
+        "T3",
+        "T5",
+        "M4",
+        "M7"
+      ]
+    },
+    {
+      "id": "T2",
+      "cluster": "Technologie",
+      "name": "KI-Diffusion in die Realwirtschaft",
+      "typ": "Kritische Unsicherheit",
+      "frage": "Wie schnell übersetzt sich Fähigkeit in gemessene Produktivität außerhalb des Tech-Sektors?",
+      "stand_2026": "Die Nutzung wächst, die Wirkung nicht: 26 % der deutschen Unternehmen ab zehn Beschäftigten nutzten 2025 KI (2024: 20 %), das US-TFP-Wachstum fällt auf 1,2 %. Das Frühwarnzeichen ‚TFP unter 1,2 %‘ trifft zu.",
+      "unsicherheit": 5,
+      "wirkung": 5,
+      "tempo": "mittel",
+      "richtung": "langsam steigend",
+      "indikatoren": [
+        {
+          "name": "US Total Factor Productivity Wachstum",
+          "schwelle": "über 1,5 Prozent p.a. über 6 Quartale = Durchbruch bestätigt",
+          "quelle": "BLS / Fed"
+        },
+        {
+          "name": "Anteil Unternehmen mit KI in Kernprozessen (nicht Pilot)",
+          "schwelle": "über 25 Prozent",
+          "quelle": "Census BTOS"
+        }
+      ],
+      "kreuzwirkung": [
+        "T1",
+        "M7",
+        "M8"
+      ]
+    },
+    {
+      "id": "T3",
+      "cluster": "Technologie",
+      "name": "Compute- und Halbleiter-Verfügbarkeit",
+      "typ": "Treiber mit Chokepoint-Risiko",
+      "frage": "Bleibt Rechenleistung ein reichlich verfügbares oder ein politisch rationiertes Gut?",
+      "stand_2026": "Speicher bleibt knapp und lukrativ (Micron mit erneutem Rekordquartal), Konzerne setzen auf eigene Chips (Google gegen Nvidia), Europa baut kleine Standorte aus (Erfurt). Der Chokepoint Taiwan ist unverändert.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "mittel",
+      "richtung": "verknappend",
+      "indikatoren": [
+        {
+          "name": "HBM-Spotpreise und Lieferzeiten",
+          "schwelle": "Verdopplung binnen 2 Quartalen",
+          "quelle": "TrendForce"
+        },
+        {
+          "name": "Anteil der weltweiten Leading-Edge-Kapazität außerhalb Taiwans",
+          "schwelle": "über 25 Prozent = Chokepoint entschärft",
+          "quelle": "SEMI / TSMC Berichte"
+        }
+      ],
+      "kreuzwirkung": [
+        "G2",
+        "T1",
+        "M4"
+      ]
+    },
+    {
+      "id": "T5",
+      "cluster": "Technologie",
+      "name": "Robotik und verkörperte KI",
+      "typ": "Kritische Unsicherheit",
+      "frage": "Überschreiten Humanoide und VLA-Systeme die Schwelle vom Pilotprojekt zum wirtschaftlichen Einsatz?",
+      "stand_2026": "Keine Belege für den Sprung vom Pilotprojekt zum Dauerbetrieb im Radar. Robotik bleibt in den Meldungen ein Nischenthema.",
+      "unsicherheit": 5,
+      "wirkung": 5,
+      "tempo": "mittel",
+      "richtung": "steigend",
+      "indikatoren": [
+        {
+          "name": "Installierte Humanoide in produktivem Dauerbetrieb",
+          "schwelle": "über 50.000 weltweit",
+          "quelle": "IFR / State of Robotics"
+        },
+        {
+          "name": "Kosten pro Roboterstunde vs. Lohnkosten",
+          "schwelle": "Parität in Hochlohnländern",
+          "quelle": "Herstellerangaben, IFR"
+        }
+      ],
+      "kreuzwirkung": [
+        "M7",
+        "G7"
+      ]
+    },
+    {
+      "id": "T6",
+      "cluster": "Technologie",
+      "name": "Biotechnologie, Gesundheitsspanne und KI-getriebene Wissenschaft",
+      "typ": "Wildcard mit hoher Wirkung",
+      "frage": "Verschiebt KI-beschleunigte Biologie die Kosten- und Altersstruktur von Gesundheitssystemen?",
+      "stand_2026": "Medizintechnik und KI-gestützte Forschung bewegen sich (Gehirnchips als Konkurrenz zu Neuralink, Exzellenzstrategie), die Wirkung auf die Kostenstruktur der Gesundheitssysteme liegt weiter jenseits 2032.",
+      "unsicherheit": 4,
+      "wirkung": 4,
+      "tempo": "langsam",
+      "richtung": "steigend",
+      "indikatoren": [
+        {
+          "name": "Zeit von Zielidentifikation bis Phase-1-Start",
+          "schwelle": "Halbierung gegenüber 2020er-Median",
+          "quelle": "FDA / EMA Statistiken"
+        },
+        {
+          "name": "Gesundheitsausgabenquote in OECD",
+          "schwelle": "erstmaliger Rückgang trotz Alterung",
+          "quelle": "OECD Health"
+        }
+      ],
+      "kreuzwirkung": [
+        "G7",
+        "M1"
+      ]
+    },
+    {
+      "id": "T7",
+      "cluster": "Technologie",
+      "name": "Solar- und Speicher-Lernkurve",
+      "typ": "Starker Trend, hohe Vorhersagbarkeit",
+      "frage": "Wie tief fallen die Kosten für Solar plus Speicher, und ab wann unterbieten sie fossile Grenzkosten flächendeckend?",
+      "stand_2026": "Die Lernkurve läuft: In Deutschland sind 130,4 GW Photovoltaik installiert (+14 % in einem Jahr), die Batteriespeicher wachsen auf 33,6 GWh (+39 %). Erneuerbare liefern 62,6 % der öffentlichen Nettostromerzeugung.",
+      "unsicherheit": 2,
+      "wirkung": 5,
+      "tempo": "mittel",
+      "richtung": "stark fallende Kosten",
+      "indikatoren": [
+        {
+          "name": "Speicherkosten pro kWh (Systemebene)",
+          "schwelle": "unter 80 USD/kWh",
+          "quelle": "BloombergNEF"
+        },
+        {
+          "name": "Anteil Solar plus Wind an globaler Stromerzeugung",
+          "schwelle": "über 25 Prozent",
+          "quelle": "Ember Global Electricity Review"
+        }
+      ],
+      "kreuzwirkung": [
+        "T8",
+        "M3",
+        "G3"
+      ]
+    },
+    {
+      "id": "T8",
+      "cluster": "Technologie",
+      "name": "Netz-, Speicher- und Infrastrukturausbau (einschließlich Rechenzentren)",
+      "typ": "Kritische Unsicherheit",
+      "frage": "Hält der physische Ausbau – Netze, Anschlüsse für Großverbraucher wie Rechenzentren, Trafos, Fachkräfte, Genehmigungen – mit Erzeugung und Strombedarf Schritt, und wer zahlt ihn?",
+      "stand_2026": "Der Engpass liegt bei Übertragung und Netzanschluss, nicht bei der Erzeugung. Der Bund will die Übertragungsnetzkosten 2027 bis 2029 bezuschussen (Änderung des Energiewirtschaftsgesetzes, dem Bundestag zugeleitet); Rechenzentren drängen weiter in die Anschlusswarteschlangen.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "langsam",
+      "richtung": "verbessernd aber zu langsam",
+      "indikatoren": [
+        {
+          "name": "Lieferzeit Großtransformatoren",
+          "schwelle": "unter 2 Jahre = Entspannung",
+          "quelle": "Branchenverbände"
+        },
+        {
+          "name": "Wartezeit Netzanschluss Großlast",
+          "schwelle": "über 5 Jahre = harte Bremse",
+          "quelle": "Netzbetreiber"
+        },
+        {
+          "name": "Staatliche Zuschüsse zu Netzentgelten",
+          "schwelle": "dauerhaft statt befristet",
+          "quelle": "Bundestag, DIP"
+        }
+      ],
+      "kreuzwirkung": [
+        "T7",
+        "M3"
+      ]
+    },
+    {
+      "id": "T9",
+      "cluster": "Technologie",
+      "name": "Cybersicherheitslage und offensive KI",
+      "typ": "Wildcard",
+      "frage": "Kippt das Verhältnis von Angriff und Verteidigung durch KI-gestützte Offensive?",
+      "stand_2026": "Der Schutz kritischer Infrastruktur rückt ins Strafrecht (Gesetzentwurf zum strafrechtlichen Schutz kritischer Infrastrukturen); Ausfälle digitaler Staatsdienste (Störung bei der Bundesagentur für Arbeit) zeigen die Verwundbarkeit.",
+      "unsicherheit": 4,
+      "wirkung": 4,
+      "tempo": "schnell",
+      "richtung": "verschärfend",
+      "indikatoren": [
+        {
+          "name": "Erfolgreicher Angriff mit physischer Ausfallwirkung auf Netz oder Wasser in OECD",
+          "schwelle": "erstes Ereignis mit über 1 Mio. Betroffenen",
+          "quelle": "CISA / BSI"
+        },
+        {
+          "name": "Cyber-Rückversicherungsprämien",
+          "schwelle": "Verdopplung binnen 12 Monaten",
+          "quelle": "Rückversicherer"
+        }
+      ],
+      "kreuzwirkung": [
+        "G4",
+        "G6"
+      ]
+    },
+    {
+      "id": "T10",
+      "cluster": "Technologie",
+      "name": "Informationsökosystem und synthetische Medien",
+      "typ": "Kritische Unsicherheit",
+      "frage": "Bricht die gemeinsame Faktenbasis so weit weg, dass kollektive Entscheidungsfähigkeit leidet?",
+      "stand_2026": "Synthetische Inhalte werden zum Rechtsstreit (US-Gericht stoppt vorläufig ein Verbot von KI-Nacktbildern bei xAI); wer an KI-Musik verdient, ist ungeklärt.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "schnell",
+      "richtung": "verschärfend",
+      "indikatoren": [
+        {
+          "name": "Vertrauen in Nachrichtenmedien (Reuters Institute)",
+          "schwelle": "unter 30 Prozent in G7-Median",
+          "quelle": "Reuters Digital News Report"
+        },
+        {
+          "name": "Verbreitung durchgesetzter Herkunftsnachweise",
+          "schwelle": "über 50 Prozent der Reichweite großer Plattformen",
+          "quelle": "C2PA Adoption"
+        }
+      ],
+      "kreuzwirkung": [
+        "G4",
+        "M8",
+        "G5"
+      ]
+    },
+    {
+      "id": "M1",
+      "cluster": "Makro und Finanzen",
+      "name": "Staatsverschuldung und fiskalischer Spielraum",
+      "typ": "Strukturelle Vorbelastung",
+      "frage": "Ab wann erzwingt die Schuldenlast entweder Austerität, Inflation oder finanzielle Repression?",
+      "stand_2026": "Der Druck kommt zunehmend aus dem Sozialstaat: Der Bundesrechnungshof warnt vor steigenden Rentenausgaben des Bundes, die Sozialabgaben steigen 2027. In den USA bestätigt Scope die Bonität, mahnt aber die hohe Verschuldung an.",
+      "unsicherheit": 3,
+      "wirkung": 5,
+      "tempo": "langsam",
+      "richtung": "verschärfend",
+      "indikatoren": [
+        {
+          "name": "Zinsausgaben in Prozent der Staatseinnahmen (USA, F, IT, UK)",
+          "schwelle": "über 15 Prozent = politischer Druckpunkt",
+          "quelle": "IMF Fiscal Monitor"
+        },
+        {
+          "name": "Auktionsdeckungsgrad langer Laufzeiten",
+          "schwelle": "wiederholt unter historischem Mittel",
+          "quelle": "Treasury / Finanzagenturen"
+        }
+      ],
+      "kreuzwirkung": [
+        "M2",
+        "M3",
+        "M5",
+        "G6"
+      ]
+    },
+    {
+      "id": "M2",
+      "cluster": "Makro und Finanzen",
+      "name": "Zinsregime und Laufzeitprämie",
+      "typ": "Kritische Unsicherheit",
+      "frage": "Bleiben reale Langfristzinsen positiv, oder werden sie politisch nach unten gedrückt?",
+      "stand_2026": "Die Zinswende nach oben ist da: Die EZB hat den Einlagesatz am 16. September auf 2,50 % angehoben (vor einem Jahr 2,00 %), die reale zehnjährige US-Rendite liegt bei 2,88 % – über der Schwelle von 2,5 %, die das Modell als Regime markiert.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "mittel",
+      "richtung": "steigend",
+      "indikatoren": [
+        {
+          "name": "10-Jahres-Realrendite USA",
+          "schwelle": "dauerhaft über 2,5 Prozent oder unter 0 Prozent",
+          "quelle": "TIPS-Markt"
+        },
+        {
+          "name": "Kurvensteilheit 2s10s",
+          "schwelle": "über 150 Basispunkte",
+          "quelle": "Marktdaten"
+        }
+      ],
+      "kreuzwirkung": [
+        "M1",
+        "M3",
+        "M4"
+      ]
+    },
+    {
+      "id": "M3",
+      "cluster": "Makro und Finanzen",
+      "name": "Inflationsregime (angebotsseitig getrieben)",
+      "typ": "Kritische Unsicherheit",
+      "frage": "Ist die Inflation von 2026 ein einmaliger Energieschock oder der Beginn eines strukturell höheren Niveaus?",
+      "stand_2026": "Aus dem Energieschock wird ein breiterer Preisauftrieb: Inflation in Deutschland 2,9 % im August, im September 3,3 %; in den USA 3,4 %. Die Kerninflation der Eurozone hält sich bei 2,5 %, Brent liegt im September im Mittel bei 114 Dollar.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "schnell",
+      "richtung": "steigend",
+      "indikatoren": [
+        {
+          "name": "Kerninflation ohne Energie in G7",
+          "schwelle": "über 3 Prozent trotz fallender Energiepreise",
+          "quelle": "OECD"
+        },
+        {
+          "name": "Lohnstückkosten Eurozone",
+          "schwelle": "über 4 Prozent p.a.",
+          "quelle": "EZB"
+        }
+      ],
+      "kreuzwirkung": [
+        "G3",
+        "T7",
+        "M2",
+        "M8"
+      ]
+    },
+    {
+      "id": "M4",
+      "cluster": "Makro und Finanzen",
+      "name": "KI-Capex-Zyklus und Bewertungskonzentration",
+      "typ": "Kritische Unsicherheit",
+      "frage": "Ist der Investitionsboom eine tragfähige Infrastrukturphase oder eine kreditgetriebene Überinvestition?",
+      "stand_2026": "Der Zyklus läuft auf Hochtouren: Nvidia stockt den Aktienrückkauf um 150 Milliarden Dollar auf, Micron meldet ein Rekordquartal. Belege für eine Finanzierungslücke fehlen im Radar.",
+      "unsicherheit": 5,
+      "wirkung": 5,
+      "tempo": "schnell",
+      "richtung": "reifend",
+      "indikatoren": [
+        {
+          "name": "Anteil fremdfinanzierter Rechenzentrums-Capex",
+          "schwelle": "über 40 Prozent = Fragilität",
+          "quelle": "Anleiheemissionen, Private Credit"
+        },
+        {
+          "name": "Abschreibungsdauer für GPUs in Bilanzen",
+          "schwelle": "Verkürzung durch Prüfer erzwungen",
+          "quelle": "Geschäftsberichte"
+        },
+        {
+          "name": "Konzentration Top 10 im MSCI World",
+          "schwelle": "über 30 Prozent",
+          "quelle": "MSCI"
+        }
+      ],
+      "kreuzwirkung": [
+        "T1",
+        "T3",
+        "M2"
+      ]
+    },
+    {
+      "id": "M5",
+      "cluster": "Makro und Finanzen",
+      "name": "Währungsordnung und Rolle des Dollar",
+      "typ": "Langsamer Strukturbruch",
+      "frage": "Erodiert die Reservefunktion des Dollar schrittweise, und wodurch wird sie ersetzt?",
+      "stand_2026": "Keine neuen Belege im Radar.",
+      "unsicherheit": 3,
+      "wirkung": 4,
+      "tempo": "langsam",
+      "richtung": "erodierend",
+      "indikatoren": [
+        {
+          "name": "Dollaranteil an globalen Währungsreserven",
+          "schwelle": "unter 50 Prozent",
+          "quelle": "IMF COFER"
+        },
+        {
+          "name": "Goldanteil in Zentralbankreserven",
+          "schwelle": "über 20 Prozent",
+          "quelle": "World Gold Council"
+        }
+      ],
+      "kreuzwirkung": [
+        "M1",
+        "G1",
+        "M8"
+      ]
+    },
+    {
+      "id": "M6",
+      "cluster": "Makro und Finanzen",
+      "name": "Chinas Deflations- und Überkapazitätsdruck",
+      "typ": "Treiber",
+      "frage": "Exportiert China Deflation und Überkapazität in die Weltmärkte, und wie reagiert der Westen handelspolitisch?",
+      "stand_2026": "Keine neuen Belege im Radar; die Handelspolitik richtet sich derzeit stärker gegen Russland (US-Sanktionen gegen Moskau und Handelspartner).",
+      "unsicherheit": 3,
+      "wirkung": 4,
+      "tempo": "mittel",
+      "richtung": "anhaltend",
+      "indikatoren": [
+        {
+          "name": "Chinesischer BIP-Deflator",
+          "schwelle": "mehr als 12 Quartale negativ",
+          "quelle": "NBS"
+        },
+        {
+          "name": "Handelsüberschuss China in Prozent des BIP",
+          "schwelle": "über 5 Prozent = politische Gegenreaktion sicher",
+          "quelle": "Zolldaten"
+        }
+      ],
+      "kreuzwirkung": [
+        "G1",
+        "M3",
+        "G2"
+      ]
+    },
+    {
+      "id": "M7",
+      "cluster": "Makro und Finanzen",
+      "name": "Struktur des Arbeitsmarkts für Wissensarbeit",
+      "typ": "Kritische Unsicherheit",
+      "frage": "Trifft die KI-Substitution zuerst Einstiegspositionen, und was passiert mit der Qualifikationspipeline?",
+      "stand_2026": "Die Spaltung wird sichtbar: Die Wirtschaft wächst, der Arbeitsmarkt schrumpft; das Stellenangebot für Berufseinsteiger sinkt rasant. Die Arbeitslosenquote in Deutschland steigt auf 4,0 % (vor einem Jahr 3,8 %).",
+      "unsicherheit": 5,
+      "wirkung": 5,
+      "tempo": "mittel",
+      "richtung": "verschärfend",
+      "indikatoren": [
+        {
+          "name": "Einstellungsquote Berufseinsteiger in Beratung, Recht, Software",
+          "schwelle": "Rückgang über 30 Prozent gegenüber 2024",
+          "quelle": "Branchenverbände, LinkedIn Daten"
+        },
+        {
+          "name": "Lohnspreizung innerhalb gleicher Berufe",
+          "schwelle": "deutliche Aufspreizung zwischen KI-Nutzern und Nichtnutzern",
+          "quelle": "Lohnstatistiken"
+        }
+      ],
+      "kreuzwirkung": [
+        "T1",
+        "T2",
+        "T5",
+        "M8",
+        "G4"
+      ]
+    },
+    {
+      "id": "M8",
+      "cluster": "Makro und Finanzen",
+      "name": "Vermögens- und Einkommensverteilung",
+      "typ": "Treiber mit politischer Rückkopplung",
+      "frage": "Wie stark verschiebt der KI-Zyklus Einkommen von Arbeit zu Kapital, und ab wann kippt das politisch?",
+      "stand_2026": "Der Frust der Verbraucher wächst trotz Wachstum (HDE-Konsumbarometer); der Osten holt wirtschaftlich seit Jahren nicht mehr auf (IW).",
+      "unsicherheit": 3,
+      "wirkung": 5,
+      "tempo": "mittel",
+      "richtung": "verschärfend",
+      "indikatoren": [
+        {
+          "name": "Lohnquote am Volkseinkommen",
+          "schwelle": "Rückgang um mehr als 3 Prozentpunkte in 5 Jahren",
+          "quelle": "nationale VGR"
+        },
+        {
+          "name": "Politische Mehrheiten für Kapital- oder Vermögensbesteuerung",
+          "schwelle": "erste G7-Umsetzung",
+          "quelle": "Gesetzgebung"
+        }
+      ],
+      "kreuzwirkung": [
+        "M7",
+        "G4",
+        "T10",
+        "M1"
+      ]
+    },
+    {
+      "id": "G1",
+      "cluster": "Geopolitik und Governance",
+      "name": "Handelsfragmentierung und Zollpolitik",
+      "typ": "Aktiver Strukturbruch",
+      "frage": "Konsolidiert sich das Zollregime auf einem neuen, höheren Plateau, oder eskaliert es weiter?",
+      "stand_2026": "Der erhobene effektive US-Zollsatz liegt bei 8,2 % der Wareneinfuhr – deutlich unter dem gesetzlichen Satz und unter der Schwelle von 15 %. Das Thema Handel und Zölle verliert in den Meldungen an Gewicht.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "schnell",
+      "richtung": "fragmentierend",
+      "indikatoren": [
+        {
+          "name": "Effektiver durchschnittlicher US-Zollsatz",
+          "schwelle": "über 15 Prozent dauerhaft",
+          "quelle": "USITC / PIIE"
+        },
+        {
+          "name": "Welthandelsvolumen relativ zum Welt-BIP",
+          "schwelle": "anhaltender Rückgang über 3 Jahre",
+          "quelle": "WTO"
+        }
+      ],
+      "kreuzwirkung": [
+        "M6",
+        "M3",
+        "G2",
+        "M5"
+      ]
+    },
+    {
+      "id": "G2",
+      "cluster": "Geopolitik und Governance",
+      "name": "Taiwan und der Halbleiter-Chokepoint",
+      "typ": "Wildcard mit extremer Wirkung",
+      "frage": "Kommt es zu Blockade, Quarantäne oder Konflikt, und wie schnell reagiert die Weltwirtschaft?",
+      "stand_2026": "Keine neuen Belege zu Blockade oder Quarantäne im Radar.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "schnell",
+      "richtung": "angespannt",
+      "indikatoren": [
+        {
+          "name": "Militärische Aktivität in der Taiwanstraße (ADIZ-Einflüge, Übungen)",
+          "schwelle": "mehrtägige Quarantäneübung mit Handelsunterbrechung",
+          "quelle": "Verteidigungsministerien"
+        },
+        {
+          "name": "Versicherungsprämien Seefracht Ostasien",
+          "schwelle": "Verdopplung",
+          "quelle": "Lloyd's"
+        }
+      ],
+      "kreuzwirkung": [
+        "T3",
+        "G1",
+        "M4",
+        "M6"
+      ]
+    },
+    {
+      "id": "G3",
+      "cluster": "Geopolitik und Governance",
+      "name": "Energie-Chokepoints und Nahost",
+      "typ": "Aktiver Schock",
+      "frage": "Bleibt die Straße von Hormus dauerhaft ein Risikoaufschlag, oder normalisiert sich die Lage?",
+      "stand_2026": "Hormus bleibt Kampfzone: Tanker geraten unter Beschuss, die USA lehnen einen Vorschlag Irans ab, Staaten geben Ölreserven frei. Brent liegt im September im Mittel bei 114 Dollar; das Frühwarnzeichen ‚Brent zwischen 80 und 95 Dollar‘ ist entfallen.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "schnell",
+      "richtung": "steigend",
+      "indikatoren": [
+        {
+          "name": "Brent Spotpreis",
+          "schwelle": "unter 70 Dollar = Entspannung, über 110 Dollar zwei Quartale = Dauerkrise",
+          "quelle": "EIA"
+        },
+        {
+          "name": "Tankerverkehr durch Hormus",
+          "schwelle": "Rückgang über 20 Prozent",
+          "quelle": "Lloyd's List"
+        },
+        {
+          "name": "Freigaben strategischer Ölreserven",
+          "schwelle": "wiederholt binnen sechs Monaten",
+          "quelle": "IEA"
+        }
+      ],
+      "kreuzwirkung": [
+        "M3",
+        "M2",
+        "T7",
+        "G6"
+      ]
+    },
+    {
+      "id": "G4",
+      "cluster": "Geopolitik und Governance",
+      "name": "Institutionelle Stabilität und Polarisierung westlicher Demokratien",
+      "typ": "Kritische Unsicherheit",
+      "frage": "Setzen sich Erosion und Polarisierung fort – im Parlament wie auf der Straße –, und wie wirken sie auf Rechtssicherheit, Regierbarkeit und Kapitalallokation?",
+      "stand_2026": "Die Polarisierung erreicht Parlamente und Straßen: In Deutschland wird über AfD-Ausschussvorsitze gestritten, der Bundespräsident warnt vor radikalen Kräften; in Frankreich eskalieren Schülerproteste (über 5.000 Festnahmen), in Spanien wird landesweit gegen Wohnungsnot demonstriert. Demokratie und Parteien waren vergangene Woche das meistgenannte Thema (50 Meldungen).",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "mittel",
+      "richtung": "erodierend",
+      "indikatoren": [
+        {
+          "name": "V-Dem Liberal Democracy Index für G7",
+          "schwelle": "weiterer Rückgang über 2 Jahre",
+          "quelle": "V-Dem"
+        },
+        {
+          "name": "Regierungsbildungen ohne stabile Mehrheit in EU-Kernländern",
+          "schwelle": "zwei oder mehr gleichzeitig",
+          "quelle": "eigene Auswertung"
+        },
+        {
+          "name": "Protestwellen mit Massenfestnahmen in der EU",
+          "schwelle": "mehrere Länder binnen eines Quartals",
+          "quelle": "ACLED"
+        }
+      ],
+      "kreuzwirkung": [
+        "T10",
+        "M8",
+        "G5",
+        "G7"
+      ]
+    },
+    {
+      "id": "G5",
+      "cluster": "Geopolitik und Governance",
+      "name": "KI-Regulierung und Governance-Divergenz",
+      "typ": "Treiber",
+      "frage": "Entstehen inkompatible Regulierungsräume, die Produkte und Datenflüsse aufspalten?",
+      "stand_2026": "Die Regulierung von KI läuft auseinander und vor Gericht (US-Gericht stoppt ein Verbot bei xAI); die USA rüsten KI militärisch auf (Ankündigung einer ‚AI Force‘).",
+      "unsicherheit": 4,
+      "wirkung": 4,
+      "tempo": "mittel",
+      "richtung": "divergierend",
+      "indikatoren": [
+        {
+          "name": "Zeitversatz Modellverfügbarkeit EU gegenüber USA",
+          "schwelle": "über 6 Monate im Median",
+          "quelle": "Anbieter-Releases"
+        },
+        {
+          "name": "Anzahl inkompatibler nationaler Datenlokalisierungspflichten",
+          "schwelle": "steigend",
+          "quelle": "Regulierungstracker"
+        }
+      ],
+      "kreuzwirkung": [
+        "G1",
+        "T1",
+        "G4"
+      ]
+    },
+    {
+      "id": "G6",
+      "cluster": "Geopolitik und Governance",
+      "name": "Verteidigungsausgaben und Rüstungszyklus",
+      "typ": "Starker Trend",
+      "frage": "Wie lange hält der Ausgabenzyklus, und verdrängt er zivile Investitionen?",
+      "stand_2026": "Der Zyklus bleibt politisch umkämpft: Gegen Aufrüstung und Wehrpflicht wird in Stuttgart und Berlin demonstriert, während Deutschland der Ukraine weitere Militärhilfe zusagt.",
+      "unsicherheit": 2,
+      "wirkung": 4,
+      "tempo": "mittel",
+      "richtung": "stark steigend",
+      "indikatoren": [
+        {
+          "name": "NATO-Verteidigungsausgaben in Prozent des BIP",
+          "schwelle": "über 3 Prozent Durchschnitt",
+          "quelle": "NATO"
+        },
+        {
+          "name": "Auftragsbestand europäischer Rüstungskonzerne",
+          "schwelle": "über 4 Jahresumsätze",
+          "quelle": "Geschäftsberichte"
+        }
+      ],
+      "kreuzwirkung": [
+        "M1",
+        "G3",
+        "G2",
+        "T9"
+      ]
+    },
+    {
+      "id": "G7",
+      "cluster": "Gesellschaft",
+      "name": "Migration, Demografie und Arbeitskräfteangebot",
+      "typ": "Struktureller Trend mit politischer Sprengkraft",
+      "frage": "Kann Zuwanderung den demografischen Rückgang in Europa kompensieren, ohne die politische Stabilität zu überlasten?",
+      "stand_2026": "Die Demografie schlägt auf Sozialkassen und Arbeitsmarkt durch: steigende Rentenausgaben, höhere Sozialabgaben 2027, gleichzeitig Fachkräftemangel in Engpassberufen, in denen Beschäftigte mit Migrationshintergrund besonders häufig arbeiten.",
+      "unsicherheit": 3,
+      "wirkung": 5,
+      "tempo": "langsam",
+      "richtung": "verschärfend",
+      "indikatoren": [
+        {
+          "name": "Erwerbspersonenpotenzial Deutschland",
+          "schwelle": "Rückgang über 1 Prozent p.a.",
+          "quelle": "IAB"
+        },
+        {
+          "name": "Offene Stellen in Handwerk, Energie, Pflege",
+          "schwelle": "über 1 Mio. dauerhaft",
+          "quelle": "BA"
+        }
+      ],
+      "kreuzwirkung": [
+        "T8",
+        "M7",
+        "G4"
+      ]
+    },
+    {
+      "id": "OE1",
+      "cluster": "Ökologie",
+      "name": "Emissionspfad und Erwärmungsrate",
+      "typ": "Treiber mit Trägheit",
+      "frage": "Wie schnell steigt die Temperatur, und ist die Rate wichtiger als das Niveau?",
+      "stand_2026": "Europas Sommer 2026 war von Klimaextremen geprägt (Copernicus), Westeuropa erlebte mehr extreme Hitze als je zuvor.",
+      "unsicherheit": 3,
+      "wirkung": 5,
+      "tempo": "langsam",
+      "richtung": "steigend",
+      "indikatoren": [
+        {
+          "name": "Gleitendes 10-Jahres-Mittel der globalen Anomalie",
+          "schwelle": "Überschreiten von 1,5 Grad im Mittel",
+          "quelle": "WMO / Copernicus"
+        },
+        {
+          "name": "Globale CO2-Emissionen",
+          "schwelle": "erster nachhaltiger Rückgang über 3 Jahre",
+          "quelle": "Global Carbon Project"
+        }
+      ],
+      "kreuzwirkung": [
+        "OE2",
+        "OE3",
+        "T7",
+        "G3"
+      ]
+    },
+    {
+      "id": "OE2",
+      "cluster": "Ökologie",
+      "name": "Kipppunkt-Risiko (AMOC, Amazonas, Korallen)",
+      "typ": "Wildcard mit extremer Wirkung",
+      "frage": "Wie hoch ist die Wahrscheinlichkeit eines irreversiblen Systemwechsels innerhalb des Horizonts?",
+      "stand_2026": "Keine neuen Belege im Radar; die wissenschaftliche Uneinigkeit zur AMOC bleibt die relevante Information.",
+      "unsicherheit": 5,
+      "wirkung": 5,
+      "tempo": "langsam bis abrupt",
+      "richtung": "steigendes Risiko",
+      "indikatoren": [
+        {
+          "name": "AMOC-Stärke (RAPID-Array)",
+          "schwelle": "anhaltender Rückgang über 15 Prozent",
+          "quelle": "RAPID / NOAA"
+        },
+        {
+          "name": "Amazonas-Trockenjahre in Folge",
+          "schwelle": "3 Jahre mit Nettokohlenstoffabgabe",
+          "quelle": "INPE"
+        }
+      ],
+      "kreuzwirkung": [
+        "OE1",
+        "OE4",
+        "OE3",
+        "G7"
+      ]
+    },
+    {
+      "id": "OE3",
+      "cluster": "Ökologie",
+      "name": "Extremwetterschäden und Versicherbarkeit",
+      "typ": "Aktiver Trend mit Finanzwirkung",
+      "frage": "Wo zieht sich der Versicherungsmarkt zuerst zurück, und wer übernimmt das Restrisiko?",
+      "stand_2026": "Keine neuen Belege zur Versicherbarkeit im Radar; die Schadensereignisse (Hitze, Starkregen auf Kreta) setzen sich fort.",
+      "unsicherheit": 3,
+      "wirkung": 5,
+      "tempo": "mittel",
+      "richtung": "verschärfend",
+      "indikatoren": [
+        {
+          "name": "Anteil nicht versicherbarer Wohnimmobilien in exponierten Regionen",
+          "schwelle": "über 10 Prozent",
+          "quelle": "GDV, Insurance Journal"
+        },
+        {
+          "name": "Staatliche Rückversicherungsprogramme",
+          "schwelle": "Einführung einer Pflichtversicherung in Deutschland",
+          "quelle": "Gesetzgebung"
+        }
+      ],
+      "kreuzwirkung": [
+        "OE1",
+        "M1",
+        "M8",
+        "G4"
+      ]
+    },
+    {
+      "id": "OE4",
+      "cluster": "Ökologie",
+      "name": "Wasser- und Ernährungssicherheit (auch in Europa)",
+      "typ": "Treiber",
+      "frage": "Wie stark schlagen Ernteausfälle und Wasserknappheit auf Preise, Migration und politische Stabilität durch?",
+      "stand_2026": "Wasserknappheit erreicht Mitteleuropa: Die Flüsse führen so wenig Wasser wie seit gut 30 Jahren nicht, die Binnenschifffahrt auf dem Rhein stockt, der Bundesumweltminister ruft zu massiven Investitionen in Wasserinfrastruktur auf. Landwirte warnen vor existenziellen Belastungen.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "tempo": "mittel",
+      "richtung": "verschärfend",
+      "indikatoren": [
+        {
+          "name": "FAO Food Price Index",
+          "schwelle": "über Niveau von 2022",
+          "quelle": "FAO"
+        },
+        {
+          "name": "Pegel Kaub (Rhein)",
+          "schwelle": "mehr als 30 Tage unter 80 cm im Jahr",
+          "quelle": "WSV"
+        },
+        {
+          "name": "Düngemittelpreisindex",
+          "schwelle": "weiterer Anstieg über 20 Prozent",
+          "quelle": "Weltbank"
+        }
+      ],
+      "kreuzwirkung": [
+        "G3",
+        "M3",
+        "G7",
+        "OE2"
+      ]
+    },
+    {
+      "id": "OE5",
+      "cluster": "Ökologie",
+      "name": "Kritische Rohstoffe und Kreislaufwirtschaft",
+      "typ": "Treiber mit Chokepoint-Risiko",
+      "frage": "Werden Kupfer, Lithium, Seltene Erden und Netzmaterialien zum Engpass der Elektrifizierung?",
+      "stand_2026": "Keine neuen Belege im Radar.",
+      "unsicherheit": 3,
+      "wirkung": 4,
+      "tempo": "mittel",
+      "richtung": "verknappend",
+      "indikatoren": [
+        {
+          "name": "Kupferpreis real",
+          "schwelle": "dauerhaft über 12.000 USD/t",
+          "quelle": "LME"
+        },
+        {
+          "name": "Exportbeschränkungen für kritische Rohstoffe",
+          "schwelle": "neue Kontrollen durch China oder Indonesien",
+          "quelle": "Handelspolitik"
+        }
+      ],
+      "kreuzwirkung": [
+        "T7",
+        "T8",
+        "G1",
+        "M3"
+      ]
+    },
+    {
+      "id": "N1",
+      "name": "Russlands Krieg und die europäische Sicherheitsordnung",
+      "cluster": "Geopolitik und Governance",
+      "typ": "Kritische Unsicherheit",
+      "frage": "Endet der Krieg gegen die Ukraine in einem stabilen Waffenstillstand, friert er ein oder weitet er sich aus – und was heißt das für Europas Sicherheit, Energie und Haushalte?",
+      "stand_2026": "Der Krieg prägt die europäische Politik: Der Kanzler reist nach Kiew und sagt weitere Militärhilfe und ein Drohnenabkommen zu, die USA verschärfen die Sanktionen gegen Moskau und dessen Handelspartner, die EU-Staaten streiten über weitere Sanktionen, die Ukraine kündigt verstärkte Angriffe auf russische Raffinerien an.",
+      "unsicherheit": 4,
+      "wirkung": 5,
+      "richtung": "offen",
+      "tempo": "schnell",
+      "indikatoren": [
+        {
+          "name": "Frontverlauf und Waffenstillstandsverhandlungen",
+          "schwelle": "vereinbarter Waffenstillstand über 3 Monate",
+          "quelle": "ISW"
+        },
+        {
+          "name": "EU-Sanktionspaket",
+          "schwelle": "Einstimmigkeit scheitert zweimal in Folge",
+          "quelle": "Rat der EU"
+        },
+        {
+          "name": "Angriffe auf Energieinfrastruktur",
+          "schwelle": "Ausfall von über 10 Prozent der russischen Raffineriekapazität",
+          "quelle": "Reuters"
+        }
+      ],
+      "kreuzwirkung": []
+    },
+    {
+      "id": "N2",
+      "name": "Tragfähigkeit des Sozialstaats: Pflege, Gesundheit und Rente",
+      "cluster": "Gesellschaft",
+      "typ": "Strukturelle Vorbelastung",
+      "frage": "Lassen sich Pflege, Gesundheit und Rente in einer alternden Gesellschaft noch finanzieren, ohne Beiträge, Leistungen oder Zusammenhalt zu überfordern?",
+      "stand_2026": "Gesundheit und Pflege waren in der vergangenen Woche das am stärksten wachsende Thema (18 Meldungen, Vorwoche 7). Union und SPD ringen um eine Pflegereform, der Rechnungshof warnt vor steigenden Rentenausgaben, die Sozialabgaben steigen 2027.",
+      "unsicherheit": 3,
+      "wirkung": 4,
+      "richtung": "verschärfend",
+      "tempo": "mittel",
+      "indikatoren": [
+        {
+          "name": "Summe der Sozialversicherungsbeiträge",
+          "schwelle": "über 43 Prozent des Bruttolohns",
+          "quelle": "Bundesregierung"
+        },
+        {
+          "name": "Bundeszuschuss zur Rentenversicherung",
+          "schwelle": "über 30 Prozent des Bundeshaushalts",
+          "quelle": "Bundesrechnungshof"
+        },
+        {
+          "name": "Eigenanteil im Pflegeheim",
+          "schwelle": "über 3.500 Euro im Monat im Bundesschnitt",
+          "quelle": "vdek"
+        }
+      ],
+      "kreuzwirkung": []
+    },
+    {
+      "id": "N3",
+      "name": "Wohnen und Lebenshaltungskosten",
+      "cluster": "Gesellschaft",
+      "typ": "Treiber mit politischer Rückkopplung",
+      "frage": "Werden Wohnen und Alltag so teuer, dass die Mitte sich abgehängt fühlt – mit Folgen für Konsum, Mobilität und Wahlen?",
+      "stand_2026": "Wohnen und Mieten legen in den Meldungen zu (10, Vorwoche 6): In Spanien wird landesweit gegen Wohnungsnot demonstriert, der Städte- und Gemeindebund will den ländlichen Raum attraktiver machen, um die Städte zu entlasten. Der Frust der Verbraucher wächst trotz Wachstum.",
+      "unsicherheit": 3,
+      "wirkung": 4,
+      "richtung": "verschärfend",
+      "tempo": "mittel",
+      "indikatoren": [
+        {
+          "name": "Mietbelastungsquote",
+          "schwelle": "über 30 Prozent des Haushaltseinkommens im Median der Großstädte",
+          "quelle": "Destatis"
+        },
+        {
+          "name": "Baugenehmigungen Wohnungen",
+          "schwelle": "unter 200.000 pro Jahr",
+          "quelle": "Destatis"
+        },
+        {
+          "name": "Verbraucherstimmung",
+          "schwelle": "vier Quartale in Folge unter Vorjahr",
+          "quelle": "HDE / GfK"
+        }
+      ],
+      "kreuzwirkung": []
+    },
+    {
+      "id": "N4",
+      "name": "Bildung, Qualifizierung und Einstieg ins Arbeitsleben",
+      "cluster": "Gesellschaft",
+      "typ": "Langsamer Trend",
+      "frage": "Gelingt es, junge Menschen und Beschäftigte so zu qualifizieren, dass sie in einer Arbeitswelt mit KI einen Einstieg finden – oder wächst eine verunsicherte Generation heran?",
+      "stand_2026": "Bildung legt in den Meldungen deutlich zu (10, Vorwoche 3): Der Bundestag berät ein Gesetz zu Startchancen und Kita-Qualität, in Frankreich eskalieren Schülerproteste, die Exzellenzstrategie wählt neue Hochschulen aus. Gleichzeitig sinkt das Stellenangebot für Berufseinsteiger rasant.",
+      "unsicherheit": 3,
+      "wirkung": 4,
+      "richtung": "offen",
+      "tempo": "langsam",
+      "indikatoren": [
+        {
+          "name": "Stellenangebote für Berufseinsteiger",
+          "schwelle": "Rückgang über 30 Prozent gegenüber 2024",
+          "quelle": "Bundesagentur für Arbeit / Indeed"
+        },
+        {
+          "name": "Teilnahme an Weiterbildung",
+          "schwelle": "über 60 Prozent der Erwerbstätigen",
+          "quelle": "Adult Education Survey"
+        },
+        {
+          "name": "Schulabgänger ohne Abschluss",
+          "schwelle": "über 8 Prozent",
+          "quelle": "KMK"
+        }
+      ],
+      "kreuzwirkung": []
+    }
+  ],
+  "szenarien": [
+    {
+      "id": "S01",
+      "name": "Zäher Aufstieg",
+      "kurz": "Muddling through mit teurer Energie",
+      "these": "Nichts bricht, nichts bricht durch. KI wird breit genutzt, kommt aber nicht in der Produktivität an; Energie bleibt teuer, die Zinsen steigen leicht, Europa altert und wächst kaum.",
+      "einfach": "Es geht weiter wie bisher, nur mühsam: Energie bleibt teuer, KI hilft ein bisschen, die Wirtschaft wächst kaum.",
+      "narrativ": "Der Energieschock klingt langsam ab, ohne dass die Preise zurückkehren. Unternehmen nutzen KI überall und nirgends richtig. Die Staaten laufen mit hohen Defiziten, ohne dass etwas bricht - das langweiligste Szenario und deshalb das wahrscheinlichste für die nahe Zukunft.",
+      "regime": {
+        "growth": 0.0,
+        "inflation": 1.0,
+        "real_rates": 1.0,
+        "tech_concentration": 1.0,
+        "energy_price": 1.0,
+        "geopol_stress": 1.0,
+        "labor_disruption": 1.0,
+        "institutional_trust": 0.0,
+        "climate_damage": 1.0,
+        "capital_scarcity": 1.0
+      },
+      "treiber_konstellation": {
+        "T2": 0,
+        "T7": 1,
+        "M3": 1,
+        "M4": 1,
+        "G3": 1,
+        "M7": 1,
+        "N2": 1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 26,
+        "2032": 16,
+        "2040": 10
+      },
+      "fruehindikatoren": [
+        "US-TFP-Wachstum bleibt unter 1,2 % trotz steigender KI-Nutzung",
+        "Brent pendelt zwischen 85 und 110 Dollar ohne neue Eskalation",
+        "Kerninflation Eurozone zwischen 2 und 3 %"
+      ],
+      "was_es_widerlegt": "Zwei Jahre mit TFP-Wachstum über 1,5 % oder ein Bruch bei Energie, Zinsen oder Taiwan.",
+      "kernpreis": null,
+      "fassung": 2,
+      "quadrant": "Grenzfall",
+      "quadrant_achsen": {
+        "wachstum": 0.0,
+        "inflation": 1.0
+      },
+      "quadrant_hinweis": "Grenzfall: Wachstum ist 0, damit liegt das Szenario auf keiner der vier Ecken."
+    },
+    {
+      "id": "S02",
+      "name": "KI-Schub",
+      "kurz": "KI kommt in der Breite an - mit Wachstum und Umbruch zugleich",
+      "these": "Die Diffusion gelingt und die Fähigkeiten springen: KI erledigt mehrtägige Aufgaben, die Produktivität zieht an, die Preise sinken - und Wissensarbeit wird in wenigen Jahren umgebaut. Der Wettlauf um die Technik verschärft die Spannungen zwischen den Mächten, und die Zinsen steigen, weil Kapital überall gebraucht wird.",
+      "einfach": "KI hilft fast überall bei der Arbeit - es wird viel mehr geschafft, vieles wird billiger, aber viele Jobs ändern sich schnell.",
+      "narrativ": "Ab 2028 tauchen die Effekte in der Statistik auf. Unternehmen ordnen sich um ihre KI-Systeme neu, Einstiegsjobs fallen weg, neue entstehen. Wer qualifiziert und Kapital hat, gewinnt; die Politik streitet darüber, wie der Ertrag verteilt wird.",
+      "regime": {
+        "growth": 2.0,
+        "inflation": -1.0,
+        "real_rates": 2.0,
+        "tech_concentration": 2.0,
+        "energy_price": 0.0,
+        "geopol_stress": 1.0,
+        "labor_disruption": 2.0,
+        "institutional_trust": 0.0,
+        "climate_damage": 0.0,
+        "capital_scarcity": -1.0
+      },
+      "treiber_konstellation": {
+        "T1": 2,
+        "T2": 2,
+        "T5": 1,
+        "M7": 2,
+        "M8": 1,
+        "N4": 1,
+        "M3": -1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 7,
+        "2032": 10,
+        "2040": 12
+      },
+      "fruehindikatoren": [
+        "US-TFP-Wachstum über 1,5 % über sechs Quartale",
+        "KI in Kernprozessen bei über 25 % der Unternehmen",
+        "Stellen für Berufseinsteiger in Wissensberufen minus 30 % gegenüber 2024"
+      ],
+      "was_es_widerlegt": "TFP bleibt bis 2029 unter 1,2 %, oder die Fähigkeitskurve flacht sichtbar ab.",
+      "kernpreis": null,
+      "fassung": 2,
+      "quadrant": "Goldilocks",
+      "quadrant_achsen": {
+        "wachstum": 2.0,
+        "inflation": -1.0
+      },
+      "quadrant_hinweis": null
+    },
+    {
+      "id": "S03",
+      "name": "Der Platzer",
+      "kurz": "KI-Investitionen brechen ein, die Technik bleibt",
+      "these": "Die Investitionen laufen der Zahlungsbereitschaft davon. Eine Finanzierungslücke löst die Korrektur aus: Kurse fallen, Kapital wird knapp, die Preise geben nach. Die Technik verschwindet nicht, aber die Eigentümer wechseln.",
+      "einfach": "Firmen haben zu viel Geld in KI gesteckt; an der Börse kracht es, aber die Technik bleibt.",
+      "narrativ": "Ein großer Rechenzentrumsfinanzierer kommt unter Druck, Prüfer erzwingen kürzere Abschreibungsdauern für GPUs, Private-Credit-Strukturen werden neu bewertet. Die Konzentration im Index kehrt sich um, Kapital wird für alle teurer, auch für Unternehmen, die mit KI nichts zu tun haben. Wie 2001: die Infrastruktur bleibt und wird billiger, aber wer sie gebaut hat, verliert sie. Das ist ein Ereignis, kein Dauerzustand, weshalb die Wahrscheinlichkeit nach 2032 stark fällt.",
+      "regime": {
+        "growth": -1.0,
+        "inflation": -1.0,
+        "real_rates": 1.0,
+        "tech_concentration": -2.0,
+        "energy_price": 0.0,
+        "geopol_stress": 0.0,
+        "labor_disruption": 0.0,
+        "institutional_trust": 0.0,
+        "climate_damage": 1.0,
+        "capital_scarcity": 2.0
+      },
+      "treiber_konstellation": {
+        "M4": -2,
+        "T1": 0,
+        "M2": 1,
+        "T3": -1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 9,
+        "2032": 5,
+        "2040": 5
+      },
+      "fruehindikatoren": [
+        "Anteil fremdfinanzierter Rechenzentrums-Investitionen über 40 %",
+        "Prüfer erzwingen kürzere Abschreibungen für GPUs",
+        "Konzentration der Top 10 im MSCI World über 30 %"
+      ],
+      "was_es_widerlegt": "Zwei Jahre KI-Erlöse, die die Investitionen decken.",
+      "kernpreis": {
+        "text": "Kreditaufschlag KI-Schuldner",
+        "quelle": "Karl, 27.10.2026"
+      },
+      "fassung": 2,
+      "quadrant": "Deflation",
+      "quadrant_achsen": {
+        "wachstum": -1.0,
+        "inflation": -1.0
+      },
+      "quadrant_hinweis": null
+    },
+    {
+      "id": "S04",
+      "name": "Energiegetriebene Stagflation",
+      "kurz": "Hormus bleibt Kampfzone, Europa erodiert industriell",
+      "these": "Der Nahostkonflikt wird zum Dauerzustand. Öl bleibt über 110 Dollar, Dünger und Nahrung folgen, und die Zentralbanken erhöhen die Zinsen in eine Rezession hinein.",
+      "einfach": "Im Nahen Osten bleibt es gefährlich, Öl wird sehr teuer, alles wird teurer - und die Wirtschaft stockt.",
+      "narrativ": "Tanker werden beschossen, Reserven freigegeben, der Ölpreis fällt nicht mehr unter 100 Dollar. Europas Industrie verliert weiter Produktion, die Inflation setzt sich in Löhnen fest, und die Zinsen steigen, obwohl die Wirtschaft schwächelt.",
+      "regime": {
+        "growth": -2.0,
+        "inflation": 2.0,
+        "real_rates": 1.0,
+        "tech_concentration": 1.0,
+        "energy_price": 2.0,
+        "geopol_stress": 2.0,
+        "labor_disruption": 0.0,
+        "institutional_trust": -1.0,
+        "climate_damage": 1.0,
+        "capital_scarcity": 2.0
+      },
+      "treiber_konstellation": {
+        "G3": 2,
+        "M3": 2,
+        "M2": 1,
+        "N1": 1,
+        "OE4": 1,
+        "M1": 1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 12,
+        "2032": 8,
+        "2040": 5
+      },
+      "fruehindikatoren": [
+        "Brent über 110 Dollar für mehr als zwei Quartale",
+        "Kerninflation Eurozone über 3 % trotz schwacher Nachfrage",
+        "Deutsche Industrieproduktion fällt das dritte Jahr in Folge"
+      ],
+      "was_es_widerlegt": "Brent dauerhaft unter 85 Dollar und eine geöffnete Straße von Hormus.",
+      "kernpreis": null,
+      "fassung": 2,
+      "quadrant": "Stagflation",
+      "quadrant_achsen": {
+        "wachstum": -2.0,
+        "inflation": 2.0
+      },
+      "quadrant_hinweis": null
+    },
+    {
+      "id": "S06",
+      "name": "Blockbildung",
+      "kurz": "Zwei Technik-Welten, teuer, aber ohne Krieg",
+      "these": "Taiwan eskaliert nicht militärisch, aber Technik, Handel und Daten spalten sich in einen US- und einen China-Block. Staaten investieren massiv in eigene Fertigung - teuer und langsamer, aber nicht katastrophal.",
+      "einfach": "Die Welt teilt sich in ein Technik-Lager um die USA und eins um China; vieles wird doppelt gebaut.",
+      "narrativ": "Exportkontrollen, Sanktionen und eigene Chips trennen die Lager. Europa muss sich entscheiden und zahlt für doppelte Standards. Eskaliert es um Taiwan doch, wird aus der Blockbildung ein Bruch der Chip-Versorgung - das ist der gefährliche Rand dieses Szenarios.",
+      "regime": {
+        "growth": 0.0,
+        "inflation": 1.0,
+        "real_rates": 1.0,
+        "tech_concentration": -1.0,
+        "energy_price": 0.0,
+        "geopol_stress": 2.0,
+        "labor_disruption": 0.0,
+        "institutional_trust": 0.0,
+        "climate_damage": 0.0,
+        "capital_scarcity": 0.0
+      },
+      "treiber_konstellation": {
+        "G1": 2,
+        "G2": 1,
+        "G5": 2,
+        "T3": 1,
+        "M6": 1,
+        "N1": 1,
+        "OE5": 1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 7,
+        "2032": 8,
+        "2040": 6
+      },
+      "fruehindikatoren": [
+        "Neue Exportkontrollen für KI-Chips auf beiden Seiten binnen eines Jahres",
+        "Sanktionen gegen Handelspartner Russlands oder Chinas ausgeweitet",
+        "Modelle und Dienste in EU und USA mit über 6 Monaten Zeitversatz"
+      ],
+      "was_es_widerlegt": "Ein umfassendes Handels- und Technologieabkommen zwischen USA und China.",
+      "kernpreis": null,
+      "fassung": 2,
+      "quadrant": "Grenzfall",
+      "quadrant_achsen": {
+        "wachstum": 0.0,
+        "inflation": 1.0
+      },
+      "quadrant_hinweis": "Grenzfall: Wachstum ist 0, damit liegt das Szenario auf keiner der vier Ecken."
+    },
+    {
+      "id": "S08",
+      "name": "Grüner Boom aus Kostengründen",
+      "kurz": "Solar und Speicher unterbieten alles, Energie wird billig",
+      "these": "Nicht die Klimapolitik, die Lernkurve entscheidet: Ab etwa 2030 fallen die Energiepreise so weit, dass Elektrifizierung ein Kostenargument wird. Dafür beginnt ein Rennen um Rohstoffe und Lieferketten, das China anführt.",
+      "einfach": "Strom aus Sonne und Speichern wird so billig, dass alle umsteigen - weil es sich rechnet, nicht aus Überzeugung.",
+      "narrativ": "Speicher wachsen jedes Jahr um ein Drittel, Netze werden schneller gebaut als gedacht. Mit billigem Strom kommen Industrie und Mittelstand wieder in Fahrt; Ölkrisen verlieren ihren Schrecken.",
+      "regime": {
+        "growth": 1.0,
+        "inflation": -2.0,
+        "real_rates": 0.0,
+        "tech_concentration": 0.0,
+        "energy_price": -2.0,
+        "geopol_stress": 1.0,
+        "labor_disruption": 0.0,
+        "institutional_trust": 1.0,
+        "climate_damage": 0.0,
+        "capital_scarcity": -1.0
+      },
+      "treiber_konstellation": {
+        "T7": 2,
+        "T8": 2,
+        "OE5": 1,
+        "M3": -2,
+        "G3": -1,
+        "OE1": -1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 6,
+        "2032": 9,
+        "2040": 13
+      },
+      "fruehindikatoren": [
+        "Speicherkosten unter 80 Dollar je kWh auf Systemebene",
+        "Batteriespeicher in Deutschland wachsen weiter um über 30 % im Jahr",
+        "Lieferzeit für Großtransformatoren unter 2 Jahre"
+      ],
+      "was_es_widerlegt": "Speicherkosten steigen zwei Jahre in Folge, oder der Netzausbau stockt dauerhaft.",
+      "kernpreis": null,
+      "fassung": 2,
+      "quadrant": "Goldilocks",
+      "quadrant_achsen": {
+        "wachstum": 1.0,
+        "inflation": -2.0
+      },
+      "quadrant_hinweis": null
+    },
+    {
+      "id": "S09",
+      "name": "Klimaschock-Kaskade",
+      "kurz": "Hitze, Dürre und Fluten treffen auch Europa - mehrere Jahre in Folge",
+      "these": "Nicht ein Ereignis, eine Häufung: Mehrere Extremjahre überfordern Versicherer, Haushalte, Landwirtschaft und Verkehr gleichzeitig - auch in Mitteleuropa.",
+      "einfach": "Mehrere Jahre mit Dürren, Fluten und Stürmen nacheinander überfordern Versicherungen, Staaten und die Landwirtschaft.",
+      "narrativ": "Flüsse führen im Herbst so wenig Wasser wie nie, Schiffe liegen fest, Ernten fallen aus. Versicherer ziehen sich aus Regionen zurück, Staaten springen ein und verschulden sich weiter.",
+      "regime": {
+        "growth": -1.0,
+        "inflation": 1.0,
+        "real_rates": 0.0,
+        "tech_concentration": 0.0,
+        "energy_price": 0.0,
+        "geopol_stress": 1.0,
+        "labor_disruption": 0.0,
+        "institutional_trust": -1.0,
+        "climate_damage": 2.0,
+        "capital_scarcity": 1.0
+      },
+      "treiber_konstellation": {
+        "OE1": 2,
+        "OE2": 1,
+        "OE3": 2,
+        "OE4": 2,
+        "M1": 1,
+        "G7": 1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 5,
+        "2032": 8,
+        "2040": 13
+      },
+      "fruehindikatoren": [
+        "Pegel Kaub mehr als 30 Tage im Jahr unter 80 cm",
+        "Versicherer ziehen sich aus Regionen in Deutschland zurück",
+        "Zwei Jahre in Folge mit Ernteausfällen über 10 % in der EU"
+      ],
+      "was_es_widerlegt": "Drei normale Jahre in Folge ohne Rekordschäden in Europa.",
+      "kernpreis": null,
+      "fassung": 2,
+      "quadrant": "Stagflation",
+      "quadrant_achsen": {
+        "wachstum": -1.0,
+        "inflation": 1.0
+      },
+      "quadrant_hinweis": null
+    },
+    {
+      "id": "S13",
+      "name": "Verteilungskampf im Sozialstaat",
+      "kurz": "Rente, Pflege und Wohnen sprengen die Haushalte - das Geld wird still entwertet",
+      "these": "Eine alternde Gesellschaft, teure Pflege, knapper Wohnraum und hohe Schulden: Die Zentralbanken halten die Zinsen unter der Inflation, damit die Staaten zahlungsfähig bleiben - Geld ist billig, Erspartes verliert still an Wert, und der Streit, wer zahlt, prägt die Politik.",
+      "einfach": "Rente, Pflege und Wohnen werden so teuer, dass der Staat sie kaum noch bezahlen kann - und Erspartes langsam an Wert verliert.",
+      "narrativ": "Die Sozialabgaben steigen Jahr für Jahr, die Mieten auch. Der Staat hält die Zinsen unter der Inflation, damit die Schulden tragbar bleiben. Jung gegen Alt, Mieter gegen Eigentümer, Stadt gegen Land - Verteilung wird zum Hauptthema jeder Wahl.",
+      "regime": {
+        "growth": 0.0,
+        "inflation": 2.0,
+        "real_rates": -2.0,
+        "tech_concentration": 0.0,
+        "energy_price": 0.0,
+        "geopol_stress": 0.0,
+        "labor_disruption": 1.0,
+        "institutional_trust": -1.0,
+        "climate_damage": 0.0,
+        "capital_scarcity": -1.0
+      },
+      "treiber_konstellation": {
+        "M1": 2,
+        "M2": -2,
+        "M3": 2,
+        "N2": 2,
+        "N3": 2,
+        "M8": 2,
+        "G7": 2
+      },
+      "wahrscheinlichkeit": {
+        "2028": 6,
+        "2032": 9,
+        "2040": 11
+      },
+      "fruehindikatoren": [
+        "Sozialversicherungsbeiträge über 43 % des Bruttolohns",
+        "Reale Zehnjahresrendite unter null bei Inflation über 3 %",
+        "Mietbelastung in Großstädten über 30 % des Haushaltseinkommens im Median"
+      ],
+      "was_es_widerlegt": "Eine Rentenreform mit stabilen Beiträgen und sinkende reale Wohnkosten.",
+      "kernpreis": null,
+      "nachfolger_von": "S05",
+      "fassung": 1,
+      "seit": "1.3.0",
+      "quadrant": "Grenzfall",
+      "quadrant_achsen": {
+        "wachstum": 0.0,
+        "inflation": 2.0
+      },
+      "quadrant_hinweis": "Grenzfall: Wachstum ist 0, damit liegt das Szenario auf keiner der vier Ecken."
+    },
+    {
+      "id": "S14",
+      "name": "Gespaltene Gesellschaft",
+      "kurz": "Vertrauen bricht weg - Stillstand oder harte Hand",
+      "these": "Jobverluste in der Wissensarbeit, eine zerfallende Faktenbasis und polarisierte Parlamente lassen das Vertrauen wegbrechen. Am Ende stehen Stillstand - oder Regierungen, die mit Überwachung und harter Hand Ordnung versprechen.",
+      "einfach": "Die Menschen vertrauen der Politik und einander nicht mehr; entweder geht nichts mehr voran, oder jemand verspricht Ordnung mit harter Hand.",
+      "narrativ": "Proteste werden größer und härter, Regierungsbildungen dauern Monate. KI-Fälschungen machen jede Wahl zum Streit über Fakten. Manche Länder lähmen sich, andere greifen zu Überwachung und Notrecht - beides kostet Freiheit und Wohlstand.",
+      "regime": {
+        "growth": -1.0,
+        "inflation": 0.0,
+        "real_rates": 0.0,
+        "tech_concentration": 2.0,
+        "energy_price": 0.0,
+        "geopol_stress": 0.0,
+        "labor_disruption": 2.0,
+        "institutional_trust": -2.0,
+        "climate_damage": 0.0,
+        "capital_scarcity": 1.0
+      },
+      "treiber_konstellation": {
+        "G4": -2,
+        "T10": 2,
+        "M7": 2,
+        "M8": 2,
+        "N3": 1,
+        "N4": -1,
+        "T9": 1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 5,
+        "2032": 5,
+        "2040": 7
+      },
+      "fruehindikatoren": [
+        "Protestwellen mit Massenfestnahmen in mehreren EU-Ländern binnen eines Quartals",
+        "Zwei oder mehr EU-Kernländer gleichzeitig ohne stabile Regierungsmehrheit",
+        "Vertrauen in Nachrichtenmedien unter 30 % im G7-Median"
+      ],
+      "was_es_widerlegt": "Stabile Regierungsmehrheiten und steigendes Vertrauen in Institutionen über zwei Jahre.",
+      "kernpreis": null,
+      "nachfolger_von": "S11",
+      "fassung": 1,
+      "seit": "1.3.0",
+      "quadrant": "Grenzfall",
+      "quadrant_achsen": {
+        "wachstum": -1.0,
+        "inflation": 0.0
+      },
+      "quadrant_hinweis": "Grenzfall: Inflation ist 0, damit liegt das Szenario auf keiner der vier Ecken."
+    },
+    {
+      "id": "S15",
+      "name": "Europäischer Neustart",
+      "kurz": "Waffenstillstand, Investitionen und Bildung geben Europa neuen Schwung",
+      "these": "Ein tragfähiger Waffenstillstand in der Ukraine, große Investitionen in Netze, Verteidigung und Bildung und eine Reform des Sozialstaats bringen Europa - und mit ihm den Westen - zurück. Der Investitionsboom treibt Preise und Kapitalbedarf, aber das Vertrauen in die eigenen Institutionen wächst.",
+      "einfach": "Der Krieg in der Ukraine endet, Europa investiert in Schulen, Netze und Sicherheit - und die Menschen fassen wieder Vertrauen.",
+      "narrativ": "Nach dem Waffenstillstand fließt Geld in Wiederaufbau, Netze und Schulen. Junge Menschen finden mit neuen Ausbildungen in eine Arbeitswelt mit KI. Die Energiepreise sinken, die Parteien der Mitte gewinnen wieder Mehrheiten. Der Preis: höhere Zinsen und eine Zeit lang spürbare Inflation, weil überall gebaut wird.",
+      "regime": {
+        "growth": 1.0,
+        "inflation": 1.0,
+        "real_rates": 1.0,
+        "tech_concentration": 0.0,
+        "energy_price": -1.0,
+        "geopol_stress": -1.0,
+        "labor_disruption": 0.0,
+        "institutional_trust": 2.0,
+        "climate_damage": 0.0,
+        "capital_scarcity": 1.0
+      },
+      "treiber_konstellation": {
+        "N1": -2,
+        "N4": 2,
+        "N2": 1,
+        "G4": 2,
+        "G6": 1,
+        "T8": 2,
+        "T7": 1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 5,
+        "2032": 6,
+        "2040": 7
+      },
+      "fruehindikatoren": [
+        "Vereinbarter Waffenstillstand in der Ukraine über drei Monate",
+        "Teilnahme an Weiterbildung über 60 % der Erwerbstätigen",
+        "Stabile Regierungsmehrheiten der Mitte in Deutschland und Frankreich"
+      ],
+      "was_es_widerlegt": "Der Krieg weitet sich aus, oder die Investitionen versanden in Haushaltsstreit.",
+      "kernpreis": null,
+      "fassung": 1,
+      "seit": "1.3.0",
+      "quadrant": "Überhitzung",
+      "quadrant_achsen": {
+        "wachstum": 1.0,
+        "inflation": 1.0
+      },
+      "quadrant_hinweis": null
+    },
+    {
+      "id": "S16",
+      "name": "Rüstungswirtschaft",
+      "kurz": "Sicherheit wird zum Dauerauftrag - und verdrängt anderes",
+      "these": "Der Krieg friert nicht ein und endet nicht. Europa stellt seine Wirtschaft dauerhaft auf Verteidigung um: Rüstung schafft Aufträge und Arbeitsplätze, treibt Preise und Schulden und verdrängt Geld für Sozialstaat, Klima und Bildung.",
+      "einfach": "Weil die Bedrohung bleibt, steckt Europa sehr viel Geld in Waffen und Soldaten - das bringt Arbeit, aber für Schulen, Pflege und Klima bleibt weniger.",
+      "narrativ": "Die Verteidigungshaushalte steigen auf drei Prozent und mehr, Rüstungsfirmen haben Aufträge für Jahre. In Industrieregionen entstehen neue Jobs, die Wehrpflicht kehrt zurück. Die Preise bleiben erhöht, die Staatsschulden wachsen, und jede Sozialreform muss gegen den Verteidigungsetat bestehen.",
+      "regime": {
+        "growth": 1.0,
+        "inflation": 1.0,
+        "real_rates": 0.0,
+        "tech_concentration": 0.0,
+        "energy_price": 1.0,
+        "geopol_stress": 2.0,
+        "labor_disruption": -1.0,
+        "institutional_trust": 0.0,
+        "climate_damage": 0.0,
+        "capital_scarcity": 1.0
+      },
+      "treiber_konstellation": {
+        "G6": 2,
+        "N1": 2,
+        "M1": 2,
+        "M3": 1,
+        "N2": -1,
+        "G4": 0,
+        "T9": 1
+      },
+      "wahrscheinlichkeit": {
+        "2028": 5,
+        "2032": 8,
+        "2040": 5
+      },
+      "fruehindikatoren": [
+        "NATO-Verteidigungsausgaben im Schnitt über 3 % des BIP",
+        "Auftragsbestand europäischer Rüstungskonzerne über vier Jahresumsätze",
+        "Wiedereinführung einer Wehrpflicht in Deutschland"
+      ],
+      "was_es_widerlegt": "Ein dauerhafter Waffenstillstand und sinkende Verteidigungshaushalte ab 2028.",
+      "kernpreis": null,
+      "fassung": 1,
+      "seit": "1.3.0",
+      "quadrant": "Überhitzung",
+      "quadrant_achsen": {
+        "wachstum": 1.0,
+        "inflation": 1.0
+      },
+      "quadrant_hinweis": null
+    },
+    {
+      "id": "S17",
+      "name": "Bruch um Taiwan",
+      "kurz": "Blockade oder Krieg um Taiwan - Chips, Handel und Seewege brechen gleichzeitig",
+      "these": "China blockiert Taiwan oder greift an. Die Fertigung der modernsten Chips fällt aus, Seefracht in Ostasien wird unversicherbar, Sanktionen trennen die Blöcke über Nacht. Das Wachstum bricht ein, die Inflation springt.",
+      "einfach": "Ein Konflikt um Taiwan unterbricht die Versorgung mit Chips und den Handel mit Asien - vieles wird knapp und teuer, die Wirtschaft schrumpft.",
+      "narrativ": "Innerhalb von Wochen fehlen fortgeschrittene Chips in Autos, Maschinen, Rechenzentren und Waffen zugleich. Reedereien meiden die Region, Lieferketten reißen. Kapital flieht in Gold und kurze Laufzeiten, Vermögen in China werden für westliche Anleger unerreichbar. Danach folgt der schnellste Industriepolitik-Schub der Geschichte. Das Szenario ist selten, aber so folgenreich, dass jede Entscheidung dagegen geprüft werden sollte.",
+      "regime": {
+        "growth": -2.0,
+        "inflation": 2.0,
+        "real_rates": 0.0,
+        "tech_concentration": -1.0,
+        "energy_price": 1.0,
+        "geopol_stress": 2.0,
+        "labor_disruption": 0.0,
+        "institutional_trust": -1.0,
+        "climate_damage": 0.0,
+        "capital_scarcity": 2.0
+      },
+      "treiber_konstellation": {
+        "G2": 2,
+        "T3": -2,
+        "G1": 2,
+        "M3": 2,
+        "M4": -1,
+        "G6": 2
+      },
+      "wahrscheinlichkeit": {
+        "2028": 7,
+        "2032": 8,
+        "2040": 6
+      },
+      "fruehindikatoren": [
+        "Mehrtägige Quarantäneübung mit tatsächlicher Handelsunterbrechung",
+        "Verdopplung der Seefrachtversicherung für Ostasien",
+        "Prognosemärkte sehen eine Invasion innerhalb eines Jahres über 20 %"
+      ],
+      "was_es_widerlegt": "Deutliche Deeskalation in der Taiwanstraße oder mehr als ein Viertel der modernsten Chipfertigung außerhalb Taiwans.",
+      "kernpreis": {
+        "text": "Seefracht-Versicherung Ostasien",
+        "quelle": "Karl, 27.10.2026"
+      },
+      "abgespalten_von": "S06",
+      "fassung": 1,
+      "seit": "1.4.0",
+      "quadrant": "Stagflation",
+      "quadrant_achsen": {
+        "wachstum": -2.0,
+        "inflation": 2.0
+      },
+      "quadrant_hinweis": null
+    }
+  ],
+  "treiber_kopplung": {
+    "T1": {
+      "S01": 0.433,
+      "S02": 0.814,
+      "S03": -0.456,
+      "S04": 0.055,
+      "S06": -0.224,
+      "S08": 0.065,
+      "S09": -0.07,
+      "S13": 0.2,
+      "S14": 0.69,
+      "S15": 0.068,
+      "S16": -0.14,
+      "S17": -0.291
+    },
+    "T2": {
+      "S01": 0.0,
+      "S02": 0.589,
+      "S03": -0.22,
+      "S04": -0.555,
+      "S06": 0.084,
+      "S08": 0.293,
+      "S09": -0.315,
+      "S13": 0.225,
+      "S14": -0.141,
+      "S15": 0.154,
+      "S16": 0.0,
+      "S17": -0.458
+    },
+    "T3": {
+      "S01": 0.419,
+      "S02": 0.338,
+      "S03": -0.284,
+      "S04": 0.637,
+      "S06": 0.217,
+      "S08": 0.095,
+      "S09": 0.305,
+      "S13": 0.0,
+      "S14": 0.456,
+      "S15": -0.297,
+      "S16": 0.305,
+      "S17": 0.338
+    },
+    "T5": {
+      "S01": 0.381,
+      "S02": 0.86,
+      "S03": -0.414,
+      "S04": -0.116,
+      "S06": -0.158,
+      "S08": 0.138,
+      "S09": -0.148,
+      "S13": 0.211,
+      "S14": 0.531,
+      "S15": 0.144,
+      "S16": -0.074,
+      "S17": -0.369
+    },
+    "T6": {
+      "S01": 0.0,
+      "S02": 0.453,
+      "S03": -0.254,
+      "S04": -0.534,
+      "S06": 0.0,
+      "S08": 0.381,
+      "S09": -0.41,
+      "S13": -0.13,
+      "S14": -0.489,
+      "S15": 0.532,
+      "S16": 0.273,
+      "S17": -0.566
+    },
+    "T7": {
+      "S01": 0.5,
+      "S02": 0.229,
+      "S03": 0.0,
+      "S04": -0.72,
+      "S06": -0.098,
+      "S08": 0.771,
+      "S09": -0.184,
+      "S13": -0.175,
+      "S14": -0.082,
+      "S15": 0.269,
+      "S16": -0.276,
+      "S17": -0.535
+    },
+    "T8": {
+      "S01": -0.128,
+      "S02": 0.103,
+      "S03": 0.116,
+      "S04": -0.39,
+      "S06": 0.0,
+      "S08": 0.464,
+      "S09": 0.0,
+      "S13": -0.119,
+      "S14": 0.0,
+      "S15": 0.486,
+      "S16": 0.0,
+      "S17": -0.207
+    },
+    "T9": {
+      "S01": 0.222,
+      "S02": 0.179,
+      "S03": 0.0,
+      "S04": 0.507,
+      "S06": 0.46,
+      "S08": 0.0,
+      "S09": 0.432,
+      "S13": 0.205,
+      "S14": 0.387,
+      "S15": -0.631,
+      "S16": 0.432,
+      "S17": 0.537
+    },
+    "T10": {
+      "S01": 0.099,
+      "S02": 0.16,
+      "S03": 0.0,
+      "S04": 0.227,
+      "S06": 0.0,
+      "S08": -0.27,
+      "S09": 0.29,
+      "S13": 0.367,
+      "S14": 0.692,
+      "S15": -0.564,
+      "S16": -0.097,
+      "S17": 0.24
+    },
+    "M1": {
+      "S01": 0.514,
+      "S02": -0.103,
+      "S03": 0.464,
+      "S04": 0.683,
+      "S06": 0.265,
+      "S08": -0.464,
+      "S09": 0.374,
+      "S13": 1.0,
+      "S14": 0.223,
+      "S15": 0.486,
+      "S16": 0.374,
+      "S17": 0.621
+    },
+    "M2": {
+      "S01": 0.433,
+      "S02": 0.058,
+      "S03": 0.652,
+      "S04": 0.603,
+      "S06": 0.224,
+      "S08": -0.261,
+      "S09": 0.28,
+      "S13": -0.6,
+      "S14": 0.251,
+      "S15": 0.341,
+      "S16": 0.14,
+      "S17": 0.465
+    },
+    "M3": {
+      "S01": 0.371,
+      "S02": -0.358,
+      "S03": -0.201,
+      "S04": 0.676,
+      "S06": 0.307,
+      "S08": -0.737,
+      "S09": 0.36,
+      "S13": 0.548,
+      "S14": 0.064,
+      "S15": 0.14,
+      "S16": 0.288,
+      "S17": 0.657
+    },
+    "M4": {
+      "S01": 0.148,
+      "S02": 0.717,
+      "S03": -0.804,
+      "S04": -0.169,
+      "S06": -0.23,
+      "S08": 0.134,
+      "S09": -0.288,
+      "S13": 0.137,
+      "S14": 0.129,
+      "S15": -0.07,
+      "S16": 0.072,
+      "S17": -0.597
+    },
+    "M5": {
+      "S01": 0.514,
+      "S02": 0.0,
+      "S03": 0.116,
+      "S04": 0.78,
+      "S06": 0.664,
+      "S08": -0.116,
+      "S09": 0.499,
+      "S13": 0.119,
+      "S14": 0.112,
+      "S15": 0.0,
+      "S16": 0.748,
+      "S17": 0.827
+    },
+    "M6": {
+      "S01": -0.128,
+      "S02": 0.103,
+      "S03": 0.348,
+      "S04": 0.0,
+      "S06": 0.0,
+      "S08": 0.464,
+      "S09": 0.0,
+      "S13": -0.474,
+      "S14": 0.112,
+      "S15": -0.486,
+      "S16": -0.125,
+      "S17": 0.0
+    },
+    "M7": {
+      "S01": 0.305,
+      "S02": 0.492,
+      "S03": 0.0,
+      "S04": 0.058,
+      "S06": 0.0,
+      "S08": -0.069,
+      "S09": 0.074,
+      "S13": 0.352,
+      "S14": 0.663,
+      "S15": -0.144,
+      "S16": -0.296,
+      "S17": 0.061
+    },
+    "M8": {
+      "S01": 0.141,
+      "S02": 0.227,
+      "S03": 0.0,
+      "S04": 0.214,
+      "S06": 0.0,
+      "S08": -0.254,
+      "S09": 0.273,
+      "S13": 0.39,
+      "S14": 0.734,
+      "S15": -0.532,
+      "S16": -0.137,
+      "S17": 0.227
+    },
+    "G1": {
+      "S01": 0.336,
+      "S02": -0.135,
+      "S03": 0.076,
+      "S04": 0.766,
+      "S06": 0.608,
+      "S08": -0.076,
+      "S09": 0.49,
+      "S13": 0.155,
+      "S14": 0.146,
+      "S15": -0.318,
+      "S16": 0.408,
+      "S17": 0.812
+    },
+    "G2": {
+      "S01": 0.128,
+      "S02": -0.207,
+      "S03": 0.348,
+      "S04": 0.488,
+      "S06": 0.664,
+      "S08": 0.116,
+      "S09": 0.374,
+      "S13": 0.0,
+      "S14": -0.112,
+      "S15": -0.364,
+      "S16": 0.374,
+      "S17": 0.724
+    },
+    "G3": {
+      "S01": 0.526,
+      "S02": 0.047,
+      "S03": -0.106,
+      "S04": 0.799,
+      "S06": 0.483,
+      "S08": -0.475,
+      "S09": 0.284,
+      "S13": 0.216,
+      "S14": 0.0,
+      "S15": -0.276,
+      "S16": 0.68,
+      "S17": 0.659
+    },
+    "G4": {
+      "S01": 0.076,
+      "S02": 0.061,
+      "S03": 0.0,
+      "S04": 0.348,
+      "S06": 0.158,
+      "S08": -0.207,
+      "S09": 0.37,
+      "S13": 0.282,
+      "S14": 0.531,
+      "S15": -0.649,
+      "S16": 0.148,
+      "S17": 0.369
+    },
+    "G5": {
+      "S01": 0.363,
+      "S02": 0.146,
+      "S03": -0.164,
+      "S04": 0.69,
+      "S06": 0.188,
+      "S08": 0.0,
+      "S09": 0.353,
+      "S13": 0.0,
+      "S14": 0.474,
+      "S15": -0.343,
+      "S16": 0.176,
+      "S17": 0.439
+    },
+    "G6": {
+      "S01": 0.385,
+      "S02": 0.31,
+      "S03": 0.116,
+      "S04": 0.39,
+      "S06": 0.531,
+      "S08": 0.232,
+      "S09": 0.249,
+      "S13": -0.119,
+      "S14": 0.0,
+      "S15": 0.0,
+      "S16": 0.748,
+      "S17": 0.414
+    },
+    "G7": {
+      "S01": 0.182,
+      "S02": -0.439,
+      "S03": 0.0,
+      "S04": 0.69,
+      "S06": 0.188,
+      "S08": -0.656,
+      "S09": 0.529,
+      "S13": 0.503,
+      "S14": 0.474,
+      "S15": -0.343,
+      "S16": 0.0,
+      "S17": 0.731
+    },
+    "OE1": {
+      "S01": 0.314,
+      "S02": 0.0,
+      "S03": 0.284,
+      "S04": 0.239,
+      "S06": 0.0,
+      "S08": 0.0,
+      "S09": 0.611,
+      "S13": 0.0,
+      "S14": 0.0,
+      "S15": 0.0,
+      "S16": 0.0,
+      "S17": 0.0
+    },
+    "OE2": {
+      "S01": 0.305,
+      "S02": 0.0,
+      "S03": 0.276,
+      "S04": 0.29,
+      "S06": 0.0,
+      "S08": -0.069,
+      "S09": 0.667,
+      "S13": 0.07,
+      "S14": 0.133,
+      "S15": -0.144,
+      "S16": 0.0,
+      "S17": 0.061
+    },
+    "OE3": {
+      "S01": 0.445,
+      "S02": -0.119,
+      "S03": 0.335,
+      "S04": 0.451,
+      "S06": 0.077,
+      "S08": -0.201,
+      "S09": 0.72,
+      "S13": 0.068,
+      "S14": 0.064,
+      "S15": 0.14,
+      "S16": 0.144,
+      "S17": 0.239
+    },
+    "OE4": {
+      "S01": 0.534,
+      "S02": 0.0,
+      "S03": 0.069,
+      "S04": 0.638,
+      "S06": 0.473,
+      "S08": -0.138,
+      "S09": 0.741,
+      "S13": 0.282,
+      "S14": 0.0,
+      "S15": 0.0,
+      "S16": 0.444,
+      "S17": 0.492
+    },
+    "OE5": {
+      "S01": 0.514,
+      "S02": 0.103,
+      "S03": -0.116,
+      "S04": 0.78,
+      "S06": 0.664,
+      "S08": 0.5,
+      "S09": 0.374,
+      "S13": 0.237,
+      "S14": 0.0,
+      "S15": -0.243,
+      "S16": 0.748,
+      "S17": 0.724
+    },
+    "N1": {
+      "S01": 0.469,
+      "S02": 0.162,
+      "S03": 0.121,
+      "S04": 0.764,
+      "S06": 0.555,
+      "S08": -0.121,
+      "S09": 0.391,
+      "S13": 0.0,
+      "S14": 0.175,
+      "S15": -0.444,
+      "S16": 0.716,
+      "S17": 0.702
+    },
+    "N2": {
+      "S01": 0.5,
+      "S02": -0.561,
+      "S03": -0.18,
+      "S04": 0.302,
+      "S06": -0.103,
+      "S08": -0.449,
+      "S09": 0.386,
+      "S13": 0.735,
+      "S14": 0.432,
+      "S15": -0.564,
+      "S16": 0.0,
+      "S17": 0.481
+    },
+    "N3": {
+      "S01": 0.363,
+      "S02": -0.293,
+      "S03": 0.164,
+      "S04": 0.69,
+      "S06": 0.188,
+      "S08": -0.656,
+      "S09": 0.529,
+      "S13": 0.335,
+      "S14": 0.474,
+      "S15": 0.0,
+      "S16": 0.353,
+      "S17": 0.731
+    },
+    "N4": {
+      "S01": 0.257,
+      "S02": 0.621,
+      "S03": -0.116,
+      "S04": -0.293,
+      "S06": 0.0,
+      "S08": 0.232,
+      "S09": -0.249,
+      "S13": 0.119,
+      "S14": 0.112,
+      "S15": 0.364,
+      "S16": -0.125,
+      "S17": -0.31
+    }
+  },
+  "bayes": {
+    "k_daempfung": 0.15
+  },
+  "anzeichen": [
+    {
+      "id": "A01",
+      "bezug": "S02",
+      "rolle": "widerlegt",
+      "art": "zahl",
+      "text": "TFP-Wachstum bleibt unter 1,2 %",
+      "reihe": "sffed-tfp-usa",
+      "regel": "mittel 4 < 1.2",
+      "hinweis": "US-Unternehmenssektor, Mittel der letzten vier Quartale",
+      "wirkung": {
+        "treiber_ids": [
+          "T2"
+        ],
+        "richtung": "widersprechend",
+        "staerke": 2
+      },
+      "warum": "Die Diffusion von KI kommt nicht in der Produktivität an."
+    },
+    {
+      "id": "A02",
+      "bezug": "S01",
+      "art": "zahl",
+      "text": "Brent pendelt zwischen 85 und 110 $",
+      "reihe": "fred-brent",
+      "regel": "zwischen 3 85 110",
+      "hinweis": "Mittel der letzten drei Monate",
+      "wirkung": null,
+      "warum": "Beschreibt ein mittleres Band. Den Ausbruch nach oben oder unten tragen A05, A12 und A13."
+    },
+    {
+      "id": "A03",
+      "bezug": "S02",
+      "art": "zahl",
+      "text": "TFP-Wachstum über 1,5 % über sechs Quartale",
+      "reihe": "sffed-tfp-usa",
+      "regel": "mittel 6 > 1.5",
+      "hinweis": "US-Unternehmenssektor",
+      "wirkung": {
+        "treiber_ids": [
+          "T1",
+          "T2"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 3
+      },
+      "warum": "KI-Fähigkeit und Diffusion kommen breit in der Produktivität an."
+    },
+    {
+      "id": "A04",
+      "bezug": "S02",
+      "art": "zahl",
+      "text": "Kerninflation fällt bei steigendem BIP",
+      "reihe": "eurostat-kerninflation-ea",
+      "regel": "faellt 3",
+      "reihe2": "eurostat-bip-ea",
+      "regel2": "alle 2 > 0",
+      "hinweis": "Eurozone: Kerninflation drei Monate gegen die drei davor, BIP zwei Quartale",
+      "wirkung": {
+        "treiber_ids": [
+          "M3"
+        ],
+        "richtung": "widersprechend",
+        "staerke": 2
+      },
+      "warum": "Disinflation bei Wachstum spricht gegen ein angebotsseitig erhöhtes Inflationsregime."
+    },
+    {
+      "id": "A05",
+      "bezug": "S04",
+      "art": "zahl",
+      "text": "Brent über 110 $ für mehr als zwei Quartale",
+      "reihe": "fred-brent",
+      "regel": "alle 7 > 110",
+      "hinweis": "sieben Monatsmittel in Folge",
+      "wirkung": {
+        "treiber_ids": [
+          "G3"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 3
+      },
+      "warum": "Der Engpass am Golf wird zum Dauerzustand."
+    },
+    {
+      "id": "A06",
+      "bezug": "S04",
+      "art": "zahl",
+      "text": "Kerninflation Eurozone über 3 % trotz schwacher Nachfrage",
+      "reihe": "eurostat-kerninflation-ea",
+      "regel": "alle 3 > 3",
+      "reihe2": "eurostat-bip-ea",
+      "regel2": "mittel 2 < 1",
+      "hinweis": "schwache Nachfrage: BIP-Wachstum unter 1 % im Mittel zweier Quartale",
+      "wirkung": {
+        "treiber_ids": [
+          "M3"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 2
+      },
+      "warum": "Inflation, die nicht aus der Nachfrage kommt, ist angebotsseitig."
+    },
+    {
+      "id": "A07",
+      "bezug": "S04",
+      "art": "zahl",
+      "text": "Deutsche Industrieproduktion fällt zwei Jahre in Folge",
+      "reihe": "eurostat-industrie-de",
+      "regel": "jahresrueckgang 2",
+      "hinweis": "Jahresmittel gegen das Jahr davor, zweimal",
+      "wirkung": {
+        "treiber_ids": [
+          "G3",
+          "M6"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 2
+      },
+      "warum": "Teure Energie und chinesische Überkapazität setzen der europäischen Industrie zu."
+    },
+    {
+      "id": "A08",
+      "bezug": "S13",
+      "art": "zahl",
+      "text": "Reale 10-Jahres-Rendite dauerhaft unter null bei Inflation über 3 %",
+      "reihe": "fred-realrendite-10j",
+      "regel": "alle 3 < 0",
+      "reihe2": "fred-inflation-usa",
+      "regel2": "alle 3 > 3",
+      "hinweis": "USA, drei Monate",
+      "wirkung": {
+        "treiber_ids": [
+          "M1",
+          "M3"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 3
+      },
+      "warum": "Schulden werden weginflationiert, Realzinsen politisch gedrückt."
+    },
+    {
+      "id": "A09",
+      "bezug": "S13",
+      "art": "aussage",
+      "text": "Zentralbank verschiebt oder relativiert das Inflationsziel",
+      "muster": "inflationsziel.{0,80}(verschieb|lockert|lockern|aufweich|relativ|anheb|flexib|abrück|aufgeb|toleri|überprüf)|(verschieb|lockert|lockern|aufweich|relativ|anheb|flexib|abrück|aufgeb|toleri|überprüf).{0,80}inflationsziel|inflation target",
+      "hinweis": "eine Aussage, keine Zahl: Treffer in den Meldungen der letzten 30 Tage, von Hand beurteilt",
+      "wirkung": {
+        "treiber_ids": [
+          "M1"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 2
+      },
+      "warum": "Wirkt erst, wenn ein Treffer bestätigt ist - nie allein aus einem Wort."
+    },
+    {
+      "id": "A10",
+      "bezug": "S06",
+      "art": "zahl",
+      "text": "Effektiver US-Zollsatz dauerhaft über 15 %",
+      "reihe": "fred-zollsatz-usa",
+      "regel": "alle 2 > 15",
+      "hinweis": "erhoben: Zolleinnahmen je Wareneinfuhr; der gesetzliche Satz (Yale Budget Lab) liegt höher",
+      "wirkung": {
+        "treiber_ids": [
+          "G1"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 3
+      },
+      "warum": "Das Zollregime konsolidiert sich auf hohem Plateau."
+    },
+    {
+      "id": "A11",
+      "bezug": "M2",
+      "art": "zahl",
+      "text": "Reale 10-Jahres-Rendite dauerhaft über 2,5 %",
+      "reihe": "fred-realrendite-10j",
+      "regel": "alle 3 > 2.5",
+      "hinweis": "Indikatorschwelle des Treibers Zinsregime und Laufzeitprämie",
+      "wirkung": null,
+      "warum": "Die Richtung des Treibers ist im Modell offen - hohe Realzinsen zeigen den Zustand, bewegen aber kein Szenario, bis die Kopplung geklärt ist."
+    },
+    {
+      "id": "A12",
+      "bezug": "G3",
+      "art": "zahl",
+      "text": "Brent über 115 $ (Eskalation)",
+      "reihe": "fred-brent",
+      "regel": "mittel 1 > 115",
+      "hinweis": "Indikatorschwelle des Treibers Energie-Chokepoints und Nahost",
+      "wirkung": {
+        "treiber_ids": [
+          "G3"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 2
+      },
+      "warum": "Schwelle, die das Modell selbst als Eskalation nennt."
+    },
+    {
+      "id": "A13",
+      "bezug": "G3",
+      "art": "zahl",
+      "text": "Brent unter 70 $ (Entspannung)",
+      "reihe": "fred-brent",
+      "regel": "mittel 1 < 70",
+      "hinweis": "Indikatorschwelle des Treibers Energie-Chokepoints und Nahost",
+      "wirkung": {
+        "treiber_ids": [
+          "G3"
+        ],
+        "richtung": "widersprechend",
+        "staerke": 2
+      },
+      "warum": "Schwelle, die das Modell selbst als Entspannung nennt."
+    },
+    {
+      "id": "AS01",
+      "bezug": "S16",
+      "art": "zahl",
+      "text": "Geopolitisches Risiko um Deutschland auf Kriegsniveau",
+      "reihe": "gpr-deu",
+      "regel": "mittel 3 > 1.0",
+      "hinweis": "Dreimonatsmittel des Länder-Index Deutschland (Anteil der Artikel in zehn Zeitungen, die Deutschland zusammen mit geopolitischen Risiken nennen, in Prozent). Seit 1985 über 1,0 nur 1991, 2001, 2003, 2022 und März bis Mai 2026; Median der Monatswerte 0,35, der Dreimonatsmittel (das misst die Regel) 0,37; beides 01/1985 bis 09/2026, Spalte GPRC_DEU, Datenstand 01.10.2026. Zuletzt (Juli bis September 2026) 0,49.",
+      "wirkung": {
+        "treiber_ids": [
+          "N1",
+          "G6"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 3
+      },
+      "warum": "Krieg oder Kriegsgefahr mit deutscher Betroffenheit zeigt sich zuerst in der Berichterstattung. Die Schwelle trennt Kriegsepisoden vom Grundrauschen. N1 hat im Modell die Richtung 'offen'; seine Ladung (geopolitischer Stress +2) liest 'bestaetigend' als Eskalation. Wer das wie bei A11 nicht will, nimmt nur G6."
+    },
+    {
+      "id": "AS02",
+      "bezug": "S16",
+      "art": "aussage",
+      "text": "NATO-Bündnisfall oder Bundeswehr in Kampfhandlungen",
+      "muster": "(bündnisfall|artikel 5|article 5).{0,80}(ausgerufen|ausrufen|aktiviert|invoked|invoke)|(ausgerufen|aktiviert|invoked).{0,80}(bündnisfall|artikel 5|article 5)|bundeswehr.{0,80}(kampfhandlung|beschossen|angegriffen|gefallen)",
+      "hinweis": "eine Aussage, keine Zahl: Treffer in den Meldungen der letzten 30 Tage, von Hand beurteilt",
+      "wirkung": {
+        "treiber_ids": [
+          "N1",
+          "G6"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 4
+      },
+      "warum": "Die direkte Beteiligung Deutschlands misst keine Zahl. Wirkt erst, wenn ein Treffer bestätigt ist - nie allein aus einem Wort."
+    },
+    {
+      "id": "AS03",
+      "bezug": "S14",
+      "art": "zahl",
+      "text": "Politisch motivierte Gewalt in Deutschland steigt weiter",
+      "reihe": "bka-pmk-gewalt",
+      "regel": "steigt 1",
+      "hinweis": "Gewaltdelikte der politisch motivierten Kriminalität je Jahr, letzter Wert gegen das Vorjahr. 2025: 4.156 (plus 1,2 %, höchster Stand seit 2016).",
+      "wirkung": {
+        "treiber_ids": [
+          "G4"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 2
+      },
+      "warum": "Mehr politische Gewalt ist der sichtbare Teil von Polarisierung und Vertrauensverlust (G4, Gespaltene Gesellschaft). Gilt heute schon (2025 über 2024) und ist damit eingepreist; bewegt, wenn es kippt."
+    },
+    {
+      "id": "AS04",
+      "bezug": "S14",
+      "art": "zahl",
+      "text": "Liberale Demokratie in Deutschland unter 0,75 (V-Dem)",
+      "reihe": "vdem-libdem-de",
+      "regel": "mittel 1 < 0.75",
+      "hinweis": "Liberal Democracy Index, 0 bis 1. Deutschland 2025: 0,782, 2024: 0,778 (niedrigster Wert seit 1991). Seit 1991 nie unter 0,75.",
+      "wirkung": {
+        "treiber_ids": [
+          "G4"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 3
+      },
+      "warum": "Misst Rechtsstaat, Gewaltenteilung und Bürgerrechte zusammen; ein Wert unter 0,75 wäre ein Bruch mit allem seit der Einheit."
+    },
+    {
+      "id": "AS05",
+      "bezug": "S14",
+      "art": "zahl",
+      "text": "Meinungs- und Informationsfreiheit in Deutschland unter 0,9 (V-Dem)",
+      "reihe": "vdem-meinungsfreiheit-de",
+      "regel": "mittel 1 < 0.9",
+      "hinweis": "Freedom of Expression and Alternative Sources of Information Index, 0 bis 1. Deutschland 2025: 0,914, 2024: 0,920; seit 1991 nie so niedrig.",
+      "wirkung": {
+        "treiber_ids": [
+          "T10",
+          "G4"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 2
+      },
+      "warum": "Misst Informations- und Meinungsfreiheit für sich, enger als der Demokratie-Index; er fällt seit 2023."
+    },
+    {
+      "id": "AS06",
+      "bezug": "S14",
+      "art": "zahl",
+      "text": "Liberale Demokratie in den USA unter 0,5 (V-Dem)",
+      "reihe": "vdem-libdem-usa",
+      "regel": "mittel 1 < 0.5",
+      "hinweis": "USA 2025: 0,571 nach 0,751 im Jahr 2024, niedrigster Wert seit 1965. Unter 0,5 lag der Index zuletzt 1949.",
+      "wirkung": {
+        "treiber_ids": [
+          "G4"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 2
+      },
+      "warum": "G4 gilt für westliche Demokratien; die USA sind der stärkste Einzelfall. Der Absturz 2025 ist eingepreist; die Schwelle fragt, ob er weitergeht."
+    },
+    {
+      "id": "AS07",
+      "bezug": "T9",
+      "art": "zahl",
+      "text": "Ausgenutzte Sicherheitslücken auf hohem Niveau (CISA-Katalog)",
+      "reihe": "cisa-kev-monat",
+      "regel": "mittel 3 > 27",
+      "hinweis": "Neue Einträge je Monat im Katalog nachweislich ausgenutzter Schwachstellen, Dreimonatsmittel. 27 ist das 90. Perzentil der Dreimonatsmittel seit Juni 2022 (Median der Monate 18). Juli bis September 2026: 26, 31, 43, also Mittel 33; gilt heute schon.",
+      "wirkung": {
+        "treiber_ids": [
+          "T9"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 2
+      },
+      "warum": "Die beste offene, tägliche Zahl zur Angriffslage. Sie misst Ausnutzung, nicht KI im Besonderen; KI-gestützte Angriffe hat keine offene Reihe."
+    },
+    {
+      "id": "AS08",
+      "bezug": "T9",
+      "art": "aussage",
+      "text": "Cyberangriff legt kritische Infrastruktur in Deutschland lahm",
+      "muster": "(cyber|hacker|ransomware|ki-gestützt).{0,80}(stromnetz|stromausfall|krankenhaus|wasserwerk|kritische infrastruktur|kritis|stadtwerk)|(stromnetz|krankenhaus|wasserwerk|kritische infrastruktur|kritis|stadtwerk).{0,80}(cyberangriff|hackerangriff|ransomware)",
+      "hinweis": "eine Aussage, keine Zahl: Treffer in den Meldungen der letzten 30 Tage, von Hand beurteilt",
+      "wirkung": {
+        "treiber_ids": [
+          "T9"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 3
+      },
+      "warum": "Ein Ausfall durch einen Angriff ist das Ereignis selbst; Zahlen dazu erscheinen erst im Jahresbericht des BSI. Wirkt erst, wenn ein Treffer bestätigt ist - nie allein aus einem Wort."
+    },
+    {
+      "id": "AS09",
+      "bezug": "T8",
+      "art": "zahl",
+      "text": "Stromausfall je Kunde über 15 Minuten im Jahr (SAIDI)",
+      "reihe": "bnetza-saidi",
+      "regel": "mittel 1 > 15",
+      "hinweis": "Durchschnittliche Unterbrechung je Letztverbraucher, nur ungeplante (Wetter, Einwirkung Dritter, Netzbetreiber). 2024: 11,7 Minuten, 2023: 12,8; Zehnjahresmittel 12,7.",
+      "wirkung": {
+        "treiber_ids": [
+          "T8"
+        ],
+        "richtung": "widersprechend",
+        "staerke": 2
+      },
+      "warum": "Misst, ob das Netz Ausfälle häufiger zulässt, gleich aus welchem Grund. 15 Minuten liegt rund ein Fünftel über dem Zehnjahresmittel (Urteil). Ein Jahr Verzug."
+    },
+    {
+      "id": "AS10",
+      "bezug": "S14",
+      "art": "zahl",
+      "text": "Reichste 0,1 % in den USA besitzen dauerhaft mehr als 15 % des Vermögens",
+      "reihe": "fed-dfa-top01",
+      "regel": "alle 2 > 15",
+      "hinweis": "Anteil am Nettovermögen der privaten Haushalte, Quartale. 2026-Q2: 15,0 % (Höchststand seit Beginn 1989; 1989: 8,6 %).",
+      "wirkung": {
+        "treiber_ids": [
+          "M8"
+        ],
+        "richtung": "bestaetigend",
+        "staerke": 2
+      },
+      "warum": "Vermögenskonzentration an der Spitze ist die messbare Seite einer Oligarchie. Für Deutschland gibt es keine offene Quartalsreihe."
+    }
+  ],
+  "beendet": [
+    {
+      "id": "S05",
+      "name": "Fiskaldominanz und finanzielle Repression",
+      "bis": "2026-10-04",
+      "bis_version": "1.2.0",
+      "nachfolger": "S13",
+      "begruendung": "Geht in S13 auf: Die Belege zeigen den Schuldendruck vor allem als Druck auf Sozialstaat und Lebenshaltung (Rente, Pflege, Wohnen) – das ist eine reichere, verstaendlichere Zukunft als eine rein finanztechnische."
+    },
+    {
+      "id": "S07",
+      "name": "Chokepoint-Bruch",
+      "bis": "2026-10-04",
+      "bis_version": "1.2.0",
+      "nachfolger": "S06",
+      "begruendung": "Unter der Schwelle von 5 % in allen Horizonten; als Eskalationsrand in S06 aufgenommen, statt ein eigenes Szenario zu tragen, das die Rechnung kaum beeinflusst."
+    },
+    {
+      "id": "S10",
+      "name": "Autoritäre Effizienz",
+      "bis": "2026-10-04",
+      "bis_version": "1.2.0",
+      "nachfolger": "S14",
+      "begruendung": "Unter der Schwelle von 5 % (4 bis 7 %) und im Regime fast gleich mit der Fragmentierten Gesellschaft; der autoritaere Ausweg ist jetzt eine Moeglichkeit in S14."
+    },
+    {
+      "id": "S11",
+      "name": "Fragmentierte Gesellschaft",
+      "bis": "2026-10-04",
+      "bis_version": "1.2.0",
+      "nachfolger": "S14",
+      "begruendung": "Geht in S14 auf, zusammen mit der Autoritaeren Effizienz (S10): beide beschrieben dieselbe Kraft - schwindendes Vertrauen - mit zwei Ausgaengen."
+    },
+    {
+      "id": "S12",
+      "name": "Beschleunigte Transformation",
+      "bis": "2026-10-04",
+      "bis_version": "1.2.0",
+      "nachfolger": "S02",
+      "begruendung": "Unter der Schwelle von 5 % (1 bis 6 %); in den KI-Schub (S02) aufgenommen, der jetzt Wachstum und Umbruch zugleich beschreibt."
+    }
+  ],
+  "pruefung": {
+    "ampel": "gruen",
+    "stand": "2026-10-09",
+    "faellig": false,
+    "naechste": "2026-11-14",
+    "begruendung": [],
+    "kennzahlen": [
+      {
+        "schluessel": "fehlender_treiber",
+        "frage": "Fehlt ein Treiber?",
+        "status": "gruen",
+        "befund": "0 von 21 Signalen nennen keinen Treiber, den es im Modell gibt."
+      },
+      {
+        "schluessel": "keine_trennung",
+        "frage": "Trennen die Szenarien noch?",
+        "status": "gruen",
+        "befund": "0 von 21 zuordenbaren Signalen trennen die Szenarien kaum (Kopplungsspanne unter 0.3)."
+      },
+      {
+        "schluessel": "unbalanciert",
+        "frage": "Ist der Szenariensatz balanciert?",
+        "status": "gruen",
+        "befund": "Im Horizont 2028 liegen 0 von 12 Szenarien außerhalb von 5 bis 40 Prozent."
+      },
+      {
+        "schluessel": "effektive_dimension",
+        "frage": "Sind die Szenarien verschieden genug?",
+        "status": "gruen",
+        "befund": "Effektive Dimension 5.94 von 10, also 59 Prozent der Achsen. Gegenüber dem Vorwert 5.937 um 0.0 gestiegen."
+      },
+      {
+        "schluessel": "krisenlast",
+        "frage": "Ist die Krisenlast begründet?",
+        "status": "gruen",
+        "befund": "Im Horizont 2028 tragen 38% der Wahrscheinlichkeit Szenarien mit Wachstum unter normal, das 1.8-Fache der Basisrate von 21% – begründet."
+      }
+    ],
+    "krisenlast_begruendung": "2028 liegt die Krisenlast (Szenarien mit Wachstum unter normal) bei 38 %, dem 1,8-Fachen der Basisrate (USA 1973–2025: 21 % der Jahre mit Wachstum mehr als eine halbe Standardabweichung unter dem Mittel). Begründet durch die Lage im Oktober 2026: Brent über 100 $, deutsche Industrieproduktion zwei Jahre rückläufig (das Anzeichen dafür ist eingetreten), Shiller-KGV 41 als Fallhöhe für einen Platzer, Russlands Krieg, Prognosemärkte sehen eine Taiwan-Invasion bis Ende 2027 bei rund 12 %. Dagegen sprechen Kreditaufschläge unter dem langjährigen Mittel und das schwache, aber positive Wachstum, das der IWF für den Euroraum erwartet. Deshalb ist die Krisenlast ohne Taiwan von 39 auf 31 % gedämpft."
+  },
+  "aussensicht": {
+    "schema": "aussensicht/v1",
+    "stand": "2026-10-09",
+    "geschichte": {
+      "zeitraum": "1973-2025",
+      "region": "USA",
+      "quelle": "FRED (BIP real, Verbraucherpreise, Rendite 10 Jahre, Ölpreis, Kreditaufschlag), pruefung/basisraten.py",
+      "hinweis": "Lange, freie Reihen gibt es fuer die USA; fuer Deutschland und den Euroraum beginnen sie spaeter."
+    },
+    "vergleiche": [
+      {
+        "id": "wachstum_schwach",
+        "frage": "Wachstum unter normal",
+        "erklaerung": "Szenarien, in denen die Wirtschaft schwächer wächst als üblich - verglichen mit den Jahren, in denen das Wachstum mehr als eine halbe Standardabweichung unter dem Mittel lag.",
+        "szenarien": [
+          "S03",
+          "S04",
+          "S09",
+          "S14",
+          "S17"
+        ],
+        "geschichte": 21,
+        "begruendung": "2028 liegt die Krisenlast (Szenarien mit Wachstum unter normal) bei 38 %, dem 1,8-Fachen der Basisrate (USA 1973–2025: 21 % der Jahre mit Wachstum mehr als eine halbe Standardabweichung unter dem Mittel). Begründet durch die Lage im Oktober 2026: Brent über 100 $, deutsche Industrieproduktion zwei Jahre rückläufig (das Anzeichen dafür ist eingetreten), Shiller-KGV 41 als Fallhöhe für einen Platzer, Russlands Krieg, Prognosemärkte sehen eine Taiwan-Invasion bis Ende 2027 bei rund 12 %. Dagegen sprechen Kreditaufschläge unter dem langjährigen Mittel und das schwache, aber positive Wachstum, das der IWF für den Euroraum erwartet. Deshalb ist die Krisenlast ohne Taiwan von 39 auf 31 % gedämpft."
+      },
+      {
+        "id": "schrumpft",
+        "frage": "Wirtschaft schrumpft",
+        "erklaerung": "Szenarien mit deutlichem Einbruch - verglichen mit den Jahren, in denen die Wirtschaftsleistung gesunken ist.",
+        "szenarien": [
+          "S04",
+          "S17"
+        ],
+        "geschichte": 13
+      },
+      {
+        "id": "stagflation",
+        "frage": "Stagflation",
+        "erklaerung": "Schwaches Wachstum und zugleich hohe Inflation - verglichen mit Jahren, in denen beides zusammenkam.",
+        "szenarien": [
+          "S04",
+          "S09",
+          "S17"
+        ],
+        "geschichte": 8,
+        "begruendung": "Das Modell rechnet 2028 mit 24 % für Welten mit schwachem Wachstum und zugleich steigenden Preisen; die Geschichte zeigt 8 % solcher Jahre, fast alle zwischen 1974 und 1982 nach den Ölkrisen. Der Faktor 3 überzeichnet etwas: Nur die Energiegetriebene Stagflation (12 %) ist der klassische Fall. Klimaschock-Kaskade (5 %) und Bruch um Taiwan (7 %) zählen mit, weil in ihnen ein Angebotsschock beides zugleich auslöst. Dafür spricht die Lage im Oktober 2026: Brent zwischen 105 und 125 $ – ein Ölschock wie damals –, die deutsche Industrieproduktion ist zwei Jahre in Folge gefallen, in den USA liegen Inflation bei 3,4 % und die erwartete Inflation für ein Jahr bei 3,9 %, dazu höhere Zölle. Dagegen spricht: Zentralbanken sind unabhängiger und glaubwürdiger als in den 1970ern, die Wirtschaft braucht je Euro Wertschöpfung nur noch etwa halb so viel Öl, Löhne folgen den Preisen kaum noch automatisch, und die Kerninflation im Euroraum liegt bei 2,5 %. Die Abweichung ist deshalb begründet, aber nicht sicher: Fällt der Ölpreis dauerhaft unter 110 $, kippen die Anzeichen dafür, und die Abweichung sinkt im Tagesstand."
+      },
+      {
+        "id": "inflation_hoch",
+        "frage": "Hohe Inflation",
+        "erklaerung": "Szenarien mit stark steigenden Preisen - verglichen mit Jahren, in denen die Inflation mehr als eine Standardabweichung über dem Mittel lag.",
+        "szenarien": [
+          "S04",
+          "S13",
+          "S17"
+        ],
+        "geschichte": 13,
+        "begruendung": "25 % gegen 13 % der Jahre. Gezählt werden Energiegetriebene Stagflation, Verteilungskampf im Sozialstaat und Bruch um Taiwan. Dafür sprechen hohe Staatsschulden und der Druck, die Zinsen unter der Inflation zu halten, weniger Arbeitskräfte durch die Alterung, Abschottung und Zölle sowie teure Energie. Dagegen: Die EZB hält den Einlagesatz bei 2,5 % und signalisiert eher Erhöhungen, die Kerninflation im Euroraum liegt bei 2,5 %. Die Abweichung hängt vor allem am Verteilungskampf im Sozialstaat; seine Anzeichen – reale Zinsen unter null bei hoher Inflation, ein aufgeweichtes Inflationsziel – sind derzeit nicht eingetreten."
+      },
+      {
+        "id": "energie_teuer",
+        "frage": "Teure Energie",
+        "erklaerung": "Szenarien mit hohen Energiepreisen - verglichen mit Jahren, in denen der reale Ölpreis mehr als eine halbe Standardabweichung über dem Mittel lag.",
+        "szenarien": [
+          "S01",
+          "S04",
+          "S16",
+          "S17"
+        ],
+        "geschichte": 32,
+        "begruendung": "50 % gegen 32 % der Jahre für 2028; danach fällt der Anteil unter die Geschichte (2040: 26 %). Der Grund ist der Startpunkt: Der Ölpreis liegt heute weit über seinem langjährigen Mittel, und Energiepreise sinken meist über Jahre, nicht über Monate – auch der Zähe Aufstieg rechnet deshalb noch mit teurer Energie. Dagegen spricht der Umbau: 42 % des Stroms kommen schon aus Erneuerbaren, Batteriespeicher wachsen schnell. Das Modell lässt teure Energie deshalb bis 2040 auslaufen."
+      }
+    ],
+    "anker": [
+      {
+        "id": "taiwan",
+        "frage": "Invasion Taiwans bis Ende 2027",
+        "szenarien": [
+          "S17"
+        ],
+        "horizont": "2028",
+        "extern": 12,
+        "extern_text": "12 %",
+        "quelle": "Polymarket",
+        "url": "https://polymarket.com/event/will-china-invade-taiwan-by-december-31-2027",
+        "datum": "2026-10-08",
+        "hinweis": "Der Markt fragt nach einer Invasion; das Szenario umfasst auch eine Blockade."
+      },
+      {
+        "id": "rezession",
+        "frage": "Rezession in den USA 2026",
+        "szenarien": [
+          "S03"
+        ],
+        "horizont": "2028",
+        "extern": 20,
+        "extern_text": "11-28 %",
+        "quelle": "Polymarket und Kalshi, Sommer 2026",
+        "url": "https://seekingalpha.com/news/4575878-prediction-markets-slash-2026-us-recession-odds-to-28",
+        "datum": "2026-07-15",
+        "hinweis": "Nicht dieselbe Frage: Der Markt fragt nach 2026, das Szenario beschreibt die Welt 2028."
+      },
+      {
+        "id": "iwf",
+        "frage": "Wachstum im Euroraum 2027",
+        "szenarien": [
+          "S01"
+        ],
+        "horizont": "2028",
+        "extern": null,
+        "extern_text": "+1,2 %",
+        "quelle": "IWF, World Economic Outlook Juli 2026",
+        "url": "https://www.imf.org/en/publications/weo",
+        "datum": "2026-07-15",
+        "hinweis": "Schwach, aber positiv - das Bild des Zähen Aufstiegs."
+      }
+    ]
+  },
+  "journal": [
+    {
+      "version": "1.2.0",
+      "datum": "2026-08-15",
+      "szenarien": {
+        "S01": "Zäher Aufstieg",
+        "S02": "Produktivitätsdurchbruch",
+        "S03": "Der Platzer",
+        "S04": "Energiegetriebene Stagflation",
+        "S05": "Fiskaldominanz und finanzielle Repression",
+        "S06": "Blockbildung und Zwei-Stack-Welt",
+        "S07": "Chokepoint-Bruch",
+        "S08": "Grüner Boom aus Kostengründen",
+        "S09": "Klimaschock-Kaskade",
+        "S10": "Autoritäre Effizienz",
+        "S11": "Fragmentierte Gesellschaft",
+        "S12": "Beschleunigte Transformation"
+      },
+      "wahrscheinlichkeiten": {
+        "2028": {
+          "S01": 26,
+          "S02": 7,
+          "S03": 16,
+          "S04": 15,
+          "S05": 6,
+          "S06": 12,
+          "S07": 3,
+          "S08": 3,
+          "S09": 4,
+          "S10": 4,
+          "S11": 3,
+          "S12": 1
+        },
+        "2032": {
+          "S01": 17,
+          "S02": 12,
+          "S03": 8,
+          "S04": 10,
+          "S05": 11,
+          "S06": 14,
+          "S07": 4,
+          "S08": 8,
+          "S09": 6,
+          "S10": 5,
+          "S11": 3,
+          "S12": 2
+        },
+        "2040": {
+          "S01": 10,
+          "S02": 12,
+          "S03": 3,
+          "S04": 5,
+          "S05": 12,
+          "S06": 12,
+          "S07": 4,
+          "S08": 13,
+          "S09": 11,
+          "S10": 7,
+          "S11": 5,
+          "S12": 6
+        }
+      }
+    },
+    {
+      "version": "1.3.0",
+      "datum": "2026-10-04",
+      "szenarien": {
+        "S01": "Zäher Aufstieg",
+        "S02": "KI-Schub",
+        "S03": "Der Platzer",
+        "S04": "Energiegetriebene Stagflation",
+        "S06": "Blockbildung",
+        "S08": "Grüner Boom aus Kostengründen",
+        "S09": "Klimaschock-Kaskade",
+        "S13": "Verteilungskampf im Sozialstaat",
+        "S14": "Gespaltene Gesellschaft",
+        "S15": "Europäischer Neustart",
+        "S16": "Rüstungswirtschaft"
+      },
+      "wahrscheinlichkeiten": {
+        "2028": {
+          "S01": 24,
+          "S02": 6,
+          "S03": 12,
+          "S04": 16,
+          "S06": 9,
+          "S08": 5,
+          "S09": 6,
+          "S13": 6,
+          "S14": 5,
+          "S15": 5,
+          "S16": 6
+        },
+        "2032": {
+          "S01": 16,
+          "S02": 10,
+          "S03": 7,
+          "S04": 10,
+          "S06": 11,
+          "S08": 9,
+          "S09": 8,
+          "S13": 9,
+          "S14": 6,
+          "S15": 6,
+          "S16": 8
+        },
+        "2040": {
+          "S01": 10,
+          "S02": 12,
+          "S03": 5,
+          "S04": 6,
+          "S06": 10,
+          "S08": 13,
+          "S09": 13,
+          "S13": 11,
+          "S14": 7,
+          "S15": 7,
+          "S16": 6
+        }
+      }
+    },
+    {
+      "version": "1.4.0",
+      "datum": "2026-10-09",
+      "szenarien": {
+        "S01": "Zäher Aufstieg",
+        "S02": "KI-Schub",
+        "S03": "Der Platzer",
+        "S04": "Energiegetriebene Stagflation",
+        "S06": "Blockbildung",
+        "S08": "Grüner Boom aus Kostengründen",
+        "S09": "Klimaschock-Kaskade",
+        "S13": "Verteilungskampf im Sozialstaat",
+        "S14": "Gespaltene Gesellschaft",
+        "S15": "Europäischer Neustart",
+        "S16": "Rüstungswirtschaft",
+        "S17": "Bruch um Taiwan"
+      },
+      "wahrscheinlichkeiten": {
+        "2028": {
+          "S01": 26,
+          "S02": 7,
+          "S03": 9,
+          "S04": 12,
+          "S06": 7,
+          "S08": 6,
+          "S09": 5,
+          "S13": 6,
+          "S14": 5,
+          "S15": 5,
+          "S16": 5,
+          "S17": 7
+        },
+        "2032": {
+          "S01": 16,
+          "S02": 10,
+          "S03": 5,
+          "S04": 8,
+          "S06": 8,
+          "S08": 9,
+          "S09": 8,
+          "S13": 9,
+          "S14": 5,
+          "S15": 6,
+          "S16": 8,
+          "S17": 8
+        },
+        "2040": {
+          "S01": 10,
+          "S02": 12,
+          "S03": 5,
+          "S04": 5,
+          "S06": 6,
+          "S08": 13,
+          "S09": 13,
+          "S13": 11,
+          "S14": 7,
+          "S15": 7,
+          "S16": 5,
+          "S17": 6
+        }
+      }
+    }
+  ],
+  "zufluss": {
+    "entdoppeln": {
+      "an": true,
+      "buendel_exponent": 0.5
+    },
+    "ungerundet": {
+      "an": true,
+      "p_min_prozent": 0.5,
+      "basis_version": "1.4.0"
+    },
+    "p_basis": {
+      "2028": {
+        "S01": 26,
+        "S02": 7,
+        "S03": 9,
+        "S04": 12,
+        "S06": 7,
+        "S08": 6,
+        "S09": 5,
+        "S13": 6,
+        "S14": 5,
+        "S15": 5,
+        "S16": 5,
+        "S17": 7
+      },
+      "2032": {
+        "S01": 16,
+        "S02": 10,
+        "S03": 5,
+        "S04": 8,
+        "S06": 8,
+        "S08": 9,
+        "S09": 8,
+        "S13": 9,
+        "S14": 5,
+        "S15": 6,
+        "S16": 8,
+        "S17": 8
+      },
+      "2040": {
+        "S01": 10,
+        "S02": 12,
+        "S03": 5,
+        "S04": 5,
+        "S06": 6,
+        "S08": 13,
+        "S09": 13,
+        "S13": 11,
+        "S14": 7,
+        "S15": 7,
+        "S16": 5,
+        "S17": 6
+      }
+    },
+    "signale": []
+  },
+  "stufen": {
+    "A12": [
+      {
+        "regel": "mittel 1 > 115",
+        "staerke": 2
+      },
+      {
+        "regel": "mittel 1 > 130",
+        "staerke": 3
+      },
+      {
+        "regel": "mittel 1 > 145",
+        "staerke": 4
+      }
+    ]
+  },
+  "spanne_massstab": {
+    "je_horizont": {
+      "2028": 0.025089250925677674,
+      "2032": 0.025089250925677674,
+      "2040": 0.025089250925677674
+    },
+    "quelle": "letzte Revision 1.3.0 -> 1.4.0, Abspaltungen ihrem Ursprung zugerechnet, groesster Wert fuer alle Horizonte"
+  }
+}
