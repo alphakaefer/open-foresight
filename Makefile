@@ -1,4 +1,4 @@
-.PHONY: test energy backtest worldstate sources snapshot
+.PHONY: test energy backtest worldstate sources snapshot ui regional
 
 test:            ## reproduce the published world state, run all model tests
 	python3 -m pytest tests explain/test_check_numbers.py -q
@@ -19,3 +19,9 @@ sources:         ## regenerate the radar source list
 
 snapshot:        ## fetch the latest public radar snapshot (then: make worldstate energy sources)
 	bash radar/fetch_snapshot.sh
+
+ui:              ## serve the UI prototype at http://localhost:8000/ui/ (serves the repo root)
+	python3 -m http.server 8000
+
+regional:        ## fetch per-country and per-state values for the map comparisons (needs internet)
+	python3 radar/fetch_regional.py

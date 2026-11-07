@@ -1,0 +1,235 @@
+{
+  "_note": "JUDGMENT: which energy parameters the map can show, and the geography each one applies to. 'series' parameters read a radar series, 'model' parameters read the scenario table, 'gap' parameters have no data yet and say what is needed. Nothing here is a regional measurement.",
+  "scopes": {
+    "global": "Global",
+    "euro_area": "Euro area (aggregate)",
+    "germany": "Germany (national)",
+    "brandenburg": "Brandenburg",
+    "berlin": "Berlin"
+  },
+  "params": [
+    {
+      "id": "regime_dear",
+      "scope": "global",
+      "kind": "model",
+      "label": "Chance of more expensive energy",
+      "short": "P(energy dearer)",
+      "note": "Share of scenario probability in scenarios with an energy-price regime above neutral, for the chosen horizon. Base model vs today."
+    },
+    {
+      "id": "brent",
+      "scope": "global",
+      "kind": "series",
+      "series": "fred-brent",
+      "label": "Brent crude oil price",
+      "short": "Brent",
+      "unit": "USD/barrel"
+    },
+    {
+      "id": "realyield",
+      "scope": "global",
+      "kind": "series",
+      "series": "fred-realrendite-10j",
+      "label": "US real 10-year yield",
+      "short": "Real yield",
+      "unit": "%"
+    },
+    {
+      "id": "ecb",
+      "scope": "euro_area",
+      "kind": "series",
+      "series": "ezb-leitzins",
+      "label": "ECB deposit rate",
+      "short": "ECB rate",
+      "unit": "%"
+    },
+    {
+      "id": "core",
+      "scope": "euro_area",
+      "kind": "series",
+      "series": "eurostat-kerninflation-ea",
+      "label": "Euro area core inflation",
+      "short": "Core inflation",
+      "unit": "%"
+    },
+    {
+      "id": "gdp",
+      "scope": "euro_area",
+      "kind": "series",
+      "series": "eurostat-bip-ea",
+      "label": "Euro area GDP growth",
+      "short": "GDP growth",
+      "unit": "%"
+    },
+    {
+      "id": "res",
+      "scope": "germany",
+      "kind": "series",
+      "series": "energy-charts-erneuerbare",
+      "label": "Renewable share of electricity",
+      "short": "Renewables",
+      "unit": "%",
+      "caution": "Monthly values swing with season and weather. The snapshot's value for a year earlier (83.4%) looks high; check it against Energy-Charts before relying on the change."
+    },
+    {
+      "id": "pv",
+      "scope": "germany",
+      "kind": "series",
+      "series": "energy-charts-solar",
+      "label": "Installed photovoltaic capacity",
+      "short": "PV capacity",
+      "unit": "GW"
+    },
+    {
+      "id": "battery",
+      "scope": "germany",
+      "kind": "series",
+      "series": "energy-charts-speicher",
+      "label": "Battery storage capacity",
+      "short": "Batteries",
+      "unit": "GWh"
+    },
+    {
+      "id": "industry",
+      "scope": "germany",
+      "kind": "series",
+      "series": "destatis-produktion",
+      "label": "Industrial production",
+      "short": "Industry",
+      "unit": "index 2021=100"
+    },
+    {
+      "id": "gap-wind",
+      "scope": "brandenburg",
+      "kind": "gap",
+      "label": "Installed wind capacity",
+      "short": "Wind capacity",
+      "needs": "Marktstammdatenregister (Bundesnetzagentur), filtered to the state"
+    },
+    {
+      "id": "gap-queue",
+      "scope": "brandenburg",
+      "kind": "gap",
+      "label": "Grid-connection queue",
+      "short": "Grid queue",
+      "needs": "Network operators; the primary source for the German figures is also still missing"
+    },
+    {
+      "id": "gap-load",
+      "scope": "berlin",
+      "kind": "gap",
+      "label": "Electricity consumption and peak load",
+      "short": "Peak load",
+      "needs": "Grid operator Stromnetz Berlin"
+    },
+    {
+      "id": "gap-roof",
+      "scope": "berlin",
+      "kind": "gap",
+      "label": "Rooftop PV and heat pumps",
+      "short": "Rooftop PV",
+      "needs": "Marktstammdatenregister, filtered to Berlin"
+    }
+  ],
+  "compare": [
+    {
+      "id": "c-wb-res",
+      "kind": "compare",
+      "dataset": "wb_res",
+      "home": "global",
+      "good": "high",
+      "short": "Renewables share",
+      "levels": [
+        "global",
+        "europe"
+      ]
+    },
+    {
+      "id": "c-wb-epc",
+      "kind": "compare",
+      "dataset": "wb_energy_pc",
+      "home": "global",
+      "good": "neutral",
+      "short": "Energy per person",
+      "levels": [
+        "global",
+        "europe"
+      ]
+    },
+    {
+      "id": "c-es-res",
+      "kind": "compare",
+      "dataset": "es_res_elec",
+      "home": "europe",
+      "good": "high",
+      "short": "Renewable electricity",
+      "caution": "Eurostat publishes values above 100% for some countries (Norway); they are shown as published.",
+      "levels": [
+        "europe"
+      ]
+    },
+    {
+      "id": "c-es-imp",
+      "kind": "compare",
+      "dataset": "es_import_dep",
+      "home": "europe",
+      "good": "low",
+      "short": "Import dependency",
+      "caution": "Negative values mean a net exporter.",
+      "levels": [
+        "europe"
+      ]
+    },
+    {
+      "id": "c-es-price",
+      "kind": "compare",
+      "dataset": "es_price_hh",
+      "home": "europe",
+      "good": "low",
+      "short": "Household power price",
+      "levels": [
+        "europe"
+      ]
+    },
+    {
+      "id": "c-es-hicp",
+      "kind": "compare",
+      "dataset": "es_hicp_energy",
+      "home": "europe",
+      "good": "low",
+      "short": "Energy inflation",
+      "levels": [
+        "europe"
+      ]
+    },
+    {
+      "id": "c-mastr-wind",
+      "kind": "compare",
+      "dataset": "mastr_wind",
+      "home": "germany",
+      "good": "neutral",
+      "short": "Wind turbines",
+      "caution": "Counts units, not capacity. A state with many small turbines ranks above one with fewer, larger ones.",
+      "levels": [
+        "germany",
+        "brandenburg",
+        "berlin"
+      ]
+    },
+    {
+      "id": "c-mastr-pv",
+      "kind": "compare",
+      "dataset": "mastr_pv",
+      "home": "germany",
+      "good": "neutral",
+      "short": "Solar PV units",
+      "caution": "Counts registered units, mostly rooftop systems, not capacity and not per head of population.",
+      "levels": [
+        "germany",
+        "brandenburg",
+        "berlin"
+      ]
+    }
+  ],
+  "_compare_note": "JUDGMENT: 'good' says which end is favourable (high, low, or neutral = no judgment). The numbers live in radar/regional/regional.json. 'levels' lists the map levels where a comparison is shown: World Bank data covers the world, Eurostat only Europe, MaStR only Germany."
+}

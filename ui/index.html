@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>open-foresight: energy foresight explorer (prototype)</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div>
+      <p class="eyebrow">open-foresight · prototype</p>
+      <h1>Energy foresight explorer</h1>
+      <p id="question" class="question"></p>
+      <p id="stamp" class="stamp"></p>
+    </div>
+    <div class="top-tools">
+      <button id="theme" class="btn" type="button" aria-label="Toggle light and dark theme">Theme</button>
+      <button id="prov-open" class="btn" type="button">Provenance</button>
+    </div>
+  </div>
+  <nav class="scale" aria-label="Geographic scale" id="scale"></nav>
+</header>
+<main id="main" tabindex="-1"><p class="loading">Loading data …</p></main>
+<aside id="prov" class="prov" hidden aria-label="Provenance">
+  <div class="prov-head"><h2>Provenance</h2><button id="prov-close" class="btn" type="button">Close</button></div>
+  <p class="muted">Every block on the page is tagged. Measured = from a radar series. Model output = computed by the engine. Judgment = a human decision recorded in a file you can edit.</p>
+  <div id="prov-body"></div>
+</aside>
+<div id="tip" class="tip" role="status" hidden></div>
+<script src="map.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
