@@ -1,0 +1,111 @@
+/* Look of the zukunftsgut.org apps for the map UI.
+   Loaded after styles.css: it only resets colours, type, spacing and a few shapes, so styles.css stays as written.
+   Brand colours: blue #2753a7, red #c23a2a, yellow #e8b21e. Headings: Jost (SIL OFL, fonts/OFL-Jost.txt).
+   Remove the <link> to this file in index.html to get the original look back. */
+
+@font-face{font-family:Jost;font-style:normal;font-weight:500;font-display:swap;src:url(fonts/jost-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:Jost;font-style:normal;font-weight:600;font-display:swap;src:url(fonts/jost-latin-600-normal.woff2) format("woff2")}
+
+:root{
+  --head:Jost,Futura,"Avenir Next","Century Gothic",sans-serif;
+  --surface:#f8fafc; --card:#ffffff; --line:#e2e8f0; --grid:#f1f5f9;
+  --text:#0f172a; --text2:#334155; --muted:#64748b;
+  --today:#2753a7; --base:#cbd5e1; --accent-soft:#eef2fb;
+  --good:#15803d; --warn:#a16207; --crit:#c23a2a; --gap:#6a4fb3;
+  --meas:#0f6b8f; --model:#2753a7; --judg:#a16207;
+  --active:#1e293b; --active-fg:#ffffff; --soft:#f8fafc; --shadow:0 10px 30px rgba(15,23,42,.08);
+}
+:root[data-theme="dark"]{
+  --surface:#0f172a; --card:#162033; --line:#273449; --grid:#1e293b;
+  --text:#f1f5f9; --text2:#cbd5e1; --muted:#94a3b8;
+  --today:#7d9be0; --base:#475569; --accent-soft:#1c2a48;
+  --good:#4ade80; --warn:#f2c14e; --crit:#f07a6b; --gap:#a994e8;
+  --meas:#59b4d6; --model:#7d9be0; --judg:#f2c14e;
+  --active:#e2e8f0; --active-fg:#0f172a; --soft:#1a2539; --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --surface:#0f172a; --card:#162033; --line:#273449; --grid:#1e293b;
+    --text:#f1f5f9; --text2:#cbd5e1; --muted:#94a3b8;
+    --today:#7d9be0; --base:#475569; --accent-soft:#1c2a48;
+    --good:#4ade80; --warn:#f2c14e; --crit:#f07a6b; --gap:#a994e8;
+    --meas:#59b4d6; --model:#7d9be0; --judg:#f2c14e;
+    --active:#e2e8f0; --active-fg:#0f172a; --soft:#1a2539; --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+}
+
+/* type: 16 px body, Jost for headings, numbers in tabular figures */
+body{font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--head);font-weight:600;letter-spacing:0}
+h1{font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.15}
+h2{font-size:1.3rem}
+h3{font-size:1.05rem}
+.big,.t-val,.mass b{font-family:var(--head);font-weight:600}
+.card p,.question,.callout,.sc-detail{max-width:78ch}
+
+/* header: scrolls away instead of covering a third of the screen */
+.top{position:static;background:var(--card)}
+.top-inner{max-width:1280px;padding:28px 24px 10px}
+.eyebrow{font-size:.75rem;letter-spacing:.08em;font-weight:600;color:var(--muted);margin-bottom:6px}
+.eyebrow::before{content:"";display:inline-block;width:8px;height:8px;margin-right:8px;vertical-align:1px;
+  background:linear-gradient(90deg,#c23a2a 0 33%,#2753a7 33% 66%,#e8b21e 66%)}
+.question{font-size:1.05rem;color:var(--text2);margin:10px 0 6px}
+.stamp{font-size:.8rem}
+.scale{max-width:1280px;padding:8px 24px 18px;gap:6px}
+.sep{opacity:.5}
+
+/* controls: one shape, dark when active (as in the other zukunftsgut apps), at least 40 px high */
+.btn,.crumb,.seg button,.paramsel select,.when label,.when .yr select{min-height:40px}
+.btn{border-radius:8px;padding:8px 14px;font-weight:500}
+.btn:hover,.tile:hover{border-color:var(--muted)}
+.crumb{border-radius:999px;padding:8px 14px}
+.crumb[aria-current="true"],.seg button[aria-pressed="true"]{background:var(--active);border-color:var(--active);color:var(--active-fg)}
+.seg{border-radius:10px;background:var(--grid);border-color:var(--grid);padding:3px;gap:2px}
+.seg button{background:transparent;border-radius:7px;padding:6px 14px;font-weight:500}
+.paramsel select,.when .yr select{border-radius:8px;padding:6px 10px}
+.when label{padding:6px 12px}
+.when label:has(input:checked){border-color:var(--active);background:var(--grid)}
+.btn:focus-visible,.crumb:focus-visible,.seg button:focus-visible,.tile:focus-visible{outline:2px solid var(--today);outline-offset:2px}
+
+/* page and cards: air instead of frames */
+main{max-width:1280px;padding:8px 24px 40px;gap:20px}
+.card{border-radius:16px;padding:22px 24px;border-color:var(--line)}
+.card-head{margin-bottom:14px;align-items:center}
+.intro{border-left:0;border-color:transparent;background:var(--accent-soft)}
+.intro.gap{background:color-mix(in srgb,var(--gap) 9%,var(--card))}
+
+/* labels: quiet filled chips instead of coloured outlines */
+.tag{border:0;background:color-mix(in srgb,currentColor 11%,transparent);padding:3px 10px;font-weight:600;font-size:.72rem;letter-spacing:.02em}
+.chip{border-radius:999px;padding:3px 10px;border:0;background:var(--grid)}
+.chip.on{background:color-mix(in srgb,var(--warn) 14%,transparent);color:var(--warn)}
+.regime span{border:0;background:var(--grid);border-radius:999px;padding:2px 9px}
+
+/* map: soft sea, readout as a floating card */
+.map{background:var(--grid);border-radius:12px}
+.mapbar{border:0;background:var(--soft);border-radius:12px;padding:10px 12px}
+.readout{border-radius:12px;box-shadow:var(--shadow);border-color:var(--line);padding:12px 14px}
+.ranklist{border-radius:12px}
+.rk{padding:5px 10px}
+.tile{border-radius:12px;padding:10px 12px;background:var(--soft);border-color:transparent}
+.tile.on{background:var(--card);border-color:var(--meas)}
+
+/* bars and numbers */
+.bar-track .b{background:var(--base)}
+.bar-track i,.axis-track,.axis-track i,.rk-bar{border-radius:999px}
+.mass{gap:10px}
+.mass div{border:0;background:var(--soft);border-radius:12px;padding:12px 8px}
+.mass b{font-size:1.5rem}
+
+/* notes about gaps: tinted surface instead of a dashed frame */
+.callout{border:0;border-left:3px solid var(--gap);border-radius:0 10px 10px 0;background:color-mix(in srgb,var(--gap) 7%,transparent);padding:12px 14px}
+.demo-banner{border:0;border-left:3px solid var(--warn);border-radius:0 10px 10px 0;background:color-mix(in srgb,var(--warn) 10%,transparent);padding:8px 12px}
+
+/* provenance panel and tooltip */
+.prov{box-shadow:var(--shadow)}
+.tip{border-radius:10px;box-shadow:var(--shadow)}
+
+@media (max-width:640px){
+  .top-inner{padding:20px 16px 8px;flex-direction:column}
+  .scale,main{padding-left:16px;padding-right:16px}
+  .card{padding:18px 16px}
+}
