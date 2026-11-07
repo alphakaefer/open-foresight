@@ -1,17 +1,18 @@
 # k-sensitivity experiment: how to rerun
 
-Read-only on the repo. Nothing inside `open-foresight` is written: k is changed on an in-memory copy of the
+Read-only on the repo. Nothing inside `open-foresight` is written (results go to `--out`, which must be outside the
+repo; default `../open-foresight-results/k_experiment/`, next to your clone): k is changed on an in-memory copy of the
 model, bytecode writing is switched off, and `git status` is compared before and after the run.
 
 ```bash
-cd C:/Users/navee/Desktop/CLUADEFORESIGHT/k_experiment
-python -B k_sensitivity.py                                  # defaults: --repo C:/Users/navee/open-foresight --out ./results
-python -B k_sensitivity.py --repo /path/to/open-foresight --out ./results-other
+# from the repo root
+python3 -B k_experiment/k_sensitivity.py                                  # defaults: --repo . --out ../open-foresight-results/k_experiment
+python3 -B k_experiment/k_sensitivity.py --repo /path/to/open-foresight --out /tmp/k-results-other
 ```
 
 Needs Python 3.9+; matplotlib is optional (without it the charts are skipped).
 
-## Outputs (in `results/`)
+## Outputs (in `--out`)
 
 | File | Content |
 |---|---|

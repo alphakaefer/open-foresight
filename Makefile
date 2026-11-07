@@ -1,7 +1,7 @@
 .PHONY: test energy backtest worldstate sources snapshot
 
 test:            ## reproduce the published world state, run all model tests
-	python3 -m pytest tests -q
+	python3 -m pytest tests explain/test_check_numbers.py -q
 
 energy:          ## break the world model down to the energy-transition question
 	python3 domains/lens.py energy-transition

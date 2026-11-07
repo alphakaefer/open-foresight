@@ -42,7 +42,8 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import check_numbers as cn  # noqa: E402
 
-DEFAULT_REPO = Path("C:/Users/navee/open-foresight")
+DEFAULT_REPO = HERE.parent  # the script lives in the repo
+DEFAULT_OUT = HERE.parent.parent / "open-foresight-results" / "explain"  # outside the repo
 MODEL_ID = "claude-opus-5-5"
 EFFORT = "medium"
 MAX_TOKENS = 16000
@@ -403,7 +404,7 @@ def main(argv=None) -> int:
     g.add_argument("--real", action="store_true", help="use today's real snapshot instead of a what-if")
     ap.add_argument("--dry-run", action="store_true", help="build trace + prompt and run self-tests; no API call")
     ap.add_argument("--repo", type=Path, default=DEFAULT_REPO)
-    ap.add_argument("--out", type=Path, default=HERE / "results")
+    ap.add_argument("--out", type=Path, default=DEFAULT_OUT)
     args = ap.parse_args(argv)
     try:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")

@@ -1,15 +1,16 @@
 # explain_trace: plain-language explanation of the engine, with a number check
 
-Read-only on the repo (`C:/Users/navee/open-foresight`): no bytecode, `git status` compared before and after.
+Read-only on the repo: no bytecode, `git status` compared before and after. Results go outside the repo, by default
+to `../open-foresight-results/explain/` (next to your clone); `--out` must point outside the repo.
 
 ```bash
-cd C:/Users/navee/Desktop/CLUADEFORESIGHT/explain
-python -B explain_trace.py --whatif A05 --dry-run   # trace + prompt + checker self-tests; NO API call
-python -B explain_trace.py --real --dry-run
-python -B explain_trace.py --whatif A05             # PAID: 1 call, plus 1 retry only if the number check fails
-python -B explain_trace.py --real                   # PAID
-python -B check_numbers.py results/<run>/trace.json <explanation.json>   # re-check offline
-python -B check_numbers.py --self-test results/<run>/trace.json
+# from the repo root
+python3 -B explain/explain_trace.py --whatif A05 --dry-run   # trace + prompt + checker self-tests; NO API call
+python3 -B explain/explain_trace.py --real --dry-run
+python3 -B explain/explain_trace.py --whatif A05             # PAID: 1 call, plus 1 retry only if the number check fails
+python3 -B explain/explain_trace.py --real                   # PAID
+python3 -B explain/check_numbers.py <run folder>/trace.json <explanation.json>   # re-check offline
+python3 -B explain/check_numbers.py --self-test <run folder>/trace.json
 ```
 
 Before a paid run:
@@ -20,7 +21,7 @@ Model `claude-opus-5-5`, effort `medium`, structured JSON output, server-side re
 (`fallbacks: "default"`, beta `server-side-fallback-2026-07-01`). The answering model is recorded in
 `attemptN_response.json` (`model_that_answered`).
 
-Per run, in `results/<UTC time>_<mode>/`: `trace.json` (`run` = local provenance, `trace` = the only part sent),
+Per run, in `<out>/<UTC time>_<mode>/`: `trace.json` (`run` = local provenance, `trace` = the only part sent),
 `prompt.json` (exact request, no key), `attemptN_response.json`, `attemptN_check.json`, `check_report.json`,
 `explanation.md` (with a FAILED NUMBER CHECK banner if it still fails after the retry).
 

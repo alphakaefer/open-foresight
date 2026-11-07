@@ -20,7 +20,7 @@ Gates (the script stops with exit code 2 if one fails, before any result is show
   3. The unrounded path (rechne_am) rounds to exactly the same numbers as aus_status.
 
 Usage
-  python k_sensitivity.py [--repo C:/Users/navee/open-foresight] [--out ./results]
+  python3 -B k_experiment/k_sensitivity.py [--repo .] [--out ../open-foresight-results/k_experiment]
 """
 from __future__ import annotations
 
@@ -38,7 +38,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-DEFAULT_REPO = Path("C:/Users/navee/open-foresight")
+DEFAULT_REPO = HERE.parent  # the script lives in the repo
+DEFAULT_OUT = HERE.parent.parent / "open-foresight-results" / "k_experiment"  # outside the repo
 K_VALUES = [0.0, 0.05, 0.10, 0.15, 0.20, 0.30, 0.50]
 K_CURRENT = 0.15
 FOCUS = "2040"
@@ -168,7 +169,7 @@ class Experiment:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--repo", type=Path, default=DEFAULT_REPO)
-    ap.add_argument("--out", type=Path, default=HERE / "results")
+    ap.add_argument("--out", type=Path, default=DEFAULT_OUT)
     args = ap.parse_args(argv)
     repo, out = args.repo.resolve(), args.out.resolve()
     if out == repo or repo in out.parents:
