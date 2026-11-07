@@ -15,6 +15,10 @@ Asset paths are relative (`base: './'` in `vite.config.ts`), so `dist/` also wor
 (Fontsource), so the page loads nothing from third-party servers. A hosted copy can show imprint and privacy links in the
 footer by setting `VITE_IMPRINT_URL` and `VITE_PRIVACY_URL` at build time, for example in `.env.production.local`
 (ignored by git). Without them the footer shows no legal links.
+`VITE_MAPS_URL` adds a "Maps" link to the top bar, for a hosted copy that also serves the map prototype in [`ui/`](../ui/).
+
+The look follows the zukunftsgut.org apps: [`src/theme.css`](src/theme.css) is loaded after `styles.css` and only overrides
+colours and fonts (slate greys, white cards, Jost headings). Delete its import in `src/main.tsx` to get the original dark design back.
 
 ## Explanation trace from commit `35e6dc2`
 

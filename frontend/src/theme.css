@@ -1,0 +1,158 @@
+/* Light theme in the style of the zukunftsgut.org apps (slate greys, white cards, Jost headings).
+   Loaded after styles.css and prediction.css; it only overrides colours and fonts, so styles.css stays as the
+   developers wrote it. Generated once on 2026-11-07: green tints mapped to the slate scale by lightness,
+   warm data colours (regimes, sun, chart lines) kept; then the dark sections set by hand below. */
+:root{color:#1e293b;background:#f1f5f9}
+.topbar{background:#0f172a;border-bottom:1px solid #334155}
+.brand b{color:#cbd5e1}
+.brand-mark{color:#cbd5e1}
+.topbar nav{color:#cbd5e1}
+.top-tag{color:#cbd5e1;border:1px solid #475569}
+.hero{background:#0f172a}
+.hero:after{background:#334155}
+.eyebrow{color:#cbd5e1}
+.eyebrow-dot{background:#cbd5e1;box-shadow:0 0 0 5px #cbd5e122}
+.hero h1 em{color:#cbd5e1}
+.hero p{color:#cbd5e1}
+.hero-meta{color:#94a3b8}
+.hero-meta span+span{border-left:1px solid #475569}
+.hero-art{background:radial-gradient(circle at 60% 50%,#334155 0,#1e293b 37%,#0f172a 73%)}
+.orbit{border:1px solid #64748b66}
+.art-label{color:#cbd5e1}
+.section{border-bottom:1px solid #e2e8f0}
+.section-top p{color:#64748b}
+.horizon-tabs{background:#e2e8f0}
+.horizon-tabs button{color:#64748b}
+.horizon-tabs button.active{background:#334155;box-shadow:0 2px 6px #1e293b26}
+.card{border:1px solid #e2e8f0;box-shadow:0 6px 24px #1e293b10}
+.label{color:#64748b}
+.badge{color:#64748b;background:#f1f5f9}
+.regime-bar{background:#cbd5e1}
+.r-cheap2{background:#64748b}
+.r-cheap1{background:#94a3b8;color:#1e293b}
+.r-neutral{background:#cbd5e1;color:#334155}
+.regime-legend{color:#64748b}
+.regime-legend strong{color:#334155}
+.small-note{color:#94a3b8}
+.insight-card{background:#f1f5f9}
+.status-icon{border:1px solid #94a3b8;color:#64748b}
+.insight-card p{color:#64748b}
+.timestamp{color:#64748b}
+.scenario-head h3 span{color:#94a3b8}
+.scenario-card{border:1px solid #e2e8f0;color:#1e293b}
+.scenario-card:hover,.scenario-card.selected{border-color:#64748b;box-shadow:0 7px 24px #4755691a}
+.scenario-short{color:#64748b}
+.scenario-footer{border-top:1px solid #e2e8f0;color:#64748b}
+.scenario-footer b{color:#334155}
+.evidence-card{border:1px solid #e2e8f0}
+.evidence-card:hover{border-color:#64748b}
+.evidence-card>strong small{color:#94a3b8}
+.evidence-foot{color:#94a3b8}
+.evidence-foot .positive{color:#64748b}
+.evidence-source{color:#94a3b8;border-top:1px solid #e2e8f0}
+.indicator-panel{background:#f1f5f9}
+.indicator-panel p{color:#64748b}
+.indicator-row{border-bottom:1px solid #e2e8f0}
+.indicator-dot{background:#cbd5e1}
+.indicator-dot.on{background:#94a3b8}
+.indicator-row small{color:#94a3b8}
+.indicator-status{color:#64748b}
+.mode-tabs{background:#e2e8f0}
+.mode-tabs button{color:#64748b}
+.mode-tabs button.active{color:#334155;box-shadow:0 2px 10px #1e293b12}
+.compare-row{border-bottom:1px solid #f1f5f9;color:#334155}
+.compare-row:hover,.compare-row.selected{background:#f8fafc}
+.compare-name small{color:#94a3b8}
+.compare-meter{background:#f1f5f9}
+.compare-meter i{background:#94a3b8}
+.compare-value small{color:#94a3b8}
+.scenario-description{color:#64748b}
+.empty-explain{background:#f1f5f9}
+.empty-explain>span{color:#94a3b8}
+.empty-explain p{color:#64748b}
+.chain{border-top:1px solid #e2e8f0}
+.chain>div{border-bottom:1px solid #e2e8f0}
+.chain small{color:#94a3b8}
+.chain span{color:#64748b}
+.explain-result div span{color:#94a3b8}
+.explain-result div b{color:#334155}
+.explain-result .arrow{color:#94a3b8}
+.explain-result>strong small{color:#94a3b8}
+.sensitivity-panel{background:#1e293b}
+.sensitivity-intro{background:#1e293b}
+.sensitivity-intro .label{color:#cbd5e1}
+.sensitivity-intro h3 em{color:#cbd5e1}
+.sensitivity-intro p{color:#cbd5e1}
+.k-control>span{color:#94a3b8}
+.k-control button{background:#334155;border:1px solid #475569;color:#e2e8f0}
+.k-control button.active{background:#cbd5e1;color:#334155;border-color:#cbd5e1}
+.k-control small{color:#94a3b8}
+.chart-card{background:#334155}
+.chart-card .label{color:#cbd5e1}
+.chart-axis{color:#94a3b8}
+.chart-card>strong small{color:#cbd5e1}
+.sensitivity-body>.small-note{color:#cbd5e1}
+.bottleneck-row{border-bottom:1px solid #e2e8f0}
+.bottleneck-row>div:first-child span{color:#94a3b8}
+.bottleneck-track{background:#f1f5f9}
+.method-card p{color:#64748b}
+.limitations{color:#64748b}
+.source-links{border-top:1px solid #e2e8f0}
+.source-links a{color:#64748b}
+footer{background:#0f172a;color:#94a3b8}
+footer a{color:#cbd5e1}
+.prediction-stat{border:1px solid #e2e8f0}
+.prediction-stat.highlight{background:#f1f5f9}
+.prediction-stat strong{color:#334155}
+.prediction-stat small{color:#94a3b8}
+.prediction-chart-legend{color:#64748b}
+.prediction-chart-legend i.baseline-line{background:#94a3b8}
+.prediction-detail label{color:#64748b}
+.prediction-detail select{border:1px solid #e2e8f0;background:#f8fafc;color:#334155}
+.prediction-detail-values > div{border-bottom:1px solid #e2e8f0}
+.prediction-detail-values span,
+.prediction-outcome span{color:#64748b}
+.prediction-detail-values strong{color:#334155}
+.prediction-outcome{background:#f1f5f9}
+.prediction-outcome strong{color:#475569}
+.prediction-bottom{border:1px solid #e2e8f0;background:#f1f5f9}
+.prediction-score th,
+.prediction-score td{border-bottom:1px solid #cbd5e1}
+.prediction-score thead th{color:#64748b}
+.prediction-score p,
+.prediction-limits li{color:#64748b}
+.brand,.chart-card>strong,.compare-value b,.evidence-card>strong,.explain-result div b,.prediction-detail-values strong,.prediction-stat strong,.scenario-card>strong,.scenario-footer b,h1,h2,h3{font-family:Jost,Futura,'Century Gothic','Avenir Next',sans-serif}
+.chart-card>strong small,.prediction-detail select,.scenario-head h3 span,:root{font-family:-apple-system,system-ui,'Segoe UI',Roboto,'Helvetica Neue','Noto Sans',Arial,sans-serif}
+
+/* Light sections instead of the dark ones (topbar, hero, k sensitivity, footer) */
+:root{font-family:-apple-system,system-ui,'Segoe UI',Roboto,'Helvetica Neue','Noto Sans',Arial,sans-serif;color:#0f172a;background:#f8fafc}
+body{background:#f8fafc}
+h1,h2,h3{font-family:Jost,Futura,'Century Gothic','Avenir Next',sans-serif;font-weight:600;letter-spacing:0}
+.topbar{background:#fff;color:#0f172a;border-bottom:1px solid #e2e8f0}
+.topbar nav,.top-tag{color:#475569}
+.brand b,.brand-mark{color:#0f172a}
+.hero{background:#fff;color:#0f172a;border-bottom:1px solid #e2e8f0}
+.hero:after{background:#e2e8f0}
+.eyebrow{color:#475569}
+.hero h1 em{font-family:Jost,Futura,'Century Gothic','Avenir Next',sans-serif;font-style:italic;color:#2f4fa8}
+.hero p{color:#334155}
+.hero-meta{color:#64748b}
+.hero-meta span+span{border-left-color:#cbd5e1}
+.hero-art{background:radial-gradient(circle at 60% 50%,#f1f5f9 0,#f8fafc 45%,#fff 73%)}
+.orbit{border-color:#94a3b866}
+.art-label{color:#64748b}
+.horizon-tabs{background:#f1f5f9}
+.horizon-tabs button{color:#475569;border-radius:6px}
+.horizon-tabs button.active{background:#1e293b;color:#fff;box-shadow:none}
+.sensitivity-panel{background:#fff;color:#0f172a;border:1px solid #e2e8f0;border-radius:16px}
+.sensitivity-intro{background:#f8fafc;border-right:1px solid #e2e8f0}
+.sensitivity-intro .label,.k-control>span,.k-control small,.chart-card .label,.chart-axis,.chart-card>strong small,.sensitivity-body>.small-note{color:#64748b}
+.sensitivity-intro h3 em{color:#2f4fa8}
+.sensitivity-intro p{color:#334155}
+.k-control button{background:#fff;border:1px solid #cbd5e1;color:#334155}
+.k-control button.active{background:#1e293b;border-color:#1e293b;color:#fff}
+.chart-card{background:#f8fafc;border:1px solid #e2e8f0}
+.card,.scenario-card,.evidence-card{border-radius:16px;box-shadow:none}
+footer{background:#fff;color:#64748b;border-top:1px solid #e2e8f0}
+footer .brand{color:#0f172a}
+footer a{color:#334155}

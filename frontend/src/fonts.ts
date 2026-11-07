@@ -1,10 +1,6 @@
 // Fonts are bundled with the build (Fontsource), so the page loads nothing from Google.
-import '@fontsource/dm-sans/latin-400.css'
-import '@fontsource/dm-sans/latin-500.css'
-import '@fontsource/dm-sans/latin-600.css'
-import '@fontsource/dm-sans/latin-700.css'
-import '@fontsource/manrope/latin-400.css'
-import '@fontsource/manrope/latin-500.css'
-import '@fontsource/manrope/latin-600.css'
-import '@fontsource/manrope/latin-700.css'
-import '@fontsource/manrope/latin-800.css'
+// Headings use Jost (as in the zukunftsgut.org apps); body text uses the system font.
+import '@fontsource/jost/latin-500.css'
+import '@fontsource/jost/latin-600.css'
+import '@fontsource/jost/latin-700.css'
+import '@fontsource/jost/latin-500-italic.css'
